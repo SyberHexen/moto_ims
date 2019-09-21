@@ -43,8 +43,6 @@
 
 .field private mImsSupportedServicesRetries:I
 
-.field private mMotoExtTelephonyMgr:Lcom/motorola/android/telephony/MotoExtTelephonyManager;
-
 .field private mPhoneId:I
 
 .field private mServiceSub:Lorg/codeaurora/ims/ImsServiceSub;
@@ -81,9 +79,6 @@
     const/4 v0, 0x0
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsConfigImplOem;->mTelephonyMgr:Landroid/telephony/TelephonyManager;
-
-    .line 47
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsConfigImplOem;->mMotoExtTelephonyMgr:Lcom/motorola/android/telephony/MotoExtTelephonyManager;
 
     .line 65
     const/4 v1, 0x0
@@ -127,15 +122,6 @@
     move-result-object v1
 
     iput-object v1, p0, Lorg/codeaurora/ims/ImsConfigImplOem;->mTelephonyMgr:Landroid/telephony/TelephonyManager;
-
-    .line 99
-    new-instance v1, Lcom/motorola/android/telephony/MotoExtTelephonyManager;
-
-    iget-object v2, p0, Lorg/codeaurora/ims/ImsConfigImplOem;->mContext:Landroid/content/Context;
-
-    invoke-direct {v1, v2, v0}, Lcom/motorola/android/telephony/MotoExtTelephonyManager;-><init>(Landroid/content/Context;I)V
-
-    iput-object v1, p0, Lorg/codeaurora/ims/ImsConfigImplOem;->mMotoExtTelephonyMgr:Lcom/motorola/android/telephony/MotoExtTelephonyManager;
 
     .line 100
     iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImplOem;->mContext:Landroid/content/Context;
@@ -1440,7 +1426,7 @@
 
     .line 434
     .local v0, "ar":Landroid/os/AsyncResult;
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImplOem;->mMotoExtTelephonyMgr:Lcom/motorola/android/telephony/MotoExtTelephonyManager;
+    iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImplOem;->mTelephonyMgr:Landroid/telephony/TelephonyManager;
 
     const/4 v2, 0x0
 
@@ -1512,9 +1498,9 @@
 
     .line 446
     .local v3, "subId":I
-    iget-object v4, p0, Lorg/codeaurora/ims/ImsConfigImplOem;->mMotoExtTelephonyMgr:Lcom/motorola/android/telephony/MotoExtTelephonyManager;
+    iget-object v4, p0, Lorg/codeaurora/ims/ImsConfigImplOem;->mTelephonyMgr:Landroid/telephony/TelephonyManager;
 
-    invoke-virtual {v4, v3, p2, v1}, Lcom/motorola/android/telephony/MotoExtTelephonyManager;->vendorInvokeOemRilRequestRawSync(I[B[B)I
+    invoke-virtual {v4, v3, p2, v1}, Landroid/telephony/TelephonyManager;->vendorInvokeOemRilRequestRawSync(I[B[B)I
 
     move-result v4
 
