@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <public type="bool" name="config_carrier_display_csretry_toast" id="0x7f010000" />
+    <public type="bool" name="config_device_allow_telephony_calculate_rotation" id="0x7f010001" />
+    <public type="bool" name="config_enable_camera_sound" id="0x7f010002" />
+    <public type="bool" name="config_ovr_create_video_call_provider" id="0x7f010003" />
+    <public type="bool" name="config_regional_number_patterns_video_call" id="0x7f010004" />
+    <public type="bool" name="config_video_call_datausage_enable" id="0x7f010005" />
+    <public type="drawable" name="img_no_image" id="0x7f020000" />
+    <public type="drawable" name="ims_state" id="0x7f020001" />
+    <public type="drawable" name="volte_icon" id="0x7f020002" />
+    <public type="string" name="call_hold_label" id="0x7f030000" />
+    <public type="string" name="call_resume_label" id="0x7f030001" />
+    <public type="string" name="device_is_hd_capable" id="0x7f030002" />
+    <public type="string" name="device_is_volte_capable" id="0x7f030003" />
+    <public type="string" name="error_msg_cancelled" id="0x7f030004" />
+    <public type="string" name="error_msg_failed" id="0x7f030005" />
+    <public type="string" name="error_msg_reinvite_collision" id="0x7f030006" />
+    <public type="string" name="handover_from_wifi_to_lte" id="0x7f030007" />
+    <public type="string" name="hd_icon_header_app_name" id="0x7f030008" />
+    <public type="string" name="ims_channel_name" id="0x7f030009" />
+    <public type="string" name="incoming_call_failed_low_battery" id="0x7f030012" />
+    <public type="string" name="APKTOOL_DUMMY_a" id="0x7f03000a" />
+    <public type="string" name="APKTOOL_DUMMY_b" id="0x7f03000b" />
+    <public type="string" name="APKTOOL_DUMMY_c" id="0x7f03000c" />
+    <public type="string" name="APKTOOL_DUMMY_d" id="0x7f03000d" />
+    <public type="string" name="APKTOOL_DUMMY_e" id="0x7f03000e" />
+    <public type="string" name="APKTOOL_DUMMY_f" id="0x7f03000f" />
+    <public type="string" name="APKTOOL_DUMMY_10" id="0x7f030010" />
+    <public type="string" name="APKTOOL_DUMMY_11" id="0x7f030011" />
+</resources>

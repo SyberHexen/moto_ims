@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="29" android:compileSdkVersionCodename="10" android:sharedUserId="android.uid.phone" coreApp="true" package="org.codeaurora.ims" platformBuildVersionCode="29" platformBuildVersionName="10">
+    <protected-broadcast android:name="org.codeaurora.VOIP_VOPS_SSAC_STATUS"/>
+    <protected-broadcast android:name="com.android.internal.intent.action.ACTION_FORBIDDEN_NO_SERVICE_AUTHORIZATION"/>
+    <protected-broadcast android:name="com.motorola.intent.action.PROVISION_STATE_CHANGED"/>
+    <protected-broadcast android:name="com.motorola.internal.intent.action.EPDG_CONNECTION_STATE_CHANGED"/>
+    <protected-broadcast android:name="com.android.imsconnection.DISCONNECTED"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_PRECISE_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS"/>
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL"/>
+    <uses-permission android:name="android.permission.SUBSTITUTE_NOTIFICATION_APP_NAME"/>
+    <uses-permission android:name="com.motorola.omadm.permission.CONNMO_SETTINGS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.GET_INTENT_SENDER_INTENT"/>
+    <uses-permission android:name="android.permission.READ_NETWORK_USAGE_HISTORY"/>
+    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+    <uses-permission android:name="com.motorola.permission.ACCESS_CHECKIN"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="com.qti.permission.DIAG"/>
+    <uses-permission android:name="com.qti.permission.AUDIO"/>
+    <permission android:name="com.qti.permission.DIAG" android:protectionLevel="signatureOrSystem"/>
+    <permission android:name="com.qti.permission.AUDIO" android:protectionLevel="signatureOrSystem"/>
+    <permission android:name="com.qti.permission.BIND_QTI_IMS_SERVICE" android:protectionLevel="signatureOrSystem"/>
+    <application android:directBootAware="true" android:extractNativeLibs="false" android:usesNonSdkApi="true">
+        <service android:enabled="true" android:exported="true" android:name=".ImsService" android:permission="android.permission.BIND_IMS_SERVICE" android:persistent="true" android:process="com.android.phone" android:singleUser="true">
+            <meta-data android:name="android.telephony.ims.MMTEL_FEATURE" android:value="true"/>
+            <meta-data android:name="android.telephony.ims.EMERGENCY_MMTEL_FEATURE" android:value="true"/>
+            <intent-filter>
+                <action android:name="android.telephony.ims.ImsService"/>
+            </intent-filter>
+        </service>
+        <service android:enabled="true" android:exported="true" android:name=".QtiImsExtService" android:permission="com.qti.permission.BIND_QTI_IMS_SERVICE" android:process="com.android.phone" android:singleUser="true"/>
+        <uses-library android:name="qti-telephony-hidl-wrapper"/>
+        <uses-library android:name="qti-telephony-utils"/>
+        <uses-library android:name="ims-ext-common"/>
+    </application>
+</manifest>
