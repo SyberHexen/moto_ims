@@ -1,5 +1,5 @@
 .class public Lorg/codeaurora/ims/ImsPhoneStateListener;
-.super Lcom/motorola/android/telephony/MotoExtPhoneStateListener;
+.super Landroid/telephony/PhoneStateListener;
 .source "ImsPhoneStateListener.java"
 
 
@@ -8,7 +8,7 @@
 
 .field private mPhoneId:I
 
-.field private mTelephony:Lcom/motorola/android/telephony/MotoExtTelephonyManager;
+.field private mTelephony:Landroid/telephony/TelephonyManager;
 
 
 # direct methods
@@ -19,19 +19,19 @@
     .param p3, "phoneId"    # I
 
     .line 34
-    invoke-direct {p0}, Lcom/motorola/android/telephony/MotoExtPhoneStateListener;-><init>()V
+    invoke-direct {p0}, Landroid/telephony/PhoneStateListener;-><init>()V
 
     .line 35
     iput-object p1, p0, Lorg/codeaurora/ims/ImsPhoneStateListener;->mContext:Landroid/content/Context;
 
     .line 37
-    new-instance v0, Lcom/motorola/android/telephony/MotoExtTelephonyManager;
+    new-instance v0, Landroid/telephony/TelephonyManager;
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsPhoneStateListener;->mContext:Landroid/content/Context;
 
-    invoke-direct {v0, v1, p2}, Lcom/motorola/android/telephony/MotoExtTelephonyManager;-><init>(Landroid/content/Context;I)V
+    invoke-direct {v0, v1, p2}, Landroid/telephony/TelephonyManager;-><init>(Landroid/content/Context;I)V
 
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsPhoneStateListener;->mTelephony:Lcom/motorola/android/telephony/MotoExtTelephonyManager;
+    iput-object v0, p0, Lorg/codeaurora/ims/ImsPhoneStateListener;->mTelephony:Landroid/telephony/TelephonyManager;
 
     .line 38
     iput p3, p0, Lorg/codeaurora/ims/ImsPhoneStateListener;->mPhoneId:I
@@ -139,11 +139,11 @@
     invoke-direct {p0, v0}, Lorg/codeaurora/ims/ImsPhoneStateListener;->logd(Ljava/lang/String;)V
 
     .line 43
-    iget-object v0, p0, Lorg/codeaurora/ims/ImsPhoneStateListener;->mTelephony:Lcom/motorola/android/telephony/MotoExtTelephonyManager;
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsPhoneStateListener;->mTelephony:Landroid/telephony/TelephonyManager;
 
     const v1, 0x8000
 
-    invoke-virtual {v0, p0, v1}, Lcom/motorola/android/telephony/MotoExtTelephonyManager;->listen(Lcom/motorola/android/telephony/MotoExtPhoneStateListener;I)V
+    invoke-virtual {v0, p0, v1}, Landroid/telephony/TelephonyManager;->listen(Landroid/telephony/PhoneStateListener;I)V
 
     .line 44
     return-void
@@ -239,11 +239,11 @@
     invoke-direct {p0, v0}, Lorg/codeaurora/ims/ImsPhoneStateListener;->logd(Ljava/lang/String;)V
 
     .line 48
-    iget-object v0, p0, Lorg/codeaurora/ims/ImsPhoneStateListener;->mTelephony:Lcom/motorola/android/telephony/MotoExtTelephonyManager;
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsPhoneStateListener;->mTelephony:Landroid/telephony/TelephonyManager;
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, p0, v1}, Lcom/motorola/android/telephony/MotoExtTelephonyManager;->listen(Lcom/motorola/android/telephony/MotoExtPhoneStateListener;I)V
+    invoke-virtual {v0, p0, v1}, Landroid/telephony/TelephonyManager;->listen(Landroid/telephony/PhoneStateListener;I)V
 
     .line 49
     return-void
