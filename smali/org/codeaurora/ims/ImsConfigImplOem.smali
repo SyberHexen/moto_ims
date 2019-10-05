@@ -1500,7 +1500,7 @@
     .local v3, "subId":I
     iget-object v4, p0, Lorg/codeaurora/ims/ImsConfigImplOem;->mTelephonyMgr:Landroid/telephony/TelephonyManager;
 
-    invoke-virtual {v4, v3, p2, v1}, Landroid/telephony/TelephonyManager;->vendorInvokeOemRilRequestRawSync(I[B[B)I
+    invoke-virtual {v4, v3, p2, v1}, Landroid/telephony/TelephonyManager;->invokeOemRilRequestRaw(I[B[B)I
 
     move-result v4
 
