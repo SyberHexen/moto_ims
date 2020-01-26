@@ -137,8 +137,6 @@
     .line 811
     const-string v2, "wfc_ims_mdn"
 
-    invoke-static {v0, v2, v1}, Landroid/telephony/SubscriptionManager;->setSubscriptionProperty(ILjava/lang/String;Ljava/lang/String;)V
-
     goto :goto_0
 
     .line 813
