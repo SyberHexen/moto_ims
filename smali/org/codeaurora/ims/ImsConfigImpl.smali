@@ -994,25 +994,8 @@
 
     const-string v1, "wfc_ims_mdn"
 
-    invoke-static {p1, v1, v0}, Landroid/telephony/SubscriptionManager;->getSubscriptionProperty(ILjava/lang/String;Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 827
-    .local v0, "mdn":Ljava/lang/String;
-    const-string v1, "0"
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    .line 828
     const/4 v0, 0x0
 
-    .line 830
-    :cond_0
     return-object v0
 .end method
 
