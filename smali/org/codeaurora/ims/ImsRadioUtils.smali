@@ -13,7 +13,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 102
+    .line 106
     const-string v0, "ImsRadioUtils"
 
     sput-object v0, Lorg/codeaurora/ims/ImsRadioUtils;->TAG:Ljava/lang/String;
@@ -24,7 +24,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 101
+    .line 105
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,79 +34,79 @@
     .locals 1
     .param p0, "facilityType"    # I
 
-    .line 1450
+    .line 1514
     const/16 v0, 0x8
 
     packed-switch p0, :pswitch_data_0
 
-    .line 1477
+    .line 1541
     return v0
 
-    .line 1472
+    .line 1536
     :pswitch_0
     const/16 v0, 0xc
 
     return v0
 
-    .line 1470
+    .line 1534
     :pswitch_1
     const/16 v0, 0xb
 
     return v0
 
-    .line 1468
+    .line 1532
     :pswitch_2
     const/16 v0, 0xa
 
     return v0
 
-    .line 1466
+    .line 1530
     :pswitch_3
     const/16 v0, 0x9
 
     return v0
 
-    .line 1464
+    .line 1528
     :pswitch_4
     return v0
 
-    .line 1462
+    .line 1526
     :pswitch_5
     const/4 v0, 0x7
 
     return v0
 
-    .line 1460
+    .line 1524
     :pswitch_6
     const/4 v0, 0x6
 
     return v0
 
-    .line 1458
+    .line 1522
     :pswitch_7
     const/4 v0, 0x5
 
     return v0
 
-    .line 1474
+    .line 1538
     :pswitch_8
     const/4 v0, 0x4
 
     return v0
 
-    .line 1456
+    .line 1520
     :pswitch_9
     const/4 v0, 0x3
 
     return v0
 
-    .line 1454
+    .line 1518
     :pswitch_a
     const/4 v0, 0x2
 
     return v0
 
-    .line 1452
+    .line 1516
     :pswitch_b
     const/4 v0, 0x1
 
@@ -135,12 +135,12 @@
     .locals 3
     .param p0, "inBlockReasonDetails"    # Lvendor/qti/hardware/radio/ims/V1_0/BlockReasonDetails;
 
-    .line 2375
+    .line 2440
     new-instance v0, Lorg/codeaurora/ims/BlockReasonDetailsInfo;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/BlockReasonDetailsInfo;-><init>()V
 
-    .line 2377
+    .line 2442
     .local v0, "outBlockReasonDetails":Lorg/codeaurora/ims/BlockReasonDetailsInfo;
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/BlockReasonDetails;->regFailureReasonType:I
 
@@ -148,7 +148,7 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 2378
+    .line 2443
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/BlockReasonDetails;->regFailureReasonType:I
 
     invoke-static {v1}, Lorg/codeaurora/ims/ImsRadioUtils;->regFailureReasonTypeFromHal(I)I
@@ -157,7 +157,7 @@
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/BlockReasonDetailsInfo;->setRegFailureReasonType(I)V
 
-    .line 2382
+    .line 2447
     :cond_0
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/BlockReasonDetails;->regFailureReason:I
 
@@ -165,12 +165,12 @@
 
     if-eq v1, v2, :cond_1
 
-    .line 2383
+    .line 2448
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/BlockReasonDetails;->regFailureReason:I
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/BlockReasonDetailsInfo;->setRegFailureReason(I)V
 
-    .line 2386
+    .line 2451
     :cond_1
     return-object v0
 .end method
@@ -179,7 +179,7 @@
     .locals 2
     .param p0, "inBlockReason"    # I
 
-    .line 2359
+    .line 2424
     const/4 v0, 0x1
 
     if-eqz p0, :cond_3
@@ -194,26 +194,26 @@
 
     if-eq p0, v0, :cond_0
 
-    .line 2369
+    .line 2434
     const/4 v0, -0x1
 
     return v0
 
-    .line 2367
+    .line 2432
     :cond_0
     const/4 v0, 0x4
 
     return v0
 
-    .line 2365
+    .line 2430
     :cond_1
     return v0
 
-    .line 2363
+    .line 2428
     :cond_2
     return v1
 
-    .line 2361
+    .line 2426
     :cond_3
     return v0
 .end method
@@ -222,21 +222,21 @@
     .locals 3
     .param p0, "inBlockStatus"    # Lvendor/qti/hardware/radio/ims/V1_0/BlockStatus;
 
-    .line 2340
+    .line 2405
     if-nez p0, :cond_0
 
-    .line 2341
+    .line 2406
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 2344
+    .line 2409
     :cond_0
     new-instance v0, Lorg/codeaurora/ims/BlockStatusInfo;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/BlockStatusInfo;-><init>()V
 
-    .line 2346
+    .line 2411
     .local v0, "outBlockStatus":Lorg/codeaurora/ims/BlockStatusInfo;
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/BlockStatus;->blockReason:I
 
@@ -244,7 +244,7 @@
 
     if-eq v1, v2, :cond_1
 
-    .line 2347
+    .line 2412
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/BlockStatus;->blockReason:I
 
     invoke-static {v1}, Lorg/codeaurora/ims/ImsRadioUtils;->blockReasonTypeFromHal(I)I
@@ -253,13 +253,13 @@
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/BlockStatusInfo;->setReason(I)V
 
-    .line 2350
+    .line 2415
     :cond_1
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/BlockStatus;->hasBlockReasonDetails:Z
 
     if-eqz v1, :cond_2
 
-    .line 2351
+    .line 2416
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/BlockStatus;->blockReasonDetails:Lvendor/qti/hardware/radio/ims/V1_0/BlockReasonDetails;
 
     invoke-static {v1}, Lorg/codeaurora/ims/ImsRadioUtils;->blockReasonDetailsFromHal(Lvendor/qti/hardware/radio/ims/V1_0/BlockReasonDetails;)Lorg/codeaurora/ims/BlockReasonDetailsInfo;
@@ -268,7 +268,7 @@
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/BlockStatusInfo;->setReasonDetails(Lorg/codeaurora/ims/BlockReasonDetailsInfo;)V
 
-    .line 2355
+    .line 2420
     :cond_2
     return-object v0
 .end method
@@ -285,27 +285,27 @@
         }
     .end annotation
 
-    .line 1284
+    .line 1348
     .local p0, "inCfInfoList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;>;"
     const/4 v0, 0x0
 
-    .line 1286
+    .line 1350
     .local v0, "outCfInfoList":[Lorg/codeaurora/telephony/utils/CallForwardInfo;
     if-eqz p0, :cond_e
 
-    .line 1287
+    .line 1351
     invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    .line 1288
+    .line 1352
     .local v1, "infoListSize":I
     new-array v0, v1, [Lorg/codeaurora/telephony/utils/CallForwardInfo;
 
-    .line 1289
+    .line 1353
     new-array v2, v1, [Lorg/codeaurora/ims/ImsCallForwardTimerInfo;
 
-    .line 1291
+    .line 1355
     .local v2, "timerInfo":[Lorg/codeaurora/ims/ImsCallForwardTimerInfo;
     const/4 v3, 0x0
 
@@ -313,21 +313,21 @@
     :goto_0
     if-ge v3, v1, :cond_d
 
-    .line 1292
+    .line 1356
     new-instance v4, Lorg/codeaurora/telephony/utils/CallForwardInfo;
 
     invoke-direct {v4}, Lorg/codeaurora/telephony/utils/CallForwardInfo;-><init>()V
 
     aput-object v4, v0, v3
 
-    .line 1293
+    .line 1357
     invoke-virtual {p0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;
 
-    .line 1295
+    .line 1359
     .local v4, "inCfInfo":Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;
     iget v5, v4, Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;->status:I
 
@@ -335,53 +335,53 @@
 
     if-eq v5, v6, :cond_0
 
-    .line 1296
+    .line 1360
     aget-object v5, v0, v3
 
     iget v7, v4, Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;->status:I
 
     iput v7, v5, Lorg/codeaurora/telephony/utils/CallForwardInfo;->status:I
 
-    .line 1299
+    .line 1363
     :cond_0
     iget v5, v4, Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;->reason:I
 
     if-eq v5, v6, :cond_1
 
-    .line 1300
+    .line 1364
     aget-object v5, v0, v3
 
     iget v7, v4, Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;->reason:I
 
     iput v7, v5, Lorg/codeaurora/telephony/utils/CallForwardInfo;->reason:I
 
-    .line 1303
+    .line 1367
     :cond_1
     iget v5, v4, Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;->serviceClass:I
 
     if-eq v5, v6, :cond_2
 
-    .line 1304
+    .line 1368
     aget-object v5, v0, v3
 
     iget v7, v4, Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;->serviceClass:I
 
     iput v7, v5, Lorg/codeaurora/telephony/utils/CallForwardInfo;->serviceClass:I
 
-    .line 1307
+    .line 1371
     :cond_2
     iget v5, v4, Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;->toa:I
 
     if-eq v5, v6, :cond_3
 
-    .line 1308
+    .line 1372
     aget-object v5, v0, v3
 
     iget v7, v4, Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;->toa:I
 
     iput v7, v5, Lorg/codeaurora/telephony/utils/CallForwardInfo;->toa:I
 
-    .line 1311
+    .line 1375
     :cond_3
     aget-object v5, v0, v3
 
@@ -389,19 +389,19 @@
 
     iput-object v7, v5, Lorg/codeaurora/telephony/utils/CallForwardInfo;->number:Ljava/lang/String;
 
-    .line 1313
+    .line 1377
     iget v5, v4, Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;->timeSeconds:I
 
     if-eq v5, v6, :cond_4
 
-    .line 1314
+    .line 1378
     aget-object v5, v0, v3
 
     iget v7, v4, Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;->timeSeconds:I
 
     iput v7, v5, Lorg/codeaurora/telephony/utils/CallForwardInfo;->timeSeconds:I
 
-    .line 1317
+    .line 1381
     :cond_4
     iget-boolean v5, v4, Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;->hasCallFwdTimerStart:Z
 
@@ -411,15 +411,15 @@
 
     if-eqz v5, :cond_c
 
-    .line 1318
+    .line 1382
     const-string v5, "responseQueryCallForward for Timer"
 
     invoke-static {v5}, Lorg/codeaurora/ims/ImsRadioUtils;->log(Ljava/lang/String;)V
 
-    .line 1319
+    .line 1383
     iget-object v5, v4, Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;->callFwdTimerStart:Lvendor/qti/hardware/radio/ims/V1_0/CallFwdTimerInfo;
 
-    .line 1320
+    .line 1384
     .local v5, "startCallTimerInfo":Lvendor/qti/hardware/radio/ims/V1_0/CallFwdTimerInfo;
     new-instance v7, Lorg/codeaurora/ims/ImsCallForwardTimerInfo;
 
@@ -427,45 +427,45 @@
 
     aput-object v7, v2, v3
 
-    .line 1321
+    .line 1385
     iget v7, v4, Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;->status:I
 
     if-eq v7, v6, :cond_5
 
-    .line 1322
+    .line 1386
     aget-object v7, v2, v3
 
     iget v8, v4, Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;->status:I
 
     iput v8, v7, Lorg/codeaurora/ims/ImsCallForwardTimerInfo;->status:I
 
-    .line 1325
+    .line 1389
     :cond_5
     iget v7, v4, Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;->reason:I
 
     if-eq v7, v6, :cond_6
 
-    .line 1326
+    .line 1390
     aget-object v7, v2, v3
 
     iget v8, v4, Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;->reason:I
 
     iput v8, v7, Lorg/codeaurora/ims/ImsCallForwardTimerInfo;->reason:I
 
-    .line 1329
+    .line 1393
     :cond_6
     iget v7, v4, Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;->serviceClass:I
 
     if-eq v7, v6, :cond_7
 
-    .line 1330
+    .line 1394
     aget-object v7, v2, v3
 
     iget v8, v4, Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;->serviceClass:I
 
     iput v8, v7, Lorg/codeaurora/ims/ImsCallForwardTimerInfo;->serviceClass:I
 
-    .line 1333
+    .line 1397
     :cond_7
     aget-object v7, v2, v3
 
@@ -473,66 +473,66 @@
 
     iput-object v8, v7, Lorg/codeaurora/ims/ImsCallForwardTimerInfo;->number:Ljava/lang/String;
 
-    .line 1335
+    .line 1399
     iget v7, v5, Lvendor/qti/hardware/radio/ims/V1_0/CallFwdTimerInfo;->hour:I
 
     if-eq v7, v6, :cond_8
 
-    .line 1336
+    .line 1400
     aget-object v7, v2, v3
 
     iget v8, v5, Lvendor/qti/hardware/radio/ims/V1_0/CallFwdTimerInfo;->hour:I
 
     iput v8, v7, Lorg/codeaurora/ims/ImsCallForwardTimerInfo;->startHour:I
 
-    .line 1339
+    .line 1403
     :cond_8
     iget v7, v5, Lvendor/qti/hardware/radio/ims/V1_0/CallFwdTimerInfo;->minute:I
 
     if-eq v7, v6, :cond_9
 
-    .line 1340
+    .line 1404
     aget-object v7, v2, v3
 
     iget v8, v5, Lvendor/qti/hardware/radio/ims/V1_0/CallFwdTimerInfo;->minute:I
 
     iput v8, v7, Lorg/codeaurora/ims/ImsCallForwardTimerInfo;->startMinute:I
 
-    .line 1342
+    .line 1406
     :cond_9
     iget-object v7, v4, Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;->callFwdTimerEnd:Lvendor/qti/hardware/radio/ims/V1_0/CallFwdTimerInfo;
 
-    .line 1344
+    .line 1408
     .local v7, "endCallTimerInfo":Lvendor/qti/hardware/radio/ims/V1_0/CallFwdTimerInfo;
     iget v8, v7, Lvendor/qti/hardware/radio/ims/V1_0/CallFwdTimerInfo;->hour:I
 
     if-eq v8, v6, :cond_a
 
-    .line 1345
+    .line 1409
     aget-object v8, v2, v3
 
     iget v9, v7, Lvendor/qti/hardware/radio/ims/V1_0/CallFwdTimerInfo;->hour:I
 
     iput v9, v8, Lorg/codeaurora/ims/ImsCallForwardTimerInfo;->endHour:I
 
-    .line 1348
+    .line 1412
     :cond_a
     iget v8, v7, Lvendor/qti/hardware/radio/ims/V1_0/CallFwdTimerInfo;->minute:I
 
     if-eq v8, v6, :cond_b
 
-    .line 1349
+    .line 1413
     aget-object v6, v2, v3
 
     iget v8, v7, Lvendor/qti/hardware/radio/ims/V1_0/CallFwdTimerInfo;->minute:I
 
     iput v8, v6, Lorg/codeaurora/ims/ImsCallForwardTimerInfo;->endMinute:I
 
-    .line 1351
+    .line 1415
     :cond_b
     return-object v2
 
-    .line 1291
+    .line 1355
     .end local v4    # "inCfInfo":Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;
     .end local v5    # "startCallTimerInfo":Lvendor/qti/hardware/radio/ims/V1_0/CallFwdTimerInfo;
     .end local v7    # "endCallTimerInfo":Lvendor/qti/hardware/radio/ims/V1_0/CallFwdTimerInfo;
@@ -541,25 +541,25 @@
 
     goto/16 :goto_0
 
-    .line 1354
+    .line 1418
     .end local v1    # "infoListSize":I
     .end local v2    # "timerInfo":[Lorg/codeaurora/ims/ImsCallForwardTimerInfo;
     .end local v3    # "i":I
     :cond_d
     goto :goto_1
 
-    .line 1355
+    .line 1419
     :cond_e
     const/4 v1, 0x0
 
     new-array v0, v1, [Lorg/codeaurora/telephony/utils/CallForwardInfo;
 
-    .line 1356
+    .line 1420
     const-string v1, "inCfInfoList is null."
 
     invoke-static {v1}, Lorg/codeaurora/ims/ImsRadioUtils;->log(Ljava/lang/String;)V
 
-    .line 1359
+    .line 1423
     :goto_1
     return-object v0
 .end method
@@ -572,47 +572,47 @@
     .param p3, "action"    # I
     .param p4, "timeSeconds"    # I
 
-    .line 1220
+    .line 1284
     new-instance v0, Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;
 
     invoke-direct {v0}, Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;-><init>()V
 
-    .line 1222
+    .line 1286
     .local v0, "cfInfo":Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;
     iput p3, v0, Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;->status:I
 
-    .line 1223
+    .line 1287
     iput p0, v0, Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;->reason:I
 
-    .line 1224
+    .line 1288
     iput p1, v0, Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;->serviceClass:I
 
-    .line 1225
+    .line 1289
     invoke-static {p2}, Landroid/telephony/PhoneNumberUtils;->toaFromString(Ljava/lang/String;)I
 
     move-result v1
 
     iput v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;->toa:I
 
-    .line 1226
+    .line 1290
     if-eqz p2, :cond_0
 
-    .line 1227
+    .line 1291
     iput-object p2, v0, Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;->number:Ljava/lang/String;
 
-    .line 1229
+    .line 1293
     :cond_0
     const/4 v1, 0x0
 
     iput-boolean v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;->hasCallFwdTimerStart:Z
 
-    .line 1230
+    .line 1294
     iput-boolean v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;->hasCallFwdTimerEnd:Z
 
-    .line 1231
+    .line 1295
     iput p4, v0, Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;->timeSeconds:I
 
-    .line 1233
+    .line 1297
     return-object v0
 .end method
 
@@ -622,30 +622,30 @@
     .param p1, "hour"    # I
     .param p2, "minute"    # I
 
-    .line 1274
+    .line 1338
     const v0, 0x7fffffff
 
     iput v0, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallFwdTimerInfo;->year:I
 
-    .line 1275
+    .line 1339
     iput v0, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallFwdTimerInfo;->month:I
 
-    .line 1276
+    .line 1340
     iput v0, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallFwdTimerInfo;->day:I
 
-    .line 1277
+    .line 1341
     iput p1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallFwdTimerInfo;->hour:I
 
-    .line 1278
+    .line 1342
     iput p2, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallFwdTimerInfo;->minute:I
 
-    .line 1279
+    .line 1343
     iput v0, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallFwdTimerInfo;->second:I
 
-    .line 1280
+    .line 1344
     iput v0, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallFwdTimerInfo;->timezone:I
 
-    .line 1281
+    .line 1345
     return-void
 .end method
 
@@ -653,7 +653,7 @@
     .locals 3
     .param p0, "callModify"    # Lorg/codeaurora/ims/CallModify;
 
-    .line 1621
+    .line 1685
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -670,41 +670,41 @@
 
     invoke-static {v0}, Lorg/codeaurora/ims/ImsRadioUtils;->log(Ljava/lang/String;)V
 
-    .line 1622
+    .line 1686
     new-instance v0, Lvendor/qti/hardware/radio/ims/V1_0/CallModifyInfo;
 
     invoke-direct {v0}, Lvendor/qti/hardware/radio/ims/V1_0/CallModifyInfo;-><init>()V
 
-    .line 1623
+    .line 1687
     .local v0, "callModifyInfo":Lvendor/qti/hardware/radio/ims/V1_0/CallModifyInfo;
     iget v1, p0, Lorg/codeaurora/ims/CallModify;->call_index:I
 
     iput v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/CallModifyInfo;->callIndex:I
 
-    .line 1625
+    .line 1689
     iget-object v1, p0, Lorg/codeaurora/ims/CallModify;->call_details:Lorg/codeaurora/ims/CallDetails;
 
     if-eqz v1, :cond_0
 
-    .line 1626
+    .line 1690
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/CallModifyInfo;->hasCallDetails:Z
 
-    .line 1627
+    .line 1691
     iget-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/CallModifyInfo;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
 
     iget-object v2, p0, Lorg/codeaurora/ims/CallModify;->call_details:Lorg/codeaurora/ims/CallDetails;
 
     invoke-static {v1, v2}, Lorg/codeaurora/ims/ImsRadioUtils;->callDetailsToHal(Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;Lorg/codeaurora/ims/CallDetails;)V
 
-    .line 1631
+    .line 1695
     :cond_0
     const/16 v1, 0xd
 
     iput v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/CallModifyInfo;->failCause:I
 
-    .line 1633
+    .line 1697
     return-object v0
 .end method
 
@@ -713,25 +713,25 @@
     .param p0, "inCbNumList"    # [Ljava/lang/String;
     .param p1, "serviceClass"    # I
 
-    .line 2081
+    .line 2146
     new-instance v0, Lvendor/qti/hardware/radio/ims/V1_0/CbNumListInfo;
 
     invoke-direct {v0}, Lvendor/qti/hardware/radio/ims/V1_0/CbNumListInfo;-><init>()V
 
-    .line 2083
+    .line 2148
     .local v0, "outCbNumListInfo":Lvendor/qti/hardware/radio/ims/V1_0/CbNumListInfo;
     const v1, 0x7fffffff
 
     if-eq p1, v1, :cond_0
 
-    .line 2084
+    .line 2149
     iput p1, v0, Lvendor/qti/hardware/radio/ims/V1_0/CbNumListInfo;->serviceClass:I
 
-    .line 2087
+    .line 2152
     :cond_0
     if-eqz p0, :cond_2
 
-    .line 2088
+    .line 2153
     const/4 v1, 0x0
 
     .local v1, "i":I
@@ -740,40 +740,40 @@
 
     if-ge v1, v2, :cond_2
 
-    .line 2089
+    .line 2154
     new-instance v2, Lvendor/qti/hardware/radio/ims/V1_0/CbNumInfo;
 
     invoke-direct {v2}, Lvendor/qti/hardware/radio/ims/V1_0/CbNumInfo;-><init>()V
 
-    .line 2090
+    .line 2155
     .local v2, "cbNumInfo":Lvendor/qti/hardware/radio/ims/V1_0/CbNumInfo;
     const/4 v3, 0x2
 
     iput v3, v2, Lvendor/qti/hardware/radio/ims/V1_0/CbNumInfo;->status:I
 
-    .line 2091
+    .line 2156
     aget-object v3, p0, v1
 
     if-eqz v3, :cond_1
 
-    .line 2092
+    .line 2157
     aget-object v3, p0, v1
 
     iput-object v3, v2, Lvendor/qti/hardware/radio/ims/V1_0/CbNumInfo;->number:Ljava/lang/String;
 
-    .line 2094
+    .line 2159
     :cond_1
     iget-object v3, v0, Lvendor/qti/hardware/radio/ims/V1_0/CbNumListInfo;->cbNumInfo:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2088
+    .line 2153
     .end local v2    # "cbNumInfo":Lvendor/qti/hardware/radio/ims/V1_0/CbNumInfo;
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 2098
+    .line 2163
     .end local v1    # "i":I
     :cond_2
     return-object v0
@@ -787,12 +787,12 @@
     .param p3, "stringValue"    # Ljava/lang/String;
     .param p4, "errorCause"    # I
 
-    .line 1690
+    .line 1755
     new-instance v0, Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;
 
     invoke-direct {v0}, Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;-><init>()V
 
-    .line 1692
+    .line 1757
     .local v0, "configInfo":Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;
     invoke-static {p0}, Lorg/codeaurora/ims/ImsRadioUtils;->configInfoItemToHal(I)I
 
@@ -800,24 +800,24 @@
 
     iput v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;->item:I
 
-    .line 1693
+    .line 1758
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;->hasBoolValue:Z
 
-    .line 1694
+    .line 1759
     iput-boolean p1, v0, Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;->boolValue:Z
 
-    .line 1695
+    .line 1760
     iput p2, v0, Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;->intValue:I
 
-    .line 1696
+    .line 1761
     if-eqz p3, :cond_0
 
-    .line 1697
+    .line 1762
     iput-object p3, v0, Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;->stringValue:Ljava/lang/String;
 
-    .line 1699
+    .line 1764
     :cond_0
     invoke-static {p4}, Lorg/codeaurora/ims/ImsRadioUtils;->configFailureCauseToHal(I)I
 
@@ -825,7 +825,7 @@
 
     iput v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;->errorCause:I
 
-    .line 1701
+    .line 1766
     return-object v0
 .end method
 
@@ -836,59 +836,59 @@
     .param p2, "callDetails"    # Lorg/codeaurora/ims/CallDetails;
     .param p3, "isEncrypted"    # Z
 
-    .line 855
+    .line 878
     new-instance v0, Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;
 
     invoke-direct {v0}, Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;-><init>()V
 
-    .line 857
+    .line 880
     .local v0, "dialRequest":Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;
     if-eqz p0, :cond_0
 
-    .line 858
+    .line 881
     iput-object p0, v0, Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;->address:Ljava/lang/String;
 
-    .line 860
+    .line 883
     :cond_0
     iput p1, v0, Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;->clirMode:I
 
-    .line 862
+    .line 885
     invoke-static {p1}, Lorg/codeaurora/ims/ImsRadioUtils;->getIpPresentation(I)I
 
     move-result v1
 
     iput v1, v0, Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;->presentation:I
 
-    .line 864
+    .line 887
     const/4 v1, 0x1
 
     if-eqz p2, :cond_1
 
-    .line 865
+    .line 888
     iput-boolean v1, v0, Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;->hasCallDetails:Z
 
-    .line 866
+    .line 889
     iget-object v2, v0, Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
 
     invoke-static {v2, p2}, Lorg/codeaurora/ims/ImsRadioUtils;->callDetailsToHal(Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;Lorg/codeaurora/ims/CallDetails;)V
 
-    .line 869
+    .line 892
     :cond_1
     invoke-static {p2}, Lorg/codeaurora/ims/ImsRadioUtils;->getIsConferenceUri(Lorg/codeaurora/ims/CallDetails;)Z
 
     move-result v2
 
-    .line 870
+    .line 893
     .local v2, "isConferenceUri":Z
     if-eqz v2, :cond_2
 
-    .line 871
+    .line 894
     iput-boolean v2, v0, Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;->isConferenceUri:Z
 
-    .line 872
+    .line 895
     iput-boolean v2, v0, Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;->hasIsConferenceUri:Z
 
-    .line 874
+    .line 897
     :cond_2
     if-eqz p2, :cond_3
 
@@ -901,28 +901,28 @@
     :cond_3
     const/4 v3, 0x0
 
-    .line 875
+    .line 898
     .local v3, "isCallPull":Z
     :goto_0
     if-eqz v3, :cond_4
 
-    .line 876
+    .line 899
     iput-boolean v3, v0, Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;->isCallPull:Z
 
-    .line 877
+    .line 900
     iput-boolean v3, v0, Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;->hasIsCallPull:Z
 
-    .line 880
+    .line 903
     :cond_4
     iput-boolean v1, v0, Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;->hasIsEncrypted:Z
 
-    .line 881
+    .line 904
     iput-boolean p3, v0, Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;->isEncrypted:Z
 
-    .line 883
+    .line 906
     if-eqz p2, :cond_5
 
-    .line 884
+    .line 907
     invoke-virtual {p2}, Lorg/codeaurora/ims/CallDetails;->getMultiIdentityLineInfo()Lorg/codeaurora/ims/MultiIdentityLineInfo;
 
     move-result-object v1
@@ -932,43 +932,43 @@
     :cond_5
     const/4 v1, 0x0
 
-    .line 885
+    .line 908
     .local v1, "multiIdentityLineInfo":Lorg/codeaurora/ims/MultiIdentityLineInfo;
     :goto_1
     iget-object v4, v0, Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;->multiLineInfo:Lvendor/qti/hardware/radio/ims/V1_4/MultiIdentityLineInfoHal;
 
     invoke-static {v1, v4}, Lorg/codeaurora/ims/ImsRadioUtilsV14;->toMultiIdentityLineInfoHal(Lorg/codeaurora/ims/MultiIdentityLineInfo;Lvendor/qti/hardware/radio/ims/V1_4/MultiIdentityLineInfoHal;)V
 
-    .line 889
+    .line 912
     return-object v0
 .end method
 
-.method public static buildDriverCallImsFromHal(Lvendor/qti/hardware/radio/ims/V1_5/CallInfo;)Lorg/codeaurora/ims/DriverCallIms;
+.method public static buildDriverCallImsFromHal(Lvendor/qti/hardware/radio/ims/V1_6/CallInfo;)Lorg/codeaurora/ims/DriverCallIms;
     .locals 8
-    .param p0, "call"    # Lvendor/qti/hardware/radio/ims/V1_5/CallInfo;
+    .param p0, "call"    # Lvendor/qti/hardware/radio/ims/V1_6/CallInfo;
 
-    .line 170
+    .line 174
     new-instance v0, Lorg/codeaurora/ims/DriverCallIms;
 
-    iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_5/CallInfo;->verstatInfo:Lvendor/qti/hardware/radio/ims/V1_3/VerstatInfo;
+    iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallInfo;->verstatInfo:Lvendor/qti/hardware/radio/ims/V1_3/VerstatInfo;
 
-    .line 171
+    .line 175
     invoke-static {v1}, Lorg/codeaurora/ims/ImsRadioUtilsV13;->createVerstatInfo(Lvendor/qti/hardware/radio/ims/V1_3/VerstatInfo;)Lorg/codeaurora/ims/VerstatInfo;
 
     move-result-object v1
 
     invoke-direct {v0, v1}, Lorg/codeaurora/ims/DriverCallIms;-><init>(Lorg/codeaurora/ims/VerstatInfo;)V
 
-    .line 172
+    .line 176
     .local v0, "dc":Lorg/codeaurora/ims/DriverCallIms;
-    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_5/CallInfo;->state:I
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallInfo;->state:I
 
     const/4 v2, 0x7
 
     if-eq v1, v2, :cond_0
 
-    .line 173
-    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_5/CallInfo;->state:I
+    .line 177
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallInfo;->state:I
 
     invoke-static {v1}, Lorg/codeaurora/ims/ImsRadioUtils;->callStateFromHal(I)Lorg/codeaurora/ims/DriverCallIms$State;
 
@@ -976,88 +976,88 @@
 
     iput-object v1, v0, Lorg/codeaurora/ims/DriverCallIms;->state:Lorg/codeaurora/ims/DriverCallIms$State;
 
-    .line 176
+    .line 180
     :cond_0
-    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_5/CallInfo;->index:I
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallInfo;->index:I
 
     const v2, 0x7fffffff
 
     if-eq v1, v2, :cond_1
 
-    .line 177
-    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_5/CallInfo;->index:I
+    .line 181
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallInfo;->index:I
 
     iput v1, v0, Lorg/codeaurora/ims/DriverCallIms;->index:I
 
-    .line 180
+    .line 184
     :cond_1
-    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_5/CallInfo;->toa:I
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallInfo;->toa:I
 
     if-eq v1, v2, :cond_2
 
-    .line 181
-    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_5/CallInfo;->toa:I
+    .line 185
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallInfo;->toa:I
 
     iput v1, v0, Lorg/codeaurora/ims/DriverCallIms;->TOA:I
 
-    .line 184
+    .line 188
     :cond_2
-    iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_5/CallInfo;->hasIsMpty:Z
+    iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallInfo;->hasIsMpty:Z
 
     if-eqz v1, :cond_3
 
-    .line 185
-    iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_5/CallInfo;->isMpty:Z
+    .line 189
+    iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallInfo;->isMpty:Z
 
     iput-boolean v1, v0, Lorg/codeaurora/ims/DriverCallIms;->isMpty:Z
 
-    .line 188
+    .line 192
     :cond_3
-    iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_5/CallInfo;->hasIsMT:Z
+    iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallInfo;->hasIsMT:Z
 
     if-eqz v1, :cond_4
 
-    .line 189
-    iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_5/CallInfo;->isMT:Z
+    .line 193
+    iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallInfo;->isMT:Z
 
     iput-boolean v1, v0, Lorg/codeaurora/ims/DriverCallIms;->isMT:Z
 
-    .line 192
+    .line 196
     :cond_4
-    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_5/CallInfo;->als:I
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallInfo;->als:I
 
     if-eq v1, v2, :cond_5
 
-    .line 193
-    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_5/CallInfo;->als:I
+    .line 197
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallInfo;->als:I
 
     iput v1, v0, Lorg/codeaurora/ims/DriverCallIms;->als:I
 
-    .line 196
+    .line 200
     :cond_5
-    iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_5/CallInfo;->hasIsVoice:Z
+    iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallInfo;->hasIsVoice:Z
 
     if-eqz v1, :cond_6
 
-    .line 197
-    iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_5/CallInfo;->isVoice:Z
+    .line 201
+    iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallInfo;->isVoice:Z
 
     iput-boolean v1, v0, Lorg/codeaurora/ims/DriverCallIms;->isVoice:Z
 
-    .line 200
+    .line 204
     :cond_6
-    iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_5/CallInfo;->hasIsVoicePrivacy:Z
+    iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallInfo;->hasIsVoicePrivacy:Z
 
     if-eqz v1, :cond_7
 
-    .line 201
-    iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_5/CallInfo;->isVoicePrivacy:Z
+    .line 205
+    iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallInfo;->isVoicePrivacy:Z
 
     iput-boolean v1, v0, Lorg/codeaurora/ims/DriverCallIms;->isVoicePrivacy:Z
 
-    .line 204
+    .line 208
     :cond_7
-    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_5/CallInfo;->numberPresentation:I
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallInfo;->numberPresentation:I
 
     invoke-static {v1}, Lorg/codeaurora/ims/DriverCallIms;->presentationFromCLIP(I)I
 
@@ -1065,13 +1065,13 @@
 
     iput v1, v0, Lorg/codeaurora/ims/DriverCallIms;->numberPresentation:I
 
-    .line 206
-    iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_5/CallInfo;->name:Ljava/lang/String;
+    .line 210
+    iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallInfo;->name:Ljava/lang/String;
 
     iput-object v1, v0, Lorg/codeaurora/ims/DriverCallIms;->name:Ljava/lang/String;
 
-    .line 207
-    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_5/CallInfo;->namePresentation:I
+    .line 211
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallInfo;->namePresentation:I
 
     invoke-static {v1}, Lorg/codeaurora/ims/DriverCallIms;->presentationFromCLIP(I)I
 
@@ -1079,19 +1079,19 @@
 
     iput v1, v0, Lorg/codeaurora/ims/DriverCallIms;->namePresentation:I
 
-    .line 210
-    iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_5/CallInfo;->hasIsEncrypted:Z
+    .line 214
+    iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallInfo;->hasIsEncrypted:Z
 
     if-eqz v1, :cond_8
 
-    .line 211
-    iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_5/CallInfo;->isEncrypted:Z
+    .line 215
+    iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallInfo;->isEncrypted:Z
 
     iput-boolean v1, v0, Lorg/codeaurora/ims/DriverCallIms;->isEncrypted:Z
 
-    .line 214
+    .line 218
     :cond_8
-    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_5/CallInfo;->tirMode:I
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallInfo;->tirMode:I
 
     invoke-static {v1}, Lorg/codeaurora/ims/ImsRadioUtils;->isTirOverwriteAllowed(I)Z
 
@@ -1099,30 +1099,30 @@
 
     iput-boolean v1, v0, Lorg/codeaurora/ims/DriverCallIms;->isTirOverwriteAllowed:Z
 
-    .line 216
-    iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_5/CallInfo;->historyInfo:Ljava/lang/String;
+    .line 220
+    iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallInfo;->historyInfo:Ljava/lang/String;
 
     iput-object v1, v0, Lorg/codeaurora/ims/DriverCallIms;->historyInfo:Ljava/lang/String;
 
-    .line 218
-    iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_5/CallInfo;->hasIsVideoConfSupported:Z
+    .line 222
+    iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallInfo;->hasIsVideoConfSupported:Z
 
     if-eqz v1, :cond_a
 
-    .line 219
+    .line 223
     nop
 
-    .line 220
-    iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_5/CallInfo;->isVideoConfSupported:Z
+    .line 224
+    iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallInfo;->isVideoConfSupported:Z
 
     if-eqz v1, :cond_9
 
-    .line 221
+    .line 225
     const/4 v1, 0x2
 
     goto :goto_0
 
-    .line 222
+    .line 226
     :cond_9
     const/4 v1, 0x0
 
@@ -1131,28 +1131,28 @@
 
     iput v1, v0, Lorg/codeaurora/ims/DriverCallIms;->mConfSupported:I
 
-    .line 225
+    .line 229
     :cond_a
-    iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_5/CallInfo;->hasCallDetails:Z
+    iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallInfo;->hasCallDetails:Z
 
     if-eqz v1, :cond_b
 
-    .line 226
-    iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_5/CallInfo;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
+    .line 230
+    iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallInfo;->callDetails:Lvendor/qti/hardware/radio/ims/V1_6/CallDetails;
 
-    invoke-static {v1}, Lorg/codeaurora/ims/ImsRadioUtils;->getCallDetails(Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;)Lorg/codeaurora/ims/CallDetails;
+    invoke-static {v1}, Lorg/codeaurora/ims/ImsRadioUtils;->getCallDetails(Lvendor/qti/hardware/radio/ims/V1_6/CallDetails;)Lorg/codeaurora/ims/CallDetails;
 
     move-result-object v1
 
     iput-object v1, v0, Lorg/codeaurora/ims/DriverCallIms;->callDetails:Lorg/codeaurora/ims/CallDetails;
 
-    .line 229
+    .line 233
     :cond_b
-    iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_5/CallInfo;->number:Ljava/lang/String;
+    iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallInfo;->number:Ljava/lang/String;
 
     iput-object v1, v0, Lorg/codeaurora/ims/DriverCallIms;->number:Ljava/lang/String;
 
-    .line 230
+    .line 234
     iget-object v1, v0, Lorg/codeaurora/ims/DriverCallIms;->number:Ljava/lang/String;
 
     iget v3, v0, Lorg/codeaurora/ims/DriverCallIms;->TOA:I
@@ -1163,66 +1163,66 @@
 
     iput-object v1, v0, Lorg/codeaurora/ims/DriverCallIms;->number:Ljava/lang/String;
 
-    .line 232
+    .line 236
     const/4 v1, 0x0
 
-    .line 233
+    .line 237
     .local v1, "imsReasonCode":I
     const/4 v3, 0x0
 
-    .line 234
+    .line 238
     .local v3, "imsReasonExtraCode":I
     const/4 v4, 0x0
 
-    .line 235
+    .line 239
     .local v4, "imsReasonExtraMessage":Ljava/lang/String;
-    iget-boolean v5, p0, Lvendor/qti/hardware/radio/ims/V1_5/CallInfo;->hasFailCause:Z
+    iget-boolean v5, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallInfo;->hasFailCause:Z
 
     if-eqz v5, :cond_f
 
-    .line 236
+    .line 240
     const/4 v5, 0x0
 
-    .line 238
+    .line 242
     .local v5, "networkError":Ljava/lang/String;
-    iget-object v6, p0, Lvendor/qti/hardware/radio/ims/V1_5/CallInfo;->failCause:Lvendor/qti/hardware/radio/ims/V1_5/CallFailCauseResponse;
+    iget-object v6, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallInfo;->failCause:Lvendor/qti/hardware/radio/ims/V1_5/CallFailCauseResponse;
 
     iget-boolean v6, v6, Lvendor/qti/hardware/radio/ims/V1_5/CallFailCauseResponse;->hasErrorDetails:Z
 
     if-eqz v6, :cond_c
 
-    .line 239
-    iget-object v6, p0, Lvendor/qti/hardware/radio/ims/V1_5/CallInfo;->failCause:Lvendor/qti/hardware/radio/ims/V1_5/CallFailCauseResponse;
+    .line 243
+    iget-object v6, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallInfo;->failCause:Lvendor/qti/hardware/radio/ims/V1_5/CallFailCauseResponse;
 
     iget-object v6, v6, Lvendor/qti/hardware/radio/ims/V1_5/CallFailCauseResponse;->errorDetails:Lvendor/qti/hardware/radio/ims/V1_0/SipErrorInfo;
 
     iget-object v5, v6, Lvendor/qti/hardware/radio/ims/V1_0/SipErrorInfo;->errorString:Ljava/lang/String;
 
-    .line 242
+    .line 246
     :cond_c
-    iget-object v6, p0, Lvendor/qti/hardware/radio/ims/V1_5/CallInfo;->failCause:Lvendor/qti/hardware/radio/ims/V1_5/CallFailCauseResponse;
+    iget-object v6, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallInfo;->failCause:Lvendor/qti/hardware/radio/ims/V1_5/CallFailCauseResponse;
 
     iget v6, v6, Lvendor/qti/hardware/radio/ims/V1_5/CallFailCauseResponse;->failCause:I
 
-    .line 244
+    .line 248
     .local v6, "failCause":I
     const/16 v7, 0x225
 
     if-eq v6, v7, :cond_e
 
-    .line 245
+    .line 249
     invoke-static {v6}, Lorg/codeaurora/ims/ImsRadioUtils;->getImsReasonForCallFailCause(I)I
 
     move-result v1
 
-    .line 246
-    iget-object v7, p0, Lvendor/qti/hardware/radio/ims/V1_5/CallInfo;->failCause:Lvendor/qti/hardware/radio/ims/V1_5/CallFailCauseResponse;
+    .line 250
+    iget-object v7, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallInfo;->failCause:Lvendor/qti/hardware/radio/ims/V1_5/CallFailCauseResponse;
 
     iget-boolean v7, v7, Lvendor/qti/hardware/radio/ims/V1_5/CallFailCauseResponse;->hasErrorDetails:Z
 
     if-eqz v7, :cond_d
 
-    iget-object v7, p0, Lvendor/qti/hardware/radio/ims/V1_5/CallInfo;->failCause:Lvendor/qti/hardware/radio/ims/V1_5/CallFailCauseResponse;
+    iget-object v7, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallInfo;->failCause:Lvendor/qti/hardware/radio/ims/V1_5/CallFailCauseResponse;
 
     iget-object v7, v7, Lvendor/qti/hardware/radio/ims/V1_5/CallFailCauseResponse;->errorDetails:Lvendor/qti/hardware/radio/ims/V1_0/SipErrorInfo;
 
@@ -1230,8 +1230,8 @@
 
     if-eq v7, v2, :cond_d
 
-    .line 248
-    iget-object v2, p0, Lvendor/qti/hardware/radio/ims/V1_5/CallInfo;->failCause:Lvendor/qti/hardware/radio/ims/V1_5/CallFailCauseResponse;
+    .line 252
+    iget-object v2, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallInfo;->failCause:Lvendor/qti/hardware/radio/ims/V1_5/CallFailCauseResponse;
 
     iget-object v2, v2, Lvendor/qti/hardware/radio/ims/V1_5/CallFailCauseResponse;->errorDetails:Lvendor/qti/hardware/radio/ims/V1_0/SipErrorInfo;
 
@@ -1239,31 +1239,31 @@
 
     goto :goto_1
 
-    .line 250
+    .line 254
     :cond_d
     const-string v2, "CallFailCauseResponse has no int error code!"
 
     invoke-static {v2}, Lorg/codeaurora/ims/ImsRadioUtils;->log(Ljava/lang/String;)V
 
-    .line 253
+    .line 257
     :goto_1
     iput v6, v0, Lorg/codeaurora/ims/DriverCallIms;->mCallFailReason:I
 
-    .line 256
+    .line 260
     if-eqz v5, :cond_f
 
-    .line 257
+    .line 261
     move-object v4, v5
 
     goto :goto_2
 
-    .line 260
+    .line 264
     :cond_e
     const-string v2, "CallFailCauseResponse failCause is Invalid"
 
     invoke-static {v2}, Lorg/codeaurora/ims/ImsRadioUtils;->log(Ljava/lang/String;)V
 
-    .line 264
+    .line 268
     .end local v5    # "networkError":Ljava/lang/String;
     .end local v6    # "failCause":I
     :cond_f
@@ -1274,8 +1274,8 @@
 
     iput-object v2, v0, Lorg/codeaurora/ims/DriverCallIms;->callFailCause:Landroid/telephony/ims/ImsReasonInfo;
 
-    .line 268
-    iget-object v2, p0, Lvendor/qti/hardware/radio/ims/V1_5/CallInfo;->mtMultiLineInfo:Lvendor/qti/hardware/radio/ims/V1_4/MultiIdentityLineInfoHal;
+    .line 272
+    iget-object v2, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallInfo;->mtMultiLineInfo:Lvendor/qti/hardware/radio/ims/V1_4/MultiIdentityLineInfoHal;
 
     invoke-static {v2}, Lorg/codeaurora/ims/ImsRadioUtilsV14;->fromMultiIdentityLineInfoHal(Lvendor/qti/hardware/radio/ims/V1_4/MultiIdentityLineInfoHal;)Lorg/codeaurora/ims/MultiIdentityLineInfo;
 
@@ -1283,7 +1283,7 @@
 
     iput-object v2, v0, Lorg/codeaurora/ims/DriverCallIms;->mMtMultiLineInfo:Lorg/codeaurora/ims/MultiIdentityLineInfo;
 
-    .line 269
+    .line 273
     return-object v0
 .end method
 
@@ -1294,44 +1294,44 @@
     .param p2, "number"    # Ljava/lang/String;
     .param p3, "destCallId"    # I
 
-    .line 2230
+    .line 2295
     new-instance v0, Lvendor/qti/hardware/radio/ims/V1_0/ExplicitCallTransferInfo;
 
     invoke-direct {v0}, Lvendor/qti/hardware/radio/ims/V1_0/ExplicitCallTransferInfo;-><init>()V
 
-    .line 2231
+    .line 2296
     .local v0, "ectInfo":Lvendor/qti/hardware/radio/ims/V1_0/ExplicitCallTransferInfo;
     iput p0, v0, Lvendor/qti/hardware/radio/ims/V1_0/ExplicitCallTransferInfo;->callId:I
 
-    .line 2232
+    .line 2297
     invoke-static {p1}, Lorg/codeaurora/ims/ImsRadioUtils;->ectTypeToHal(I)I
 
     move-result v1
 
     iput v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/ExplicitCallTransferInfo;->ectType:I
 
-    .line 2233
+    .line 2298
     if-eqz p2, :cond_0
 
-    .line 2234
+    .line 2299
     iput-object p2, v0, Lvendor/qti/hardware/radio/ims/V1_0/ExplicitCallTransferInfo;->targetAddress:Ljava/lang/String;
 
-    .line 2236
+    .line 2301
     :cond_0
     if-lez p3, :cond_1
 
-    .line 2237
+    .line 2302
     iput p3, v0, Lvendor/qti/hardware/radio/ims/V1_0/ExplicitCallTransferInfo;->targetCallId:I
 
     goto :goto_0
 
-    .line 2239
+    .line 2304
     :cond_1
     const v1, 0x7fffffff
 
     iput v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/ExplicitCallTransferInfo;->targetCallId:I
 
-    .line 2241
+    .line 2306
     :goto_0
     return-object v0
 .end method
@@ -1345,52 +1345,52 @@
     .param p4, "failCause"    # I
     .param p5, "errorInfo"    # Ljava/lang/String;
 
-    .line 936
+    .line 961
     new-instance v0, Lvendor/qti/hardware/radio/ims/V1_3/HangupRequestInfo;
 
     invoke-direct {v0}, Lvendor/qti/hardware/radio/ims/V1_3/HangupRequestInfo;-><init>()V
 
-    .line 942
+    .line 967
     .local v0, "hangup":Lvendor/qti/hardware/radio/ims/V1_3/HangupRequestInfo;
     const v1, 0x7fffffff
 
     if-eqz p0, :cond_0
 
-    .line 943
+    .line 968
     iput p0, v0, Lvendor/qti/hardware/radio/ims/V1_3/HangupRequestInfo;->connIndex:I
 
     goto :goto_0
 
-    .line 945
+    .line 970
     :cond_0
     iput v1, v0, Lvendor/qti/hardware/radio/ims/V1_3/HangupRequestInfo;->connIndex:I
 
-    .line 948
+    .line 973
     :goto_0
     if-eqz p1, :cond_1
 
-    .line 949
+    .line 974
     iput-object p1, v0, Lvendor/qti/hardware/radio/ims/V1_3/HangupRequestInfo;->connUri:Ljava/lang/String;
 
-    .line 951
+    .line 976
     :cond_1
     const/4 v2, 0x1
 
     iput-boolean v2, v0, Lvendor/qti/hardware/radio/ims/V1_3/HangupRequestInfo;->hasMultiParty:Z
 
-    .line 952
+    .line 977
     iput-boolean p3, v0, Lvendor/qti/hardware/radio/ims/V1_3/HangupRequestInfo;->multiParty:Z
 
-    .line 953
+    .line 978
     iput v1, v0, Lvendor/qti/hardware/radio/ims/V1_3/HangupRequestInfo;->conf_id:I
 
-    .line 954
+    .line 979
     if-eq p4, v1, :cond_4
 
-    .line 955
+    .line 980
     iput-boolean v2, v0, Lvendor/qti/hardware/radio/ims/V1_3/HangupRequestInfo;->hasFailCauseResponse:Z
 
-    .line 956
+    .line 981
     const/4 v1, 0x0
 
     if-eqz p5, :cond_2
@@ -1401,7 +1401,7 @@
 
     if-nez v2, :cond_2
 
-    .line 957
+    .line 982
     sget-object v2, Lorg/codeaurora/ims/ImsRadioUtils;->TAG:Ljava/lang/String;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1420,7 +1420,7 @@
 
     invoke-static {v2, v3}, Lcom/qualcomm/ims/utils/Log;->v(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 958
+    .line 983
     invoke-virtual {p5}, Ljava/lang/String;->getBytes()[B
 
     move-result-object v2
@@ -1438,7 +1438,7 @@
 
     move-result-object v5
 
-    .line 959
+    .line 984
     .local v5, "b":Ljava/lang/Byte;
     iget-object v6, v0, Lvendor/qti/hardware/radio/ims/V1_3/HangupRequestInfo;->failCauseResponse:Lvendor/qti/hardware/radio/ims/V1_3/CallFailCauseResponse;
 
@@ -1446,25 +1446,25 @@
 
     invoke-virtual {v6, v1, v5}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 958
+    .line 983
     .end local v5    # "b":Ljava/lang/Byte;
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_1
 
-    .line 962
+    .line 987
     :cond_2
     invoke-static {p4}, Lorg/codeaurora/ims/ImsRadioUtils;->getCallFailCauseForImsReason(I)I
 
     move-result v2
 
-    .line 963
+    .line 988
     .local v2, "callFailCause":I
     iget-object v3, v0, Lvendor/qti/hardware/radio/ims/V1_3/HangupRequestInfo;->failCauseResponse:Lvendor/qti/hardware/radio/ims/V1_3/CallFailCauseResponse;
 
     iput v2, v3, Lvendor/qti/hardware/radio/ims/V1_3/CallFailCauseResponse;->failCause:I
 
-    .line 964
+    .line 989
     sget-object v3, Lorg/codeaurora/ims/ImsRadioUtils;->TAG:Ljava/lang/String;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1483,12 +1483,12 @@
 
     invoke-static {v3, v4}, Lcom/qualcomm/ims/utils/Log;->v(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 967
+    .line 992
     const/16 v3, 0x1fd
 
     if-ne v2, v3, :cond_3
 
-    .line 968
+    .line 993
     invoke-static {p4}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v3
@@ -1510,7 +1510,7 @@
 
     move-result-object v6
 
-    .line 969
+    .line 994
     .local v6, "b":Ljava/lang/Byte;
     iget-object v7, v0, Lvendor/qti/hardware/radio/ims/V1_3/HangupRequestInfo;->failCauseResponse:Lvendor/qti/hardware/radio/ims/V1_3/CallFailCauseResponse;
 
@@ -1518,13 +1518,13 @@
 
     invoke-virtual {v7, v1, v6}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 968
+    .line 993
     .end local v6    # "b":Ljava/lang/Byte;
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_2
 
-    .line 972
+    .line 997
     :cond_3
     sget-object v1, Lorg/codeaurora/ims/ImsRadioUtils;->TAG:Ljava/lang/String;
 
@@ -1544,7 +1544,7 @@
 
     invoke-static {v1, v3}, Lcom/qualcomm/ims/utils/Log;->v(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 974
+    .line 999
     .end local v2    # "callFailCause":I
     :cond_4
     return-object v0
@@ -1558,22 +1558,22 @@
     .param p3, "isRetry"    # Z
     .param p4, "pdu"    # [B
 
-    .line 1238
+    .line 1302
     new-instance v0, Lvendor/qti/hardware/radio/ims/V1_2/ImsSmsMessage;
 
     invoke-direct {v0}, Lvendor/qti/hardware/radio/ims/V1_2/ImsSmsMessage;-><init>()V
 
-    .line 1240
+    .line 1304
     .local v0, "imsSms":Lvendor/qti/hardware/radio/ims/V1_2/ImsSmsMessage;
     iput p0, v0, Lvendor/qti/hardware/radio/ims/V1_2/ImsSmsMessage;->messageRef:I
 
-    .line 1241
+    .line 1305
     iput-object p1, v0, Lvendor/qti/hardware/radio/ims/V1_2/ImsSmsMessage;->format:Ljava/lang/String;
 
-    .line 1242
+    .line 1306
     iput-boolean p3, v0, Lvendor/qti/hardware/radio/ims/V1_2/ImsSmsMessage;->shallRetry:Z
 
-    .line 1243
+    .line 1307
     if-nez p2, :cond_0
 
     const-string v1, ""
@@ -1586,7 +1586,7 @@
     :goto_0
     iput-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_2/ImsSmsMessage;->smsc:Ljava/lang/String;
 
-    .line 1244
+    .line 1308
     array-length v1, p4
 
     const/4 v2, 0x0
@@ -1596,7 +1596,7 @@
 
     aget-byte v3, p4, v2
 
-    .line 1245
+    .line 1309
     .local v3, "a":B
     iget-object v4, v0, Lvendor/qti/hardware/radio/ims/V1_2/ImsSmsMessage;->pdu:Ljava/util/ArrayList;
 
@@ -1606,80 +1606,220 @@
 
     invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1244
+    .line 1308
     .end local v3    # "a":B
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 1247
+    .line 1311
     :cond_1
     return-object v0
 .end method
 
-.method public static buildServiceStatusInfo(IIII)Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;
+.method public static buildServiceStatusInfo(IIII)Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;
     .locals 3
     .param p0, "srvType"    # I
-    .param p1, "network"    # I
+    .param p1, "rat"    # I
     .param p2, "enabled"    # I
     .param p3, "restrictCause"    # I
 
-    .line 274
-    new-instance v0, Lvendor/qti/hardware/radio/ims/V1_0/StatusForAccessTech;
+    .line 278
+    sget-object v0, Lorg/codeaurora/ims/ImsRadioUtils;->TAG:Ljava/lang/String;
 
-    invoke-direct {v0}, Lvendor/qti/hardware/radio/ims/V1_0/StatusForAccessTech;-><init>()V
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    .line 275
-    .local v0, "statusForAccessTech":Lvendor/qti/hardware/radio/ims/V1_0/StatusForAccessTech;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "buildServiceStatusInfo srvType = "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v2, " rat = "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v2, " enabled = "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 280
+    new-instance v0, Lvendor/qti/hardware/radio/ims/V1_6/StatusForAccessTech;
+
+    invoke-direct {v0}, Lvendor/qti/hardware/radio/ims/V1_6/StatusForAccessTech;-><init>()V
+
+    .line 281
+    .local v0, "statusForAccessTech":Lvendor/qti/hardware/radio/ims/V1_6/StatusForAccessTech;
     invoke-static {p1}, Lorg/codeaurora/ims/ImsRadioUtils;->mapRadioTechToHal(I)I
 
     move-result v1
 
-    iput v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/StatusForAccessTech;->networkMode:I
+    iput v1, v0, Lvendor/qti/hardware/radio/ims/V1_6/StatusForAccessTech;->networkMode:I
 
-    .line 276
+    .line 282
     invoke-static {p2}, Lorg/codeaurora/ims/ImsRadioUtils;->statusTypeToHal(I)I
 
     move-result v1
 
-    iput v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/StatusForAccessTech;->status:I
-
-    .line 277
-    iput p3, v0, Lvendor/qti/hardware/radio/ims/V1_0/StatusForAccessTech;->restrictCause:I
-
-    .line 278
-    const/4 v1, 0x0
-
-    iput-boolean v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/StatusForAccessTech;->hasRegistration:Z
-
-    .line 280
-    new-instance v1, Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;
-
-    invoke-direct {v1}, Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;-><init>()V
-
-    .line 281
-    .local v1, "serviceStatusInfo":Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;
-    const/4 v2, 0x1
-
-    iput-boolean v2, v1, Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;->hasIsValid:Z
-
-    .line 282
-    iput-boolean v2, v1, Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;->isValid:Z
+    iput v1, v0, Lvendor/qti/hardware/radio/ims/V1_6/StatusForAccessTech;->status:I
 
     .line 283
+    iput p3, v0, Lvendor/qti/hardware/radio/ims/V1_6/StatusForAccessTech;->restrictCause:I
+
+    .line 284
+    const/4 v1, 0x0
+
+    iput-boolean v1, v0, Lvendor/qti/hardware/radio/ims/V1_6/StatusForAccessTech;->hasRegistration:Z
+
+    .line 286
+    new-instance v1, Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;
+
+    invoke-direct {v1}, Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;-><init>()V
+
+    .line 287
+    .local v1, "serviceStatusInfo":Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;
+    const/4 v2, 0x1
+
+    iput-boolean v2, v1, Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;->hasIsValid:Z
+
+    .line 288
+    iput-boolean v2, v1, Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;->isValid:Z
+
+    .line 289
     invoke-static {p0}, Lorg/codeaurora/ims/ImsRadioUtils;->callTypeToHal(I)I
 
     move-result v2
 
-    iput v2, v1, Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;->callType:I
+    iput v2, v1, Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;->callType:I
 
-    .line 284
-    iget-object v2, v1, Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;->accTechStatus:Ljava/util/ArrayList;
+    .line 290
+    iget-object v2, v1, Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;->accTechStatus:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 286
+    .line 292
     return-object v1
+.end method
+
+.method public static buildServiceStatusInfoList(Ljava/util/ArrayList;I)Ljava/util/ArrayList;
+    .locals 6
+    .param p1, "restrictCause"    # I
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/ArrayList<",
+            "Lorg/codeaurora/ims/CapabilityStatus;",
+            ">;I)",
+            "Ljava/util/ArrayList<",
+            "Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;",
+            ">;"
+        }
+    .end annotation
+
+    .line 297
+    .local p0, "capabilityStatusList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lorg/codeaurora/ims/CapabilityStatus;>;"
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    .line 298
+    .local v0, "serviceStatusInfoList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;>;"
+    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lorg/codeaurora/ims/CapabilityStatus;
+
+    .line 299
+    .local v2, "capabilityStatus":Lorg/codeaurora/ims/CapabilityStatus;
+    sget-object v3, Lorg/codeaurora/ims/ImsRadioUtils;->TAG:Ljava/lang/String;
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "buildServiceStatusInfoList capabilityStatus = "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Lcom/qualcomm/ims/utils/Log;->v(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 300
+    nop
+
+    .line 301
+    invoke-virtual {v2}, Lorg/codeaurora/ims/CapabilityStatus;->getCapability()I
+
+    move-result v3
+
+    invoke-static {v3}, Lorg/codeaurora/ims/ImsRadioUtils;->mapCapabilityToSrvType(I)I
+
+    move-result v3
+
+    .line 302
+    invoke-virtual {v2}, Lorg/codeaurora/ims/CapabilityStatus;->getRadioTech()I
+
+    move-result v4
+
+    invoke-static {v4}, Lorg/codeaurora/ims/ImsRadioUtils;->mapRadioTechToHidlRadioTech(I)I
+
+    move-result v4
+
+    .line 303
+    invoke-virtual {v2}, Lorg/codeaurora/ims/CapabilityStatus;->getStatus()I
+
+    move-result v5
+
+    invoke-static {v5}, Lorg/codeaurora/ims/ImsRadioUtils;->mapValueToServiceStatus(I)I
+
+    move-result v5
+
+    .line 300
+    invoke-static {v3, v4, v5, p1}, Lorg/codeaurora/ims/ImsRadioUtils;->buildServiceStatusInfo(IIII)Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;
+
+    move-result-object v3
+
+    .line 305
+    .local v3, "serviceStatusInfo":Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 306
+    .end local v2    # "capabilityStatus":Lorg/codeaurora/ims/CapabilityStatus;
+    .end local v3    # "serviceStatusInfo":Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;
+    goto :goto_0
+
+    .line 307
+    :cond_0
+    return-object v0
 .end method
 
 .method public static callDetailsToHal(Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;Lorg/codeaurora/ims/CallDetails;)V
@@ -1687,7 +1827,7 @@
     .param p0, "imsRadioCallDetails"    # Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
     .param p1, "callDetails"    # Lorg/codeaurora/ims/CallDetails;
 
-    .line 115
+    .line 119
     iget v0, p1, Lorg/codeaurora/ims/CallDetails;->call_type:I
 
     invoke-static {v0}, Lorg/codeaurora/ims/ImsRadioUtils;->callTypeToHal(I)I
@@ -1696,7 +1836,7 @@
 
     iput v0, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->callType:I
 
-    .line 116
+    .line 120
     iget v0, p1, Lorg/codeaurora/ims/CallDetails;->call_domain:I
 
     invoke-static {v0}, Lorg/codeaurora/ims/ImsRadioUtils;->callDomainToHal(I)I
@@ -1705,7 +1845,7 @@
 
     iput v0, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->callDomain:I
 
-    .line 118
+    .line 122
     invoke-virtual {p1}, Lorg/codeaurora/ims/CallDetails;->getRttMode()I
 
     move-result v0
@@ -1716,7 +1856,7 @@
 
     if-eq v2, v0, :cond_0
 
-    .line 119
+    .line 123
     invoke-virtual {p1}, Lorg/codeaurora/ims/CallDetails;->getRttMode()I
 
     move-result v0
@@ -1725,17 +1865,17 @@
 
     goto :goto_0
 
-    .line 121
+    .line 125
     :cond_0
     iput v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->rttMode:I
 
-    .line 123
+    .line 127
     :goto_0
     iget-object v0, p1, Lorg/codeaurora/ims/CallDetails;->extras:[Ljava/lang/String;
 
     if-eqz v0, :cond_1
 
-    .line 124
+    .line 128
     iget-object v0, p1, Lorg/codeaurora/ims/CallDetails;->extras:[Ljava/lang/String;
 
     array-length v1, v0
@@ -1748,7 +1888,7 @@
     :goto_1
     iput v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->extrasLength:I
 
-    .line 125
+    .line 129
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -1757,7 +1897,7 @@
 
     if-ge v0, v1, :cond_2
 
-    .line 126
+    .line 130
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->extras:Ljava/util/ArrayList;
 
     iget-object v2, p1, Lorg/codeaurora/ims/CallDetails;->extras:[Ljava/lang/String;
@@ -1766,12 +1906,12 @@
 
     invoke-virtual {v1, v0, v2}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 125
+    .line 129
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_2
 
-    .line 128
+    .line 132
     .end local v0    # "i":I
     :cond_2
     return-void
@@ -1781,7 +1921,7 @@
     .locals 1
     .param p0, "callDomain"    # I
 
-    .line 1079
+    .line 1143
     if-eqz p0, :cond_3
 
     const/4 v0, 0x1
@@ -1796,24 +1936,24 @@
 
     if-eq p0, v0, :cond_0
 
-    .line 1091
+    .line 1155
     const/4 v0, 0x4
 
     return v0
 
-    .line 1087
+    .line 1151
     :cond_0
     return v0
 
-    .line 1085
+    .line 1149
     :cond_1
     return v0
 
-    .line 1083
+    .line 1147
     :cond_2
     return v0
 
-    .line 1081
+    .line 1145
     :cond_3
     const/16 v0, 0xb
 
@@ -1824,7 +1964,7 @@
     .locals 1
     .param p0, "callDomain"    # I
 
-    .line 1096
+    .line 1160
     const/4 v0, 0x1
 
     if-eq p0, v0, :cond_3
@@ -1841,26 +1981,26 @@
 
     if-eq p0, v0, :cond_0
 
-    .line 1107
+    .line 1171
     const/4 v0, 0x4
 
     return v0
 
-    .line 1098
+    .line 1162
     :cond_0
     const/4 v0, 0x0
 
     return v0
 
-    .line 1104
+    .line 1168
     :cond_1
     return v0
 
-    .line 1102
+    .line 1166
     :cond_2
     return v0
 
-    .line 1100
+    .line 1164
     :cond_3
     return v0
 .end method
@@ -1869,87 +2009,87 @@
     .locals 1
     .param p0, "failCause"    # I
 
-    .line 1656
+    .line 1721
     const/4 v0, 0x0
 
     packed-switch p0, :pswitch_data_0
 
-    .line 1684
+    .line 1749
     return v0
 
-    .line 1682
+    .line 1747
     :pswitch_0
     const/16 v0, 0x21
 
     return v0
 
-    .line 1680
+    .line 1745
     :pswitch_1
     const/16 v0, 0x20
 
     return v0
 
-    .line 1678
+    .line 1743
     :pswitch_2
     const/16 v0, 0x1f
 
     return v0
 
-    .line 1676
+    .line 1741
     :pswitch_3
     const/16 v0, 0x1e
 
     return v0
 
-    .line 1674
+    .line 1739
     :pswitch_4
     const/16 v0, 0x1d
 
     return v0
 
-    .line 1672
+    .line 1737
     :pswitch_5
     const/16 v0, 0x1c
 
     return v0
 
-    .line 1670
+    .line 1735
     :pswitch_6
     const/16 v0, 0x1b
 
     return v0
 
-    .line 1668
+    .line 1733
     :pswitch_7
     const/16 v0, 0x10
 
     return v0
 
-    .line 1666
+    .line 1731
     :pswitch_8
     const/4 v0, 0x7
 
     return v0
 
-    .line 1664
+    .line 1729
     :pswitch_9
     const/4 v0, 0x6
 
     return v0
 
-    .line 1662
+    .line 1727
     :pswitch_a
     const/4 v0, 0x2
 
     return v0
 
-    .line 1660
+    .line 1725
     :pswitch_b
     const/4 v0, 0x1
 
     return v0
 
-    .line 1658
+    .line 1723
     :pswitch_c
     return v0
 
@@ -1975,27 +2115,33 @@
     .locals 3
     .param p0, "callModifyInfo"    # Lvendor/qti/hardware/radio/ims/V1_0/CallModifyInfo;
 
-    .line 1637
+    .line 1701
     new-instance v0, Lorg/codeaurora/ims/CallModify;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/CallModify;-><init>()V
 
-    .line 1639
+    .line 1703
     .local v0, "callModify":Lorg/codeaurora/ims/CallModify;
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallModifyInfo;->hasCallDetails:Z
 
     if-eqz v1, :cond_0
 
-    .line 1640
+    .line 1704
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallModifyInfo;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
 
-    invoke-static {v1}, Lorg/codeaurora/ims/ImsRadioUtils;->getCallDetails(Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;)Lorg/codeaurora/ims/CallDetails;
+    .line 1705
+    invoke-static {v1}, Lorg/codeaurora/ims/ImsRadioUtilsV16;->migrateCallDetails(Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;)Lvendor/qti/hardware/radio/ims/V1_6/CallDetails;
+
+    move-result-object v1
+
+    .line 1704
+    invoke-static {v1}, Lorg/codeaurora/ims/ImsRadioUtils;->getCallDetails(Lvendor/qti/hardware/radio/ims/V1_6/CallDetails;)Lorg/codeaurora/ims/CallDetails;
 
     move-result-object v1
 
     iput-object v1, v0, Lorg/codeaurora/ims/CallModify;->call_details:Lorg/codeaurora/ims/CallDetails;
 
-    .line 1643
+    .line 1708
     :cond_0
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallModifyInfo;->callIndex:I
 
@@ -2003,25 +2149,25 @@
 
     if-eq v1, v2, :cond_1
 
-    .line 1644
+    .line 1709
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallModifyInfo;->callIndex:I
 
     iput v1, v0, Lorg/codeaurora/ims/CallModify;->call_index:I
 
-    .line 1647
+    .line 1712
     :cond_1
     const/4 v1, 0x0
 
     iput v1, v0, Lorg/codeaurora/ims/CallModify;->error:I
 
-    .line 1648
+    .line 1713
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallModifyInfo;->failCause:I
 
     const/16 v2, 0xd
 
     if-eq v1, v2, :cond_2
 
-    .line 1649
+    .line 1714
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallModifyInfo;->failCause:I
 
     invoke-static {v1}, Lorg/codeaurora/ims/ImsRadioUtils;->callModifyFailCauseFromHal(I)I
@@ -2030,7 +2176,7 @@
 
     iput v1, v0, Lorg/codeaurora/ims/CallModify;->error:I
 
-    .line 1652
+    .line 1717
     :cond_2
     return-object v0
 .end method
@@ -2039,7 +2185,7 @@
     .locals 1
     .param p0, "inCallState"    # I
 
-    .line 1190
+    .line 1254
     if-eqz p0, :cond_5
 
     const/4 v0, 0x1
@@ -2062,42 +2208,42 @@
 
     if-eq p0, v0, :cond_0
 
-    .line 1205
+    .line 1269
     sget-object v0, Lorg/codeaurora/ims/DriverCallIms$State;->END:Lorg/codeaurora/ims/DriverCallIms$State;
 
     return-object v0
 
-    .line 1202
+    .line 1266
     :cond_0
     sget-object v0, Lorg/codeaurora/ims/DriverCallIms$State;->WAITING:Lorg/codeaurora/ims/DriverCallIms$State;
 
     return-object v0
 
-    .line 1200
+    .line 1264
     :cond_1
     sget-object v0, Lorg/codeaurora/ims/DriverCallIms$State;->INCOMING:Lorg/codeaurora/ims/DriverCallIms$State;
 
     return-object v0
 
-    .line 1198
+    .line 1262
     :cond_2
     sget-object v0, Lorg/codeaurora/ims/DriverCallIms$State;->ALERTING:Lorg/codeaurora/ims/DriverCallIms$State;
 
     return-object v0
 
-    .line 1196
+    .line 1260
     :cond_3
     sget-object v0, Lorg/codeaurora/ims/DriverCallIms$State;->DIALING:Lorg/codeaurora/ims/DriverCallIms$State;
 
     return-object v0
 
-    .line 1194
+    .line 1258
     :cond_4
     sget-object v0, Lorg/codeaurora/ims/DriverCallIms$State;->HOLDING:Lorg/codeaurora/ims/DriverCallIms$State;
 
     return-object v0
 
-    .line 1192
+    .line 1256
     :cond_5
     sget-object v0, Lorg/codeaurora/ims/DriverCallIms$State;->ACTIVE:Lorg/codeaurora/ims/DriverCallIms$State;
 
@@ -2108,76 +2254,76 @@
     .locals 1
     .param p0, "callType"    # I
 
-    .line 794
+    .line 817
     packed-switch p0, :pswitch_data_0
 
-    .line 820
+    .line 843
     :pswitch_0
     const/16 v0, 0xa
 
     return v0
 
-    .line 816
+    .line 839
     :pswitch_1
     const/16 v0, 0x19
 
     return v0
 
-    .line 814
+    .line 837
     :pswitch_2
     const/4 v0, 0x5
 
     return v0
 
-    .line 812
+    .line 835
     :pswitch_3
     const/16 v0, 0x18
 
     return v0
 
-    .line 810
+    .line 833
     :pswitch_4
     const/16 v0, 0x17
 
     return v0
 
-    .line 808
+    .line 831
     :pswitch_5
     const/16 v0, 0x16
 
     return v0
 
-    .line 806
+    .line 829
     :pswitch_6
     const/16 v0, 0x15
 
     return v0
 
-    .line 804
+    .line 827
     :pswitch_7
     const/4 v0, 0x4
 
     return v0
 
-    .line 802
+    .line 825
     :pswitch_8
     const/4 v0, 0x3
 
     return v0
 
-    .line 800
+    .line 823
     :pswitch_9
     const/4 v0, 0x2
 
     return v0
 
-    .line 798
+    .line 821
     :pswitch_a
     const/4 v0, 0x1
 
     return v0
 
-    .line 796
+    .line 819
     :pswitch_b
     const/4 v0, 0x0
 
@@ -2206,7 +2352,7 @@
     .locals 1
     .param p0, "callType"    # I
 
-    .line 764
+    .line 787
     if-eqz p0, :cond_5
 
     const/4 v0, 0x1
@@ -2231,62 +2377,62 @@
 
     packed-switch p0, :pswitch_data_0
 
-    .line 789
+    .line 812
     const/16 v0, 0x9
 
     return v0
 
-    .line 786
+    .line 809
     :pswitch_0
     const/16 v0, 0xb
 
     return v0
 
-    .line 782
+    .line 805
     :pswitch_1
     const/16 v0, 0x8
 
     return v0
 
-    .line 780
+    .line 803
     :pswitch_2
     const/4 v0, 0x7
 
     return v0
 
-    .line 778
+    .line 801
     :pswitch_3
     const/4 v0, 0x6
 
     return v0
 
-    .line 776
+    .line 799
     :pswitch_4
     return v0
 
-    .line 784
+    .line 807
     :cond_0
     const/16 v0, 0xa
 
     return v0
 
-    .line 774
+    .line 797
     :cond_1
     return v0
 
-    .line 772
+    .line 795
     :cond_2
     return v0
 
-    .line 770
+    .line 793
     :cond_3
     return v0
 
-    .line 768
+    .line 791
     :cond_4
     return v0
 
-    .line 766
+    .line 789
     :cond_5
     const/4 v0, 0x0
 
@@ -2308,23 +2454,23 @@
     .locals 1
     .param p0, "clipStatus"    # I
 
-    .line 1597
+    .line 1661
     if-eqz p0, :cond_1
 
     const/4 v0, 0x1
 
     if-eq p0, v0, :cond_0
 
-    .line 1604
+    .line 1668
     const/4 v0, 0x2
 
     return v0
 
-    .line 1601
+    .line 1665
     :cond_0
     return v0
 
-    .line 1599
+    .line 1663
     :cond_1
     const/4 v0, 0x0
 
@@ -2335,23 +2481,23 @@
     .locals 1
     .param p0, "conferenceCallState"    # I
 
-    .line 1609
+    .line 1673
     if-eqz p0, :cond_1
 
     const/4 v0, 0x1
 
     if-eq p0, v0, :cond_0
 
-    .line 1616
+    .line 1680
     const/4 v0, 0x2
 
     return v0
 
-    .line 1613
+    .line 1677
     :cond_0
     return v0
 
-    .line 1611
+    .line 1675
     :cond_1
     const/4 v0, 0x0
 
@@ -2362,7 +2508,7 @@
     .locals 1
     .param p0, "errorCause"    # I
 
-    .line 2063
+    .line 2128
     if-eqz p0, :cond_4
 
     const/4 v0, 0x1
@@ -2381,28 +2527,28 @@
 
     if-eq p0, v0, :cond_0
 
-    .line 2076
+    .line 2141
     const/4 v0, 0x5
 
     return v0
 
-    .line 2073
+    .line 2138
     :cond_0
     return v0
 
-    .line 2071
+    .line 2136
     :cond_1
     return v0
 
-    .line 2069
+    .line 2134
     :cond_2
     return v0
 
-    .line 2067
+    .line 2132
     :cond_3
     return v0
 
-    .line 2065
+    .line 2130
     :cond_4
     const/4 v0, 0x0
 
@@ -2413,7 +2559,7 @@
     .locals 1
     .param p0, "errorCause"    # I
 
-    .line 2044
+    .line 2109
     if-eqz p0, :cond_5
 
     const/4 v0, 0x1
@@ -2436,32 +2582,32 @@
 
     if-eq p0, v0, :cond_0
 
-    .line 2058
+    .line 2123
     const/4 v0, 0x6
 
     return v0
 
-    .line 2056
+    .line 2121
     :cond_0
     return v0
 
-    .line 2054
+    .line 2119
     :cond_1
     return v0
 
-    .line 2052
+    .line 2117
     :cond_2
     return v0
 
-    .line 2050
+    .line 2115
     :cond_3
     return v0
 
-    .line 2048
+    .line 2113
     :cond_4
     return v0
 
-    .line 2046
+    .line 2111
     :cond_5
     const/4 v0, 0x0
 
@@ -2472,21 +2618,21 @@
     .locals 3
     .param p0, "configInfo"    # Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;
 
-    .line 1706
+    .line 1771
     if-nez p0, :cond_0
 
-    .line 1707
+    .line 1772
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 1710
+    .line 1775
     :cond_0
     new-instance v0, Lorg/codeaurora/ims/ImsConfigItem;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsConfigItem;-><init>()V
 
-    .line 1712
+    .line 1777
     .local v0, "config":Lorg/codeaurora/ims/ImsConfigItem;
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;->item:I
 
@@ -2496,17 +2642,17 @@
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/ImsConfigItem;->setItem(I)V
 
-    .line 1714
+    .line 1779
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;->hasBoolValue:Z
 
     if-eqz v1, :cond_1
 
-    .line 1715
+    .line 1780
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;->boolValue:Z
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/ImsConfigItem;->setBoolValue(Z)V
 
-    .line 1718
+    .line 1783
     :cond_1
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;->intValue:I
 
@@ -2514,25 +2660,25 @@
 
     if-eq v1, v2, :cond_2
 
-    .line 1719
+    .line 1784
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;->intValue:I
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/ImsConfigItem;->setIntValue(I)V
 
-    .line 1722
+    .line 1787
     :cond_2
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;->stringValue:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/ImsConfigItem;->setStringValue(Ljava/lang/String;)V
 
-    .line 1724
+    .line 1789
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;->errorCause:I
 
     const/4 v2, 0x6
 
     if-eq v1, v2, :cond_3
 
-    .line 1725
+    .line 1790
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;->errorCause:I
 
     invoke-static {v1}, Lorg/codeaurora/ims/ImsRadioUtils;->configFailureCauseFromHal(I)I
@@ -2541,7 +2687,7 @@
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/ImsConfigItem;->setErrorCause(I)V
 
-    .line 1728
+    .line 1793
     :cond_3
     return-object v0
 .end method
@@ -2550,448 +2696,448 @@
     .locals 1
     .param p0, "item"    # I
 
-    .line 1889
+    .line 1954
     const/4 v0, 0x0
 
     packed-switch p0, :pswitch_data_0
 
-    .line 2039
+    .line 2104
     :pswitch_0
     return v0
 
-    .line 2036
+    .line 2101
     :pswitch_1
-    const/16 v0, 0x4a
+    const/16 v0, 0x4b
 
     return v0
 
-    .line 2033
+    .line 2098
     :pswitch_2
     const/16 v0, 0x48
 
     return v0
 
-    .line 2031
+    .line 2096
     :pswitch_3
     const/16 v0, 0x47
 
     return v0
 
-    .line 2029
+    .line 2094
     :pswitch_4
     const/16 v0, 0x45
 
     return v0
 
-    .line 2027
+    .line 2092
     :pswitch_5
     const/16 v0, 0x44
 
     return v0
 
-    .line 2025
+    .line 2090
     :pswitch_6
     const/16 v0, 0x43
 
     return v0
 
-    .line 2023
+    .line 2088
     :pswitch_7
     const/16 v0, 0x42
 
     return v0
 
-    .line 2021
+    .line 2086
     :pswitch_8
     const/16 v0, 0x41
 
     return v0
 
-    .line 2019
+    .line 2084
     :pswitch_9
     const/16 v0, 0x40
 
     return v0
 
-    .line 2017
+    .line 2082
     :pswitch_a
     const/16 v0, 0x3f
 
     return v0
 
-    .line 2015
+    .line 2080
     :pswitch_b
     const/16 v0, 0x3e
 
     return v0
 
-    .line 2013
+    .line 2078
     :pswitch_c
     const/16 v0, 0x3d
 
     return v0
 
-    .line 2011
+    .line 2076
     :pswitch_d
     const/16 v0, 0x3c
 
     return v0
 
-    .line 2009
+    .line 2074
     :pswitch_e
     const/16 v0, 0x3b
 
     return v0
 
-    .line 2007
+    .line 2072
     :pswitch_f
     const/16 v0, 0x3a
 
     return v0
 
-    .line 2005
+    .line 2070
     :pswitch_10
     const/16 v0, 0x39
 
     return v0
 
-    .line 2003
+    .line 2068
     :pswitch_11
     const/16 v0, 0x38
 
     return v0
 
-    .line 2001
+    .line 2066
     :pswitch_12
     const/16 v0, 0x37
 
     return v0
 
-    .line 1999
+    .line 2064
     :pswitch_13
     const/16 v0, 0x36
 
     return v0
 
-    .line 1997
+    .line 2062
     :pswitch_14
     const/16 v0, 0x35
 
     return v0
 
-    .line 1995
+    .line 2060
     :pswitch_15
     const/16 v0, 0x34
 
     return v0
 
-    .line 1993
+    .line 2058
     :pswitch_16
     const/16 v0, 0x33
 
     return v0
 
-    .line 1991
+    .line 2056
     :pswitch_17
     const/16 v0, 0x32
 
     return v0
 
-    .line 1989
+    .line 2054
     :pswitch_18
     const/16 v0, 0x31
 
     return v0
 
-    .line 1987
+    .line 2052
     :pswitch_19
     const/16 v0, 0x30
 
     return v0
 
-    .line 1985
+    .line 2050
     :pswitch_1a
     const/16 v0, 0x2f
 
     return v0
 
-    .line 1983
+    .line 2048
     :pswitch_1b
     const/16 v0, 0x2e
 
     return v0
 
-    .line 1981
+    .line 2046
     :pswitch_1c
     const/16 v0, 0x2d
 
     return v0
 
-    .line 1979
+    .line 2044
     :pswitch_1d
     const/16 v0, 0x2c
 
     return v0
 
-    .line 1977
+    .line 2042
     :pswitch_1e
     const/16 v0, 0x2b
 
     return v0
 
-    .line 1975
+    .line 2040
     :pswitch_1f
     const/16 v0, 0x2a
 
     return v0
 
-    .line 1973
+    .line 2038
     :pswitch_20
     const/16 v0, 0x29
 
     return v0
 
-    .line 1971
+    .line 2036
     :pswitch_21
     const/16 v0, 0x28
 
     return v0
 
-    .line 1969
+    .line 2034
     :pswitch_22
     const/16 v0, 0x27
 
     return v0
 
-    .line 1967
+    .line 2032
     :pswitch_23
     const/16 v0, 0x26
 
     return v0
 
-    .line 1965
+    .line 2030
     :pswitch_24
     const/16 v0, 0x25
 
     return v0
 
-    .line 1963
+    .line 2028
     :pswitch_25
     const/16 v0, 0x24
 
     return v0
 
-    .line 1961
+    .line 2026
     :pswitch_26
     const/16 v0, 0x23
 
     return v0
 
-    .line 1959
+    .line 2024
     :pswitch_27
     const/16 v0, 0x22
 
     return v0
 
-    .line 1957
+    .line 2022
     :pswitch_28
     const/16 v0, 0x21
 
     return v0
 
-    .line 1955
+    .line 2020
     :pswitch_29
     const/16 v0, 0x20
 
     return v0
 
-    .line 1953
+    .line 2018
     :pswitch_2a
     const/16 v0, 0x1f
 
     return v0
 
-    .line 1951
+    .line 2016
     :pswitch_2b
     const/16 v0, 0x1e
 
     return v0
 
-    .line 1949
+    .line 2014
     :pswitch_2c
     const/16 v0, 0x1d
 
     return v0
 
-    .line 1947
+    .line 2012
     :pswitch_2d
     const/16 v0, 0x1c
 
     return v0
 
-    .line 1945
+    .line 2010
     :pswitch_2e
     const/16 v0, 0x1b
 
     return v0
 
-    .line 1943
+    .line 2008
     :pswitch_2f
     const/16 v0, 0x1a
 
     return v0
 
-    .line 1941
+    .line 2006
     :pswitch_30
     const/16 v0, 0x19
 
     return v0
 
-    .line 1939
+    .line 2004
     :pswitch_31
     const/16 v0, 0x18
 
     return v0
 
-    .line 1937
+    .line 2002
     :pswitch_32
     const/16 v0, 0x17
 
     return v0
 
-    .line 1935
+    .line 2000
     :pswitch_33
     const/16 v0, 0x16
 
     return v0
 
-    .line 1933
+    .line 1998
     :pswitch_34
     const/16 v0, 0x15
 
     return v0
 
-    .line 1931
+    .line 1996
     :pswitch_35
     const/16 v0, 0x14
 
     return v0
 
-    .line 1929
+    .line 1994
     :pswitch_36
     const/16 v0, 0x13
 
     return v0
 
-    .line 1927
+    .line 1992
     :pswitch_37
     const/16 v0, 0x12
 
     return v0
 
-    .line 1925
+    .line 1990
     :pswitch_38
     const/16 v0, 0x11
 
     return v0
 
-    .line 1923
+    .line 1988
     :pswitch_39
     const/16 v0, 0x10
 
     return v0
 
-    .line 1921
+    .line 1986
     :pswitch_3a
     const/16 v0, 0xf
 
     return v0
 
-    .line 1919
+    .line 1984
     :pswitch_3b
     const/16 v0, 0xe
 
     return v0
 
-    .line 1917
+    .line 1982
     :pswitch_3c
     const/16 v0, 0xd
 
     return v0
 
-    .line 1915
+    .line 1980
     :pswitch_3d
     const/16 v0, 0xc
 
     return v0
 
-    .line 1913
+    .line 1978
     :pswitch_3e
     const/16 v0, 0xb
 
     return v0
 
-    .line 1911
+    .line 1976
     :pswitch_3f
     const/16 v0, 0xa
 
     return v0
 
-    .line 1909
+    .line 1974
     :pswitch_40
     const/16 v0, 0x9
 
     return v0
 
-    .line 1907
+    .line 1972
     :pswitch_41
     const/16 v0, 0x8
 
     return v0
 
-    .line 1905
+    .line 1970
     :pswitch_42
     const/4 v0, 0x7
 
     return v0
 
-    .line 1903
+    .line 1968
     :pswitch_43
     const/4 v0, 0x6
 
     return v0
 
-    .line 1901
+    .line 1966
     :pswitch_44
     const/4 v0, 0x5
 
     return v0
 
-    .line 1899
+    .line 1964
     :pswitch_45
     const/4 v0, 0x4
 
     return v0
 
-    .line 1897
+    .line 1962
     :pswitch_46
     const/4 v0, 0x3
 
     return v0
 
-    .line 1895
+    .line 1960
     :pswitch_47
     const/4 v0, 0x2
 
     return v0
 
-    .line 1893
+    .line 1958
     :pswitch_48
     const/4 v0, 0x1
 
     return v0
 
-    .line 1891
+    .line 1956
     :pswitch_49
     return v0
 
@@ -3080,463 +3226,464 @@
     .locals 1
     .param p0, "item"    # I
 
-    .line 1732
+    .line 1797
+    const/16 v0, 0x4b
+
+    if-eq p0, v0, :cond_0
+
     packed-switch p0, :pswitch_data_0
 
-    .line 1884
-    :pswitch_0
+    .line 1949
     const/16 v0, 0x4a
 
     return v0
 
-    .line 1881
-    :pswitch_1
-    const/16 v0, 0x49
-
-    return v0
-
-    .line 1876
-    :pswitch_2
+    .line 1941
+    :pswitch_0
     const/16 v0, 0x48
 
     return v0
 
-    .line 1874
-    :pswitch_3
+    .line 1939
+    :pswitch_1
     const/16 v0, 0x47
 
     return v0
 
-    .line 1878
-    :pswitch_4
+    .line 1943
+    :pswitch_2
     const/16 v0, 0x46
 
     return v0
 
-    .line 1872
-    :pswitch_5
+    .line 1937
+    :pswitch_3
     const/16 v0, 0x45
 
     return v0
 
-    .line 1870
-    :pswitch_6
+    .line 1935
+    :pswitch_4
     const/16 v0, 0x44
 
     return v0
 
-    .line 1868
-    :pswitch_7
+    .line 1933
+    :pswitch_5
     const/16 v0, 0x43
 
     return v0
 
-    .line 1866
-    :pswitch_8
+    .line 1931
+    :pswitch_6
     const/16 v0, 0x42
 
     return v0
 
-    .line 1864
-    :pswitch_9
+    .line 1929
+    :pswitch_7
     const/16 v0, 0x41
 
     return v0
 
-    .line 1862
-    :pswitch_a
+    .line 1927
+    :pswitch_8
     const/16 v0, 0x40
 
     return v0
 
-    .line 1860
-    :pswitch_b
+    .line 1925
+    :pswitch_9
     const/16 v0, 0x3f
 
     return v0
 
-    .line 1858
-    :pswitch_c
+    .line 1923
+    :pswitch_a
     const/16 v0, 0x3e
 
     return v0
 
-    .line 1856
-    :pswitch_d
+    .line 1921
+    :pswitch_b
     const/16 v0, 0x3d
 
     return v0
 
-    .line 1854
-    :pswitch_e
+    .line 1919
+    :pswitch_c
     const/16 v0, 0x3c
 
     return v0
 
-    .line 1852
-    :pswitch_f
+    .line 1917
+    :pswitch_d
     const/16 v0, 0x3b
 
     return v0
 
-    .line 1850
-    :pswitch_10
+    .line 1915
+    :pswitch_e
     const/16 v0, 0x3a
 
     return v0
 
-    .line 1848
-    :pswitch_11
+    .line 1913
+    :pswitch_f
     const/16 v0, 0x39
 
     return v0
 
-    .line 1846
-    :pswitch_12
+    .line 1911
+    :pswitch_10
     const/16 v0, 0x38
 
     return v0
 
-    .line 1844
-    :pswitch_13
+    .line 1909
+    :pswitch_11
     const/16 v0, 0x37
 
     return v0
 
-    .line 1842
-    :pswitch_14
+    .line 1907
+    :pswitch_12
     const/16 v0, 0x36
 
     return v0
 
-    .line 1840
-    :pswitch_15
+    .line 1905
+    :pswitch_13
     const/16 v0, 0x35
 
     return v0
 
-    .line 1838
-    :pswitch_16
+    .line 1903
+    :pswitch_14
     const/16 v0, 0x34
 
     return v0
 
-    .line 1836
-    :pswitch_17
+    .line 1901
+    :pswitch_15
     const/16 v0, 0x33
 
     return v0
 
-    .line 1834
-    :pswitch_18
+    .line 1899
+    :pswitch_16
     const/16 v0, 0x32
 
     return v0
 
-    .line 1832
-    :pswitch_19
+    .line 1897
+    :pswitch_17
     const/16 v0, 0x31
 
     return v0
 
-    .line 1830
-    :pswitch_1a
+    .line 1895
+    :pswitch_18
     const/16 v0, 0x30
 
     return v0
 
-    .line 1828
-    :pswitch_1b
+    .line 1893
+    :pswitch_19
     const/16 v0, 0x2f
 
     return v0
 
-    .line 1826
-    :pswitch_1c
+    .line 1891
+    :pswitch_1a
     const/16 v0, 0x2e
 
     return v0
 
-    .line 1824
-    :pswitch_1d
+    .line 1889
+    :pswitch_1b
     const/16 v0, 0x2d
 
     return v0
 
-    .line 1822
-    :pswitch_1e
+    .line 1887
+    :pswitch_1c
     const/16 v0, 0x2c
 
     return v0
 
-    .line 1820
-    :pswitch_1f
+    .line 1885
+    :pswitch_1d
     const/16 v0, 0x2b
 
     return v0
 
-    .line 1818
-    :pswitch_20
+    .line 1883
+    :pswitch_1e
     const/16 v0, 0x2a
 
     return v0
 
-    .line 1816
-    :pswitch_21
+    .line 1881
+    :pswitch_1f
     const/16 v0, 0x29
 
     return v0
 
-    .line 1814
-    :pswitch_22
+    .line 1879
+    :pswitch_20
     const/16 v0, 0x28
 
     return v0
 
-    .line 1812
-    :pswitch_23
+    .line 1877
+    :pswitch_21
     const/16 v0, 0x27
 
     return v0
 
-    .line 1810
-    :pswitch_24
+    .line 1875
+    :pswitch_22
     const/16 v0, 0x26
 
     return v0
 
-    .line 1808
-    :pswitch_25
+    .line 1873
+    :pswitch_23
     const/16 v0, 0x25
 
     return v0
 
-    .line 1806
-    :pswitch_26
+    .line 1871
+    :pswitch_24
     const/16 v0, 0x24
 
     return v0
 
-    .line 1804
-    :pswitch_27
+    .line 1869
+    :pswitch_25
     const/16 v0, 0x23
 
     return v0
 
-    .line 1802
-    :pswitch_28
+    .line 1867
+    :pswitch_26
     const/16 v0, 0x22
 
     return v0
 
-    .line 1800
-    :pswitch_29
+    .line 1865
+    :pswitch_27
     const/16 v0, 0x21
 
     return v0
 
-    .line 1798
-    :pswitch_2a
+    .line 1863
+    :pswitch_28
     const/16 v0, 0x20
 
     return v0
 
-    .line 1796
-    :pswitch_2b
+    .line 1861
+    :pswitch_29
     const/16 v0, 0x1f
 
     return v0
 
-    .line 1794
-    :pswitch_2c
+    .line 1859
+    :pswitch_2a
     const/16 v0, 0x1e
 
     return v0
 
-    .line 1792
-    :pswitch_2d
+    .line 1857
+    :pswitch_2b
     const/16 v0, 0x1d
 
     return v0
 
-    .line 1790
-    :pswitch_2e
+    .line 1855
+    :pswitch_2c
     const/16 v0, 0x1c
 
     return v0
 
-    .line 1788
-    :pswitch_2f
+    .line 1853
+    :pswitch_2d
     const/16 v0, 0x1b
 
     return v0
 
-    .line 1786
-    :pswitch_30
+    .line 1851
+    :pswitch_2e
     const/16 v0, 0x1a
 
     return v0
 
-    .line 1784
-    :pswitch_31
+    .line 1849
+    :pswitch_2f
     const/16 v0, 0x19
 
     return v0
 
-    .line 1782
-    :pswitch_32
+    .line 1847
+    :pswitch_30
     const/16 v0, 0x18
 
     return v0
 
-    .line 1780
-    :pswitch_33
+    .line 1845
+    :pswitch_31
     const/16 v0, 0x17
 
     return v0
 
-    .line 1778
-    :pswitch_34
+    .line 1843
+    :pswitch_32
     const/16 v0, 0x16
 
     return v0
 
-    .line 1776
-    :pswitch_35
+    .line 1841
+    :pswitch_33
     const/16 v0, 0x15
 
     return v0
 
-    .line 1774
-    :pswitch_36
+    .line 1839
+    :pswitch_34
     const/16 v0, 0x14
 
     return v0
 
-    .line 1772
-    :pswitch_37
+    .line 1837
+    :pswitch_35
     const/16 v0, 0x13
 
     return v0
 
-    .line 1770
-    :pswitch_38
+    .line 1835
+    :pswitch_36
     const/16 v0, 0x12
 
     return v0
 
-    .line 1768
-    :pswitch_39
+    .line 1833
+    :pswitch_37
     const/16 v0, 0x11
 
     return v0
 
-    .line 1766
-    :pswitch_3a
+    .line 1831
+    :pswitch_38
     const/16 v0, 0x10
 
     return v0
 
-    .line 1764
-    :pswitch_3b
+    .line 1829
+    :pswitch_39
     const/16 v0, 0xf
 
     return v0
 
-    .line 1762
-    :pswitch_3c
+    .line 1827
+    :pswitch_3a
     const/16 v0, 0xe
 
     return v0
 
-    .line 1760
-    :pswitch_3d
+    .line 1825
+    :pswitch_3b
     const/16 v0, 0xd
 
     return v0
 
-    .line 1758
-    :pswitch_3e
+    .line 1823
+    :pswitch_3c
     const/16 v0, 0xc
 
     return v0
 
-    .line 1756
-    :pswitch_3f
+    .line 1821
+    :pswitch_3d
     const/16 v0, 0xb
 
     return v0
 
-    .line 1754
-    :pswitch_40
+    .line 1819
+    :pswitch_3e
     const/16 v0, 0xa
 
     return v0
 
-    .line 1752
-    :pswitch_41
+    .line 1817
+    :pswitch_3f
     const/16 v0, 0x9
 
     return v0
 
-    .line 1750
-    :pswitch_42
+    .line 1815
+    :pswitch_40
     const/16 v0, 0x8
 
     return v0
 
-    .line 1748
-    :pswitch_43
+    .line 1813
+    :pswitch_41
     const/4 v0, 0x7
 
     return v0
 
-    .line 1746
-    :pswitch_44
+    .line 1811
+    :pswitch_42
     const/4 v0, 0x6
 
     return v0
 
-    .line 1744
-    :pswitch_45
+    .line 1809
+    :pswitch_43
     const/4 v0, 0x5
 
     return v0
 
-    .line 1742
-    :pswitch_46
+    .line 1807
+    :pswitch_44
     const/4 v0, 0x4
 
     return v0
 
-    .line 1740
-    :pswitch_47
+    .line 1805
+    :pswitch_45
     const/4 v0, 0x3
 
     return v0
 
-    .line 1738
-    :pswitch_48
+    .line 1803
+    :pswitch_46
     const/4 v0, 0x2
 
     return v0
 
-    .line 1736
-    :pswitch_49
+    .line 1801
+    :pswitch_47
     const/4 v0, 0x1
 
     return v0
 
-    .line 1734
-    :pswitch_4a
+    .line 1799
+    :pswitch_48
     const/4 v0, 0x0
+
+    return v0
+
+    .line 1946
+    :cond_0
+    const/16 v0, 0x49
 
     return v0
 
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_4a
-        :pswitch_49
         :pswitch_48
         :pswitch_47
         :pswitch_46
@@ -3608,8 +3755,8 @@
         :pswitch_4
         :pswitch_3
         :pswitch_2
-        :pswitch_0
         :pswitch_1
+        :pswitch_0
     .end packed-switch
 .end method
 
@@ -3619,26 +3766,26 @@
         value = {
             "(",
             "Ljava/util/ArrayList<",
-            "Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;",
+            "Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;",
             ">;)[",
             "Lorg/codeaurora/ims/ServiceStatus;"
         }
     .end annotation
 
-    .line 531
-    .local p0, "fromList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;>;"
+    .line 552
+    .local p0, "fromList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;>;"
     const/4 v0, 0x0
 
-    .line 532
+    .line 553
     .local v0, "toList":[Lorg/codeaurora/ims/ServiceStatus;
     if-eqz p0, :cond_9
 
-    .line 533
+    .line 554
     invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    .line 534
+    .line 555
     .local v1, "listLen":I
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -3656,51 +3803,51 @@
 
     invoke-static {v2}, Lorg/codeaurora/ims/ImsRadioUtils;->log(Ljava/lang/String;)V
 
-    .line 535
+    .line 556
     new-array v0, v1, [Lorg/codeaurora/ims/ServiceStatus;
 
-    .line 536
+    .line 557
     const/4 v2, 0x0
 
     .local v2, "i":I
     :goto_0
     if-ge v2, v1, :cond_9
 
-    .line 537
+    .line 558
     invoke-virtual {p0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
-    check-cast v3, Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;
+    check-cast v3, Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;
 
-    .line 538
-    .local v3, "fromInfo":Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;
+    .line 559
+    .local v3, "fromInfo":Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;
     if-eqz v3, :cond_8
 
-    .line 539
+    .line 560
     new-instance v4, Lorg/codeaurora/ims/ServiceStatus;
 
     invoke-direct {v4}, Lorg/codeaurora/ims/ServiceStatus;-><init>()V
 
     aput-object v4, v0, v2
 
-    .line 540
-    iget-boolean v4, v3, Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;->hasIsValid:Z
+    .line 561
+    iget-boolean v4, v3, Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;->hasIsValid:Z
 
     if-eqz v4, :cond_0
 
-    .line 541
+    .line 562
     aget-object v4, v0, v2
 
-    iget-boolean v5, v3, Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;->isValid:Z
+    iget-boolean v5, v3, Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;->isValid:Z
 
     iput-boolean v5, v4, Lorg/codeaurora/ims/ServiceStatus;->isValid:Z
 
-    .line 543
+    .line 564
     :cond_0
     aget-object v4, v0, v2
 
-    iget v5, v3, Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;->callType:I
+    iget v5, v3, Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;->callType:I
 
     invoke-static {v5}, Lorg/codeaurora/ims/ImsRadioUtils;->callTypeFromHal(I)I
 
@@ -3708,8 +3855,8 @@
 
     iput v5, v4, Lorg/codeaurora/ims/ServiceStatus;->type:I
 
-    .line 544
-    iget-object v4, v3, Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;->accTechStatus:Ljava/util/ArrayList;
+    .line 565
+    iget-object v4, v3, Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;->accTechStatus:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
@@ -3723,10 +3870,10 @@
 
     if-lez v4, :cond_1
 
-    .line 545
+    .line 566
     aget-object v4, v0, v2
 
-    invoke-static {v3}, Lorg/codeaurora/ims/ImsRadioUtils;->unpackAccTechStatus(Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;)[Lorg/codeaurora/ims/ServiceStatus$StatusForAccessTech;
+    invoke-static {v3}, Lorg/codeaurora/ims/ImsRadioUtils;->unpackAccTechStatus(Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;)[Lorg/codeaurora/ims/ServiceStatus$StatusForAccessTech;
 
     move-result-object v8
 
@@ -3734,7 +3881,7 @@
 
     goto :goto_1
 
-    .line 547
+    .line 568
     :cond_1
     aget-object v4, v0, v2
 
@@ -3742,7 +3889,7 @@
 
     iput-object v8, v4, Lorg/codeaurora/ims/ServiceStatus;->accessTechStatus:[Lorg/codeaurora/ims/ServiceStatus$StatusForAccessTech;
 
-    .line 548
+    .line 569
     aget-object v4, v0, v2
 
     iget-object v4, v4, Lorg/codeaurora/ims/ServiceStatus;->accessTechStatus:[Lorg/codeaurora/ims/ServiceStatus$StatusForAccessTech;
@@ -3753,26 +3900,26 @@
 
     aput-object v8, v4, v6
 
-    .line 549
+    .line 570
     aget-object v4, v0, v2
 
     iget-object v4, v4, Lorg/codeaurora/ims/ServiceStatus;->accessTechStatus:[Lorg/codeaurora/ims/ServiceStatus$StatusForAccessTech;
 
     aget-object v4, v4, v6
 
-    .line 550
+    .line 571
     .local v4, "act":Lorg/codeaurora/ims/ServiceStatus$StatusForAccessTech;
     const/16 v8, 0xe
 
     iput v8, v4, Lorg/codeaurora/ims/ServiceStatus$StatusForAccessTech;->networkMode:I
 
-    .line 552
-    iget v8, v3, Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;->status:I
+    .line 573
+    iget v8, v3, Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;->status:I
 
     if-eq v8, v5, :cond_2
 
-    .line 553
-    iget v8, v3, Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;->status:I
+    .line 574
+    iget v8, v3, Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;->status:I
 
     invoke-static {v8}, Lorg/codeaurora/ims/ImsRadioUtils;->statusTypeFromHal(I)I
 
@@ -3780,55 +3927,55 @@
 
     iput v8, v4, Lorg/codeaurora/ims/ServiceStatus$StatusForAccessTech;->status:I
 
-    .line 555
+    .line 576
     :cond_2
-    iget v8, v3, Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;->restrictCause:I
+    iget v8, v3, Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;->restrictCause:I
 
     const v9, 0x7fffffff
 
     if-eq v8, v9, :cond_3
 
-    .line 556
-    iget v8, v3, Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;->restrictCause:I
+    .line 577
+    iget v8, v3, Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;->restrictCause:I
 
     iput v8, v4, Lorg/codeaurora/ims/ServiceStatus$StatusForAccessTech;->restrictCause:I
 
-    .line 559
+    .line 580
     .end local v4    # "act":Lorg/codeaurora/ims/ServiceStatus$StatusForAccessTech;
     :cond_3
     :goto_1
-    iget v4, v3, Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;->status:I
+    iget v4, v3, Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;->status:I
 
     const/4 v8, 0x2
 
     if-ne v4, v8, :cond_4
 
-    iget v4, v3, Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;->restrictCause:I
+    iget v4, v3, Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;->restrictCause:I
 
     if-eqz v4, :cond_4
 
-    .line 561
+    .line 582
     const-string v4, "Partially Enabled Status due to Restrict Cause"
 
     invoke-static {v4}, Lorg/codeaurora/ims/ImsRadioUtils;->log(Ljava/lang/String;)V
 
-    .line 562
+    .line 583
     aget-object v4, v0, v2
 
     iput v7, v4, Lorg/codeaurora/ims/ServiceStatus;->status:I
 
     goto :goto_2
 
-    .line 564
+    .line 585
     :cond_4
-    iget v4, v3, Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;->status:I
+    iget v4, v3, Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;->status:I
 
     if-eq v4, v5, :cond_5
 
-    .line 565
+    .line 586
     aget-object v4, v0, v2
 
-    iget v5, v3, Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;->status:I
+    iget v5, v3, Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;->status:I
 
     invoke-static {v5}, Lorg/codeaurora/ims/ImsRadioUtils;->statusTypeFromHal(I)I
 
@@ -3836,29 +3983,29 @@
 
     iput v5, v4, Lorg/codeaurora/ims/ServiceStatus;->status:I
 
-    .line 568
+    .line 589
     :cond_5
     :goto_2
-    iget v4, v3, Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;->rttMode:I
+    iget v4, v3, Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;->rttMode:I
 
     if-eq v8, v4, :cond_6
 
-    .line 569
+    .line 590
     aget-object v4, v0, v2
 
-    iget v5, v3, Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;->rttMode:I
+    iget v5, v3, Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;->rttMode:I
 
     iput v5, v4, Lorg/codeaurora/ims/ServiceStatus;->rttMode:I
 
     goto :goto_3
 
-    .line 571
+    .line 592
     :cond_6
     aget-object v4, v0, v2
 
     iput v6, v4, Lorg/codeaurora/ims/ServiceStatus;->rttMode:I
 
-    .line 573
+    .line 594
     :goto_3
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -3868,7 +4015,7 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v5, v3, Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;->rttMode:I
+    iget v5, v3, Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;->rttMode:I
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -3878,37 +4025,37 @@
 
     invoke-static {v4}, Lorg/codeaurora/ims/ImsRadioUtils;->log(Ljava/lang/String;)V
 
-    .line 574
-    iget-object v4, v3, Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;->userdata:Ljava/util/ArrayList;
+    .line 595
+    iget-object v4, v3, Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;->userdata:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v4
 
-    .line 575
+    .line 596
     .local v4, "userdataLen":I
     if-lez v4, :cond_7
 
-    .line 576
+    .line 597
     aget-object v5, v0, v2
 
     new-array v6, v4, [B
 
     iput-object v6, v5, Lorg/codeaurora/ims/ServiceStatus;->userdata:[B
 
-    .line 577
+    .line 598
     const/4 v5, 0x0
 
     .local v5, "j":I
     :goto_4
     if-ge v5, v4, :cond_7
 
-    .line 578
+    .line 599
     aget-object v6, v0, v2
 
     iget-object v6, v6, Lorg/codeaurora/ims/ServiceStatus;->userdata:[B
 
-    iget-object v7, v3, Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;->userdata:Ljava/util/ArrayList;
+    iget-object v7, v3, Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;->userdata:Ljava/util/ArrayList;
 
     invoke-virtual {v7, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -3922,31 +4069,31 @@
 
     aput-byte v7, v6, v5
 
-    .line 577
+    .line 598
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_4
 
-    .line 581
+    .line 602
     .end local v4    # "userdataLen":I
     .end local v5    # "j":I
     :cond_7
     goto :goto_5
 
-    .line 582
+    .line 603
     :cond_8
     const-string v4, "Null service status in list"
 
     invoke-static {v4}, Lorg/codeaurora/ims/ImsRadioUtils;->log(Ljava/lang/String;)V
 
-    .line 536
-    .end local v3    # "fromInfo":Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;
+    .line 557
+    .end local v3    # "fromInfo":Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;
     :goto_5
     add-int/lit8 v2, v2, 0x1
 
     goto/16 :goto_0
 
-    .line 586
+    .line 607
     .end local v1    # "listLen":I
     .end local v2    # "i":I
     :cond_9
@@ -3957,7 +4104,7 @@
     .locals 1
     .param p0, "type"    # I
 
-    .line 2245
+    .line 2310
     if-eqz p0, :cond_2
 
     const/4 v0, 0x1
@@ -3968,20 +4115,20 @@
 
     if-eq p0, v0, :cond_0
 
-    .line 2253
+    .line 2318
     const/4 v0, 0x3
 
     return v0
 
-    .line 2251
+    .line 2316
     :cond_0
     return v0
 
-    .line 2249
+    .line 2314
     :cond_1
     return v0
 
-    .line 2247
+    .line 2312
     :cond_2
     const/4 v0, 0x0
 
@@ -3992,15 +4139,15 @@
     .locals 1
     .param p0, "extraHo"    # I
 
-    .line 1210
+    .line 1274
     if-eqz p0, :cond_0
 
-    .line 1214
+    .line 1278
     const/4 v0, -0x1
 
     return v0
 
-    .line 1212
+    .line 1276
     :cond_0
     const/4 v0, 0x1
 
@@ -4011,81 +4158,81 @@
     .locals 1
     .param p0, "facilityType"    # I
 
-    .line 1482
+    .line 1546
     packed-switch p0, :pswitch_data_0
 
-    .line 1508
+    .line 1572
     const/16 v0, 0xc
 
     return v0
 
-    .line 1506
+    .line 1570
     :pswitch_0
     const/16 v0, 0xb
 
     return v0
 
-    .line 1504
+    .line 1568
     :pswitch_1
     const/16 v0, 0xa
 
     return v0
 
-    .line 1502
+    .line 1566
     :pswitch_2
     const/16 v0, 0x9
 
     return v0
 
-    .line 1500
+    .line 1564
     :pswitch_3
     const/16 v0, 0x8
 
     return v0
 
-    .line 1498
+    .line 1562
     :pswitch_4
     const/4 v0, 0x7
 
     return v0
 
-    .line 1496
+    .line 1560
     :pswitch_5
     const/4 v0, 0x6
 
     return v0
 
-    .line 1494
+    .line 1558
     :pswitch_6
     const/4 v0, 0x5
 
     return v0
 
-    .line 1492
+    .line 1556
     :pswitch_7
     const/4 v0, 0x4
 
     return v0
 
-    .line 1490
+    .line 1554
     :pswitch_8
     const/4 v0, 0x3
 
     return v0
 
-    .line 1488
+    .line 1552
     :pswitch_9
     const/4 v0, 0x2
 
     return v0
 
-    .line 1486
+    .line 1550
     :pswitch_a
     const/4 v0, 0x1
 
     return v0
 
-    .line 1484
+    .line 1548
     :pswitch_b
     const/4 v0, 0x0
 
@@ -4113,7 +4260,7 @@
     .param p0, "lat"    # D
     .param p2, "lon"    # D
 
-    .line 2261
+    .line 2326
     new-instance v0, Lorg/codeaurora/ims/GeoLocationInfo;
 
     invoke-direct {v0, p0, p1, p2, p3}, Lorg/codeaurora/ims/GeoLocationInfo;-><init>(DD)V
@@ -4132,16 +4279,16 @@
         }
     .end annotation
 
-    .line 1436
+    .line 1500
     .local p0, "inList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/Byte;>;"
     if-nez p0, :cond_0
 
-    .line 1437
+    .line 1501
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 1440
+    .line 1504
     :cond_0
     invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
 
@@ -4149,7 +4296,7 @@
 
     new-array v0, v0, [B
 
-    .line 1442
+    .line 1506
     .local v0, "outArray":[B
     const/4 v1, 0x0
 
@@ -4159,7 +4306,7 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 1443
+    .line 1507
     invoke-virtual {p0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -4172,36 +4319,36 @@
 
     aput-byte v2, v0, v1
 
-    .line 1442
+    .line 1506
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 1446
+    .line 1510
     .end local v1    # "i":I
     :cond_1
     return-object v0
 .end method
 
-.method public static getCallDetails(Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;)Lorg/codeaurora/ims/CallDetails;
+.method public static getCallDetails(Lvendor/qti/hardware/radio/ims/V1_6/CallDetails;)Lorg/codeaurora/ims/CallDetails;
     .locals 4
-    .param p0, "inCallDetails"    # Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
+    .param p0, "inCallDetails"    # Lvendor/qti/hardware/radio/ims/V1_6/CallDetails;
 
-    .line 412
+    .line 433
     new-instance v0, Lorg/codeaurora/ims/CallDetails;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/CallDetails;-><init>()V
 
-    .line 414
+    .line 435
     .local v0, "outCallDetails":Lorg/codeaurora/ims/CallDetails;
-    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->callType:I
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallDetails;->callType:I
 
     const/16 v2, 0xc
 
     if-eq v1, v2, :cond_0
 
-    .line 415
-    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->callType:I
+    .line 436
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallDetails;->callType:I
 
     invoke-static {v1}, Lorg/codeaurora/ims/ImsRadioUtils;->callTypeFromHal(I)I
 
@@ -4209,16 +4356,16 @@
 
     iput v1, v0, Lorg/codeaurora/ims/CallDetails;->call_type:I
 
-    .line 418
+    .line 439
     :cond_0
-    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->callDomain:I
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallDetails;->callDomain:I
 
     const/4 v2, 0x5
 
     if-eq v1, v2, :cond_1
 
-    .line 419
-    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->callDomain:I
+    .line 440
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallDetails;->callDomain:I
 
     invoke-static {v1}, Lorg/codeaurora/ims/ImsRadioUtils;->callDomainFromHal(I)I
 
@@ -4226,16 +4373,16 @@
 
     iput v1, v0, Lorg/codeaurora/ims/CallDetails;->call_domain:I
 
-    .line 422
+    .line 443
     :cond_1
-    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->callSubstate:I
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallDetails;->callSubstate:I
 
     const v2, 0x7fffffff
 
     if-eq v1, v2, :cond_2
 
-    .line 423
-    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->callSubstate:I
+    .line 444
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallDetails;->callSubstate:I
 
     invoke-static {v1}, Lorg/codeaurora/ims/ImsRadioUtils;->toCallSubstateConstants(I)I
 
@@ -4243,20 +4390,20 @@
 
     iput v1, v0, Lorg/codeaurora/ims/CallDetails;->callsubstate:I
 
-    .line 427
+    .line 448
     :cond_2
-    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->mediaId:I
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallDetails;->mediaId:I
 
     if-eq v1, v2, :cond_3
 
-    .line 428
-    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->mediaId:I
+    .line 449
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallDetails;->mediaId:I
 
     iput v1, v0, Lorg/codeaurora/ims/CallDetails;->callMediaId:I
 
-    .line 431
+    .line 452
     :cond_3
-    iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->extras:Ljava/util/ArrayList;
+    iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallDetails;->extras:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -4266,8 +4413,8 @@
 
     iput-object v1, v0, Lorg/codeaurora/ims/CallDetails;->extras:[Ljava/lang/String;
 
-    .line 432
-    iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->extras:Ljava/util/ArrayList;
+    .line 453
+    iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallDetails;->extras:Ljava/util/ArrayList;
 
     iget-object v3, v0, Lorg/codeaurora/ims/CallDetails;->extras:[Ljava/lang/String;
 
@@ -4279,8 +4426,8 @@
 
     iput-object v1, v0, Lorg/codeaurora/ims/CallDetails;->extras:[Ljava/lang/String;
 
-    .line 434
-    iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->localAbility:Ljava/util/ArrayList;
+    .line 455
+    iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallDetails;->localAbility:Ljava/util/ArrayList;
 
     invoke-static {v1}, Lorg/codeaurora/ims/ImsRadioUtils;->copySrvStatusList(Ljava/util/ArrayList;)[Lorg/codeaurora/ims/ServiceStatus;
 
@@ -4288,8 +4435,8 @@
 
     iput-object v1, v0, Lorg/codeaurora/ims/CallDetails;->localAbility:[Lorg/codeaurora/ims/ServiceStatus;
 
-    .line 435
-    iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->peerAbility:Ljava/util/ArrayList;
+    .line 456
+    iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallDetails;->peerAbility:Ljava/util/ArrayList;
 
     invoke-static {v1}, Lorg/codeaurora/ims/ImsRadioUtils;->copySrvStatusList(Ljava/util/ArrayList;)[Lorg/codeaurora/ims/ServiceStatus;
 
@@ -4297,32 +4444,32 @@
 
     iput-object v1, v0, Lorg/codeaurora/ims/CallDetails;->peerAbility:[Lorg/codeaurora/ims/ServiceStatus;
 
-    .line 437
-    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->causeCode:I
+    .line 458
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallDetails;->causeCode:I
 
     if-eq v1, v2, :cond_4
 
-    .line 438
-    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->causeCode:I
+    .line 459
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallDetails;->causeCode:I
 
     iput v1, v0, Lorg/codeaurora/ims/CallDetails;->causeCode:I
 
-    .line 441
+    .line 462
     :cond_4
-    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->rttMode:I
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallDetails;->rttMode:I
 
     const/4 v2, 0x2
 
     if-eq v1, v2, :cond_5
 
-    .line 442
-    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->rttMode:I
+    .line 463
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallDetails;->rttMode:I
 
     iput v1, v0, Lorg/codeaurora/ims/CallDetails;->rttMode:I
 
-    .line 445
+    .line 466
     :cond_5
-    iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->sipAlternateUri:Ljava/lang/String;
+    iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallDetails;->sipAlternateUri:Ljava/lang/String;
 
     invoke-virtual {v1}, Ljava/lang/String;->isEmpty()Z
 
@@ -4330,12 +4477,12 @@
 
     if-nez v1, :cond_6
 
-    .line 446
-    iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->sipAlternateUri:Ljava/lang/String;
+    .line 467
+    iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/CallDetails;->sipAlternateUri:Ljava/lang/String;
 
     iput-object v1, v0, Lorg/codeaurora/ims/CallDetails;->sipAlternateUri:Ljava/lang/String;
 
-    .line 449
+    .line 470
     :cond_6
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -4353,7 +4500,7 @@
 
     invoke-static {v1}, Lorg/codeaurora/ims/ImsRadioUtils;->log(Ljava/lang/String;)V
 
-    .line 451
+    .line 472
     return-object v0
 .end method
 
@@ -4361,7 +4508,7 @@
     .locals 3
     .param p0, "imsReason"    # I
 
-    .line 978
+    .line 1003
     sget-object v0, Lorg/codeaurora/ims/ImsRadioUtils;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4380,14 +4527,14 @@
 
     invoke-static {v0, v1}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 981
+    .line 1006
     const/16 v0, 0x1f5
 
     if-eq p0, v0, :cond_0
 
     packed-switch p0, :pswitch_data_0
 
-    .line 995
+    .line 1020
     invoke-static {p0}, Lorg/codeaurora/ims/ImsRadioUtilsV13;->getCallFailCauseForImsReason(I)I
 
     move-result v0
@@ -4395,43 +4542,43 @@
     .local v0, "failCause":I
     goto :goto_0
 
-    .line 992
+    .line 1017
     .end local v0    # "failCause":I
     :pswitch_0
     const/16 v0, 0x1f8
 
-    .line 993
+    .line 1018
     .restart local v0    # "failCause":I
     goto :goto_0
 
-    .line 989
+    .line 1014
     .end local v0    # "failCause":I
     :pswitch_1
     const/16 v0, 0x1f7
 
-    .line 990
+    .line 1015
     .restart local v0    # "failCause":I
     goto :goto_0
 
-    .line 983
+    .line 1008
     .end local v0    # "failCause":I
     :pswitch_2
     const/16 v0, 0x1f6
 
-    .line 984
+    .line 1009
     .restart local v0    # "failCause":I
     goto :goto_0
 
-    .line 986
+    .line 1011
     .end local v0    # "failCause":I
     :cond_0
     const/16 v0, 0x1f5
 
-    .line 987
+    .line 1012
     .restart local v0    # "failCause":I
     nop
 
-    .line 997
+    .line 1022
     :goto_0
     return v0
 
@@ -4451,111 +4598,111 @@
     .param p2, "lon"    # D
     .param p4, "address"    # Landroid/location/Address;
 
-    .line 2676
+    .line 2741
     new-instance v0, Lvendor/qti/hardware/radio/ims/V1_2/AddressInfo;
 
     invoke-direct {v0}, Lvendor/qti/hardware/radio/ims/V1_2/AddressInfo;-><init>()V
 
-    .line 2678
+    .line 2743
     .local v0, "addressInfo":Lvendor/qti/hardware/radio/ims/V1_2/AddressInfo;
     if-nez p4, :cond_0
 
-    .line 2679
+    .line 2744
     sget-object v1, Lorg/codeaurora/ims/ImsRadioUtils;->TAG:Ljava/lang/String;
 
     const-string v2, "Null Address!"
 
     invoke-static {v1, v2}, Lcom/qualcomm/ims/utils/Log;->v(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 2680
+    .line 2745
     return-object v0
 
-    .line 2683
+    .line 2748
     :cond_0
     invoke-virtual {p4}, Landroid/location/Address;->getLocality()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 2684
+    .line 2749
     .local v1, "info":Ljava/lang/String;
     if-eqz v1, :cond_1
 
-    .line 2685
+    .line 2750
     iput-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_2/AddressInfo;->city:Ljava/lang/String;
 
-    .line 2687
+    .line 2752
     :cond_1
     invoke-virtual {p4}, Landroid/location/Address;->getAdminArea()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 2688
+    .line 2753
     if-eqz v1, :cond_2
 
-    .line 2689
+    .line 2754
     iput-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_2/AddressInfo;->state:Ljava/lang/String;
 
-    .line 2691
+    .line 2756
     :cond_2
     invoke-virtual {p4}, Landroid/location/Address;->getCountryName()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 2692
+    .line 2757
     if-eqz v1, :cond_3
 
-    .line 2693
+    .line 2758
     iput-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_2/AddressInfo;->country:Ljava/lang/String;
 
-    .line 2695
+    .line 2760
     :cond_3
     invoke-virtual {p4}, Landroid/location/Address;->getPostalCode()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 2696
+    .line 2761
     if-eqz v1, :cond_4
 
-    .line 2697
+    .line 2762
     iput-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_2/AddressInfo;->postalCode:Ljava/lang/String;
 
-    .line 2699
+    .line 2764
     :cond_4
     invoke-virtual {p4}, Landroid/location/Address;->getCountryCode()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 2700
+    .line 2765
     if-eqz v1, :cond_5
 
-    .line 2701
+    .line 2766
     iput-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_2/AddressInfo;->countryCode:Ljava/lang/String;
 
-    .line 2703
+    .line 2768
     :cond_5
     invoke-virtual {p4}, Landroid/location/Address;->getThoroughfare()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 2704
+    .line 2769
     if-eqz v1, :cond_6
 
-    .line 2705
+    .line 2770
     iput-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_2/AddressInfo;->street:Ljava/lang/String;
 
-    .line 2707
+    .line 2772
     :cond_6
     invoke-virtual {p4}, Landroid/location/Address;->getSubThoroughfare()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 2708
+    .line 2773
     if-eqz v1, :cond_7
 
-    .line 2709
+    .line 2774
     iput-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_2/AddressInfo;->houseNumber:Ljava/lang/String;
 
-    .line 2711
+    .line 2776
     :cond_7
     sget-object v2, Lorg/codeaurora/ims/ImsRadioUtils;->TAG:Ljava/lang/String;
 
@@ -4585,7 +4732,7 @@
 
     invoke-static {v2, v3}, Lcom/qualcomm/ims/utils/Log;->v(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 2712
+    .line 2777
     return-object v0
 .end method
 
@@ -4593,7 +4740,7 @@
     .locals 3
     .param p0, "failCause"    # I
 
-    .line 290
+    .line 311
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -4610,7 +4757,7 @@
 
     invoke-static {v0}, Lorg/codeaurora/ims/ImsRadioUtils;->log(Ljava/lang/String;)V
 
-    .line 292
+    .line 313
     const/4 v0, 0x1
 
     if-eq p0, v0, :cond_5
@@ -4645,268 +4792,268 @@
 
     packed-switch p0, :pswitch_data_2
 
-    .line 406
+    .line 427
     invoke-static {p0}, Lorg/codeaurora/ims/ImsRadioUtilsV12;->getImsReasonForCallFailCause(I)I
 
     move-result v0
 
     return v0
 
-    .line 393
+    .line 414
     :pswitch_0
     const/16 v0, 0xfb
 
     return v0
 
-    .line 391
+    .line 412
     :pswitch_1
     const/16 v0, 0xfa
 
     return v0
 
-    .line 397
+    .line 418
     :pswitch_2
     const/16 v0, 0xf9
 
     return v0
 
-    .line 395
+    .line 416
     :pswitch_3
     const/16 v0, 0xf8
 
     return v0
 
-    .line 389
+    .line 410
     :pswitch_4
     const/16 v0, 0xf7
 
     return v0
 
-    .line 346
+    .line 367
     :pswitch_5
     const/16 v0, 0x194
 
     return v0
 
-    .line 344
+    .line 365
     :pswitch_6
     const/16 v0, 0x193
 
     return v0
 
-    .line 342
+    .line 363
     :pswitch_7
     const/16 v0, 0x192
 
     return v0
 
-    .line 340
+    .line 361
     :pswitch_8
     const/16 v0, 0x191
 
     return v0
 
-    .line 333
+    .line 354
     :pswitch_9
     const/16 v0, 0x16a
 
     return v0
 
-    .line 331
+    .line 352
     :pswitch_a
     const/16 v0, 0x169
 
     return v0
 
-    .line 329
+    .line 350
     :pswitch_b
     const/16 v0, 0x161
 
     return v0
 
-    .line 327
+    .line 348
     :pswitch_c
     const/16 v0, 0x160
 
     return v0
 
-    .line 325
+    .line 346
     :pswitch_d
     const/16 v0, 0x162
 
     return v0
 
-    .line 319
+    .line 340
     :pswitch_e
     const/16 v0, 0x15f
 
     return v0
 
-    .line 317
+    .line 338
     :pswitch_f
     const/16 v0, 0x155
 
     return v0
 
-    .line 315
+    .line 336
     :pswitch_10
     const/16 v0, 0x154
 
     return v0
 
-    .line 313
+    .line 334
     :pswitch_11
     const/16 v0, 0x153
 
     return v0
 
-    .line 311
+    .line 332
     :pswitch_12
     return v1
 
-    .line 309
+    .line 330
     :pswitch_13
     const/16 v0, 0x151
 
     return v0
 
-    .line 307
+    .line 328
     :pswitch_14
     return v2
 
-    .line 305
+    .line 326
     :pswitch_15
     const/16 v0, 0x14f
 
     return v0
 
-    .line 303
+    .line 324
     :pswitch_16
     const/16 v0, 0x14e
 
     return v0
 
-    .line 301
+    .line 322
     :pswitch_17
     const/16 v0, 0x14d
 
     return v0
 
-    .line 299
+    .line 320
     :pswitch_18
     const/16 v0, 0x14c
 
     return v0
 
-    .line 297
+    .line 318
     :pswitch_19
     const/16 v0, 0x14b
 
     return v0
 
-    .line 295
+    .line 316
     :pswitch_1a
     const/16 v0, 0x141
 
     return v0
 
-    .line 381
+    .line 402
     :pswitch_1b
     const/16 v0, 0x5e8
 
     return v0
 
-    .line 379
+    .line 400
     :pswitch_1c
     const/16 v0, 0x3f8
 
     return v0
 
-    .line 377
+    .line 398
     :pswitch_1d
     const/16 v0, 0x3f7
 
     return v0
 
-    .line 361
+    .line 382
     :pswitch_1e
     const/16 v0, 0x3f6
 
     return v0
 
-    .line 369
+    .line 390
     :pswitch_1f
     const/16 v0, 0x95
 
     return v0
 
-    .line 375
+    .line 396
     :pswitch_20
     const/16 v0, 0x16c
 
     return v0
 
-    .line 373
+    .line 394
     :pswitch_21
     const/16 v0, 0x16b
 
     return v0
 
-    .line 387
+    .line 408
     :pswitch_22
     const/16 v0, 0xf6
 
     return v0
 
-    .line 383
+    .line 404
     :pswitch_23
     const/16 v0, 0xf5
 
     return v0
 
-    .line 385
+    .line 406
     :pswitch_24
     const/16 v0, 0xf4
 
     return v0
 
-    .line 365
+    .line 386
     :pswitch_25
     const/16 v0, 0xf3
 
     return v0
 
-    .line 363
+    .line 384
     :pswitch_26
     const/16 v0, 0xf1
 
     return v0
 
-    .line 359
+    .line 380
     :cond_0
     return v2
 
-    .line 367
+    .line 388
     :cond_1
     const/16 v0, 0x92
 
     return v0
 
-    .line 336
+    .line 357
     :cond_2
     const/16 v0, 0x5ea
 
     return v0
 
-    .line 371
+    .line 392
     :cond_3
     return v2
 
-    .line 357
+    .line 378
     :cond_4
     return v1
 
-    .line 353
+    .line 374
     :cond_5
     const/16 v0, 0x1fe
 
@@ -4972,7 +5119,7 @@
     .locals 2
     .param p0, "clirMode"    # I
 
-    .line 138
+    .line 142
     if-eqz p0, :cond_1
 
     const/4 v0, 0x1
@@ -4983,16 +5130,16 @@
 
     if-eq p0, v1, :cond_0
 
-    .line 145
+    .line 149
     const/4 v0, 0x3
 
     return v0
 
-    .line 140
+    .line 144
     :cond_0
     return v0
 
-    .line 143
+    .line 147
     :cond_1
     const/4 v0, 0x0
 
@@ -5003,10 +5150,10 @@
     .locals 3
     .param p0, "callDetails"    # Lorg/codeaurora/ims/CallDetails;
 
-    .line 157
+    .line 161
     const/4 v0, 0x0
 
-    .line 158
+    .line 162
     .local v0, "isConferenceUri":Z
     if-eqz p0, :cond_0
 
@@ -5014,7 +5161,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 159
+    .line 163
     iget-object v1, p0, Lorg/codeaurora/ims/CallDetails;->extras:[Ljava/lang/String;
 
     const-string v2, "isConferenceUri"
@@ -5023,7 +5170,7 @@
 
     move-result-object v1
 
-    .line 161
+    .line 165
     .local v1, "value":Ljava/lang/String;
     if-eqz v1, :cond_0
 
@@ -5037,10 +5184,10 @@
 
     if-eqz v2, :cond_0
 
-    .line 162
+    .line 166
     const/4 v0, 0x1
 
-    .line 165
+    .line 169
     .end local v1    # "value":Ljava/lang/String;
     :cond_0
     return v0
@@ -5057,7 +5204,7 @@
         }
     .end annotation
 
-    .line 455
+    .line 476
     .local p0, "hidlPdu":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/Byte;>;"
     invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
 
@@ -5065,7 +5212,7 @@
 
     new-array v0, v0, [B
 
-    .line 457
+    .line 478
     .local v0, "pdu":[B
     const/4 v1, 0x0
 
@@ -5075,7 +5222,7 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 458
+    .line 479
     invoke-virtual {p0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -5088,12 +5235,12 @@
 
     aput-byte v2, v0, v1
 
-    .line 457
+    .line 478
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 460
+    .line 481
     .end local v1    # "i":I
     :cond_0
     return-object v0
@@ -5103,7 +5250,7 @@
     .locals 1
     .param p0, "commandsInterfaceCFReason"    # I
 
-    .line 2557
+    .line 2622
     if-eqz p0, :cond_5
 
     const/4 v0, 0x1
@@ -5126,32 +5273,32 @@
 
     if-eq p0, v0, :cond_0
 
-    .line 2573
+    .line 2638
     const/4 v0, -0x1
 
     return v0
 
-    .line 2569
+    .line 2634
     :cond_0
     return v0
 
-    .line 2567
+    .line 2632
     :cond_1
     return v0
 
-    .line 2565
+    .line 2630
     :cond_2
     return v0
 
-    .line 2563
+    .line 2628
     :cond_3
     return v0
 
-    .line 2561
+    .line 2626
     :cond_4
     return v0
 
-    .line 2559
+    .line 2624
     :cond_5
     const/4 v0, 0x0
 
@@ -5164,33 +5311,33 @@
         value = {
             "(",
             "Ljava/util/ArrayList<",
-            "Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;",
+            "Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;",
             ">;)",
             "Ljava/lang/Object;"
         }
     .end annotation
 
-    .line 1128
-    .local p0, "inList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;>;"
+    .line 1192
+    .local p0, "inList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;>;"
     if-nez p0, :cond_0
 
-    .line 1129
+    .line 1193
     const-string v0, "inList is null."
 
     invoke-static {v0}, Lorg/codeaurora/ims/ImsRadioUtils;->log(Ljava/lang/String;)V
 
-    .line 1130
+    .line 1194
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 1133
+    .line 1197
     :cond_0
     invoke-static {p0}, Lorg/codeaurora/ims/ImsRadioUtils;->copySrvStatusList(Ljava/util/ArrayList;)[Lorg/codeaurora/ims/ServiceStatus;
 
     move-result-object v0
 
-    .line 1134
+    .line 1198
     .local v0, "outList":[Lorg/codeaurora/ims/ServiceStatus;
     new-instance v1, Ljava/util/ArrayList;
 
@@ -5200,39 +5347,39 @@
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 1136
+    .line 1200
     .local v1, "response":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lorg/codeaurora/ims/ServiceStatus;>;"
     return-object v1
 .end method
 
-.method public static handoverFromHal(Lvendor/qti/hardware/radio/ims/V1_0/HandoverInfo;)Lorg/codeaurora/ims/HoInfo;
+.method public static handoverFromHal(Lvendor/qti/hardware/radio/ims/V1_6/HandoverInfo;)Lorg/codeaurora/ims/HoInfo;
     .locals 3
-    .param p0, "inHandover"    # Lvendor/qti/hardware/radio/ims/V1_0/HandoverInfo;
+    .param p0, "inHandover"    # Lvendor/qti/hardware/radio/ims/V1_6/HandoverInfo;
 
-    .line 1141
+    .line 1205
     if-nez p0, :cond_0
 
-    .line 1142
+    .line 1206
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 1145
+    .line 1209
     :cond_0
     new-instance v0, Lorg/codeaurora/ims/HoInfo;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/HoInfo;-><init>()V
 
-    .line 1147
+    .line 1211
     .local v0, "outHandover":Lorg/codeaurora/ims/HoInfo;
-    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/HandoverInfo;->type:I
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/HandoverInfo;->type:I
 
     const/4 v2, 0x6
 
     if-eq v1, v2, :cond_1
 
-    .line 1148
-    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/HandoverInfo;->type:I
+    .line 1212
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/HandoverInfo;->type:I
 
     invoke-static {v1}, Lorg/codeaurora/ims/ImsRadioUtils;->handoverTypeFromHal(I)I
 
@@ -5240,16 +5387,16 @@
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/HoInfo;->setType(I)V
 
-    .line 1151
+    .line 1215
     :cond_1
-    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/HandoverInfo;->srcTech:I
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/HandoverInfo;->srcTech:I
 
     const/16 v2, 0x15
 
     if-eq v1, v2, :cond_2
 
-    .line 1152
-    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/HandoverInfo;->srcTech:I
+    .line 1216
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/HandoverInfo;->srcTech:I
 
     invoke-static {v1}, Lorg/codeaurora/ims/ImsRadioUtils;->radioTechFromHal(I)I
 
@@ -5257,14 +5404,14 @@
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/HoInfo;->setSrcTech(I)V
 
-    .line 1155
+    .line 1219
     :cond_2
-    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/HandoverInfo;->targetTech:I
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/HandoverInfo;->targetTech:I
 
     if-eq v1, v2, :cond_3
 
-    .line 1156
-    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/HandoverInfo;->targetTech:I
+    .line 1220
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/HandoverInfo;->targetTech:I
 
     invoke-static {v1}, Lorg/codeaurora/ims/ImsRadioUtils;->radioTechFromHal(I)I
 
@@ -5272,14 +5419,14 @@
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/HoInfo;->setTargetTech(I)V
 
-    .line 1159
+    .line 1223
     :cond_3
-    iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/HandoverInfo;->hasHoExtra:Z
+    iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/HandoverInfo;->hasHoExtra:Z
 
     if-eqz v1, :cond_4
 
-    .line 1160
-    iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/HandoverInfo;->hoExtra:Lvendor/qti/hardware/radio/ims/V1_0/Extra;
+    .line 1224
+    iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/HandoverInfo;->hoExtra:Lvendor/qti/hardware/radio/ims/V1_0/Extra;
 
     iget v1, v1, Lvendor/qti/hardware/radio/ims/V1_0/Extra;->type:I
 
@@ -5287,30 +5434,30 @@
 
     move-result v1
 
-    iget-object v2, p0, Lvendor/qti/hardware/radio/ims/V1_0/HandoverInfo;->hoExtra:Lvendor/qti/hardware/radio/ims/V1_0/Extra;
+    iget-object v2, p0, Lvendor/qti/hardware/radio/ims/V1_6/HandoverInfo;->hoExtra:Lvendor/qti/hardware/radio/ims/V1_0/Extra;
 
     iget-object v2, v2, Lvendor/qti/hardware/radio/ims/V1_0/Extra;->extraInfo:Ljava/util/ArrayList;
 
-    .line 1161
+    .line 1225
     invoke-static {v2}, Lorg/codeaurora/ims/ImsRadioUtils;->getByteArray(Ljava/util/ArrayList;)[B
 
     move-result-object v2
 
-    .line 1160
+    .line 1224
     invoke-virtual {v0, v1, v2}, Lorg/codeaurora/ims/HoInfo;->setExtra(I[B)V
 
-    .line 1164
+    .line 1228
     :cond_4
-    iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/HandoverInfo;->errorCode:Ljava/lang/String;
+    iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/HandoverInfo;->errorCode:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/HoInfo;->setErrorCode(Ljava/lang/String;)V
 
-    .line 1165
-    iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/HandoverInfo;->errorMessage:Ljava/lang/String;
+    .line 1229
+    iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/HandoverInfo;->errorMessage:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/HoInfo;->setErrorMessage(Ljava/lang/String;)V
 
-    .line 1167
+    .line 1231
     return-object v0
 .end method
 
@@ -5318,7 +5465,7 @@
     .locals 1
     .param p0, "inType"    # I
 
-    .line 1171
+    .line 1235
     if-eqz p0, :cond_5
 
     const/4 v0, 0x1
@@ -5341,32 +5488,32 @@
 
     if-eq p0, v0, :cond_0
 
-    .line 1185
+    .line 1249
     const/4 v0, -0x1
 
     return v0
 
-    .line 1181
+    .line 1245
     :cond_0
     return v0
 
-    .line 1183
+    .line 1247
     :cond_1
     return v0
 
-    .line 1179
+    .line 1243
     :cond_2
     return v0
 
-    .line 1177
+    .line 1241
     :cond_3
     return v0
 
-    .line 1175
+    .line 1239
     :cond_4
     return v0
 
-    .line 1173
+    .line 1237
     :cond_5
     const/4 v0, 0x0
 
@@ -5377,7 +5524,7 @@
     .locals 2
     .param p0, "status"    # I
 
-    .line 1251
+    .line 1315
     const/4 v0, 0x1
 
     if-eq p0, v0, :cond_1
@@ -5386,14 +5533,18 @@
 
     if-eq p0, v1, :cond_0
 
-    .line 1257
+    .line 1321
+    invoke-static {p0}, Lorg/codeaurora/ims/ImsRadioUtilsV15;->imsSmsDeliverStatusToHidl(I)I
+
+    move-result v0
+
     return v0
 
-    .line 1255
+    .line 1319
     :cond_0
     return v0
 
-    .line 1253
+    .line 1317
     :cond_1
     const/4 v0, 0x0
 
@@ -5406,18 +5557,18 @@
     .param p1, "smsStatusResult"    # I
     .param p2, "hidlReason"    # I
 
-    .line 507
+    .line 528
     invoke-static {p1}, Lorg/codeaurora/ims/ImsRadioUtils;->mapHidlToFrameworkResponseResult(I)I
 
     move-result v0
 
-    .line 508
+    .line 529
     .local v0, "statusResult":I
     invoke-static {p2}, Lorg/codeaurora/ims/ImsRadioUtils;->mapHidlToFrameworkResponseReason(I)I
 
     move-result v1
 
-    .line 510
+    .line 531
     .local v1, "reason":I
     new-instance v2, Lorg/codeaurora/ims/sms/SmsResponse;
 
@@ -5430,7 +5581,7 @@
     .locals 2
     .param p0, "report"    # I
 
-    .line 1262
+    .line 1326
     const/4 v0, 0x1
 
     if-eq p0, v0, :cond_1
@@ -5439,14 +5590,14 @@
 
     if-eq p0, v1, :cond_0
 
-    .line 1268
+    .line 1332
     return v0
 
-    .line 1266
+    .line 1330
     :cond_0
     return v0
 
-    .line 1264
+    .line 1328
     :cond_1
     const/4 v0, 0x0
 
@@ -5457,21 +5608,21 @@
     .locals 3
     .param p0, "subConfigInfo"    # Lvendor/qti/hardware/radio/ims/V1_0/ImsSubConfigInfo;
 
-    .line 2266
+    .line 2331
     if-nez p0, :cond_0
 
-    .line 2267
+    .line 2332
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 2270
+    .line 2335
     :cond_0
     new-instance v0, Lorg/codeaurora/ims/ImsSubConfigDetails;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ImsSubConfigDetails;-><init>()V
 
-    .line 2271
+    .line 2336
     .local v0, "subConfig":Lorg/codeaurora/ims/ImsSubConfigDetails;
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/ImsSubConfigInfo;->simultStackCount:I
 
@@ -5479,12 +5630,12 @@
 
     if-eq v1, v2, :cond_1
 
-    .line 2272
+    .line 2337
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/ImsSubConfigInfo;->simultStackCount:I
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/ImsSubConfigDetails;->setSimultStackCount(I)V
 
-    .line 2275
+    .line 2340
     :cond_1
     const/4 v1, 0x0
 
@@ -5498,7 +5649,7 @@
 
     if-ge v1, v2, :cond_2
 
-    .line 2276
+    .line 2341
     iget-object v2, p0, Lvendor/qti/hardware/radio/ims/V1_0/ImsSubConfigInfo;->imsStackEnabled:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -5513,12 +5664,12 @@
 
     invoke-virtual {v0, v2}, Lorg/codeaurora/ims/ImsSubConfigDetails;->addImsStackEnabled(Z)V
 
-    .line 2275
+    .line 2340
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 2279
+    .line 2344
     .end local v1    # "i":I
     :cond_2
     return-object v0
@@ -5528,14 +5679,14 @@
     .locals 4
     .param p0, "imsSms"    # Lvendor/qti/hardware/radio/ims/V1_2/IncomingImsSms;
 
-    .line 526
+    .line 547
     iget v0, p0, Lvendor/qti/hardware/radio/ims/V1_2/IncomingImsSms;->verstat:I
 
     invoke-static {v0}, Lorg/codeaurora/ims/ImsRadioUtils;->mapHidlToFrameworkVerstat(I)I
 
     move-result v0
 
-    .line 527
+    .line 548
     .local v0, "verstat":I
     new-instance v1, Lorg/codeaurora/ims/sms/IncomingSms;
 
@@ -5556,23 +5707,23 @@
     .locals 1
     .param p0, "presentation"    # I
 
-    .line 1555
+    .line 1619
     if-eqz p0, :cond_1
 
     const/4 v0, 0x1
 
     if-eq p0, v0, :cond_0
 
-    .line 1562
+    .line 1626
     const/4 v0, 0x2
 
     return v0
 
-    .line 1559
+    .line 1623
     :cond_0
     return v0
 
-    .line 1557
+    .line 1621
     :cond_1
     const/4 v0, 0x0
 
@@ -5583,7 +5734,7 @@
     .locals 1
     .param p0, "presentation"    # I
 
-    .line 825
+    .line 848
     if-eqz p0, :cond_2
 
     const/4 v0, 0x1
@@ -5594,20 +5745,20 @@
 
     if-eq p0, v0, :cond_0
 
-    .line 833
+    .line 856
     const/4 v0, 0x3
 
     return v0
 
-    .line 831
+    .line 854
     :cond_0
     return v0
 
-    .line 829
+    .line 852
     :cond_1
     return v0
 
-    .line 827
+    .line 850
     :cond_2
     const/4 v0, 0x0
 
@@ -5618,7 +5769,7 @@
     .locals 1
     .param p0, "tirMode"    # I
 
-    .line 2859
+    .line 2921
     const/4 v0, 0x1
 
     if-ne p0, v0, :cond_0
@@ -5636,68 +5787,123 @@
     .locals 1
     .param p0, "msg"    # Ljava/lang/String;
 
-    .line 1123
+    .line 1187
     const-class v0, Lorg/codeaurora/ims/ImsRadioUtils;
 
     invoke-static {v0, p0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1124
+    .line 1188
     return-void
+.end method
+
+.method public static mapCapabilityToSrvType(I)I
+    .locals 1
+    .param p0, "capability"    # I
+
+    .line 1055
+    const/4 v0, 0x1
+
+    if-eq p0, v0, :cond_3
+
+    const/4 v0, 0x2
+
+    if-eq p0, v0, :cond_2
+
+    const/4 v0, 0x4
+
+    if-eq p0, v0, :cond_1
+
+    const/16 v0, 0x8
+
+    if-eq p0, v0, :cond_0
+
+    .line 1065
+    const/16 v0, 0xa
+
+    return v0
+
+    .line 1063
+    :cond_0
+    const/4 v0, 0x5
+
+    return v0
+
+    .line 1061
+    :cond_1
+    const/16 v0, 0x19
+
+    return v0
+
+    .line 1059
+    :cond_2
+    const/4 v0, 0x3
+
+    return v0
+
+    .line 1057
+    :cond_3
+    const/4 v0, 0x0
+
+    return v0
 .end method
 
 .method private static mapHidlToFrameworkResponseReason(I)I
     .locals 1
     .param p0, "hidlReason"    # I
 
-    .line 483
-    const/4 v0, 0x1
-
+    .line 504
     packed-switch p0, :pswitch_data_0
 
-    .line 501
+    .line 522
+    invoke-static {p0}, Lorg/codeaurora/ims/ImsRadioUtilsV15;->mapHidlToFrameworkResponseReason(I)I
+
+    move-result v0
+
     return v0
 
-    .line 499
+    .line 520
     :pswitch_0
     const/16 v0, 0x8
 
     return v0
 
-    .line 497
+    .line 518
     :pswitch_1
     const/4 v0, 0x7
 
     return v0
 
-    .line 495
+    .line 516
     :pswitch_2
     const/4 v0, 0x5
 
     return v0
 
-    .line 493
+    .line 514
     :pswitch_3
     const/4 v0, 0x4
 
     return v0
 
-    .line 491
+    .line 512
     :pswitch_4
     const/4 v0, 0x3
 
     return v0
 
-    .line 489
+    .line 510
     :pswitch_5
     const/4 v0, 0x2
 
     return v0
 
-    .line 487
+    .line 508
     :pswitch_6
+    const/4 v0, 0x1
+
     return v0
 
-    .line 485
+    .line 506
     :pswitch_7
     const/4 v0, 0x0
 
@@ -5722,7 +5928,7 @@
     .locals 2
     .param p0, "hidlResult"    # I
 
-    .line 468
+    .line 489
     const/4 v0, 0x1
 
     if-eqz p0, :cond_3
@@ -5737,24 +5943,24 @@
 
     if-eq p0, v0, :cond_0
 
-    .line 478
+    .line 499
     return v1
 
-    .line 476
+    .line 497
     :cond_0
     const/4 v0, 0x4
 
     return v0
 
-    .line 474
+    .line 495
     :cond_1
     return v0
 
-    .line 472
+    .line 493
     :cond_2
     return v1
 
-    .line 470
+    .line 491
     :cond_3
     return v0
 .end method
@@ -5763,7 +5969,7 @@
     .locals 2
     .param p0, "verstat"    # I
 
-    .line 514
+    .line 535
     const/4 v0, 0x0
 
     if-eqz p0, :cond_2
@@ -5776,18 +5982,18 @@
 
     if-eq p0, v1, :cond_0
 
-    .line 522
+    .line 543
     return v0
 
-    .line 520
+    .line 541
     :cond_0
     return v1
 
-    .line 518
+    .line 539
     :cond_1
     return v1
 
-    .line 516
+    .line 537
     :cond_2
     return v0
 .end method
@@ -5796,144 +6002,149 @@
     .locals 1
     .param p0, "radioTech"    # I
 
-    .line 1030
+    .line 1092
     packed-switch p0, :pswitch_data_0
 
-    .line 1074
+    .line 1138
     const/16 v0, 0x15
 
     return v0
 
-    .line 1072
+    .line 1136
     :pswitch_0
+    const/16 v0, 0x16
+
+    return v0
+
+    .line 1134
+    :pswitch_1
     const/16 v0, 0x14
 
     return v0
 
-    .line 1070
-    :pswitch_1
+    .line 1132
+    :pswitch_2
     const/16 v0, 0x13
 
     return v0
 
-    .line 1068
-    :pswitch_2
+    .line 1130
+    :pswitch_3
     const/16 v0, 0x12
 
     return v0
 
-    .line 1066
-    :pswitch_3
+    .line 1128
+    :pswitch_4
     const/16 v0, 0x11
 
     return v0
 
-    .line 1064
-    :pswitch_4
+    .line 1126
+    :pswitch_5
     const/16 v0, 0x10
 
     return v0
 
-    .line 1062
-    :pswitch_5
+    .line 1124
+    :pswitch_6
     const/16 v0, 0xf
 
     return v0
 
-    .line 1060
-    :pswitch_6
+    .line 1122
+    :pswitch_7
     const/16 v0, 0xe
 
     return v0
 
-    .line 1058
-    :pswitch_7
+    .line 1120
+    :pswitch_8
     const/16 v0, 0xd
 
     return v0
 
-    .line 1056
-    :pswitch_8
+    .line 1118
+    :pswitch_9
     const/16 v0, 0xc
 
     return v0
 
-    .line 1054
-    :pswitch_9
+    .line 1116
+    :pswitch_a
     const/16 v0, 0xb
 
     return v0
 
-    .line 1052
-    :pswitch_a
+    .line 1114
+    :pswitch_b
     const/16 v0, 0xa
 
     return v0
 
-    .line 1050
-    :pswitch_b
+    .line 1112
+    :pswitch_c
     const/16 v0, 0x9
 
     return v0
 
-    .line 1048
-    :pswitch_c
+    .line 1110
+    :pswitch_d
     const/16 v0, 0x8
 
     return v0
 
-    .line 1046
-    :pswitch_d
+    .line 1108
+    :pswitch_e
     const/4 v0, 0x7
 
     return v0
 
-    .line 1044
-    :pswitch_e
+    .line 1106
+    :pswitch_f
     const/4 v0, 0x6
 
     return v0
 
-    .line 1042
-    :pswitch_f
+    .line 1104
+    :pswitch_10
     const/4 v0, 0x5
 
     return v0
 
-    .line 1040
-    :pswitch_10
+    .line 1102
+    :pswitch_11
     const/4 v0, 0x4
 
     return v0
 
-    .line 1038
-    :pswitch_11
+    .line 1100
+    :pswitch_12
     const/4 v0, 0x3
 
     return v0
 
-    .line 1036
-    :pswitch_12
+    .line 1098
+    :pswitch_13
     const/4 v0, 0x2
 
     return v0
 
-    .line 1034
-    :pswitch_13
+    .line 1096
+    :pswitch_14
     const/4 v0, 0x1
 
     return v0
 
-    .line 1032
-    :pswitch_14
+    .line 1094
+    :pswitch_15
     const/4 v0, 0x0
 
     return v0
 
-    nop
-
     :pswitch_data_0
     .packed-switch -0x1
+        :pswitch_15
         :pswitch_14
         :pswitch_13
         :pswitch_12
@@ -5958,25 +6169,81 @@
     .end packed-switch
 .end method
 
+.method public static mapRadioTechToHidlRadioTech(I)I
+    .locals 1
+    .param p0, "rat"    # I
+
+    .line 1070
+    if-eqz p0, :cond_1
+
+    const/4 v0, 0x1
+
+    if-eq p0, v0, :cond_0
+
+    .line 1076
+    const/4 v0, 0x0
+
+    return v0
+
+    .line 1074
+    :cond_0
+    const/16 v0, 0x13
+
+    return v0
+
+    .line 1072
+    :cond_1
+    const/16 v0, 0xe
+
+    return v0
+.end method
+
+.method public static mapValueToServiceStatus(I)I
+    .locals 2
+    .param p0, "value"    # I
+
+    .line 1081
+    const/4 v0, 0x0
+
+    if-eqz p0, :cond_1
+
+    const/4 v1, 0x1
+
+    if-eq p0, v1, :cond_0
+
+    .line 1087
+    return v0
+
+    .line 1083
+    :cond_0
+    const/4 v0, 0x2
+
+    return v0
+
+    .line 1085
+    :cond_1
+    return v0
+.end method
+
 .method private static messageDetailsFromHal(Lvendor/qti/hardware/radio/ims/V1_0/MessageDetails;)Lorg/codeaurora/ims/Mwi$MwiMessageDetails;
     .locals 3
     .param p0, "details"    # Lvendor/qti/hardware/radio/ims/V1_0/MessageDetails;
 
-    .line 2192
+    .line 2257
     if-nez p0, :cond_0
 
-    .line 2193
+    .line 2258
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 2196
+    .line 2261
     :cond_0
     new-instance v0, Lorg/codeaurora/ims/Mwi$MwiMessageDetails;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/Mwi$MwiMessageDetails;-><init>()V
 
-    .line 2198
+    .line 2263
     .local v0, "mwiMessageDetails":Lorg/codeaurora/ims/Mwi$MwiMessageDetails;
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/MessageDetails;->toAddress:Ljava/lang/String;
 
@@ -5986,12 +6253,12 @@
 
     if-nez v1, :cond_1
 
-    .line 2199
+    .line 2264
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/MessageDetails;->toAddress:Ljava/lang/String;
 
     iput-object v1, v0, Lorg/codeaurora/ims/Mwi$MwiMessageDetails;->mToAddress:Ljava/lang/String;
 
-    .line 2202
+    .line 2267
     :cond_1
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/MessageDetails;->fromAddress:Ljava/lang/String;
 
@@ -6001,12 +6268,12 @@
 
     if-nez v1, :cond_2
 
-    .line 2203
+    .line 2268
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/MessageDetails;->fromAddress:Ljava/lang/String;
 
     iput-object v1, v0, Lorg/codeaurora/ims/Mwi$MwiMessageDetails;->mFromAddress:Ljava/lang/String;
 
-    .line 2206
+    .line 2271
     :cond_2
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/MessageDetails;->subject:Ljava/lang/String;
 
@@ -6016,12 +6283,12 @@
 
     if-nez v1, :cond_3
 
-    .line 2207
+    .line 2272
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/MessageDetails;->subject:Ljava/lang/String;
 
     iput-object v1, v0, Lorg/codeaurora/ims/Mwi$MwiMessageDetails;->mSubject:Ljava/lang/String;
 
-    .line 2210
+    .line 2275
     :cond_3
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/MessageDetails;->date:Ljava/lang/String;
 
@@ -6031,12 +6298,12 @@
 
     if-nez v1, :cond_4
 
-    .line 2211
+    .line 2276
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/MessageDetails;->date:Ljava/lang/String;
 
     iput-object v1, v0, Lorg/codeaurora/ims/Mwi$MwiMessageDetails;->mDate:Ljava/lang/String;
 
-    .line 2214
+    .line 2279
     :cond_4
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/MessageDetails;->priority:I
 
@@ -6044,7 +6311,7 @@
 
     if-eq v1, v2, :cond_5
 
-    .line 2215
+    .line 2280
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/MessageDetails;->priority:I
 
     invoke-static {v1}, Lorg/codeaurora/ims/ImsRadioUtils;->messagePriorityFromHal(I)I
@@ -6053,7 +6320,7 @@
 
     iput v1, v0, Lorg/codeaurora/ims/Mwi$MwiMessageDetails;->mPriority:I
 
-    .line 2218
+    .line 2283
     :cond_5
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/MessageDetails;->id:Ljava/lang/String;
 
@@ -6063,12 +6330,12 @@
 
     if-nez v1, :cond_6
 
-    .line 2219
+    .line 2284
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/MessageDetails;->id:Ljava/lang/String;
 
     iput-object v1, v0, Lorg/codeaurora/ims/Mwi$MwiMessageDetails;->mMessageId:Ljava/lang/String;
 
-    .line 2222
+    .line 2287
     :cond_6
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/MessageDetails;->type:I
 
@@ -6076,7 +6343,7 @@
 
     if-eq v1, v2, :cond_7
 
-    .line 2223
+    .line 2288
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/MessageDetails;->type:I
 
     invoke-static {v1}, Lorg/codeaurora/ims/ImsRadioUtils;->messageTypeFromHal(I)I
@@ -6085,7 +6352,7 @@
 
     iput v1, v0, Lorg/codeaurora/ims/Mwi$MwiMessageDetails;->mMessageType:I
 
-    .line 2225
+    .line 2290
     :cond_7
     return-object v0
 .end method
@@ -6094,7 +6361,7 @@
     .locals 2
     .param p0, "type"    # I
 
-    .line 2122
+    .line 2187
     const/4 v0, 0x1
 
     if-eq p0, v0, :cond_2
@@ -6107,20 +6374,20 @@
 
     if-eq p0, v0, :cond_0
 
-    .line 2131
+    .line 2196
     const/4 v0, -0x1
 
     return v0
 
-    .line 2128
+    .line 2193
     :cond_0
     return v1
 
-    .line 2126
+    .line 2191
     :cond_1
     return v0
 
-    .line 2124
+    .line 2189
     :cond_2
     const/4 v0, 0x0
 
@@ -6131,21 +6398,21 @@
     .locals 3
     .param p0, "summary"    # Lvendor/qti/hardware/radio/ims/V1_0/MessageSummary;
 
-    .line 2163
+    .line 2228
     if-nez p0, :cond_0
 
-    .line 2164
+    .line 2229
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 2167
+    .line 2232
     :cond_0
     new-instance v0, Lorg/codeaurora/ims/Mwi$MwiMessageSummary;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/Mwi$MwiMessageSummary;-><init>()V
 
-    .line 2169
+    .line 2234
     .local v0, "mwiMessageSummary":Lorg/codeaurora/ims/Mwi$MwiMessageSummary;
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/MessageSummary;->type:I
 
@@ -6153,7 +6420,7 @@
 
     if-eq v1, v2, :cond_1
 
-    .line 2170
+    .line 2235
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/MessageSummary;->type:I
 
     invoke-static {v1}, Lorg/codeaurora/ims/ImsRadioUtils;->messageTypeFromHal(I)I
@@ -6162,7 +6429,7 @@
 
     iput v1, v0, Lorg/codeaurora/ims/Mwi$MwiMessageSummary;->mMessageType:I
 
-    .line 2173
+    .line 2238
     :cond_1
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/MessageSummary;->newMessageCount:I
 
@@ -6170,45 +6437,45 @@
 
     if-eq v1, v2, :cond_2
 
-    .line 2174
+    .line 2239
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/MessageSummary;->newMessageCount:I
 
     iput v1, v0, Lorg/codeaurora/ims/Mwi$MwiMessageSummary;->mNewMessage:I
 
-    .line 2177
+    .line 2242
     :cond_2
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/MessageSummary;->oldMessageCount:I
 
     if-eq v1, v2, :cond_3
 
-    .line 2178
+    .line 2243
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/MessageSummary;->oldMessageCount:I
 
     iput v1, v0, Lorg/codeaurora/ims/Mwi$MwiMessageSummary;->mOldMessage:I
 
-    .line 2181
+    .line 2246
     :cond_3
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/MessageSummary;->newUrgentMessageCount:I
 
     if-eq v1, v2, :cond_4
 
-    .line 2182
+    .line 2247
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/MessageSummary;->newUrgentMessageCount:I
 
     iput v1, v0, Lorg/codeaurora/ims/Mwi$MwiMessageSummary;->mNewUrgent:I
 
-    .line 2185
+    .line 2250
     :cond_4
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/MessageSummary;->oldUrgentMessageCount:I
 
     if-eq v1, v2, :cond_5
 
-    .line 2186
+    .line 2251
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/MessageSummary;->oldUrgentMessageCount:I
 
     iput v1, v0, Lorg/codeaurora/ims/Mwi$MwiMessageSummary;->mOldUrgent:I
 
-    .line 2188
+    .line 2253
     :cond_5
     return-object v0
 .end method
@@ -6217,45 +6484,45 @@
     .locals 1
     .param p0, "type"    # I
 
-    .line 2102
+    .line 2167
     packed-switch p0, :pswitch_data_0
 
-    .line 2117
+    .line 2182
     const/4 v0, -0x1
 
     return v0
 
-    .line 2114
+    .line 2179
     :pswitch_0
     const/4 v0, 0x5
 
     return v0
 
-    .line 2112
+    .line 2177
     :pswitch_1
     const/4 v0, 0x4
 
     return v0
 
-    .line 2110
+    .line 2175
     :pswitch_2
     const/4 v0, 0x3
 
     return v0
 
-    .line 2108
+    .line 2173
     :pswitch_3
     const/4 v0, 0x2
 
     return v0
 
-    .line 2106
+    .line 2171
     :pswitch_4
     const/4 v0, 0x1
 
     return v0
 
-    .line 2104
+    .line 2169
     :pswitch_5
     const/4 v0, 0x0
 
@@ -6278,21 +6545,21 @@
     .locals 5
     .param p0, "messageWaitingIndication"    # Lvendor/qti/hardware/radio/ims/V1_0/MessageWaitingIndication;
 
-    .line 2137
+    .line 2202
     if-nez p0, :cond_0
 
-    .line 2138
+    .line 2203
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 2141
+    .line 2206
     :cond_0
     new-instance v0, Lorg/codeaurora/ims/Mwi;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/Mwi;-><init>()V
 
-    .line 2142
+    .line 2207
     .local v0, "mwi":Lorg/codeaurora/ims/Mwi;
     sget-object v1, Lorg/codeaurora/ims/ImsRadioUtils;->TAG:Ljava/lang/String;
 
@@ -6306,7 +6573,7 @@
 
     iget-object v3, p0, Lvendor/qti/hardware/radio/ims/V1_0/MessageWaitingIndication;->messageSummary:Ljava/util/ArrayList;
 
-    .line 2143
+    .line 2208
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v3
@@ -6317,10 +6584,10 @@
 
     move-result-object v2
 
-    .line 2142
+    .line 2207
     invoke-static {v1, v2}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2144
+    .line 2209
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/MessageWaitingIndication;->messageSummary:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -6340,11 +6607,11 @@
 
     check-cast v2, Lvendor/qti/hardware/radio/ims/V1_0/MessageSummary;
 
-    .line 2145
+    .line 2210
     .local v2, "summary":Lvendor/qti/hardware/radio/ims/V1_0/MessageSummary;
     if-eqz v2, :cond_1
 
-    .line 2146
+    .line 2211
     iget-object v3, v0, Lorg/codeaurora/ims/Mwi;->mwiMsgSummary:Ljava/util/List;
 
     invoke-static {v2}, Lorg/codeaurora/ims/ImsRadioUtils;->messageSummaryFromHal(Lvendor/qti/hardware/radio/ims/V1_0/MessageSummary;)Lorg/codeaurora/ims/Mwi$MwiMessageSummary;
@@ -6353,12 +6620,12 @@
 
     invoke-interface {v3, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 2148
+    .line 2213
     .end local v2    # "summary":Lvendor/qti/hardware/radio/ims/V1_0/MessageSummary;
     :cond_1
     goto :goto_0
 
-    .line 2149
+    .line 2214
     :cond_2
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/MessageWaitingIndication;->ueAddress:Ljava/lang/String;
 
@@ -6368,12 +6635,12 @@
 
     if-nez v1, :cond_3
 
-    .line 2150
+    .line 2215
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/MessageWaitingIndication;->ueAddress:Ljava/lang/String;
 
     iput-object v1, v0, Lorg/codeaurora/ims/Mwi;->mUeAddress:Ljava/lang/String;
 
-    .line 2152
+    .line 2217
     :cond_3
     sget-object v1, Lorg/codeaurora/ims/ImsRadioUtils;->TAG:Ljava/lang/String;
 
@@ -6387,7 +6654,7 @@
 
     iget-object v3, p0, Lvendor/qti/hardware/radio/ims/V1_0/MessageWaitingIndication;->messageDetails:Ljava/util/ArrayList;
 
-    .line 2153
+    .line 2218
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v3
@@ -6398,10 +6665,10 @@
 
     move-result-object v2
 
-    .line 2152
+    .line 2217
     invoke-static {v1, v2}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2154
+    .line 2219
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/MessageWaitingIndication;->messageDetails:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -6421,11 +6688,11 @@
 
     check-cast v2, Lvendor/qti/hardware/radio/ims/V1_0/MessageDetails;
 
-    .line 2155
+    .line 2220
     .local v2, "details":Lvendor/qti/hardware/radio/ims/V1_0/MessageDetails;
     if-eqz v2, :cond_4
 
-    .line 2156
+    .line 2221
     iget-object v3, v0, Lorg/codeaurora/ims/Mwi;->mwiMsgDetails:Ljava/util/List;
 
     invoke-static {v2}, Lorg/codeaurora/ims/ImsRadioUtils;->messageDetailsFromHal(Lvendor/qti/hardware/radio/ims/V1_0/MessageDetails;)Lorg/codeaurora/ims/Mwi$MwiMessageDetails;
@@ -6434,13 +6701,62 @@
 
     invoke-interface {v3, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 2158
+    .line 2223
     .end local v2    # "details":Lvendor/qti/hardware/radio/ims/V1_0/MessageDetails;
     :cond_4
     goto :goto_1
 
-    .line 2159
+    .line 2224
     :cond_5
+    return-object v0
+.end method
+
+.method public static migrateAccTechStatusFromV16(Lvendor/qti/hardware/radio/ims/V1_6/StatusForAccessTech;)Lvendor/qti/hardware/radio/ims/V1_0/StatusForAccessTech;
+    .locals 2
+    .param p0, "from"    # Lvendor/qti/hardware/radio/ims/V1_6/StatusForAccessTech;
+    .annotation build Lcom/android/internal/annotations/VisibleForTesting;
+    .end annotation
+
+    .line 2945
+    new-instance v0, Lvendor/qti/hardware/radio/ims/V1_0/StatusForAccessTech;
+
+    invoke-direct {v0}, Lvendor/qti/hardware/radio/ims/V1_0/StatusForAccessTech;-><init>()V
+
+    .line 2947
+    .local v0, "to":Lvendor/qti/hardware/radio/ims/V1_0/StatusForAccessTech;
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/StatusForAccessTech;->networkMode:I
+
+    invoke-static {v1}, Lorg/codeaurora/ims/ImsRadioUtils;->migrateRadioTechTypeFromV16(I)I
+
+    move-result v1
+
+    iput v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/StatusForAccessTech;->networkMode:I
+
+    .line 2948
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/StatusForAccessTech;->status:I
+
+    iput v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/StatusForAccessTech;->status:I
+
+    .line 2949
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/StatusForAccessTech;->restrictCause:I
+
+    iput v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/StatusForAccessTech;->restrictCause:I
+
+    .line 2950
+    iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/StatusForAccessTech;->hasRegistration:Z
+
+    iput-boolean v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/StatusForAccessTech;->hasRegistration:Z
+
+    .line 2951
+    iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/StatusForAccessTech;->registration:Lvendor/qti/hardware/radio/ims/V1_6/RegistrationInfo;
+
+    invoke-static {v1}, Lorg/codeaurora/ims/ImsRadioUtils;->migrateRegistrationInfo(Lvendor/qti/hardware/radio/ims/V1_6/RegistrationInfo;)Lvendor/qti/hardware/radio/ims/V1_0/RegistrationInfo;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/StatusForAccessTech;->registration:Lvendor/qti/hardware/radio/ims/V1_0/RegistrationInfo;
+
+    .line 2952
     return-object v0
 .end method
 
@@ -6448,38 +6764,38 @@
     .locals 2
     .param p0, "addressInfo"    # Lvendor/qti/hardware/radio/ims/V1_2/AddressInfo;
 
-    .line 2717
+    .line 2782
     new-instance v0, Lvendor/qti/hardware/radio/ims/V1_0/AddressInfo;
 
     invoke-direct {v0}, Lvendor/qti/hardware/radio/ims/V1_0/AddressInfo;-><init>()V
 
-    .line 2718
+    .line 2783
     .local v0, "addressInfoV10":Lvendor/qti/hardware/radio/ims/V1_0/AddressInfo;
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_2/AddressInfo;->city:Ljava/lang/String;
 
     iput-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/AddressInfo;->city:Ljava/lang/String;
 
-    .line 2719
+    .line 2784
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_2/AddressInfo;->state:Ljava/lang/String;
 
     iput-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/AddressInfo;->state:Ljava/lang/String;
 
-    .line 2720
+    .line 2785
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_2/AddressInfo;->country:Ljava/lang/String;
 
     iput-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/AddressInfo;->country:Ljava/lang/String;
 
-    .line 2721
+    .line 2786
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_2/AddressInfo;->postalCode:Ljava/lang/String;
 
     iput-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/AddressInfo;->postalCode:Ljava/lang/String;
 
-    .line 2722
+    .line 2787
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_2/AddressInfo;->countryCode:Ljava/lang/String;
 
     iput-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/AddressInfo;->countryCode:Ljava/lang/String;
 
-    .line 2723
+    .line 2788
     return-object v0
 .end method
 
@@ -6487,19 +6803,19 @@
     .locals 1
     .param p0, "callFailCause"    # I
 
-    .line 2580
+    .line 2645
     const/16 v0, 0x225
 
     if-ne p0, v0, :cond_0
 
-    .line 2581
+    .line 2646
     goto :goto_0
 
-    .line 2582
+    .line 2647
     :cond_0
     move v0, p0
 
-    .line 2580
+    .line 2645
     :goto_0
     return v0
 .end method
@@ -6508,7 +6824,7 @@
     .locals 1
     .param p0, "failCause"    # I
 
-    .line 2823
+    .line 2888
     invoke-static {p0}, Lorg/codeaurora/ims/ImsRadioUtilsV13;->isFailCauseIntroducedInV13(I)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -6519,12 +6835,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 2824
+    .line 2889
     const/16 v0, 0x224
 
     return v0
 
-    .line 2827
+    .line 2892
     :cond_0
     return p0
 .end method
@@ -6533,98 +6849,98 @@
     .locals 4
     .param p0, "callInfo"    # Lvendor/qti/hardware/radio/ims/V1_0/CallInfo;
 
-    .line 2588
+    .line 2653
     new-instance v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;
 
     invoke-direct {v0}, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;-><init>()V
 
-    .line 2591
+    .line 2656
     .local v0, "callInfoV11":Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallInfo;->state:I
 
     iput v1, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->state:I
 
-    .line 2592
+    .line 2657
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallInfo;->index:I
 
     iput v1, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->index:I
 
-    .line 2593
+    .line 2658
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallInfo;->toa:I
 
     iput v1, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->toa:I
 
-    .line 2594
+    .line 2659
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallInfo;->hasIsMpty:Z
 
     iput-boolean v1, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->hasIsMpty:Z
 
-    .line 2595
+    .line 2660
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallInfo;->isMpty:Z
 
     iput-boolean v1, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->isMpty:Z
 
-    .line 2596
+    .line 2661
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallInfo;->hasIsMT:Z
 
     iput-boolean v1, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->hasIsMT:Z
 
-    .line 2597
+    .line 2662
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallInfo;->isMT:Z
 
     iput-boolean v1, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->isMT:Z
 
-    .line 2598
+    .line 2663
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallInfo;->als:I
 
     iput v1, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->als:I
 
-    .line 2599
+    .line 2664
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallInfo;->hasIsVoice:Z
 
     iput-boolean v1, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->hasIsVoice:Z
 
-    .line 2600
+    .line 2665
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallInfo;->isVoice:Z
 
     iput-boolean v1, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->isVoice:Z
 
-    .line 2601
+    .line 2666
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallInfo;->hasIsVoicePrivacy:Z
 
     iput-boolean v1, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->hasIsVoicePrivacy:Z
 
-    .line 2602
+    .line 2667
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallInfo;->isVoicePrivacy:Z
 
     iput-boolean v1, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->isVoicePrivacy:Z
 
-    .line 2603
+    .line 2668
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallInfo;->number:Ljava/lang/String;
 
     iput-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->number:Ljava/lang/String;
 
-    .line 2604
+    .line 2669
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallInfo;->numberPresentation:I
 
     iput v1, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->numberPresentation:I
 
-    .line 2605
+    .line 2670
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallInfo;->name:Ljava/lang/String;
 
     iput-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->name:Ljava/lang/String;
 
-    .line 2606
+    .line 2671
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallInfo;->namePresentation:I
 
     iput v1, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->namePresentation:I
 
-    .line 2608
+    .line 2673
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallInfo;->hasCallDetails:Z
 
     iput-boolean v1, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->hasCallDetails:Z
 
-    .line 2609
+    .line 2674
     iget-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
 
     iget-object v2, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallInfo;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
@@ -6633,7 +6949,7 @@
 
     iput v2, v1, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->callType:I
 
-    .line 2610
+    .line 2675
     iget-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
 
     iget-object v2, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallInfo;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
@@ -6642,7 +6958,7 @@
 
     iput v2, v1, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->callDomain:I
 
-    .line 2611
+    .line 2676
     iget-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
 
     iget-object v2, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallInfo;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
@@ -6651,7 +6967,7 @@
 
     iput v2, v1, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->extrasLength:I
 
-    .line 2613
+    .line 2678
     const/4 v1, 0x0
 
     .local v1, "i":I
@@ -6666,7 +6982,7 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 2614
+    .line 2679
     iget-object v2, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
 
     iget-object v2, v2, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->extras:Ljava/util/ArrayList;
@@ -6683,12 +6999,12 @@
 
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2613
+    .line 2678
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 2617
+    .line 2682
     .end local v1    # "i":I
     :cond_0
     const/4 v1, 0x0
@@ -6705,7 +7021,7 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 2618
+    .line 2683
     iget-object v2, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
 
     iget-object v2, v2, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->localAbility:Ljava/util/ArrayList;
@@ -6722,12 +7038,12 @@
 
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2617
+    .line 2682
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 2621
+    .line 2686
     .end local v1    # "i":I
     :cond_1
     const/4 v1, 0x0
@@ -6744,7 +7060,7 @@
 
     if-ge v1, v2, :cond_2
 
-    .line 2622
+    .line 2687
     iget-object v2, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
 
     iget-object v2, v2, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->peerAbility:Ljava/util/ArrayList;
@@ -6761,12 +7077,12 @@
 
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2621
+    .line 2686
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_2
 
-    .line 2625
+    .line 2690
     .end local v1    # "i":I
     :cond_2
     iget-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
@@ -6777,7 +7093,7 @@
 
     iput v2, v1, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->callSubstate:I
 
-    .line 2626
+    .line 2691
     iget-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
 
     iget-object v2, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallInfo;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
@@ -6786,7 +7102,7 @@
 
     iput v2, v1, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->mediaId:I
 
-    .line 2627
+    .line 2692
     iget-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
 
     iget-object v2, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallInfo;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
@@ -6795,7 +7111,7 @@
 
     iput v2, v1, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->causeCode:I
 
-    .line 2628
+    .line 2693
     iget-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
 
     iget-object v2, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallInfo;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
@@ -6804,7 +7120,7 @@
 
     iput v2, v1, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->rttMode:I
 
-    .line 2629
+    .line 2694
     iget-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
 
     iget-object v2, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallInfo;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
@@ -6813,26 +7129,26 @@
 
     iput-object v2, v1, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->sipAlternateUri:Ljava/lang/String;
 
-    .line 2631
+    .line 2696
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallInfo;->hasFailCause:Z
 
     iput-boolean v1, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->hasFailCause:Z
 
-    .line 2632
+    .line 2697
     iget-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->failCause:Lvendor/qti/hardware/radio/ims/V1_1/CallFailCauseResponse;
 
     iget-object v2, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallInfo;->failCause:Lvendor/qti/hardware/radio/ims/V1_0/CallFailCauseResponse;
 
     iget v2, v2, Lvendor/qti/hardware/radio/ims/V1_0/CallFailCauseResponse;->failCause:I
 
-    .line 2633
+    .line 2698
     invoke-static {v2}, Lorg/codeaurora/ims/ImsRadioUtils;->migrateCallFailCauseToV11(I)I
 
     move-result v2
 
     iput v2, v1, Lvendor/qti/hardware/radio/ims/V1_1/CallFailCauseResponse;->failCause:I
 
-    .line 2635
+    .line 2700
     const/4 v1, 0x0
 
     .restart local v1    # "i":I
@@ -6847,7 +7163,7 @@
 
     if-ge v1, v2, :cond_3
 
-    .line 2636
+    .line 2701
     iget-object v2, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->failCause:Lvendor/qti/hardware/radio/ims/V1_1/CallFailCauseResponse;
 
     iget-object v2, v2, Lvendor/qti/hardware/radio/ims/V1_1/CallFailCauseResponse;->errorinfo:Ljava/util/ArrayList;
@@ -6864,12 +7180,12 @@
 
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2635
+    .line 2700
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_3
 
-    .line 2639
+    .line 2704
     .end local v1    # "i":I
     :cond_3
     iget-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->failCause:Lvendor/qti/hardware/radio/ims/V1_1/CallFailCauseResponse;
@@ -6880,7 +7196,7 @@
 
     iput-object v2, v1, Lvendor/qti/hardware/radio/ims/V1_1/CallFailCauseResponse;->networkErrorString:Ljava/lang/String;
 
-    .line 2640
+    .line 2705
     iget-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->failCause:Lvendor/qti/hardware/radio/ims/V1_1/CallFailCauseResponse;
 
     iget-object v2, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallInfo;->failCause:Lvendor/qti/hardware/radio/ims/V1_0/CallFailCauseResponse;
@@ -6889,7 +7205,7 @@
 
     iput-boolean v2, v1, Lvendor/qti/hardware/radio/ims/V1_1/CallFailCauseResponse;->hasErrorDetails:Z
 
-    .line 2641
+    .line 2706
     iget-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->failCause:Lvendor/qti/hardware/radio/ims/V1_1/CallFailCauseResponse;
 
     iget-object v1, v1, Lvendor/qti/hardware/radio/ims/V1_1/CallFailCauseResponse;->errorDetails:Lvendor/qti/hardware/radio/ims/V1_0/SipErrorInfo;
@@ -6902,7 +7218,7 @@
 
     iput v2, v1, Lvendor/qti/hardware/radio/ims/V1_0/SipErrorInfo;->errorCode:I
 
-    .line 2642
+    .line 2707
     iget-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->failCause:Lvendor/qti/hardware/radio/ims/V1_1/CallFailCauseResponse;
 
     iget-object v1, v1, Lvendor/qti/hardware/radio/ims/V1_1/CallFailCauseResponse;->errorDetails:Lvendor/qti/hardware/radio/ims/V1_0/SipErrorInfo;
@@ -6915,42 +7231,42 @@
 
     iput-object v2, v1, Lvendor/qti/hardware/radio/ims/V1_0/SipErrorInfo;->errorString:Ljava/lang/String;
 
-    .line 2645
+    .line 2710
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallInfo;->hasIsEncrypted:Z
 
     iput-boolean v1, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->hasIsEncrypted:Z
 
-    .line 2646
+    .line 2711
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallInfo;->isEncrypted:Z
 
     iput-boolean v1, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->isEncrypted:Z
 
-    .line 2647
+    .line 2712
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallInfo;->hasIsCalledPartyRinging:Z
 
     iput-boolean v1, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->hasIsCalledPartyRinging:Z
 
-    .line 2648
+    .line 2713
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallInfo;->isCalledPartyRinging:Z
 
     iput-boolean v1, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->isCalledPartyRinging:Z
 
-    .line 2649
+    .line 2714
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallInfo;->historyInfo:Ljava/lang/String;
 
     iput-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->historyInfo:Ljava/lang/String;
 
-    .line 2650
+    .line 2715
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallInfo;->hasIsVideoConfSupported:Z
 
     iput-boolean v1, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->hasIsVideoConfSupported:Z
 
-    .line 2651
+    .line 2716
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/CallInfo;->isVideoConfSupported:Z
 
     iput-boolean v1, v0, Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;->isVideoConfSupported:Z
 
-    .line 2653
+    .line 2718
     return-object v0
 .end method
 
@@ -6968,22 +7284,22 @@
         }
     .end annotation
 
-    .line 2660
+    .line 2725
     .local p0, "callList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lvendor/qti/hardware/radio/ims/V1_0/CallInfo;>;"
     if-nez p0, :cond_0
 
-    .line 2661
+    .line 2726
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 2663
+    .line 2728
     :cond_0
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2666
+    .line 2731
     .local v0, "list":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;>;"
     invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -7002,71 +7318,85 @@
 
     check-cast v2, Lvendor/qti/hardware/radio/ims/V1_0/CallInfo;
 
-    .line 2667
+    .line 2732
     .local v2, "callInfo":Lvendor/qti/hardware/radio/ims/V1_0/CallInfo;
     invoke-static {v2}, Lorg/codeaurora/ims/ImsRadioUtils;->migrateCallInfoToV11(Lvendor/qti/hardware/radio/ims/V1_0/CallInfo;)Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;
 
     move-result-object v3
 
-    .line 2668
+    .line 2733
     .local v3, "info":Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2669
+    .line 2734
     .end local v2    # "callInfo":Lvendor/qti/hardware/radio/ims/V1_0/CallInfo;
     .end local v3    # "info":Lvendor/qti/hardware/radio/ims/V1_1/CallInfo;
     goto :goto_0
 
-    .line 2670
+    .line 2735
     :cond_1
     return-object v0
 .end method
 
 .method public static migrateConfigInfoFromV15(Lvendor/qti/hardware/radio/ims/V1_5/ConfigInfo;)Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;
-    .locals 2
+    .locals 3
     .param p0, "from"    # Lvendor/qti/hardware/radio/ims/V1_5/ConfigInfo;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/telephony/ims/ImsException;
+        }
+    .end annotation
 
-    .line 2832
+    .line 2901
     new-instance v0, Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;
 
     invoke-direct {v0}, Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;-><init>()V
 
-    .line 2834
+    .line 2903
     .local v0, "to":Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_5/ConfigInfo;->item:I
 
-    invoke-static {v1}, Lorg/codeaurora/ims/ImsRadioUtils;->migrateConfigItemfromV15(I)I
+    invoke-static {v1}, Lorg/codeaurora/ims/ImsRadioUtilsV15;->isConfigItemIntroducedInV15(I)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v1
 
+    if-nez v1, :cond_1
+
+    .line 2906
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_5/ConfigInfo;->item:I
+
     iput v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;->item:I
 
-    .line 2835
+    .line 2907
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_5/ConfigInfo;->hasBoolValue:Z
 
     iput-boolean v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;->hasBoolValue:Z
 
-    .line 2836
+    .line 2908
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_5/ConfigInfo;->boolValue:Z
 
     iput-boolean v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;->boolValue:Z
 
-    .line 2837
+    .line 2909
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_5/ConfigInfo;->intValue:I
 
     iput v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;->intValue:I
 
-    .line 2838
+    .line 2910
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_5/ConfigInfo;->stringValue:Ljava/lang/String;
 
     if-eqz v1, :cond_0
 
-    .line 2839
+    .line 2911
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_5/ConfigInfo;->stringValue:Ljava/lang/String;
 
     iput-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;->stringValue:Ljava/lang/String;
 
-    .line 2841
+    .line 2913
     :cond_0
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_5/ConfigInfo;->errorCause:I
 
@@ -7076,66 +7406,51 @@
 
     iput v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;->errorCause:I
 
-    .line 2843
+    .line 2915
     return-object v0
-.end method
 
-.method private static migrateConfigItemfromV15(I)I
-    .locals 1
-    .param p0, "item"    # I
+    .line 2904
+    :cond_1
+    new-instance v1, Landroid/telephony/ims/ImsException;
 
-    .line 2849
-    invoke-static {p0}, Lorg/codeaurora/ims/ImsRadioUtilsV15;->isConfigItemIntroducedInV15(I)Ljava/lang/Boolean;
+    const-string v2, "Config item not supported in current HAL"
 
-    move-result-object v0
+    invoke-direct {v1, v2}, Landroid/telephony/ims/ImsException;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 2850
-    const/16 v0, 0x4a
-
-    return v0
-
-    .line 2853
-    :cond_0
-    return p0
+    throw v1
 .end method
 
 .method public static migrateFromDialRequestV14(Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;)Lvendor/qti/hardware/radio/ims/V1_0/DialRequest;
     .locals 4
     .param p0, "from"    # Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;
 
-    .line 894
+    .line 917
     new-instance v0, Lvendor/qti/hardware/radio/ims/V1_0/DialRequest;
 
     invoke-direct {v0}, Lvendor/qti/hardware/radio/ims/V1_0/DialRequest;-><init>()V
 
-    .line 896
+    .line 919
     .local v0, "to":Lvendor/qti/hardware/radio/ims/V1_0/DialRequest;
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;->address:Ljava/lang/String;
 
     iput-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/DialRequest;->address:Ljava/lang/String;
 
-    .line 897
+    .line 920
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;->clirMode:I
 
     iput v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/DialRequest;->clirMode:I
 
-    .line 898
+    .line 921
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;->presentation:I
 
     iput v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/DialRequest;->presentation:I
 
-    .line 899
+    .line 922
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;->hasCallDetails:Z
 
     iput-boolean v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/DialRequest;->hasCallDetails:Z
 
-    .line 901
+    .line 924
     iget-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/DialRequest;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
 
     iget-object v2, p0, Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
@@ -7144,7 +7459,7 @@
 
     iput v2, v1, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->callType:I
 
-    .line 902
+    .line 925
     iget-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/DialRequest;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
 
     iget-object v2, p0, Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
@@ -7153,7 +7468,7 @@
 
     iput v2, v1, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->callDomain:I
 
-    .line 903
+    .line 926
     iget-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/DialRequest;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
 
     iget-object v2, p0, Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
@@ -7162,7 +7477,7 @@
 
     iput v2, v1, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->extrasLength:I
 
-    .line 905
+    .line 928
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
 
     iget-object v1, v1, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->extras:Ljava/util/ArrayList;
@@ -7184,7 +7499,7 @@
 
     check-cast v2, Ljava/lang/String;
 
-    .line 906
+    .line 929
     .local v2, "extra":Ljava/lang/String;
     iget-object v3, v0, Lvendor/qti/hardware/radio/ims/V1_0/DialRequest;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
 
@@ -7192,11 +7507,11 @@
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 907
+    .line 930
     .end local v2    # "extra":Ljava/lang/String;
     goto :goto_0
 
-    .line 909
+    .line 933
     :cond_0
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
 
@@ -7219,7 +7534,7 @@
 
     check-cast v2, Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;
 
-    .line 910
+    .line 934
     .local v2, "localAbility":Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;
     iget-object v3, v0, Lvendor/qti/hardware/radio/ims/V1_0/DialRequest;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
 
@@ -7227,11 +7542,11 @@
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 911
+    .line 935
     .end local v2    # "localAbility":Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;
     goto :goto_1
 
-    .line 913
+    .line 938
     :cond_1
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
 
@@ -7254,7 +7569,7 @@
 
     check-cast v2, Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;
 
-    .line 914
+    .line 939
     .local v2, "peerAbility":Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;
     iget-object v3, v0, Lvendor/qti/hardware/radio/ims/V1_0/DialRequest;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
 
@@ -7262,11 +7577,11 @@
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 915
+    .line 940
     .end local v2    # "peerAbility":Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;
     goto :goto_2
 
-    .line 917
+    .line 942
     :cond_2
     iget-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/DialRequest;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
 
@@ -7276,7 +7591,7 @@
 
     iput v2, v1, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->callSubstate:I
 
-    .line 918
+    .line 943
     iget-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/DialRequest;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
 
     iget-object v2, p0, Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
@@ -7285,7 +7600,7 @@
 
     iput v2, v1, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->mediaId:I
 
-    .line 919
+    .line 944
     iget-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/DialRequest;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
 
     iget-object v2, p0, Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
@@ -7294,7 +7609,7 @@
 
     iput v2, v1, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->causeCode:I
 
-    .line 920
+    .line 945
     iget-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/DialRequest;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
 
     iget-object v2, p0, Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
@@ -7303,7 +7618,7 @@
 
     iput v2, v1, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->rttMode:I
 
-    .line 921
+    .line 946
     iget-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/DialRequest;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
 
     iget-object v2, p0, Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;->callDetails:Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;
@@ -7312,37 +7627,37 @@
 
     iput-object v2, v1, Lvendor/qti/hardware/radio/ims/V1_0/CallDetails;->sipAlternateUri:Ljava/lang/String;
 
-    .line 923
+    .line 948
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;->hasIsConferenceUri:Z
 
     iput-boolean v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/DialRequest;->hasIsConferenceUri:Z
 
-    .line 924
+    .line 949
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;->isConferenceUri:Z
 
     iput-boolean v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/DialRequest;->isConferenceUri:Z
 
-    .line 925
+    .line 950
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;->hasIsCallPull:Z
 
     iput-boolean v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/DialRequest;->hasIsCallPull:Z
 
-    .line 926
+    .line 951
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;->isCallPull:Z
 
     iput-boolean v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/DialRequest;->isCallPull:Z
 
-    .line 927
+    .line 952
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;->hasIsEncrypted:Z
 
     iput-boolean v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/DialRequest;->hasIsEncrypted:Z
 
-    .line 928
+    .line 953
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;->isEncrypted:Z
 
     iput-boolean v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/DialRequest;->isEncrypted:Z
 
-    .line 930
+    .line 955
     return-object v0
 .end method
 
@@ -7350,43 +7665,43 @@
     .locals 4
     .param p0, "from"    # Lvendor/qti/hardware/radio/ims/V1_3/HangupRequestInfo;
 
-    .line 2797
+    .line 2862
     new-instance v0, Lvendor/qti/hardware/radio/ims/V1_0/HangupRequestInfo;
 
     invoke-direct {v0}, Lvendor/qti/hardware/radio/ims/V1_0/HangupRequestInfo;-><init>()V
 
-    .line 2798
+    .line 2863
     .local v0, "to":Lvendor/qti/hardware/radio/ims/V1_0/HangupRequestInfo;
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_3/HangupRequestInfo;->connIndex:I
 
     iput v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/HangupRequestInfo;->connIndex:I
 
-    .line 2799
+    .line 2864
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_3/HangupRequestInfo;->hasMultiParty:Z
 
     iput-boolean v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/HangupRequestInfo;->hasMultiParty:Z
 
-    .line 2800
+    .line 2865
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_3/HangupRequestInfo;->multiParty:Z
 
     iput-boolean v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/HangupRequestInfo;->multiParty:Z
 
-    .line 2801
+    .line 2866
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_3/HangupRequestInfo;->connUri:Ljava/lang/String;
 
     iput-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/HangupRequestInfo;->connUri:Ljava/lang/String;
 
-    .line 2802
+    .line 2867
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_3/HangupRequestInfo;->conf_id:I
 
     iput v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/HangupRequestInfo;->conf_id:I
 
-    .line 2803
+    .line 2868
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_3/HangupRequestInfo;->hasFailCauseResponse:Z
 
     iput-boolean v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/HangupRequestInfo;->hasFailCauseResponse:Z
 
-    .line 2804
+    .line 2869
     iget-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/HangupRequestInfo;->failCauseResponse:Lvendor/qti/hardware/radio/ims/V1_0/CallFailCauseResponse;
 
     iget-object v2, p0, Lvendor/qti/hardware/radio/ims/V1_3/HangupRequestInfo;->failCauseResponse:Lvendor/qti/hardware/radio/ims/V1_3/CallFailCauseResponse;
@@ -7399,7 +7714,7 @@
 
     iput v2, v1, Lvendor/qti/hardware/radio/ims/V1_0/CallFailCauseResponse;->failCause:I
 
-    .line 2807
+    .line 2872
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_3/HangupRequestInfo;->failCauseResponse:Lvendor/qti/hardware/radio/ims/V1_3/CallFailCauseResponse;
 
     iget-object v1, v1, Lvendor/qti/hardware/radio/ims/V1_3/CallFailCauseResponse;->errorinfo:Ljava/util/ArrayList;
@@ -7421,7 +7736,7 @@
 
     check-cast v2, Ljava/lang/Byte;
 
-    .line 2808
+    .line 2873
     .local v2, "errorInfo":Ljava/lang/Byte;
     iget-object v3, v0, Lvendor/qti/hardware/radio/ims/V1_0/HangupRequestInfo;->failCauseResponse:Lvendor/qti/hardware/radio/ims/V1_0/CallFailCauseResponse;
 
@@ -7429,11 +7744,11 @@
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2809
+    .line 2874
     .end local v2    # "errorInfo":Ljava/lang/Byte;
     goto :goto_0
 
-    .line 2811
+    .line 2876
     :cond_0
     iget-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/HangupRequestInfo;->failCauseResponse:Lvendor/qti/hardware/radio/ims/V1_0/CallFailCauseResponse;
 
@@ -7443,7 +7758,7 @@
 
     iput-object v2, v1, Lvendor/qti/hardware/radio/ims/V1_0/CallFailCauseResponse;->networkErrorString:Ljava/lang/String;
 
-    .line 2812
+    .line 2877
     iget-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/HangupRequestInfo;->failCauseResponse:Lvendor/qti/hardware/radio/ims/V1_0/CallFailCauseResponse;
 
     iget-object v2, p0, Lvendor/qti/hardware/radio/ims/V1_3/HangupRequestInfo;->failCauseResponse:Lvendor/qti/hardware/radio/ims/V1_3/CallFailCauseResponse;
@@ -7452,7 +7767,7 @@
 
     iput-boolean v2, v1, Lvendor/qti/hardware/radio/ims/V1_0/CallFailCauseResponse;->hasErrorDetails:Z
 
-    .line 2813
+    .line 2878
     iget-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/HangupRequestInfo;->failCauseResponse:Lvendor/qti/hardware/radio/ims/V1_0/CallFailCauseResponse;
 
     iget-object v1, v1, Lvendor/qti/hardware/radio/ims/V1_0/CallFailCauseResponse;->errorDetails:Lvendor/qti/hardware/radio/ims/V1_0/SipErrorInfo;
@@ -7465,7 +7780,7 @@
 
     iput v2, v1, Lvendor/qti/hardware/radio/ims/V1_0/SipErrorInfo;->errorCode:I
 
-    .line 2815
+    .line 2880
     iget-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/HangupRequestInfo;->failCauseResponse:Lvendor/qti/hardware/radio/ims/V1_0/CallFailCauseResponse;
 
     iget-object v1, v1, Lvendor/qti/hardware/radio/ims/V1_0/CallFailCauseResponse;->errorDetails:Lvendor/qti/hardware/radio/ims/V1_0/SipErrorInfo;
@@ -7478,7 +7793,161 @@
 
     iput-object v2, v1, Lvendor/qti/hardware/radio/ims/V1_0/SipErrorInfo;->errorString:Ljava/lang/String;
 
-    .line 2817
+    .line 2882
+    return-object v0
+.end method
+
+.method private static migrateRadioTechTypeFromV16(I)I
+    .locals 1
+    .param p0, "from"    # I
+
+    .line 2969
+    const/16 v0, 0x16
+
+    if-ne p0, v0, :cond_0
+
+    const/16 v0, 0xf
+
+    goto :goto_0
+
+    :cond_0
+    move v0, p0
+
+    :goto_0
+    return v0
+.end method
+
+.method public static migrateRegistrationInfo(Lvendor/qti/hardware/radio/ims/V1_6/RegistrationInfo;)Lvendor/qti/hardware/radio/ims/V1_0/RegistrationInfo;
+    .locals 2
+    .param p0, "from"    # Lvendor/qti/hardware/radio/ims/V1_6/RegistrationInfo;
+    .annotation build Lcom/android/internal/annotations/VisibleForTesting;
+    .end annotation
+
+    .line 2958
+    new-instance v0, Lvendor/qti/hardware/radio/ims/V1_0/RegistrationInfo;
+
+    invoke-direct {v0}, Lvendor/qti/hardware/radio/ims/V1_0/RegistrationInfo;-><init>()V
+
+    .line 2960
+    .local v0, "to":Lvendor/qti/hardware/radio/ims/V1_0/RegistrationInfo;
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/RegistrationInfo;->state:I
+
+    iput v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/RegistrationInfo;->state:I
+
+    .line 2961
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/RegistrationInfo;->errorCode:I
+
+    iput v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/RegistrationInfo;->errorCode:I
+
+    .line 2962
+    iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/RegistrationInfo;->errorMessage:Ljava/lang/String;
+
+    iput-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/RegistrationInfo;->errorMessage:Ljava/lang/String;
+
+    .line 2963
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/RegistrationInfo;->radioTech:I
+
+    invoke-static {v1}, Lorg/codeaurora/ims/ImsRadioUtils;->migrateRadioTechTypeFromV16(I)I
+
+    move-result v1
+
+    iput v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/RegistrationInfo;->radioTech:I
+
+    .line 2964
+    iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/RegistrationInfo;->pAssociatedUris:Ljava/lang/String;
+
+    iput-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/RegistrationInfo;->pAssociatedUris:Ljava/lang/String;
+
+    .line 2965
+    return-object v0
+.end method
+
+.method public static migrateServiceStatusInfoFromV16(Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;)Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;
+    .locals 5
+    .param p0, "from"    # Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;
+
+    .line 2926
+    new-instance v0, Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;
+
+    invoke-direct {v0}, Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;-><init>()V
+
+    .line 2928
+    .local v0, "to":Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;
+    iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;->hasIsValid:Z
+
+    iput-boolean v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;->hasIsValid:Z
+
+    .line 2929
+    iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;->isValid:Z
+
+    iput-boolean v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;->isValid:Z
+
+    .line 2930
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;->type:I
+
+    iput v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;->type:I
+
+    .line 2931
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;->callType:I
+
+    iput v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;->callType:I
+
+    .line 2932
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;->status:I
+
+    iput v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;->status:I
+
+    .line 2933
+    iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;->userdata:Ljava/util/ArrayList;
+
+    iput-object v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;->userdata:Ljava/util/ArrayList;
+
+    .line 2934
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;->restrictCause:I
+
+    iput v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;->restrictCause:I
+
+    .line 2935
+    iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;->accTechStatus:Ljava/util/ArrayList;
+
+    invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lvendor/qti/hardware/radio/ims/V1_6/StatusForAccessTech;
+
+    .line 2936
+    .local v2, "status":Lvendor/qti/hardware/radio/ims/V1_6/StatusForAccessTech;
+    iget-object v3, v0, Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;->accTechStatus:Ljava/util/ArrayList;
+
+    invoke-static {v2}, Lorg/codeaurora/ims/ImsRadioUtils;->migrateAccTechStatusFromV16(Lvendor/qti/hardware/radio/ims/V1_6/StatusForAccessTech;)Lvendor/qti/hardware/radio/ims/V1_0/StatusForAccessTech;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 2937
+    .end local v2    # "status":Lvendor/qti/hardware/radio/ims/V1_6/StatusForAccessTech;
+    goto :goto_0
+
+    .line 2938
+    :cond_0
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;->rttMode:I
+
+    iput v1, v0, Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;->rttMode:I
+
+    .line 2939
     return-object v0
 .end method
 
@@ -7486,23 +7955,23 @@
     .locals 1
     .param p0, "inNotificationType"    # I
 
-    .line 1424
+    .line 1488
     if-eqz p0, :cond_1
 
     const/4 v0, 0x1
 
     if-eq p0, v0, :cond_0
 
-    .line 1430
+    .line 1494
     const v0, 0x7fffffff
 
     return v0
 
-    .line 1428
+    .line 1492
     :cond_0
     return v0
 
-    .line 1426
+    .line 1490
     :cond_1
     const/4 v0, 0x0
 
@@ -7513,25 +7982,25 @@
     .locals 1
     .param p0, "type"    # I
 
-    .line 2283
+    .line 2348
     const/4 v0, 0x1
 
     if-eqz p0, :cond_1
 
     if-eq p0, v0, :cond_0
 
-    .line 2289
+    .line 2354
     const/4 v0, -0x1
 
     return v0
 
-    .line 2287
+    .line 2352
     :cond_0
     const/4 v0, 0x0
 
     return v0
 
-    .line 2285
+    .line 2350
     :cond_1
     return v0
 .end method
@@ -7540,21 +8009,21 @@
     .locals 4
     .param p0, "participantStatusInfo"    # Lvendor/qti/hardware/radio/ims/V1_0/ParticipantStatusInfo;
 
-    .line 2296
+    .line 2361
     if-nez p0, :cond_0
 
-    .line 2297
+    .line 2362
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 2300
+    .line 2365
     :cond_0
     new-instance v0, Lorg/codeaurora/ims/ParticipantStatusDetails;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/ParticipantStatusDetails;-><init>()V
 
-    .line 2302
+    .line 2367
     .local v0, "participantStatus":Lorg/codeaurora/ims/ParticipantStatusDetails;
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/ParticipantStatusInfo;->callId:I
 
@@ -7562,12 +8031,12 @@
 
     if-eq v1, v2, :cond_1
 
-    .line 2303
+    .line 2368
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/ParticipantStatusInfo;->callId:I
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/ParticipantStatusDetails;->setCallId(I)V
 
-    .line 2306
+    .line 2371
     :cond_1
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/ParticipantStatusInfo;->operation:I
 
@@ -7575,7 +8044,7 @@
 
     if-eq v1, v3, :cond_2
 
-    .line 2307
+    .line 2372
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/ParticipantStatusInfo;->operation:I
 
     invoke-static {v1}, Lorg/codeaurora/ims/ImsRadioUtils;->operationFromHal(I)I
@@ -7584,34 +8053,34 @@
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/ParticipantStatusDetails;->setOperation(I)V
 
-    .line 2310
+    .line 2375
     :cond_2
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/ParticipantStatusInfo;->participantUri:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/ParticipantStatusDetails;->setParticipantUri(Ljava/lang/String;)V
 
-    .line 2312
+    .line 2377
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/ParticipantStatusInfo;->sipStatus:I
 
     if-eq v1, v2, :cond_3
 
-    .line 2313
+    .line 2378
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/ParticipantStatusInfo;->sipStatus:I
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/ParticipantStatusDetails;->setSipStatus(I)V
 
-    .line 2316
+    .line 2381
     :cond_3
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/ParticipantStatusInfo;->hasIsEct:Z
 
     if-eqz v1, :cond_4
 
-    .line 2317
+    .line 2382
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/ParticipantStatusInfo;->isEct:Z
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/ParticipantStatusDetails;->setIsEct(Z)V
 
-    .line 2320
+    .line 2385
     :cond_4
     return-object v0
 .end method
@@ -7620,142 +8089,151 @@
     .locals 1
     .param p0, "radioTech"    # I
 
-    .line 715
+    .line 736
     packed-switch p0, :pswitch_data_0
 
-    .line 759
+    .line 782
+    :pswitch_0
+    const v0, 0x7fffffff
+
+    return v0
+
+    .line 780
+    :pswitch_1
     const/16 v0, 0x14
 
     return v0
 
-    .line 757
-    :pswitch_0
+    .line 778
+    :pswitch_2
     const/16 v0, 0x13
 
     return v0
 
-    .line 755
-    :pswitch_1
+    .line 776
+    :pswitch_3
     const/16 v0, 0x12
 
     return v0
 
-    .line 753
-    :pswitch_2
+    .line 774
+    :pswitch_4
     const/16 v0, 0x11
 
     return v0
 
-    .line 751
-    :pswitch_3
+    .line 772
+    :pswitch_5
     const/16 v0, 0x10
 
     return v0
 
-    .line 749
-    :pswitch_4
+    .line 770
+    :pswitch_6
     const/16 v0, 0xf
 
     return v0
 
-    .line 747
-    :pswitch_5
+    .line 768
+    :pswitch_7
     const/16 v0, 0xe
 
     return v0
 
-    .line 745
-    :pswitch_6
+    .line 766
+    :pswitch_8
     const/16 v0, 0xd
 
     return v0
 
-    .line 743
-    :pswitch_7
+    .line 764
+    :pswitch_9
     const/16 v0, 0xc
 
     return v0
 
-    .line 741
-    :pswitch_8
+    .line 762
+    :pswitch_a
     const/16 v0, 0xb
 
     return v0
 
-    .line 739
-    :pswitch_9
+    .line 760
+    :pswitch_b
     const/16 v0, 0xa
 
     return v0
 
-    .line 737
-    :pswitch_a
+    .line 758
+    :pswitch_c
     const/16 v0, 0x9
 
     return v0
 
-    .line 735
-    :pswitch_b
+    .line 756
+    :pswitch_d
     const/16 v0, 0x8
 
     return v0
 
-    .line 733
-    :pswitch_c
+    .line 754
+    :pswitch_e
     const/4 v0, 0x7
 
     return v0
 
-    .line 731
-    :pswitch_d
+    .line 752
+    :pswitch_f
     const/4 v0, 0x6
 
     return v0
 
-    .line 729
-    :pswitch_e
+    .line 750
+    :pswitch_10
     const/4 v0, 0x5
 
     return v0
 
-    .line 727
-    :pswitch_f
+    .line 748
+    :pswitch_11
     const/4 v0, 0x4
 
     return v0
 
-    .line 725
-    :pswitch_10
+    .line 746
+    :pswitch_12
     const/4 v0, 0x3
 
     return v0
 
-    .line 723
-    :pswitch_11
+    .line 744
+    :pswitch_13
     const/4 v0, 0x2
 
     return v0
 
-    .line 721
-    :pswitch_12
+    .line 742
+    :pswitch_14
     const/4 v0, 0x1
 
     return v0
 
-    .line 719
-    :pswitch_13
+    .line 740
+    :pswitch_15
     const/4 v0, 0x0
 
     return v0
 
-    .line 717
-    :pswitch_14
+    .line 738
+    :pswitch_16
     const/4 v0, -0x1
 
     return v0
 
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_16
+        :pswitch_15
         :pswitch_14
         :pswitch_13
         :pswitch_12
@@ -7775,8 +8253,8 @@
         :pswitch_4
         :pswitch_3
         :pswitch_2
-        :pswitch_1
         :pswitch_0
+        :pswitch_1
     .end packed-switch
 .end method
 
@@ -7784,69 +8262,69 @@
     .locals 1
     .param p0, "inRegFailureReasonType"    # I
 
-    .line 2390
+    .line 2455
     packed-switch p0, :pswitch_data_0
 
-    .line 2412
+    .line 2477
     const/4 v0, -0x1
 
     return v0
 
-    .line 2408
+    .line 2473
     :pswitch_0
     const/16 v0, 0xa
 
     return v0
 
-    .line 2406
+    .line 2471
     :pswitch_1
     const/16 v0, 0x9
 
     return v0
 
-    .line 2404
+    .line 2469
     :pswitch_2
     const/16 v0, 0x8
 
     return v0
 
-    .line 2402
+    .line 2467
     :pswitch_3
     const/4 v0, 0x7
 
     return v0
 
-    .line 2400
+    .line 2465
     :pswitch_4
     const/4 v0, 0x6
 
     return v0
 
-    .line 2398
+    .line 2463
     :pswitch_5
     const/4 v0, 0x5
 
     return v0
 
-    .line 2396
+    .line 2461
     :pswitch_6
     const/4 v0, 0x4
 
     return v0
 
-    .line 2394
+    .line 2459
     :pswitch_7
     const/4 v0, 0x3
 
     return v0
 
-    .line 2392
+    .line 2457
     :pswitch_8
     const/4 v0, 0x2
 
     return v0
 
-    .line 2410
+    .line 2475
     :pswitch_9
     const/4 v0, 0x1
 
@@ -7871,7 +8349,7 @@
     .locals 2
     .param p0, "state"    # I
 
-    .line 689
+    .line 710
     const/4 v0, 0x1
 
     if-eqz p0, :cond_2
@@ -7882,22 +8360,22 @@
 
     if-eq p0, v1, :cond_0
 
-    .line 697
+    .line 718
     const/4 v0, -0x1
 
     return v0
 
-    .line 693
+    .line 714
     :cond_0
     const/4 v0, 0x3
 
     return v0
 
-    .line 695
+    .line 716
     :cond_1
     return v1
 
-    .line 691
+    .line 712
     :cond_2
     return v0
 .end method
@@ -7906,7 +8384,7 @@
     .locals 2
     .param p0, "state"    # I
 
-    .line 702
+    .line 723
     const/4 v0, 0x1
 
     if-eq p0, v0, :cond_2
@@ -7919,18 +8397,18 @@
 
     if-eq p0, v0, :cond_0
 
-    .line 710
+    .line 731
     return v0
 
-    .line 708
+    .line 729
     :cond_0
     return v1
 
-    .line 706
+    .line 727
     :cond_1
     return v0
 
-    .line 704
+    .line 725
     :cond_2
     const/4 v0, 0x0
 
@@ -7944,65 +8422,65 @@
     .param p2, "hasBlockStatusOnWlan"    # Z
     .param p3, "blockStatusOnWlan"    # Lvendor/qti/hardware/radio/ims/V1_0/BlockStatus;
 
-    .line 2326
+    .line 2391
     new-instance v0, Lorg/codeaurora/ims/RegistrationBlockStatusInfo;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/RegistrationBlockStatusInfo;-><init>()V
 
-    .line 2328
+    .line 2393
     .local v0, "regBlockStatus":Lorg/codeaurora/ims/RegistrationBlockStatusInfo;
     if-eqz p0, :cond_0
 
-    .line 2329
+    .line 2394
     invoke-static {p1}, Lorg/codeaurora/ims/ImsRadioUtils;->blockStatusFromHal(Lvendor/qti/hardware/radio/ims/V1_0/BlockStatus;)Lorg/codeaurora/ims/BlockStatusInfo;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/RegistrationBlockStatusInfo;->setStatusOnWwan(Lorg/codeaurora/ims/BlockStatusInfo;)V
 
-    .line 2332
+    .line 2397
     :cond_0
     if-eqz p2, :cond_1
 
-    .line 2333
+    .line 2398
     invoke-static {p3}, Lorg/codeaurora/ims/ImsRadioUtils;->blockStatusFromHal(Lvendor/qti/hardware/radio/ims/V1_0/BlockStatus;)Lorg/codeaurora/ims/BlockStatusInfo;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/RegistrationBlockStatusInfo;->setStatusOnWlan(Lorg/codeaurora/ims/BlockStatusInfo;)V
 
-    .line 2336
+    .line 2401
     :cond_1
     return-object v0
 .end method
 
-.method public static registrationFromHal(Lvendor/qti/hardware/radio/ims/V1_0/RegistrationInfo;)Lorg/codeaurora/ims/ImsRegistrationInfo;
+.method public static registrationFromHal(Lvendor/qti/hardware/radio/ims/V1_6/RegistrationInfo;)Lorg/codeaurora/ims/ImsRegistrationInfo;
     .locals 3
-    .param p0, "inRegistration"    # Lvendor/qti/hardware/radio/ims/V1_0/RegistrationInfo;
+    .param p0, "inRegistration"    # Lvendor/qti/hardware/radio/ims/V1_6/RegistrationInfo;
 
-    .line 648
+    .line 669
     const/4 v0, 0x0
 
-    .line 650
+    .line 671
     .local v0, "outRegistration":Lorg/codeaurora/ims/ImsRegistrationInfo;
     if-eqz p0, :cond_3
 
-    .line 651
+    .line 672
     new-instance v1, Lorg/codeaurora/ims/ImsRegistrationInfo;
 
     invoke-direct {v1}, Lorg/codeaurora/ims/ImsRegistrationInfo;-><init>()V
 
     move-object v0, v1
 
-    .line 652
-    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/RegistrationInfo;->state:I
+    .line 673
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/RegistrationInfo;->state:I
 
     const/4 v2, 0x3
 
     if-eq v1, v2, :cond_0
 
-    .line 653
-    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/RegistrationInfo;->state:I
+    .line 674
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/RegistrationInfo;->state:I
 
     invoke-static {v1}, Lorg/codeaurora/ims/ImsRadioUtils;->regStateFromHal(I)I
 
@@ -8010,34 +8488,34 @@
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/ImsRegistrationInfo;->setState(I)V
 
-    .line 656
+    .line 677
     :cond_0
-    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/RegistrationInfo;->errorCode:I
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/RegistrationInfo;->errorCode:I
 
     const v2, 0x7fffffff
 
     if-eq v1, v2, :cond_1
 
-    .line 657
-    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/RegistrationInfo;->errorCode:I
+    .line 678
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/RegistrationInfo;->errorCode:I
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/ImsRegistrationInfo;->setErrorCode(I)V
 
-    .line 660
+    .line 681
     :cond_1
-    iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/RegistrationInfo;->errorMessage:Ljava/lang/String;
+    iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/RegistrationInfo;->errorMessage:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/ImsRegistrationInfo;->setErrorMessage(Ljava/lang/String;)V
 
-    .line 662
-    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/RegistrationInfo;->radioTech:I
+    .line 683
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/RegistrationInfo;->radioTech:I
 
     const/16 v2, 0x15
 
     if-eq v1, v2, :cond_2
 
-    .line 663
-    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/RegistrationInfo;->radioTech:I
+    .line 684
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/RegistrationInfo;->radioTech:I
 
     invoke-static {v1}, Lorg/codeaurora/ims/ImsRadioUtils;->radioTechFromHal(I)I
 
@@ -8045,13 +8523,13 @@
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/ImsRegistrationInfo;->setRadioTech(I)V
 
-    .line 666
+    .line 687
     :cond_2
-    iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/RegistrationInfo;->pAssociatedUris:Ljava/lang/String;
+    iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/RegistrationInfo;->pAssociatedUris:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/ImsRegistrationInfo;->setPAssociatedUris(Ljava/lang/String;)V
 
-    .line 669
+    .line 690
     :cond_3
     return-object v0
 .end method
@@ -8060,7 +8538,7 @@
     .locals 1
     .param p0, "requestType"    # I
 
-    .line 2520
+    .line 2585
     if-eqz p0, :cond_4
 
     const/4 v0, 0x1
@@ -8079,28 +8557,28 @@
 
     if-eq p0, v0, :cond_0
 
-    .line 2533
+    .line 2598
     const/4 v0, -0x1
 
     return v0
 
-    .line 2530
+    .line 2595
     :cond_0
     return v0
 
-    .line 2528
+    .line 2593
     :cond_1
     return v0
 
-    .line 2526
+    .line 2591
     :cond_2
     return v0
 
-    .line 2524
+    .line 2589
     :cond_3
     return v0
 
-    .line 2522
+    .line 2587
     :cond_4
     const/4 v0, 0x0
 
@@ -8111,17 +8589,17 @@
     .locals 1
     .param p0, "tone"    # I
 
-    .line 1112
+    .line 1176
     const/4 v0, 0x1
 
     if-eq p0, v0, :cond_0
 
-    .line 1118
+    .line 1182
     const/4 v0, 0x0
 
     return v0
 
-    .line 1114
+    .line 1178
     :cond_0
     return v0
 .end method
@@ -8130,23 +8608,23 @@
     .locals 1
     .param p0, "inServiceProvisionStatus"    # I
 
-    .line 1374
+    .line 1438
     if-eqz p0, :cond_1
 
     const/4 v0, 0x1
 
     if-eq p0, v0, :cond_0
 
-    .line 1380
+    .line 1444
     const/4 v0, 0x2
 
     return v0
 
-    .line 1378
+    .line 1442
     :cond_0
     return v0
 
-    .line 1376
+    .line 1440
     :cond_1
     const/4 v0, 0x0
 
@@ -8157,23 +8635,23 @@
     .locals 1
     .param p0, "inServiceStatus"    # I
 
-    .line 1363
+    .line 1427
     if-eqz p0, :cond_1
 
     const/4 v0, 0x1
 
     if-eq p0, v0, :cond_0
 
-    .line 1369
+    .line 1433
     const/4 v0, -0x1
 
     return v0
 
-    .line 1365
+    .line 1429
     :cond_0
     return v0
 
-    .line 1367
+    .line 1431
     :cond_1
     const/4 v0, 0x0
 
@@ -8184,147 +8662,147 @@
     .locals 1
     .param p0, "serviceType"    # I
 
-    .line 2467
+    .line 2532
     packed-switch p0, :pswitch_data_0
 
-    .line 2516
+    .line 2581
     const/4 v0, -0x1
 
     return v0
 
-    .line 2513
+    .line 2578
     :pswitch_0
     const/16 v0, 0x16
 
     return v0
 
-    .line 2511
+    .line 2576
     :pswitch_1
     const/16 v0, 0x15
 
     return v0
 
-    .line 2509
+    .line 2574
     :pswitch_2
     const/16 v0, 0x14
 
     return v0
 
-    .line 2507
+    .line 2572
     :pswitch_3
     const/16 v0, 0x13
 
     return v0
 
-    .line 2505
+    .line 2570
     :pswitch_4
     const/16 v0, 0x12
 
     return v0
 
-    .line 2503
+    .line 2568
     :pswitch_5
     const/16 v0, 0x11
 
     return v0
 
-    .line 2501
+    .line 2566
     :pswitch_6
     const/16 v0, 0x10
 
     return v0
 
-    .line 2499
+    .line 2564
     :pswitch_7
     const/16 v0, 0xf
 
     return v0
 
-    .line 2497
+    .line 2562
     :pswitch_8
     const/16 v0, 0xe
 
     return v0
 
-    .line 2495
+    .line 2560
     :pswitch_9
     const/16 v0, 0xd
 
     return v0
 
-    .line 2493
+    .line 2558
     :pswitch_a
     const/16 v0, 0xc
 
     return v0
 
-    .line 2491
+    .line 2556
     :pswitch_b
     const/16 v0, 0xb
 
     return v0
 
-    .line 2489
+    .line 2554
     :pswitch_c
     const/16 v0, 0xa
 
     return v0
 
-    .line 2487
+    .line 2552
     :pswitch_d
     const/16 v0, 0x9
 
     return v0
 
-    .line 2485
+    .line 2550
     :pswitch_e
     const/16 v0, 0x8
 
     return v0
 
-    .line 2483
+    .line 2548
     :pswitch_f
     const/4 v0, 0x7
 
     return v0
 
-    .line 2481
+    .line 2546
     :pswitch_10
     const/4 v0, 0x6
 
     return v0
 
-    .line 2479
+    .line 2544
     :pswitch_11
     const/4 v0, 0x5
 
     return v0
 
-    .line 2477
+    .line 2542
     :pswitch_12
     const/4 v0, 0x4
 
     return v0
 
-    .line 2475
+    .line 2540
     :pswitch_13
     const/4 v0, 0x3
 
     return v0
 
-    .line 2473
+    .line 2538
     :pswitch_14
     const/4 v0, 0x2
 
     return v0
 
-    .line 2471
+    .line 2536
     :pswitch_15
     const/4 v0, 0x1
 
     return v0
 
-    .line 2469
+    .line 2534
     :pswitch_16
     const/4 v0, 0x0
 
@@ -8362,18 +8840,18 @@
     .locals 5
     .param p0, "errorInfo"    # Lvendor/qti/hardware/radio/ims/V1_0/SipErrorInfo;
 
-    .line 838
+    .line 861
     const/4 v0, 0x0
 
-    .line 839
+    .line 862
     .local v0, "ismReasonCode":I
     const/4 v1, 0x0
 
-    .line 840
+    .line 863
     .local v1, "imsReasonExtraCode":I
     iget-object v2, p0, Lvendor/qti/hardware/radio/ims/V1_0/SipErrorInfo;->errorString:Ljava/lang/String;
 
-    .line 841
+    .line 864
     .local v2, "imsReasonExtraMessage":Ljava/lang/String;
     iget v3, p0, Lvendor/qti/hardware/radio/ims/V1_0/SipErrorInfo;->errorCode:I
 
@@ -8381,10 +8859,10 @@
 
     if-eq v3, v4, :cond_0
 
-    .line 842
+    .line 865
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/SipErrorInfo;->errorCode:I
 
-    .line 844
+    .line 867
     :cond_0
     new-instance v3, Landroid/telephony/ims/ImsReasonInfo;
 
@@ -8397,140 +8875,140 @@
     .locals 2
     .param p0, "ssacInfo"    # Lvendor/qti/hardware/radio/ims/V1_0/SsacInfo;
 
-    .line 2754
+    .line 2819
     if-nez p0, :cond_0
 
-    .line 2755
+    .line 2820
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 2758
+    .line 2823
     :cond_0
     new-instance v0, Lorg/codeaurora/ims/SsacInfo;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/SsacInfo;-><init>()V
 
-    .line 2759
+    .line 2824
     .local v0, "ret":Lorg/codeaurora/ims/SsacInfo;
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/SsacInfo;->hasBarringFactorVoice:Z
 
     if-eqz v1, :cond_1
 
-    .line 2760
+    .line 2825
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/SsacInfo;->barringFactorVoice:I
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/SsacInfo;->setBarringFactorVoice(I)V
 
-    .line 2763
+    .line 2828
     :cond_1
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/SsacInfo;->hasBarringTimeVoice:Z
 
     if-eqz v1, :cond_2
 
-    .line 2764
+    .line 2829
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/SsacInfo;->barringTimeVoice:I
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/SsacInfo;->setBarringTimeVoice(I)V
 
-    .line 2767
+    .line 2832
     :cond_2
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/SsacInfo;->hasBarringFactorVideo:Z
 
     if-eqz v1, :cond_3
 
-    .line 2768
+    .line 2833
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/SsacInfo;->barringFactorVideo:I
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/SsacInfo;->setBarringFactorVideo(I)V
 
-    .line 2771
+    .line 2836
     :cond_3
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/SsacInfo;->hasBarringTimeVideo:Z
 
     if-eqz v1, :cond_4
 
-    .line 2772
+    .line 2837
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/SsacInfo;->barringTimeVideo:I
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/SsacInfo;->setBarringTimeVideo(I)V
 
-    .line 2775
+    .line 2840
     :cond_4
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/SsacInfo;->hasBarringFactorVoiceSib:Z
 
     if-eqz v1, :cond_5
 
-    .line 2776
+    .line 2841
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/SsacInfo;->barringFactorVoiceSib:I
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/SsacInfo;->setBarringFactorVoiceSib(I)V
 
-    .line 2779
+    .line 2844
     :cond_5
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/SsacInfo;->hasBarringTimeVoiceSib:Z
 
     if-eqz v1, :cond_6
 
-    .line 2780
+    .line 2845
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/SsacInfo;->barringTimeVoiceSib:I
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/SsacInfo;->setBarringTimeVoiceSib(I)V
 
-    .line 2783
+    .line 2848
     :cond_6
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/SsacInfo;->hasBarringFactorVideoSib:Z
 
     if-eqz v1, :cond_7
 
-    .line 2784
+    .line 2849
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/SsacInfo;->barringFactorVideoSib:I
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/SsacInfo;->setBarringFactorVideoSib(I)V
 
-    .line 2787
+    .line 2852
     :cond_7
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/SsacInfo;->hasBarringTimeVideoSib:Z
 
     if-eqz v1, :cond_8
 
-    .line 2788
+    .line 2853
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/SsacInfo;->barringTimeVideoSib:I
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/SsacInfo;->setBarringTimeVideoSib(I)V
 
-    .line 2791
+    .line 2856
     :cond_8
     return-object v0
 .end method
 
-.method public static statusForAccessTechFromHal(Lvendor/qti/hardware/radio/ims/V1_0/StatusForAccessTech;)Lorg/codeaurora/ims/ServiceStatus$StatusForAccessTech;
+.method public static statusForAccessTechFromHal(Lvendor/qti/hardware/radio/ims/V1_6/StatusForAccessTech;)Lorg/codeaurora/ims/ServiceStatus$StatusForAccessTech;
     .locals 3
-    .param p0, "inStatus"    # Lvendor/qti/hardware/radio/ims/V1_0/StatusForAccessTech;
+    .param p0, "inStatus"    # Lvendor/qti/hardware/radio/ims/V1_6/StatusForAccessTech;
 
-    .line 617
+    .line 638
     const/4 v0, 0x0
 
-    .line 619
+    .line 640
     .local v0, "outStatus":Lorg/codeaurora/ims/ServiceStatus$StatusForAccessTech;
     if-eqz p0, :cond_4
 
-    .line 620
+    .line 641
     new-instance v1, Lorg/codeaurora/ims/ServiceStatus$StatusForAccessTech;
 
     invoke-direct {v1}, Lorg/codeaurora/ims/ServiceStatus$StatusForAccessTech;-><init>()V
 
     move-object v0, v1
 
-    .line 621
-    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/StatusForAccessTech;->networkMode:I
+    .line 642
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/StatusForAccessTech;->networkMode:I
 
     const/16 v2, 0x15
 
     if-eq v1, v2, :cond_0
 
-    .line 622
-    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/StatusForAccessTech;->networkMode:I
+    .line 643
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/StatusForAccessTech;->networkMode:I
 
     invoke-static {v1}, Lorg/codeaurora/ims/ImsRadioUtils;->radioTechFromHal(I)I
 
@@ -8538,16 +9016,16 @@
 
     iput v1, v0, Lorg/codeaurora/ims/ServiceStatus$StatusForAccessTech;->networkMode:I
 
-    .line 625
+    .line 646
     :cond_0
-    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/StatusForAccessTech;->status:I
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/StatusForAccessTech;->status:I
 
     const/4 v2, 0x4
 
     if-eq v1, v2, :cond_1
 
-    .line 626
-    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/StatusForAccessTech;->status:I
+    .line 647
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/StatusForAccessTech;->status:I
 
     invoke-static {v1}, Lorg/codeaurora/ims/ImsRadioUtils;->statusTypeFromHal(I)I
 
@@ -8555,34 +9033,34 @@
 
     iput v1, v0, Lorg/codeaurora/ims/ServiceStatus$StatusForAccessTech;->status:I
 
-    .line 629
+    .line 650
     :cond_1
-    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/StatusForAccessTech;->restrictCause:I
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/StatusForAccessTech;->restrictCause:I
 
     const v2, 0x7fffffff
 
     if-eq v1, v2, :cond_2
 
-    .line 630
-    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/StatusForAccessTech;->restrictCause:I
+    .line 651
+    iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/StatusForAccessTech;->restrictCause:I
 
     iput v1, v0, Lorg/codeaurora/ims/ServiceStatus$StatusForAccessTech;->restrictCause:I
 
-    .line 633
+    .line 654
     :cond_2
-    iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/StatusForAccessTech;->hasRegistration:Z
+    iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/StatusForAccessTech;->hasRegistration:Z
 
     if-eqz v1, :cond_4
 
-    .line 634
-    iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/StatusForAccessTech;->registration:Lvendor/qti/hardware/radio/ims/V1_0/RegistrationInfo;
+    .line 655
+    iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/StatusForAccessTech;->registration:Lvendor/qti/hardware/radio/ims/V1_6/RegistrationInfo;
 
     if-eqz v1, :cond_3
 
-    .line 636
-    iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/StatusForAccessTech;->registration:Lvendor/qti/hardware/radio/ims/V1_0/RegistrationInfo;
+    .line 657
+    iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_6/StatusForAccessTech;->registration:Lvendor/qti/hardware/radio/ims/V1_6/RegistrationInfo;
 
-    iget v1, v1, Lvendor/qti/hardware/radio/ims/V1_0/RegistrationInfo;->state:I
+    iget v1, v1, Lvendor/qti/hardware/radio/ims/V1_6/RegistrationInfo;->state:I
 
     invoke-static {v1}, Lorg/codeaurora/ims/ImsRadioUtils;->regStateFromHal(I)I
 
@@ -8592,20 +9070,20 @@
 
     goto :goto_0
 
-    .line 638
+    .line 659
     :cond_3
     const/4 v1, 0x2
 
     iput v1, v0, Lorg/codeaurora/ims/ServiceStatus$StatusForAccessTech;->registered:I
 
-    .line 639
+    .line 660
     const-class v1, Lorg/codeaurora/ims/ImsRadioUtils;
 
     const-string v2, "Registered not sent"
 
     invoke-static {v1, v2}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 644
+    .line 665
     :cond_4
     :goto_0
     return-object v0
@@ -8615,7 +9093,7 @@
     .locals 4
     .param p0, "report"    # Lvendor/qti/hardware/radio/ims/V1_2/ImsSmsSendStatusReport;
 
-    .line 464
+    .line 485
     new-instance v0, Lorg/codeaurora/ims/sms/StatusReport;
 
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_2/ImsSmsSendStatusReport;->messageRef:I
@@ -8637,7 +9115,7 @@
     .locals 1
     .param p0, "status"    # I
 
-    .line 1016
+    .line 1041
     if-eqz p0, :cond_2
 
     const/4 v0, 0x1
@@ -8648,20 +9126,20 @@
 
     if-eq p0, v0, :cond_0
 
-    .line 1025
+    .line 1050
     const/4 v0, 0x3
 
     return v0
 
-    .line 1022
+    .line 1047
     :cond_0
     return v0
 
-    .line 1020
+    .line 1045
     :cond_1
     return v0
 
-    .line 1018
+    .line 1043
     :cond_2
     const/4 v0, 0x0
 
@@ -8672,7 +9150,7 @@
     .locals 1
     .param p0, "status"    # I
 
-    .line 1001
+    .line 1026
     if-eqz p0, :cond_3
 
     const/4 v0, 0x1
@@ -8687,24 +9165,24 @@
 
     if-eq p0, v0, :cond_0
 
-    .line 1011
+    .line 1036
     const/4 v0, 0x4
 
     return v0
 
-    .line 1009
+    .line 1034
     :cond_0
     return v0
 
-    .line 1007
+    .line 1032
     :cond_1
     return v0
 
-    .line 1005
+    .line 1030
     :cond_2
     return v0
 
-    .line 1003
+    .line 1028
     :cond_3
     const/4 v0, 0x0
 
@@ -8715,21 +9193,21 @@
     .locals 3
     .param p0, "inNotification"    # Lvendor/qti/hardware/radio/ims/V1_0/SuppServiceNotification;
 
-    .line 1386
+    .line 1450
     if-nez p0, :cond_0
 
-    .line 1387
+    .line 1451
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 1390
+    .line 1454
     :cond_0
     new-instance v0, Lorg/codeaurora/ims/SuppNotifyInfo;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/SuppNotifyInfo;-><init>()V
 
-    .line 1392
+    .line 1456
     .local v0, "outNotification":Lorg/codeaurora/ims/SuppNotifyInfo;
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/SuppServiceNotification;->notificationType:I
 
@@ -8737,7 +9215,7 @@
 
     if-eq v1, v2, :cond_1
 
-    .line 1393
+    .line 1457
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/SuppServiceNotification;->notificationType:I
 
     invoke-static {v1}, Lorg/codeaurora/ims/ImsRadioUtils;->notificationTypeFromHal(I)I
@@ -8746,7 +9224,7 @@
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/SuppNotifyInfo;->setNotificationType(I)V
 
-    .line 1397
+    .line 1461
     :cond_1
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/SuppServiceNotification;->code:I
 
@@ -8754,66 +9232,66 @@
 
     if-eq v1, v2, :cond_2
 
-    .line 1398
+    .line 1462
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/SuppServiceNotification;->code:I
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/SuppNotifyInfo;->setCode(I)V
 
-    .line 1401
+    .line 1465
     :cond_2
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/SuppServiceNotification;->index:I
 
     if-eq v1, v2, :cond_3
 
-    .line 1402
+    .line 1466
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/SuppServiceNotification;->index:I
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/SuppNotifyInfo;->setIndex(I)V
 
-    .line 1405
+    .line 1469
     :cond_3
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/SuppServiceNotification;->type:I
 
     if-eq v1, v2, :cond_4
 
-    .line 1406
+    .line 1470
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/SuppServiceNotification;->type:I
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/SuppNotifyInfo;->setType(I)V
 
-    .line 1409
+    .line 1473
     :cond_4
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/SuppServiceNotification;->connId:I
 
     if-eq v1, v2, :cond_5
 
-    .line 1410
+    .line 1474
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/SuppServiceNotification;->connId:I
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/SuppNotifyInfo;->setConnId(I)V
 
-    .line 1413
+    .line 1477
     :cond_5
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/SuppServiceNotification;->number:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/SuppNotifyInfo;->setNumber(Ljava/lang/String;)V
 
-    .line 1414
+    .line 1478
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/SuppServiceNotification;->historyInfo:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/SuppNotifyInfo;->setHistoryInfo(Ljava/lang/String;)V
 
-    .line 1416
+    .line 1480
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/SuppServiceNotification;->hasHoldTone:Z
 
     if-eqz v1, :cond_6
 
-    .line 1417
+    .line 1481
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/SuppServiceNotification;->holdTone:Z
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/SuppNotifyInfo;->setHoldTone(Z)V
 
-    .line 1420
+    .line 1484
     :cond_6
     return-object v0
 .end method
@@ -8822,12 +9300,12 @@
     .locals 9
     .param p0, "suppServiceStatus"    # Lvendor/qti/hardware/radio/ims/V1_3/SuppServiceStatus;
 
-    .line 1514
+    .line 1578
     new-instance v0, Lorg/codeaurora/ims/SuppSvcResponse;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/SuppSvcResponse;-><init>()V
 
-    .line 1516
+    .line 1580
     .local v0, "suppSvcResponse":Lorg/codeaurora/ims/SuppSvcResponse;
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_3/SuppServiceStatus;->status:I
 
@@ -8837,25 +9315,25 @@
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/SuppSvcResponse;->setStatus(I)V
 
-    .line 1518
+    .line 1582
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_3/SuppServiceStatus;->provisionStatus:I
 
-    .line 1519
+    .line 1583
     invoke-static {v1}, Lorg/codeaurora/ims/ImsRadioUtils;->serviceClassProvisionStatusFromHal(I)I
 
     move-result v1
 
-    .line 1518
+    .line 1582
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/SuppSvcResponse;->setProvisionStatus(I)V
 
-    .line 1521
+    .line 1585
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_3/SuppServiceStatus;->facilityType:I
 
     const/16 v2, 0xc
 
     if-eq v1, v2, :cond_0
 
-    .line 1522
+    .line 1586
     iget v1, p0, Lvendor/qti/hardware/radio/ims/V1_3/SuppServiceStatus;->facilityType:I
 
     invoke-static {v1}, Lorg/codeaurora/ims/ImsRadioUtils;->FacilityTypeFromHal(I)I
@@ -8864,7 +9342,7 @@
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/SuppSvcResponse;->setFacilityType(I)V
 
-    .line 1525
+    .line 1589
     :cond_0
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_3/SuppServiceStatus;->failureCause:Ljava/lang/String;
 
@@ -8872,19 +9350,19 @@
 
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_3/SuppServiceStatus;->failureCause:Ljava/lang/String;
 
-    .line 1526
+    .line 1590
     invoke-virtual {v1}, Ljava/lang/String;->isEmpty()Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 1527
+    .line 1591
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_3/SuppServiceStatus;->failureCause:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/SuppSvcResponse;->setFailureCause(Ljava/lang/String;)V
 
-    .line 1530
+    .line 1594
     :cond_1
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_3/SuppServiceStatus;->cbNumListInfo:Ljava/util/ArrayList;
 
@@ -8905,7 +9383,7 @@
 
     check-cast v2, Lvendor/qti/hardware/radio/ims/V1_0/CbNumListInfo;
 
-    .line 1531
+    .line 1595
     .local v2, "numList":Lvendor/qti/hardware/radio/ims/V1_0/CbNumListInfo;
     iget v3, v2, Lvendor/qti/hardware/radio/ims/V1_0/CbNumListInfo;->serviceClass:I
 
@@ -8913,10 +9391,10 @@
 
     if-ne v3, v4, :cond_2
 
-    .line 1532
+    .line 1596
     goto :goto_0
 
-    .line 1534
+    .line 1598
     :cond_2
     new-instance v3, Lorg/codeaurora/ims/SuppSvcResponse$BarredLines;
 
@@ -8924,13 +9402,13 @@
 
     invoke-direct {v3, v4}, Lorg/codeaurora/ims/SuppSvcResponse$BarredLines;-><init>(I)V
 
-    .line 1537
+    .line 1601
     .local v3, "lines":Lorg/codeaurora/ims/SuppSvcResponse$BarredLines;
     iget-object v4, v2, Lvendor/qti/hardware/radio/ims/V1_0/CbNumListInfo;->cbNumInfo:Ljava/util/ArrayList;
 
     if-eqz v4, :cond_3
 
-    .line 1538
+    .line 1602
     iget-object v4, v2, Lvendor/qti/hardware/radio/ims/V1_0/CbNumListInfo;->cbNumInfo:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -8950,7 +9428,7 @@
 
     check-cast v5, Lvendor/qti/hardware/radio/ims/V1_0/CbNumInfo;
 
-    .line 1539
+    .line 1603
     .local v5, "numInfo":Lvendor/qti/hardware/radio/ims/V1_0/CbNumInfo;
     new-instance v6, Lorg/codeaurora/ims/SuppSvcResponse$LineStatus;
 
@@ -8960,31 +9438,31 @@
 
     invoke-direct {v6, v7, v8}, Lorg/codeaurora/ims/SuppSvcResponse$LineStatus;-><init>(ILjava/lang/String;)V
 
-    .line 1542
+    .line 1606
     .local v6, "lineStatus":Lorg/codeaurora/ims/SuppSvcResponse$LineStatus;
     invoke-virtual {v3, v6}, Lorg/codeaurora/ims/SuppSvcResponse$BarredLines;->addLine(Lorg/codeaurora/ims/SuppSvcResponse$LineStatus;)V
 
-    .line 1543
+    .line 1607
     .end local v5    # "numInfo":Lvendor/qti/hardware/radio/ims/V1_0/CbNumInfo;
     .end local v6    # "lineStatus":Lorg/codeaurora/ims/SuppSvcResponse$LineStatus;
     goto :goto_1
 
-    .line 1545
+    .line 1609
     :cond_3
     invoke-virtual {v0, v3}, Lorg/codeaurora/ims/SuppSvcResponse;->addBarredLines(Lorg/codeaurora/ims/SuppSvcResponse$BarredLines;)V
 
-    .line 1546
+    .line 1610
     .end local v2    # "numList":Lvendor/qti/hardware/radio/ims/V1_0/CbNumListInfo;
     .end local v3    # "lines":Lorg/codeaurora/ims/SuppSvcResponse$BarredLines;
     goto :goto_0
 
-    .line 1548
+    .line 1612
     :cond_4
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_3/SuppServiceStatus;->hasErrorDetails:Z
 
     if-eqz v1, :cond_5
 
-    .line 1549
+    .line 1613
     iget-object v1, p0, Lvendor/qti/hardware/radio/ims/V1_3/SuppServiceStatus;->errorDetails:Lvendor/qti/hardware/radio/ims/V1_0/SipErrorInfo;
 
     invoke-static {v1}, Lorg/codeaurora/ims/ImsRadioUtils;->sipErrorFromHal(Lvendor/qti/hardware/radio/ims/V1_0/SipErrorInfo;)Landroid/telephony/ims/ImsReasonInfo;
@@ -8993,7 +9471,7 @@
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/SuppSvcResponse;->setErrorDetails(Landroid/telephony/ims/ImsReasonInfo;)V
 
-    .line 1551
+    .line 1615
     :cond_5
     return-object v0
 .end method
@@ -9002,7 +9480,7 @@
     .locals 1
     .param p0, "teleservice"    # I
 
-    .line 2537
+    .line 2602
     if-eqz p0, :cond_5
 
     const/4 v0, 0x1
@@ -9025,32 +9503,32 @@
 
     if-eq p0, v0, :cond_0
 
-    .line 2552
+    .line 2617
     const/4 v0, -0x1
 
     return v0
 
-    .line 2549
+    .line 2614
     :cond_0
     return v0
 
-    .line 2547
+    .line 2612
     :cond_1
     return v0
 
-    .line 2545
+    .line 2610
     :cond_2
     return v0
 
-    .line 2543
+    .line 2608
     :cond_3
     return v0
 
-    .line 2541
+    .line 2606
     :cond_4
     return v0
 
-    .line 2539
+    .line 2604
     :cond_5
     const/4 v0, 0x0
 
@@ -9061,7 +9539,7 @@
     .locals 1
     .param p0, "callSubstate"    # I
 
-    .line 673
+    .line 694
     const/4 v0, 0x1
 
     if-eq p0, v0, :cond_3
@@ -9078,24 +9556,24 @@
 
     if-eq p0, v0, :cond_0
 
-    .line 684
+    .line 705
     const/4 v0, 0x0
 
     return v0
 
-    .line 681
+    .line 702
     :cond_0
     return v0
 
-    .line 679
+    .line 700
     :cond_1
     return v0
 
-    .line 677
+    .line 698
     :cond_2
     return v0
 
-    .line 675
+    .line 696
     :cond_3
     return v0
 .end method
@@ -9104,7 +9582,7 @@
     .locals 2
     .param p0, "ttyMode"    # I
 
-    .line 1567
+    .line 1631
     const/4 v0, 0x0
 
     if-eqz p0, :cond_3
@@ -9121,22 +9599,22 @@
 
     if-eq p0, v1, :cond_0
 
-    .line 1577
+    .line 1641
     return v0
 
-    .line 1575
+    .line 1639
     :cond_0
     return v1
 
-    .line 1573
+    .line 1637
     :cond_1
     return v1
 
-    .line 1571
+    .line 1635
     :cond_2
     return v1
 
-    .line 1569
+    .line 1633
     :cond_3
     return v0
 .end method
@@ -9145,7 +9623,7 @@
     .locals 1
     .param p0, "ttyMode"    # I
 
-    .line 1582
+    .line 1646
     if-eqz p0, :cond_3
 
     const/4 v0, 0x1
@@ -9160,46 +9638,46 @@
 
     if-eq p0, v0, :cond_0
 
-    .line 1592
+    .line 1656
     const/4 v0, 0x4
 
     return v0
 
-    .line 1588
+    .line 1652
     :cond_0
     return v0
 
-    .line 1586
+    .line 1650
     :cond_1
     return v0
 
-    .line 1584
+    .line 1648
     :cond_2
     return v0
 
-    .line 1590
+    .line 1654
     :cond_3
     const/4 v0, 0x0
 
     return v0
 .end method
 
-.method private static unpackAccTechStatus(Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;)[Lorg/codeaurora/ims/ServiceStatus$StatusForAccessTech;
+.method private static unpackAccTechStatus(Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;)[Lorg/codeaurora/ims/ServiceStatus$StatusForAccessTech;
     .locals 5
-    .param p0, "info"    # Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;
+    .param p0, "info"    # Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;
 
-    .line 598
-    iget-object v0, p0, Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;->accTechStatus:Ljava/util/ArrayList;
+    .line 619
+    iget-object v0, p0, Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;->accTechStatus:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 600
+    .line 621
     .local v0, "statusListLen":I
     new-array v1, v0, [Lorg/codeaurora/ims/ServiceStatus$StatusForAccessTech;
 
-    .line 603
+    .line 624
     .local v1, "statusForAccessTech":[Lorg/codeaurora/ims/ServiceStatus$StatusForAccessTech;
     const/4 v2, 0x0
 
@@ -9207,29 +9685,29 @@
     :goto_0
     if-ge v2, v0, :cond_0
 
-    .line 604
+    .line 625
     new-instance v3, Lorg/codeaurora/ims/ServiceStatus$StatusForAccessTech;
 
     invoke-direct {v3}, Lorg/codeaurora/ims/ServiceStatus$StatusForAccessTech;-><init>()V
 
     aput-object v3, v1, v2
 
-    .line 605
-    iget-object v3, p0, Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;->accTechStatus:Ljava/util/ArrayList;
+    .line 626
+    iget-object v3, p0, Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;->accTechStatus:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
-    check-cast v3, Lvendor/qti/hardware/radio/ims/V1_0/StatusForAccessTech;
+    check-cast v3, Lvendor/qti/hardware/radio/ims/V1_6/StatusForAccessTech;
 
-    invoke-static {v3}, Lorg/codeaurora/ims/ImsRadioUtils;->statusForAccessTechFromHal(Lvendor/qti/hardware/radio/ims/V1_0/StatusForAccessTech;)Lorg/codeaurora/ims/ServiceStatus$StatusForAccessTech;
+    invoke-static {v3}, Lorg/codeaurora/ims/ImsRadioUtils;->statusForAccessTechFromHal(Lvendor/qti/hardware/radio/ims/V1_6/StatusForAccessTech;)Lorg/codeaurora/ims/ServiceStatus$StatusForAccessTech;
 
     move-result-object v3
 
     aput-object v3, v1, v2
 
-    .line 606
+    .line 627
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -9280,12 +9758,12 @@
 
     invoke-static {v3}, Lorg/codeaurora/ims/ImsRadioUtils;->log(Ljava/lang/String;)V
 
-    .line 603
+    .line 624
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 612
+    .line 633
     .end local v2    # "j":I
     :cond_0
     return-object v1
@@ -9296,12 +9774,12 @@
     .param p0, "type"    # I
     .param p1, "errorDetails"    # Lvendor/qti/hardware/radio/ims/V1_0/SipErrorInfo;
 
-    .line 2436
+    .line 2501
     new-instance v0, Lorg/codeaurora/ims/UssdInfo;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/UssdInfo;-><init>()V
 
-    .line 2438
+    .line 2503
     .local v0, "info":Lorg/codeaurora/ims/UssdInfo;
     if-eqz p0, :cond_5
 
@@ -9327,50 +9805,50 @@
 
     goto :goto_0
 
-    .line 2455
+    .line 2520
     :cond_0
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/UssdInfo;->setType(I)V
 
     goto :goto_0
 
-    .line 2452
+    .line 2517
     :cond_1
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/UssdInfo;->setType(I)V
 
-    .line 2453
+    .line 2518
     goto :goto_0
 
-    .line 2449
+    .line 2514
     :cond_2
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/UssdInfo;->setType(I)V
 
-    .line 2450
+    .line 2515
     goto :goto_0
 
-    .line 2446
+    .line 2511
     :cond_3
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/UssdInfo;->setType(I)V
 
-    .line 2447
+    .line 2512
     goto :goto_0
 
-    .line 2443
+    .line 2508
     :cond_4
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/UssdInfo;->setType(I)V
 
-    .line 2444
+    .line 2509
     goto :goto_0
 
-    .line 2440
+    .line 2505
     :cond_5
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/UssdInfo;->setType(I)V
 
-    .line 2441
+    .line 2506
     nop
 
-    .line 2459
+    .line 2524
     :goto_0
     iget v1, p1, Lvendor/qti/hardware/radio/ims/V1_0/SipErrorInfo;->errorCode:I
 
@@ -9378,18 +9856,18 @@
 
     if-eq v1, v2, :cond_6
 
-    .line 2460
+    .line 2525
     iget v1, p1, Lvendor/qti/hardware/radio/ims/V1_0/SipErrorInfo;->errorCode:I
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/UssdInfo;->setErrorCode(I)V
 
-    .line 2462
+    .line 2527
     :cond_6
     iget-object v1, p1, Lvendor/qti/hardware/radio/ims/V1_0/SipErrorInfo;->errorString:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/UssdInfo;->setErrorMessage(Ljava/lang/String;)V
 
-    .line 2463
+    .line 2528
     return-object v0
 .end method
 
@@ -9397,12 +9875,12 @@
     .locals 3
     .param p0, "voWiFiCallQuality"    # I
 
-    .line 2417
+    .line 2482
     const/4 v0, 0x1
 
     new-array v1, v0, [I
 
-    .line 2418
+    .line 2483
     .local v1, "ret":[I
     const/4 v2, 0x0
 
@@ -9416,35 +9894,35 @@
 
     if-eq p0, v0, :cond_0
 
-    .line 2429
+    .line 2494
     aput v2, v1, v2
 
     goto :goto_0
 
-    .line 2426
+    .line 2491
     :cond_0
     const/4 v0, 0x4
 
     aput v0, v1, v2
 
-    .line 2427
+    .line 2492
     goto :goto_0
 
-    .line 2423
+    .line 2488
     :cond_1
     aput v0, v1, v2
 
-    .line 2424
+    .line 2489
     goto :goto_0
 
-    .line 2420
+    .line 2485
     :cond_2
     aput v0, v1, v2
 
-    .line 2421
+    .line 2486
     nop
 
-    .line 2432
+    .line 2497
     :goto_0
     return-object v1
 .end method
@@ -9453,12 +9931,12 @@
     .locals 3
     .param p0, "voltePref"    # I
 
-    .line 2727
+    .line 2792
     const/4 v0, 0x1
 
     new-array v1, v0, [I
 
-    .line 2728
+    .line 2793
     .local v1, "ret":[I
     const/4 v2, 0x0
 
@@ -9466,28 +9944,28 @@
 
     if-eq p0, v0, :cond_0
 
-    .line 2736
+    .line 2801
     const/4 v0, 0x2
 
     aput v0, v1, v2
 
     goto :goto_0
 
-    .line 2733
+    .line 2798
     :cond_0
     aput v0, v1, v2
 
-    .line 2734
+    .line 2799
     goto :goto_0
 
-    .line 2730
+    .line 2795
     :cond_1
     aput v2, v1, v2
 
-    .line 2731
+    .line 2796
     nop
 
-    .line 2739
+    .line 2804
     :goto_0
     return-object v1
 .end method
@@ -9496,26 +9974,26 @@
     .locals 2
     .param p0, "vopsInfo"    # Lvendor/qti/hardware/radio/ims/V1_0/VopsInfo;
 
-    .line 2745
+    .line 2810
     if-nez p0, :cond_0
 
-    .line 2746
+    .line 2811
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 2748
+    .line 2813
     :cond_0
     new-instance v0, Lorg/codeaurora/ims/VopsInfo;
 
     invoke-direct {v0}, Lorg/codeaurora/ims/VopsInfo;-><init>()V
 
-    .line 2749
+    .line 2814
     .local v0, "ret":Lorg/codeaurora/ims/VopsInfo;
     iget-boolean v1, p0, Lvendor/qti/hardware/radio/ims/V1_0/VopsInfo;->isVopsEnabled:Z
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/VopsInfo;->setIsVopsEnabled(Z)V
 
-    .line 2751
+    .line 2816
     return-object v0
 .end method

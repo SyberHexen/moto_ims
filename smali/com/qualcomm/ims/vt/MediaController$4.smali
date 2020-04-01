@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lcom/qualcomm/ims/vt/MediaController;
 
-    .line 212
+    .line 221
     iput-object p1, p0, Lcom/qualcomm/ims/vt/MediaController$4;->this$0:Lcom/qualcomm/ims/vt/MediaController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 .method public run()V
     .locals 2
 
-    .line 216
+    .line 225
     iget-object v0, p0, Lcom/qualcomm/ims/vt/MediaController$4;->this$0:Lcom/qualcomm/ims/vt/MediaController;
 
     const/4 v1, 0x0
@@ -48,6 +48,6 @@
 
     invoke-static {v0, v1}, Lcom/qualcomm/ims/vt/MediaController;->access$300(Lcom/qualcomm/ims/vt/MediaController;Landroid/graphics/Bitmap;)V
 
-    .line 217
+    .line 226
     return-void
 .end method

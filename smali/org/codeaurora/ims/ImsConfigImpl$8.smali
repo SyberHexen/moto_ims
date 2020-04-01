@@ -30,7 +30,7 @@
     .locals 0
     .param p1, "this$0"    # Lorg/codeaurora/ims/ImsConfigImpl;
 
-    .line 954
+    .line 995
     iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$8;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
     iput p2, p0, Lorg/codeaurora/ims/ImsConfigImpl$8;->val$event_code:I
@@ -47,10 +47,28 @@
 .method public run()V
     .locals 11
 
-    .line 962
+    .line 998
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$8;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
+
+    invoke-static {v0}, Lorg/codeaurora/ims/ImsConfigImpl;->access$700(Lorg/codeaurora/ims/ImsConfigImpl;)Landroid/telephony/ims/ImsMmTelManager;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    .line 999
+    const-string v0, "checkinVolteProvision: mImsMmTelManager null"
+
+    invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->w(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 1000
+    return-void
+
+    .line 1010
+    :cond_0
     const/4 v0, 0x0
 
-    .line 963
+    .line 1011
     .local v0, "user_setting":I
     iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$8;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
@@ -62,13 +80,13 @@
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_1
 
-    .line 964
+    .line 1012
     or-int/lit8 v0, v0, 0x1
 
-    .line 966
-    :cond_0
+    .line 1014
+    :cond_1
     iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$8;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
     invoke-static {v1}, Lorg/codeaurora/ims/ImsConfigImpl;->access$700(Lorg/codeaurora/ims/ImsConfigImpl;)Landroid/telephony/ims/ImsMmTelManager;
@@ -79,16 +97,16 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
-    .line 967
+    .line 1015
     or-int/lit8 v0, v0, 0x4
 
-    .line 969
-    :cond_1
-    if-eqz v0, :cond_2
+    .line 1017
+    :cond_2
+    if-eqz v0, :cond_3
 
-    .line 970
+    .line 1018
     iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$8;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
     invoke-static {v1}, Lorg/codeaurora/ims/ImsConfigImpl;->access$700(Lorg/codeaurora/ims/ImsConfigImpl;)Landroid/telephony/ims/ImsMmTelManager;
@@ -99,26 +117,26 @@
 
     move-result v1
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_3
 
-    .line 971
+    .line 1019
     or-int/lit8 v0, v0, 0x2
 
-    .line 983
-    :cond_2
+    .line 1031
+    :cond_3
     const/4 v1, 0x0
 
-    .line 984
+    .line 1032
     .local v1, "dm_provision":I
     iget-object v2, p0, Lorg/codeaurora/ims/ImsConfigImpl$8;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    invoke-static {v2}, Lorg/codeaurora/ims/ImsConfigImpl;->access$500(Lorg/codeaurora/ims/ImsConfigImpl;)Landroid/content/Context;
+    invoke-static {v2}, Lorg/codeaurora/ims/ImsConfigImpl;->access$1100(Lorg/codeaurora/ims/ImsConfigImpl;)Landroid/content/Context;
 
     move-result-object v2
 
     iget-object v3, p0, Lorg/codeaurora/ims/ImsConfigImpl$8;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    invoke-static {v3}, Lorg/codeaurora/ims/ImsConfigImpl;->access$1300(Lorg/codeaurora/ims/ImsConfigImpl;)I
+    invoke-static {v3}, Lorg/codeaurora/ims/ImsConfigImpl;->access$1700(Lorg/codeaurora/ims/ImsConfigImpl;)I
 
     move-result v3
 
@@ -128,12 +146,12 @@
 
     move-result v2
 
-    if-eqz v2, :cond_7
+    if-eqz v2, :cond_8
 
-    .line 986
+    .line 1034
     or-int/lit8 v1, v1, 0x1
 
-    .line 988
+    .line 1036
     iget-object v2, p0, Lorg/codeaurora/ims/ImsConfigImpl$8;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
     const/16 v3, 0xa
@@ -144,13 +162,13 @@
 
     const/4 v3, 0x1
 
-    if-ne v3, v2, :cond_3
+    if-ne v3, v2, :cond_4
 
-    .line 990
+    .line 1038
     or-int/lit8 v1, v1, 0x2
 
-    .line 992
-    :cond_3
+    .line 1040
+    :cond_4
     iget-object v2, p0, Lorg/codeaurora/ims/ImsConfigImpl$8;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
     const/16 v4, 0xb
@@ -159,13 +177,13 @@
 
     move-result v2
 
-    if-ne v3, v2, :cond_4
+    if-ne v3, v2, :cond_5
 
-    .line 994
+    .line 1042
     or-int/lit8 v1, v1, 0x4
 
-    .line 996
-    :cond_4
+    .line 1044
+    :cond_5
     iget-object v2, p0, Lorg/codeaurora/ims/ImsConfigImpl$8;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
     const/16 v4, 0x19
@@ -174,13 +192,13 @@
 
     move-result v2
 
-    if-ne v3, v2, :cond_5
+    if-ne v3, v2, :cond_6
 
-    .line 998
+    .line 1046
     or-int/lit8 v1, v1, 0x8
 
-    .line 1000
-    :cond_5
+    .line 1048
+    :cond_6
     iget-object v2, p0, Lorg/codeaurora/ims/ImsConfigImpl$8;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
     const/16 v4, 0x1c
@@ -189,13 +207,13 @@
 
     move-result v2
 
-    if-ne v3, v2, :cond_6
+    if-ne v3, v2, :cond_7
 
-    .line 1002
+    .line 1050
     or-int/lit8 v1, v1, 0x10
 
-    .line 1004
-    :cond_6
+    .line 1052
+    :cond_7
     iget-object v2, p0, Lorg/codeaurora/ims/ImsConfigImpl$8;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
     const/16 v4, 0x41
@@ -204,24 +222,24 @@
 
     move-result v2
 
-    if-ne v3, v2, :cond_7
+    if-ne v3, v2, :cond_8
 
-    .line 1006
+    .line 1054
     or-int/lit8 v1, v1, 0x20
 
-    .line 1010
-    :cond_7
+    .line 1058
+    :cond_8
     const-string v2, "CALL_PERF_STATS"
 
-    .line 1011
+    .line 1059
     .local v2, "CHECKIN_GROUP_TAG":Ljava/lang/String;
     const-string v3, "VolteProvisioning"
 
-    .line 1012
+    .line 1060
     .local v3, "CHECKIN_EVENT_NAME":Ljava/lang/String;
     new-instance v10, Lorg/codeaurora/ims/CheckinEvent;
 
-    .line 1015
+    .line 1063
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v8
@@ -236,37 +254,37 @@
 
     invoke-direct/range {v4 .. v9}, Lorg/codeaurora/ims/CheckinEvent;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
 
-    .line 1017
+    .line 1065
     .local v4, "ce":Lorg/codeaurora/ims/CheckinEvent;
     :try_start_0
     const-string v5, "usr"
 
     invoke-virtual {v4, v5, v0}, Lorg/codeaurora/ims/CheckinEvent;->setValue(Ljava/lang/String;I)V
 
-    .line 1018
+    .line 1066
     const-string v5, "dm"
 
     invoke-virtual {v4, v5, v1}, Lorg/codeaurora/ims/CheckinEvent;->setValue(Ljava/lang/String;I)V
 
-    .line 1019
+    .line 1067
     iget v5, p0, Lorg/codeaurora/ims/ImsConfigImpl$8;->val$event_code:I
 
     const/4 v6, -0x1
 
-    if-eq v5, v6, :cond_8
+    if-eq v5, v6, :cond_9
 
-    .line 1020
+    .line 1068
     const-string v5, "evt"
 
     iget v6, p0, Lorg/codeaurora/ims/ImsConfigImpl$8;->val$event_code:I
 
     invoke-virtual {v4, v5, v6}, Lorg/codeaurora/ims/CheckinEvent;->setValue(Ljava/lang/String;I)V
 
-    .line 1022
-    :cond_8
+    .line 1070
+    :cond_9
     iget-object v5, p0, Lorg/codeaurora/ims/ImsConfigImpl$8;->val$event_info:Ljava/lang/String;
 
-    if-eqz v5, :cond_9
+    if-eqz v5, :cond_a
 
     iget-object v5, p0, Lorg/codeaurora/ims/ImsConfigImpl$8;->val$event_info:Ljava/lang/String;
 
@@ -274,9 +292,9 @@
 
     move-result v5
 
-    if-lez v5, :cond_9
+    if-lez v5, :cond_a
 
-    .line 1023
+    .line 1071
     const-string v5, "evt_info"
 
     iget-object v6, p0, Lorg/codeaurora/ims/ImsConfigImpl$8;->val$event_info:Ljava/lang/String;
@@ -287,17 +305,17 @@
 
     invoke-virtual {v4, v5, v6}, Lorg/codeaurora/ims/CheckinEvent;->setValue(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1026
-    :cond_9
+    .line 1074
+    :cond_a
     shl-int/lit8 v5, v0, 0x10
 
     or-int/2addr v5, v1
 
-    .line 1027
+    .line 1075
     .local v5, "flag":I
     iget-object v6, p0, Lorg/codeaurora/ims/ImsConfigImpl$8;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    invoke-static {v6}, Lorg/codeaurora/ims/ImsConfigImpl;->access$1800(Lorg/codeaurora/ims/ImsConfigImpl;)I
+    invoke-static {v6}, Lorg/codeaurora/ims/ImsConfigImpl;->access$2000(Lorg/codeaurora/ims/ImsConfigImpl;)I
 
     move-result v6
     :try_end_0
@@ -307,9 +325,9 @@
 
     const-string v8, "}, value={"
 
-    if-ne v6, v5, :cond_a
+    if-ne v6, v5, :cond_b
 
-    .line 1028
+    .line 1076
     :try_start_1
     iget-object v6, p0, Lorg/codeaurora/ims/ImsConfigImpl$8;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
@@ -321,7 +339,7 @@
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1029
+    .line 1077
     invoke-static {v5}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
     move-result-object v10
@@ -340,7 +358,7 @@
 
     invoke-virtual {v9, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1030
+    .line 1078
     invoke-virtual {v4}, Lorg/codeaurora/ims/CheckinEvent;->serializeEvent()Ljava/lang/StringBuilder;
 
     move-result-object v8
@@ -357,22 +375,22 @@
 
     move-result-object v7
 
-    .line 1028
+    .line 1076
     invoke-static {v6, v7}, Lcom/qualcomm/ims/utils/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1031
+    .line 1079
     return-void
 
-    .line 1033
-    :cond_a
+    .line 1081
+    :cond_b
     iget-object v6, p0, Lorg/codeaurora/ims/ImsConfigImpl$8;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    invoke-static {v6, v5}, Lorg/codeaurora/ims/ImsConfigImpl;->access$1802(Lorg/codeaurora/ims/ImsConfigImpl;I)I
+    invoke-static {v6, v5}, Lorg/codeaurora/ims/ImsConfigImpl;->access$2002(Lorg/codeaurora/ims/ImsConfigImpl;I)I
 
-    .line 1035
+    .line 1083
     iget-object v6, p0, Lorg/codeaurora/ims/ImsConfigImpl$8;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    invoke-static {v6}, Lorg/codeaurora/ims/ImsConfigImpl;->access$500(Lorg/codeaurora/ims/ImsConfigImpl;)Landroid/content/Context;
+    invoke-static {v6}, Lorg/codeaurora/ims/ImsConfigImpl;->access$1100(Lorg/codeaurora/ims/ImsConfigImpl;)Landroid/content/Context;
 
     move-result-object v6
 
@@ -382,7 +400,7 @@
 
     invoke-virtual {v4, v6}, Lorg/codeaurora/ims/CheckinEvent;->publish(Landroid/content/ContentResolver;)V
 
-    .line 1037
+    .line 1085
     iget-object v6, p0, Lorg/codeaurora/ims/ImsConfigImpl$8;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -401,7 +419,7 @@
 
     invoke-virtual {v9, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1038
+    .line 1086
     invoke-virtual {v4}, Lorg/codeaurora/ims/CheckinEvent;->serializeEvent()Ljava/lang/StringBuilder;
 
     move-result-object v8
@@ -418,20 +436,20 @@
 
     move-result-object v7
 
-    .line 1037
+    .line 1085
     invoke-static {v6, v7}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 1041
+    .line 1089
     .end local v5    # "flag":I
     goto :goto_0
 
-    .line 1039
+    .line 1087
     :catch_0
     move-exception v5
 
-    .line 1040
+    .line 1088
     .local v5, "ex":Ljava/lang/Exception;
     iget-object v6, p0, Lorg/codeaurora/ims/ImsConfigImpl$8;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
@@ -451,7 +469,7 @@
 
     invoke-static {v6, v7}, Lcom/qualcomm/ims/utils/Log;->w(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1042
+    .line 1090
     .end local v5    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void

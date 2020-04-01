@@ -48,7 +48,7 @@
     iput v0, p0, Lorg/codeaurora/ims/HoInfo;->mType:I
 
     .line 44
-    const/16 v1, 0x14
+    const v1, 0x7fffffff
 
     iput v1, p0, Lorg/codeaurora/ims/HoInfo;->mSrcTech:I
 

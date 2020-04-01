@@ -1011,7 +1011,7 @@
 .end method
 
 .method private isCarrierConfigLoaded(I)Z
-    .locals 6
+    .locals 7
     .param p1, "phoneId"    # I
 
     .line 684
@@ -1058,47 +1058,55 @@
 
     check-cast v1, Landroid/telephony/CarrierConfigManager;
 
-    .line 693
+    .line 694
     .local v1, "configManager":Landroid/telephony/CarrierConfigManager;
     invoke-static {p1}, Landroid/telephony/SubscriptionManager;->getSubId(I)[I
 
     move-result-object v3
 
+    .line 696
+    .local v3, "subIds":[I
+    if-eqz v3, :cond_2
+
     const/4 v4, 0x0
 
-    aget v3, v3, v4
+    aget v5, v3, v4
 
-    .line 695
-    .local v3, "subId":I
-    const/4 v4, -0x1
+    const/4 v6, -0x1
 
-    if-ne v3, v4, :cond_1
-
-    .line 696
-    const/4 v0, 0x0
+    if-ne v5, v6, :cond_1
 
     goto :goto_0
 
-    .line 698
+    .line 700
     :cond_1
-    invoke-virtual {v1, v3}, Landroid/telephony/CarrierConfigManager;->getConfigForSubId(I)Landroid/os/PersistableBundle;
+    aget v4, v3, v4
+
+    invoke-virtual {v1, v4}, Landroid/telephony/CarrierConfigManager;->getConfigForSubId(I)Landroid/os/PersistableBundle;
 
     move-result-object v4
 
-    .line 699
+    .line 701
     .local v4, "carrierConfig":Landroid/os/PersistableBundle;
     nop
 
-    .line 700
+    .line 702
     const-string v5, "default_carrierconfig_loaded"
 
     invoke-virtual {v4, v5}, Landroid/os/PersistableBundle;->getBoolean(Ljava/lang/String;)Z
 
     move-result v0
 
-    .line 702
+    goto :goto_1
+
+    .line 698
     .end local v4    # "carrierConfig":Landroid/os/PersistableBundle;
+    :cond_2
     :goto_0
+    const/4 v0, 0x0
+
+    .line 704
+    :goto_1
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -1113,7 +1121,7 @@
 
     invoke-static {p0, v2}, Lcom/qualcomm/ims/utils/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 704
+    .line 706
     return v0
 .end method
 

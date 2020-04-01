@@ -237,7 +237,16 @@
 .method public abstract setPhoneType(I)V
 .end method
 
-.method public abstract setServiceStatus(Landroid/os/Message;IIII)V
+.method public abstract setServiceStatus(Landroid/os/Message;Ljava/util/ArrayList;I)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/os/Message;",
+            "Ljava/util/ArrayList<",
+            "Lorg/codeaurora/ims/CapabilityStatus;",
+            ">;I)V"
+        }
+    .end annotation
 .end method
 
 .method public abstract setSuppServiceNotifications(ZLandroid/os/Message;)V

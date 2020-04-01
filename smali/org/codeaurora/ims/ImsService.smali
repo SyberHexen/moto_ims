@@ -241,11 +241,7 @@
     .local v1, "defaultSub":I
     sget-object v2, Lorg/codeaurora/ims/ImsService;->mServiceSubs:[Lorg/codeaurora/ims/ImsServiceSub;
 
-    const/4 v3, 0x0
-
-    aget-object v2, v2, v3
-
-    invoke-static {v2, p0}, Lcom/qualcomm/ims/vt/ImsVideoGlobals;->init(Lorg/codeaurora/ims/ImsServiceSub;Landroid/content/Context;)V
+    invoke-static {v2, p0}, Lcom/qualcomm/ims/vt/ImsVideoGlobals;->init([Lorg/codeaurora/ims/ImsServiceSub;Landroid/content/Context;)V
 
     .line 69
     return-void
@@ -660,6 +656,13 @@
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 234
+    invoke-static {}, Lcom/qualcomm/ims/vt/ImsVideoGlobals;->getInstance()Lcom/qualcomm/ims/vt/ImsVideoGlobals;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/qualcomm/ims/vt/ImsVideoGlobals;->dispose()V
+
+    .line 235
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -672,50 +675,50 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 235
+    .line 236
     sget-object v1, Lorg/codeaurora/ims/ImsService;->mServiceSubs:[Lorg/codeaurora/ims/ImsServiceSub;
 
     aget-object v1, v1, v0
 
     invoke-virtual {v1}, Lorg/codeaurora/ims/ImsServiceSub;->dispose()V
 
-    .line 236
+    .line 237
     sget-object v1, Lorg/codeaurora/ims/ImsService;->mServiceSubs:[Lorg/codeaurora/ims/ImsServiceSub;
 
     aput-object v2, v1, v0
 
-    .line 237
+    .line 238
     iget-object v1, p0, Lorg/codeaurora/ims/ImsService;->mSenderRxrs:[Lorg/codeaurora/ims/ImsSenderRxr;
 
     aput-object v2, v1, v0
 
-    .line 234
+    .line 235
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 239
+    .line 240
     .end local v0    # "i":I
     :cond_0
     sput-object v2, Lorg/codeaurora/ims/ImsService;->mServiceSubs:[Lorg/codeaurora/ims/ImsServiceSub;
 
-    .line 240
+    .line 241
     iput-object v2, p0, Lorg/codeaurora/ims/ImsService;->mSenderRxrs:[Lorg/codeaurora/ims/ImsSenderRxr;
 
-    .line 241
+    .line 242
     iput-object v2, p0, Lorg/codeaurora/ims/ImsService;->mSubController:Lorg/codeaurora/ims/ImsSubController;
 
-    .line 242
+    .line 243
     invoke-static {}, Lorg/codeaurora/ims/utils/QtiCarrierConfigHelper;->getInstance()Lorg/codeaurora/ims/utils/QtiCarrierConfigHelper;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lorg/codeaurora/ims/utils/QtiCarrierConfigHelper;->teardown()V
 
-    .line 243
+    .line 244
     invoke-super {p0}, Landroid/telephony/ims/ImsService;->onDestroy()V
 
-    .line 244
+    .line 245
     return-void
 .end method
 

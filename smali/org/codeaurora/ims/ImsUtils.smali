@@ -465,7 +465,7 @@
 
     .line 101
     :cond_0
-    const v0, 0x1110060
+    const v0, 0x1110063
 
     invoke-static {p0, p1, v0}, Lorg/codeaurora/ims/ImsUtils;->getBooleanDeviceConfig(Landroid/content/Context;II)Z
 
@@ -546,7 +546,7 @@
 
     .line 52
     :cond_0
-    const v0, 0x1110061
+    const v0, 0x1110064
 
     invoke-static {p0, p1, v0}, Lorg/codeaurora/ims/ImsUtils;->getBooleanDeviceConfig(Landroid/content/Context;II)Z
 
@@ -634,7 +634,7 @@
 
     .line 85
     :cond_0
-    const v0, 0x1110064
+    const v0, 0x1110067
 
     invoke-static {p0, p1, v0}, Lorg/codeaurora/ims/ImsUtils;->getBooleanDeviceConfig(Landroid/content/Context;II)Z
 
@@ -674,7 +674,7 @@
 .end method
 
 .method public static sendUpdateImsServiceConfigRequest(Landroid/content/Context;IZ)V
-    .locals 3
+    .locals 2
     .param p0, "cxt"    # Landroid/content/Context;
     .param p1, "phoneId"    # I
     .param p2, "force"    # Z
@@ -693,13 +693,9 @@
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
     .line 182
-    invoke-static {p2}, Ljava/lang/Boolean;->toString(Z)Ljava/lang/String;
+    const-string v1, "force"
 
-    move-result-object v1
-
-    const-string v2, "force"
-
-    invoke-virtual {v0, v2, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v0, v1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
     .line 183
     invoke-static {v0, p1}, Landroid/telephony/SubscriptionManager;->putPhoneIdAndSubIdExtra(Landroid/content/Intent;I)V

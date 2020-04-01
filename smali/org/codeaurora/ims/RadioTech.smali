@@ -30,7 +30,7 @@
 
 .field public static final RADIO_TECH_HSUPA:I = 0xa
 
-.field public static final RADIO_TECH_INVALID:I = 0x14
+.field public static final RADIO_TECH_INVALID:I = 0x7fffffff
 
 .field public static final RADIO_TECH_IS95A:I = 0x4
 
@@ -39,6 +39,8 @@
 .field public static final RADIO_TECH_IWLAN:I = 0x13
 
 .field public static final RADIO_TECH_LTE:I = 0xe
+
+.field public static final RADIO_TECH_NR5G:I = 0x14
 
 .field public static final RADIO_TECH_TD_SCDMA:I = 0x11
 

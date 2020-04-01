@@ -48,7 +48,7 @@
     iput-object v0, p0, Lorg/codeaurora/ims/ImsRegistrationInfo;->mErrorMessage:Ljava/lang/String;
 
     .line 46
-    const/16 v1, 0x14
+    const v1, 0x7fffffff
 
     iput v1, p0, Lorg/codeaurora/ims/ImsRegistrationInfo;->mRadioTech:I
 

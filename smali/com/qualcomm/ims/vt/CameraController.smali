@@ -162,7 +162,7 @@
     .locals 3
     .param p1, "session"    # Lorg/codeaurora/ims/ImsCallSessionImpl;
 
-    .line 324
+    .line 333
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -191,31 +191,31 @@
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 325
+    .line 334
     iget-object v0, p0, Lcom/qualcomm/ims/vt/CameraController;->mSyncObject:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 326
+    .line 335
     :try_start_0
     invoke-direct {p0, p1}, Lcom/qualcomm/ims/vt/CameraController;->removeOwner(Lorg/codeaurora/ims/ImsCallSessionImpl;)V
 
-    .line 328
+    .line 337
     iget-object v1, p0, Lcom/qualcomm/ims/vt/CameraController;->mCameraOwner:Lorg/codeaurora/ims/ImsCallSessionImpl;
 
     if-nez v1, :cond_0
 
-    .line 329
+    .line 338
     invoke-direct {p0}, Lcom/qualcomm/ims/vt/CameraController;->closeCamera()V
 
-    .line 330
+    .line 339
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/qualcomm/ims/vt/CameraController;->mPreviewSurface:Landroid/view/Surface;
 
     goto :goto_0
 
-    .line 332
+    .line 341
     :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -235,7 +235,7 @@
 
     iget-object v2, p0, Lcom/qualcomm/ims/vt/CameraController;->mCameraOwner:Lorg/codeaurora/ims/ImsCallSessionImpl;
 
-    .line 334
+    .line 343
     invoke-direct {p0, v2}, Lcom/qualcomm/ims/vt/CameraController;->getSessionInfo(Lorg/codeaurora/ims/ImsCallSessionImpl;)Ljava/lang/String;
 
     move-result-object v2
@@ -246,17 +246,17 @@
 
     move-result-object v1
 
-    .line 332
+    .line 341
     invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->w(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 336
+    .line 345
     :goto_0
     monitor-exit v0
 
-    .line 337
+    .line 346
     return-void
 
-    .line 336
+    .line 345
     :catchall_0
     move-exception v1
 
@@ -429,13 +429,13 @@
 
     monitor-enter v0
 
-    .line 134
+    .line 143
     :try_start_0
     sget-object v1, Lcom/qualcomm/ims/vt/CameraController;->sInstance:Lcom/qualcomm/ims/vt/CameraController;
 
     if-eqz v1, :cond_0
 
-    .line 135
+    .line 144
     sget-object v1, Lcom/qualcomm/ims/vt/CameraController;->sInstance:Lcom/qualcomm/ims/vt/CameraController;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -444,7 +444,7 @@
 
     return-object v1
 
-    .line 137
+    .line 146
     :cond_0
     :try_start_1
     new-instance v1, Ljava/lang/RuntimeException;
@@ -457,7 +457,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 133
+    .line 142
     :catchall_0
     move-exception v1
 
@@ -474,14 +474,14 @@
         }
     .end annotation
 
-    .line 230
+    .line 239
     iget-object v0, p0, Lcom/qualcomm/ims/vt/CameraController;->mCamera:Lcom/qualcomm/ims/vt/Camera;
 
     invoke-virtual {v0}, Lcom/qualcomm/ims/vt/Camera;->getSensorOrientation()I
 
     move-result v0
 
-    .line 231
+    .line 240
     .local v0, "mountAngle":I
     iget-object v1, p0, Lcom/qualcomm/ims/vt/CameraController;->mCamera:Lcom/qualcomm/ims/vt/Camera;
 
@@ -489,7 +489,7 @@
 
     move-result-object v1
 
-    .line 232
+    .line 241
     .local v1, "previewSize":Landroid/util/Size;
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -513,18 +513,18 @@
 
     invoke-static {p0, v2}, Lcom/qualcomm/ims/utils/Log;->v(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 233
+    .line 242
     invoke-virtual {v1}, Landroid/util/Size;->getWidth()I
 
     move-result v2
 
-    .line 234
+    .line 243
     .local v2, "width":I
     invoke-virtual {v1}, Landroid/util/Size;->getHeight()I
 
     move-result v3
 
-    .line 235
+    .line 244
     .local v3, "height":I
     invoke-virtual {v1}, Landroid/util/Size;->getWidth()I
 
@@ -543,7 +543,7 @@
     :cond_0
     const/4 v4, 0x0
 
-    .line 236
+    .line 245
     .local v4, "isPortrait":Z
     :goto_0
     if-nez v4, :cond_1
@@ -552,7 +552,7 @@
 
     if-eqz v5, :cond_1
 
-    .line 239
+    .line 248
     new-instance v5, Landroid/util/Size;
 
     invoke-direct {v5, v3, v2}, Landroid/util/Size;-><init>(II)V
@@ -561,7 +561,7 @@
 
     goto :goto_1
 
-    .line 240
+    .line 249
     :cond_1
     if-eqz v4, :cond_2
 
@@ -569,7 +569,7 @@
 
     if-nez v5, :cond_2
 
-    .line 243
+    .line 252
     new-instance v5, Landroid/util/Size;
 
     invoke-direct {v5, v2, v3}, Landroid/util/Size;-><init>(II)V
@@ -578,11 +578,11 @@
 
     goto :goto_1
 
-    .line 244
+    .line 253
     :cond_2
     if-eqz v4, :cond_3
 
-    .line 246
+    .line 255
     new-instance v5, Landroid/util/Size;
 
     invoke-direct {v5, v3, v2}, Landroid/util/Size;-><init>(II)V
@@ -591,18 +591,18 @@
 
     goto :goto_1
 
-    .line 247
+    .line 256
     :cond_3
     if-nez v4, :cond_4
 
-    .line 249
+    .line 258
     new-instance v5, Landroid/util/Size;
 
     invoke-direct {v5, v2, v3}, Landroid/util/Size;-><init>(II)V
 
     move-object v1, v5
 
-    .line 251
+    .line 260
     :cond_4
     :goto_1
     return-object v1
@@ -612,15 +612,15 @@
     .locals 1
     .param p1, "session"    # Lorg/codeaurora/ims/ImsCallSessionImpl;
 
-    .line 497
+    .line 505
     if-nez p1, :cond_0
 
-    .line 498
+    .line 506
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 500
+    .line 508
     :cond_0
     invoke-virtual {p1}, Lorg/codeaurora/ims/ImsCallSessionImpl;->toSimpleString()Ljava/lang/String;
 
@@ -687,12 +687,12 @@
 .method private releaseCurrentOwner()V
     .locals 3
 
-    .line 313
+    .line 322
     iget-object v0, p0, Lcom/qualcomm/ims/vt/CameraController;->mSyncObject:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 314
+    .line 323
     :try_start_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -716,29 +716,29 @@
 
     invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 315
+    .line 324
     iget-object v1, p0, Lcom/qualcomm/ims/vt/CameraController;->mCameraOwner:Lorg/codeaurora/ims/ImsCallSessionImpl;
 
     if-eqz v1, :cond_0
 
-    .line 316
+    .line 325
     iget-object v1, p0, Lcom/qualcomm/ims/vt/CameraController;->mCameraOwner:Lorg/codeaurora/ims/ImsCallSessionImpl;
 
     invoke-virtual {v1, p0}, Lorg/codeaurora/ims/ImsCallSessionImpl;->removeListener(Lorg/codeaurora/ims/ImsCallSessionImpl$Listener;)V
 
-    .line 317
+    .line 326
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/qualcomm/ims/vt/CameraController;->mCameraOwner:Lorg/codeaurora/ims/ImsCallSessionImpl;
 
-    .line 319
+    .line 328
     :cond_0
     monitor-exit v0
 
-    .line 320
+    .line 329
     return-void
 
-    .line 319
+    .line 328
     :catchall_0
     move-exception v1
 
@@ -753,12 +753,12 @@
     .locals 3
     .param p1, "session"    # Lorg/codeaurora/ims/ImsCallSessionImpl;
 
-    .line 294
+    .line 303
     iget-object v0, p0, Lcom/qualcomm/ims/vt/CameraController;->mSyncObject:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 295
+    .line 304
     :try_start_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -780,19 +780,19 @@
 
     invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 296
+    .line 305
     invoke-virtual {p0, p1}, Lcom/qualcomm/ims/vt/CameraController;->isOwner(Lorg/codeaurora/ims/ImsCallSessionImpl;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 297
+    .line 306
     invoke-direct {p0}, Lcom/qualcomm/ims/vt/CameraController;->releaseCurrentOwner()V
 
     goto :goto_0
 
-    .line 299
+    .line 308
     :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -802,7 +802,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 300
+    .line 309
     invoke-direct {p0, p1}, Lcom/qualcomm/ims/vt/CameraController;->getSessionInfo(Lorg/codeaurora/ims/ImsCallSessionImpl;)Ljava/lang/String;
 
     move-result-object v2
@@ -813,17 +813,17 @@
 
     move-result-object v1
 
-    .line 299
+    .line 308
     invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->w(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 302
+    .line 311
     :goto_0
     monitor-exit v0
 
-    .line 303
+    .line 312
     return-void
 
-    .line 302
+    .line 311
     :catchall_0
     move-exception v1
 
@@ -837,12 +837,12 @@
 .method private sendCameraCapabilities()V
     .locals 4
 
-    .line 480
+    .line 488
     invoke-virtual {p0}, Lcom/qualcomm/ims/vt/CameraController;->getCameraCapabilities()Landroid/telecom/VideoProfile$CameraCapabilities;
 
     move-result-object v0
 
-    .line 481
+    .line 489
     .local v0, "cc":Landroid/telecom/VideoProfile$CameraCapabilities;
     if-eqz v0, :cond_2
 
@@ -852,25 +852,25 @@
 
     goto :goto_0
 
-    .line 486
+    .line 494
     :cond_0
     invoke-virtual {v1}, Lorg/codeaurora/ims/ImsCallSessionImpl;->getImsVideoCallProviderImpl()Lcom/qualcomm/ims/vt/ImsVideoCallProviderImpl;
 
     move-result-object v1
 
-    .line 487
+    .line 495
     .local v1, "provider":Lcom/qualcomm/ims/vt/ImsVideoCallProviderImpl;
     if-nez v1, :cond_1
 
-    .line 488
+    .line 496
     const-string v2, "sendCameraCapabilities: ImsVideoCallProvider is not available (null)."
 
     invoke-static {p0, v2}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 489
+    .line 497
     return-void
 
-    .line 492
+    .line 500
     :cond_1
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -888,13 +888,13 @@
 
     invoke-static {p0, v2}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 493
+    .line 501
     invoke-virtual {v1, v0}, Lcom/qualcomm/ims/vt/ImsVideoCallProviderImpl;->changeCameraCapabilities(Landroid/telecom/VideoProfile$CameraCapabilities;)V
 
-    .line 494
+    .line 502
     return-void
 
-    .line 482
+    .line 490
     .end local v1    # "provider":Lcom/qualcomm/ims/vt/ImsVideoCallProviderImpl;
     :cond_2
     :goto_0
@@ -902,7 +902,7 @@
 
     invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 483
+    .line 491
     return-void
 .end method
 
@@ -910,30 +910,30 @@
     .locals 2
     .param p1, "error"    # I
 
-    .line 520
+    .line 528
     iget-object v0, p0, Lcom/qualcomm/ims/vt/CameraController;->mSyncObject:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 521
+    .line 529
     :try_start_0
     iget-object v1, p0, Lcom/qualcomm/ims/vt/CameraController;->mCameraOwner:Lorg/codeaurora/ims/ImsCallSessionImpl;
 
     if-eqz v1, :cond_0
 
-    .line 522
+    .line 530
     iget-object v1, p0, Lcom/qualcomm/ims/vt/CameraController;->mCameraOwner:Lorg/codeaurora/ims/ImsCallSessionImpl;
 
     invoke-direct {p0, v1, p1}, Lcom/qualcomm/ims/vt/CameraController;->sendCameraStatus(Lorg/codeaurora/ims/ImsCallSessionImpl;I)V
 
-    .line 524
+    .line 532
     :cond_0
     monitor-exit v0
 
-    .line 525
+    .line 533
     return-void
 
-    .line 524
+    .line 532
     :catchall_0
     move-exception v1
 
@@ -949,10 +949,10 @@
     .param p1, "session"    # Lorg/codeaurora/ims/ImsCallSessionImpl;
     .param p2, "error"    # I
 
-    .line 504
+    .line 512
     if-nez p1, :cond_0
 
-    .line 505
+    .line 513
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -969,28 +969,28 @@
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 506
+    .line 514
     return-void
 
-    .line 509
+    .line 517
     :cond_0
     invoke-virtual {p1}, Lorg/codeaurora/ims/ImsCallSessionImpl;->getImsVideoCallProviderImpl()Lcom/qualcomm/ims/vt/ImsVideoCallProviderImpl;
 
     move-result-object v0
 
-    .line 510
+    .line 518
     .local v0, "provider":Lcom/qualcomm/ims/vt/ImsVideoCallProviderImpl;
     if-nez v0, :cond_1
 
-    .line 511
+    .line 519
     const-string v1, "sendCameraStatus: ImsVideoCallProvider is not available (null)."
 
     invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 512
+    .line 520
     return-void
 
-    .line 515
+    .line 523
     :cond_1
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1012,12 +1012,12 @@
 
     invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->v(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 516
+    .line 524
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/qualcomm/ims/vt/ImsVideoCallProviderImpl;->sendCameraStatus(Z)V
 
-    .line 517
+    .line 525
     return-void
 .end method
 
@@ -1025,12 +1025,12 @@
     .locals 3
     .param p1, "session"    # Lorg/codeaurora/ims/ImsCallSessionImpl;
 
-    .line 280
+    .line 289
     iget-object v0, p0, Lcom/qualcomm/ims/vt/CameraController;->mSyncObject:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 281
+    .line 290
     :try_start_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1052,27 +1052,27 @@
 
     invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 282
+    .line 291
     invoke-virtual {p0, p1}, Lcom/qualcomm/ims/vt/CameraController;->isOwner(Lorg/codeaurora/ims/ImsCallSessionImpl;)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 283
+    .line 292
     invoke-direct {p0}, Lcom/qualcomm/ims/vt/CameraController;->releaseCurrentOwner()V
 
-    .line 284
+    .line 293
     iput-object p1, p0, Lcom/qualcomm/ims/vt/CameraController;->mCameraOwner:Lorg/codeaurora/ims/ImsCallSessionImpl;
 
-    .line 285
+    .line 294
     iget-object v1, p0, Lcom/qualcomm/ims/vt/CameraController;->mCameraOwner:Lorg/codeaurora/ims/ImsCallSessionImpl;
 
     invoke-virtual {v1, p0}, Lorg/codeaurora/ims/ImsCallSessionImpl;->addListener(Lorg/codeaurora/ims/ImsCallSessionImpl$Listener;)V
 
     goto :goto_0
 
-    .line 287
+    .line 296
     :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1090,14 +1090,14 @@
 
     invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 290
+    .line 299
     :goto_0
     monitor-exit v0
 
-    .line 291
+    .line 300
     return-void
 
-    .line 290
+    .line 299
     :catchall_0
     move-exception v1
 
@@ -1116,12 +1116,12 @@
         }
     .end annotation
 
-    .line 344
+    .line 353
     const-string v0, "updateCameraSession"
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 345
+    .line 354
     iget-object v0, p0, Lcom/qualcomm/ims/vt/CameraController;->mCamera:Lcom/qualcomm/ims/vt/Camera;
 
     if-eqz v0, :cond_6
@@ -1134,7 +1134,7 @@
 
     goto/16 :goto_3
 
-    .line 350
+    .line 359
     :cond_0
     iget-object v0, p0, Lcom/qualcomm/ims/vt/CameraController;->mCamera:Lcom/qualcomm/ims/vt/Camera;
 
@@ -1142,7 +1142,7 @@
 
     move-result v0
 
-    .line 351
+    .line 360
     .local v0, "isPreviewStarted":Z
     iget-object v1, p0, Lcom/qualcomm/ims/vt/CameraController;->mCamera:Lcom/qualcomm/ims/vt/Camera;
 
@@ -1150,7 +1150,7 @@
 
     move-result v1
 
-    .line 352
+    .line 361
     .local v1, "isRecordingStarted":Z
     iget-object v2, p0, Lcom/qualcomm/ims/vt/CameraController;->mPreviewSurface:Landroid/view/Surface;
 
@@ -1167,7 +1167,7 @@
     :cond_1
     move v2, v4
 
-    .line 353
+    .line 362
     .local v2, "canStartPreview":Z
     :goto_0
     iget-boolean v5, p0, Lcom/qualcomm/ims/vt/CameraController;->mIsRecordingEnabled:Z
@@ -1181,7 +1181,7 @@
     :cond_2
     move v3, v4
 
-    .line 356
+    .line 365
     .local v3, "canStartRecording":Z
     :goto_1
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1218,7 +1218,7 @@
 
     invoke-static {p0, v4}, Lcom/qualcomm/ims/utils/Log;->v(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 359
+    .line 368
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -1241,12 +1241,12 @@
 
     invoke-static {p0, v4}, Lcom/qualcomm/ims/utils/Log;->v(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 362
+    .line 371
     if-eqz v3, :cond_3
 
     if-nez v1, :cond_3
 
-    .line 363
+    .line 372
     iget-object v4, p0, Lcom/qualcomm/ims/vt/CameraController;->mCamera:Lcom/qualcomm/ims/vt/Camera;
 
     iget-object v5, p0, Lcom/qualcomm/ims/vt/CameraController;->mPreviewSurface:Landroid/view/Surface;
@@ -1257,13 +1257,13 @@
 
     goto :goto_2
 
-    .line 364
+    .line 373
     :cond_3
     if-eqz v2, :cond_4
 
     if-nez v0, :cond_4
 
-    .line 365
+    .line 374
     iget-object v4, p0, Lcom/qualcomm/ims/vt/CameraController;->mCamera:Lcom/qualcomm/ims/vt/Camera;
 
     iget-object v5, p0, Lcom/qualcomm/ims/vt/CameraController;->mPreviewSurface:Landroid/view/Surface;
@@ -1272,23 +1272,23 @@
 
     goto :goto_2
 
-    .line 366
+    .line 375
     :cond_4
     if-nez v2, :cond_5
 
     if-eqz v0, :cond_5
 
-    .line 367
+    .line 376
     iget-object v4, p0, Lcom/qualcomm/ims/vt/CameraController;->mCamera:Lcom/qualcomm/ims/vt/Camera;
 
     invoke-virtual {v4}, Lcom/qualcomm/ims/vt/Camera;->stopPreview()V
 
-    .line 369
+    .line 378
     :cond_5
     :goto_2
     return-void
 
-    .line 346
+    .line 355
     .end local v0    # "isPreviewStarted":Z
     .end local v1    # "isRecordingStarted":Z
     .end local v2    # "canStartPreview":Z
@@ -1313,7 +1313,7 @@
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 347
+    .line 356
     return-void
 .end method
 
@@ -1323,22 +1323,68 @@
     .locals 1
     .param p1, "session"    # Lorg/codeaurora/ims/ImsCallSessionImpl;
 
-    .line 168
+    .line 177
     const-string v0, "close"
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 169
+    .line 178
     invoke-direct {p0, p1}, Lcom/qualcomm/ims/vt/CameraController;->doClose(Lorg/codeaurora/ims/ImsCallSessionImpl;)V
 
-    .line 170
+    .line 179
     return-void
+.end method
+
+.method public dispose()V
+    .locals 2
+
+    .line 129
+    const-string v0, "dispose()"
+
+    invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 130
+    const-class v0, Lcom/qualcomm/ims/vt/CameraController;
+
+    monitor-enter v0
+
+    .line 131
+    :try_start_0
+    iget-object v1, p0, Lcom/qualcomm/ims/vt/CameraController;->mMedia:Lcom/qualcomm/ims/vt/ImsMedia;
+
+    invoke-virtual {v1, p0}, Lcom/qualcomm/ims/vt/ImsMedia;->removeCameraListener(Lcom/qualcomm/ims/vt/ImsMedia$CameraListener;)V
+
+    .line 132
+    iget-object v1, p0, Lcom/qualcomm/ims/vt/CameraController;->mMedia:Lcom/qualcomm/ims/vt/ImsMedia;
+
+    invoke-virtual {v1, p0}, Lcom/qualcomm/ims/vt/ImsMedia;->removeMediaStateListener(Lcom/qualcomm/ims/vt/ImsMedia$MediaStateListener;)V
+
+    .line 133
+    const/4 v1, 0x0
+
+    sput-object v1, Lcom/qualcomm/ims/vt/CameraController;->sInstance:Lcom/qualcomm/ims/vt/CameraController;
+
+    .line 134
+    monitor-exit v0
+
+    .line 135
+    return-void
+
+    .line 134
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v1
 .end method
 
 .method getCameraCapabilities()Landroid/telecom/VideoProfile$CameraCapabilities;
     .locals 8
 
-    .line 255
+    .line 264
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1357,20 +1403,20 @@
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->v(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 256
+    .line 265
     iget-object v0, p0, Lcom/qualcomm/ims/vt/CameraController;->mCamera:Lcom/qualcomm/ims/vt/Camera;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 258
+    .line 267
     :try_start_0
     invoke-direct {p0}, Lcom/qualcomm/ims/vt/CameraController;->getPreviewSize()Landroid/util/Size;
 
     move-result-object v0
 
-    .line 259
+    .line 268
     .local v0, "size":Landroid/util/Size;
     iget-object v2, p0, Lcom/qualcomm/ims/vt/CameraController;->mCamera:Lcom/qualcomm/ims/vt/Camera;
 
@@ -1382,7 +1428,7 @@
 
     move-result-object v2
 
-    .line 260
+    .line 269
     .local v2, "isZoomSupported":Ljava/lang/Boolean;
     iget-object v3, p0, Lcom/qualcomm/ims/vt/CameraController;->mCamera:Lcom/qualcomm/ims/vt/Camera;
 
@@ -1390,7 +1436,7 @@
 
     move-result v3
 
-    .line 261
+    .line 270
     .local v3, "maxZoom":F
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -1420,7 +1466,7 @@
 
     invoke-static {p0, v4}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 263
+    .line 272
     new-instance v4, Landroid/telecom/VideoProfile$CameraCapabilities;
 
     iget-object v5, p0, Lcom/qualcomm/ims/vt/CameraController;->mCameraConfigIms:Lcom/qualcomm/ims/vt/Camera$ConfigIms;
@@ -1431,12 +1477,12 @@
 
     iget-object v6, p0, Lcom/qualcomm/ims/vt/CameraController;->mCameraConfigIms:Lcom/qualcomm/ims/vt/Camera$ConfigIms;
 
-    .line 264
+    .line 273
     invoke-virtual {v6}, Lcom/qualcomm/ims/vt/Camera$ConfigIms;->getHeight()I
 
     move-result v6
 
-    .line 265
+    .line 274
     invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v7
@@ -1445,17 +1491,17 @@
     :try_end_0
     .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 263
+    .line 272
     return-object v4
 
-    .line 266
+    .line 275
     .end local v0    # "size":Landroid/util/Size;
     .end local v2    # "isZoomSupported":Ljava/lang/Boolean;
     .end local v3    # "maxZoom":F
     :catch_0
     move-exception v0
 
-    .line 267
+    .line 276
     .local v0, "e":Landroid/hardware/camera2/CameraAccessException;
     invoke-virtual {v0}, Landroid/hardware/camera2/CameraAccessException;->getReason()I
 
@@ -1463,10 +1509,10 @@
 
     invoke-direct {p0, v2}, Lcom/qualcomm/ims/vt/CameraController;->sendCameraStatus(I)V
 
-    .line 268
+    .line 277
     return-object v1
 
-    .line 271
+    .line 280
     .end local v0    # "e":Landroid/hardware/camera2/CameraAccessException;
     :cond_0
     return-object v1
@@ -1477,7 +1523,7 @@
     .annotation build Lcom/android/internal/annotations/VisibleForTesting;
     .end annotation
 
-    .line 414
+    .line 423
     iget-object v0, p0, Lcom/qualcomm/ims/vt/CameraController;->mPreviewSurface:Landroid/view/Surface;
 
     return-object v0
@@ -1488,7 +1534,7 @@
     .annotation build Lcom/android/internal/annotations/VisibleForTesting;
     .end annotation
 
-    .line 409
+    .line 418
     iget-object v0, p0, Lcom/qualcomm/ims/vt/CameraController;->mRecordingSurface:Landroid/view/Surface;
 
     return-object v0
@@ -1500,12 +1546,12 @@
     .annotation build Lcom/android/internal/annotations/VisibleForTesting;
     .end annotation
 
-    .line 307
+    .line 316
     iget-object v0, p0, Lcom/qualcomm/ims/vt/CameraController;->mSyncObject:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 308
+    .line 317
     if-eqz p1, :cond_0
 
     :try_start_0
@@ -1517,13 +1563,13 @@
 
     goto :goto_0
 
-    .line 309
+    .line 318
     :catchall_0
     move-exception v1
 
     goto :goto_1
 
-    .line 308
+    .line 317
     :cond_0
     const/4 v1, 0x0
 
@@ -1532,7 +1578,7 @@
 
     return v1
 
-    .line 309
+    .line 318
     :goto_1
     monitor-exit v0
     :try_end_0
@@ -1545,7 +1591,7 @@
     .locals 0
     .param p1, "session"    # Lorg/codeaurora/ims/ImsCallSessionImpl;
 
-    .line 558
+    .line 566
     return-void
 .end method
 
@@ -1554,7 +1600,7 @@
     .param p1, "session"    # Lorg/codeaurora/ims/ImsCallSessionImpl;
     .param p2, "callModify"    # Lorg/codeaurora/ims/CallModify;
 
-    .line 549
+    .line 557
     return-void
 .end method
 
@@ -1563,7 +1609,7 @@
     .param p1, "session"    # Lorg/codeaurora/ims/ImsCallSessionImpl;
     .param p2, "newCallType"    # I
 
-    .line 553
+    .line 561
     return-void
 .end method
 
@@ -1575,15 +1621,15 @@
     .param p4, "surface"    # Landroid/view/Surface;
     .param p5, "orientationMode"    # I
 
-    .line 422
+    .line 431
     const-string v0, "onCameraConfigChanged"
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 425
+    .line 434
     const/4 v0, 0x0
 
-    .line 426
+    .line 435
     .local v0, "changed":Z
     iget-object v1, p0, Lcom/qualcomm/ims/vt/CameraController;->mCameraConfigIms:Lcom/qualcomm/ims/vt/Camera$ConfigIms;
 
@@ -1601,11 +1647,11 @@
 
     if-eq p2, v1, :cond_1
 
-    .line 427
+    .line 436
     :cond_0
     const/4 v0, 0x1
 
-    .line 430
+    .line 439
     :cond_1
     new-instance v1, Lcom/qualcomm/ims/vt/Camera$ConfigIms;
 
@@ -1613,13 +1659,13 @@
 
     iput-object v1, p0, Lcom/qualcomm/ims/vt/CameraController;->mCameraConfigIms:Lcom/qualcomm/ims/vt/Camera$ConfigIms;
 
-    .line 431
+    .line 440
     iput p3, p0, Lcom/qualcomm/ims/vt/CameraController;->mRecorderFrameRate:I
 
-    .line 432
+    .line 441
     iput-object p4, p0, Lcom/qualcomm/ims/vt/CameraController;->mRecordingSurface:Landroid/view/Surface;
 
-    .line 433
+    .line 442
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1638,7 +1684,7 @@
 
     invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 435
+    .line 444
     iget-object v1, p0, Lcom/qualcomm/ims/vt/CameraController;->mCamera:Lcom/qualcomm/ims/vt/Camera;
 
     if-eqz v1, :cond_5
@@ -1651,34 +1697,23 @@
 
     goto :goto_1
 
-    .line 441
+    .line 450
     :cond_2
     :try_start_0
     iget-object v1, p0, Lcom/qualcomm/ims/vt/CameraController;->mCamera:Lcom/qualcomm/ims/vt/Camera;
 
-    iget-object v2, p0, Lcom/qualcomm/ims/vt/CameraController;->mCameraConfigIms:Lcom/qualcomm/ims/vt/Camera$ConfigIms;
-
-    invoke-virtual {v1, v2}, Lcom/qualcomm/ims/vt/Camera;->canReconfigureWithActiveSession(Lcom/qualcomm/ims/vt/Camera$ConfigIms;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_3
-
-    iget-object v1, p0, Lcom/qualcomm/ims/vt/CameraController;->mCamera:Lcom/qualcomm/ims/vt/Camera;
-
-    .line 442
     invoke-virtual {v1}, Lcom/qualcomm/ims/vt/Camera;->isPreviewStarted()Z
 
     move-result v1
 
     if-eqz v1, :cond_3
 
-    .line 443
+    .line 451
     iget-object v1, p0, Lcom/qualcomm/ims/vt/CameraController;->mCamera:Lcom/qualcomm/ims/vt/Camera;
 
     invoke-virtual {v1}, Lcom/qualcomm/ims/vt/Camera;->stopPreview()V
 
-    .line 445
+    .line 453
     :cond_3
     iget-object v1, p0, Lcom/qualcomm/ims/vt/CameraController;->mCamera:Lcom/qualcomm/ims/vt/Camera;
 
@@ -1686,27 +1721,27 @@
 
     invoke-virtual {v1, v2}, Lcom/qualcomm/ims/vt/Camera;->reconfigure(Lcom/qualcomm/ims/vt/Camera$ConfigIms;)V
 
-    .line 446
+    .line 454
     iget v1, p0, Lcom/qualcomm/ims/vt/CameraController;->mRecorderFrameRate:I
 
     invoke-virtual {p0, v1}, Lcom/qualcomm/ims/vt/CameraController;->onUpdateRecorderFrameRate(I)V
 
-    .line 447
+    .line 455
     invoke-direct {p0}, Lcom/qualcomm/ims/vt/CameraController;->updateCameraSession()V
 
-    .line 448
+    .line 456
     invoke-direct {p0}, Lcom/qualcomm/ims/vt/CameraController;->sendCameraCapabilities()V
     :try_end_0
     .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 451
+    .line 459
     goto :goto_0
 
-    .line 449
+    .line 457
     :catch_0
     move-exception v1
 
-    .line 450
+    .line 458
     .local v1, "e":Landroid/hardware/camera2/CameraAccessException;
     invoke-virtual {v1}, Landroid/hardware/camera2/CameraAccessException;->getReason()I
 
@@ -1714,17 +1749,17 @@
 
     invoke-direct {p0, v2}, Lcom/qualcomm/ims/vt/CameraController;->sendCameraStatus(I)V
 
-    .line 453
+    .line 461
     .end local v1    # "e":Landroid/hardware/camera2/CameraAccessException;
     :goto_0
     if-eqz v0, :cond_4
 
-    .line 454
+    .line 462
     invoke-virtual {p0}, Lcom/qualcomm/ims/vt/CameraController;->getCameraCapabilities()Landroid/telecom/VideoProfile$CameraCapabilities;
 
     move-result-object v1
 
-    .line 455
+    .line 463
     .local v1, "cc":Landroid/telecom/VideoProfile$CameraCapabilities;
     if-eqz v1, :cond_4
 
@@ -1732,7 +1767,7 @@
 
     if-eqz v2, :cond_4
 
-    .line 456
+    .line 464
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -1763,7 +1798,7 @@
 
     invoke-static {p0, v2}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 457
+    .line 465
     iget-object v2, p0, Lcom/qualcomm/ims/vt/CameraController;->mCameraOwner:Lorg/codeaurora/ims/ImsCallSessionImpl;
 
     invoke-virtual {v2}, Lorg/codeaurora/ims/ImsCallSessionImpl;->getImsVideoCallProviderImpl()Lcom/qualcomm/ims/vt/ImsVideoCallProviderImpl;
@@ -1772,19 +1807,19 @@
 
     invoke-virtual {v2, v1}, Lcom/qualcomm/ims/vt/ImsVideoCallProviderImpl;->changeCameraCapabilities(Landroid/telecom/VideoProfile$CameraCapabilities;)V
 
-    .line 461
+    .line 469
     .end local v1    # "cc":Landroid/telecom/VideoProfile$CameraCapabilities;
     :cond_4
     return-void
 
-    .line 436
+    .line 445
     :cond_5
     :goto_1
     const-string v1, "onParamReadyEvent: Camera is not open deferring configuration..."
 
     invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 437
+    .line 446
     return-void
 .end method
 
@@ -1792,7 +1827,7 @@
     .locals 2
     .param p1, "session"    # Lorg/codeaurora/ims/ImsCallSessionImpl;
 
-    .line 539
+    .line 547
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1813,10 +1848,10 @@
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 540
+    .line 548
     invoke-virtual {p0, p1}, Lcom/qualcomm/ims/vt/CameraController;->close(Lorg/codeaurora/ims/ImsCallSessionImpl;)V
 
-    .line 541
+    .line 549
     return-void
 .end method
 
@@ -1824,7 +1859,7 @@
     .locals 0
     .param p1, "session"    # Lorg/codeaurora/ims/ImsCallSessionImpl;
 
-    .line 535
+    .line 543
     return-void
 .end method
 
@@ -1833,7 +1868,7 @@
     .param p1, "camera"    # Lcom/qualcomm/ims/vt/Camera;
     .param p2, "error"    # I
 
-    .line 529
+    .line 537
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1860,10 +1895,10 @@
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 530
+    .line 538
     invoke-direct {p0, p2}, Lcom/qualcomm/ims/vt/CameraController;->sendCameraStatus(I)V
 
-    .line 531
+    .line 539
     return-void
 .end method
 
@@ -1871,98 +1906,98 @@
     .locals 0
     .param p1, "session"    # Lorg/codeaurora/ims/ImsCallSessionImpl;
 
-    .line 562
+    .line 570
     return-void
 .end method
 
 .method public onMediaDeinitialized()V
     .locals 1
 
-    .line 389
+    .line 398
     const-string v0, "onMediaDeinitialized. closing Camera"
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 390
+    .line 399
     iget-object v0, p0, Lcom/qualcomm/ims/vt/CameraController;->mCameraOwner:Lorg/codeaurora/ims/ImsCallSessionImpl;
 
     if-eqz v0, :cond_0
 
-    .line 391
+    .line 400
     invoke-virtual {p0, v0}, Lcom/qualcomm/ims/vt/CameraController;->close(Lorg/codeaurora/ims/ImsCallSessionImpl;)V
 
-    .line 396
+    .line 405
     :cond_0
     invoke-direct {p0}, Lcom/qualcomm/ims/vt/CameraController;->closeCamera()V
 
-    .line 397
+    .line 406
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/qualcomm/ims/vt/CameraController;->mIsRecordingEnabled:Z
 
-    .line 398
+    .line 407
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/qualcomm/ims/vt/CameraController;->mRecordingSurface:Landroid/view/Surface;
 
-    .line 399
+    .line 408
     iput-object v0, p0, Lcom/qualcomm/ims/vt/CameraController;->mPreviewSurface:Landroid/view/Surface;
 
-    .line 400
+    .line 409
     return-void
 .end method
 
 .method public onMediaInitialized()V
     .locals 0
 
-    .line 405
+    .line 414
     return-void
 .end method
 
 .method public onRecordingDisabled()V
     .locals 1
 
-    .line 383
+    .line 392
     const-string v0, "onStopReadyEvent"
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 384
+    .line 393
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/qualcomm/ims/vt/CameraController;->mIsRecordingEnabled:Z
 
-    .line 385
+    .line 394
     return-void
 .end method
 
 .method public onRecordingEnabled()V
     .locals 2
 
-    .line 373
+    .line 382
     const-string v0, "onRecordingEnabled"
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 375
+    .line 384
     const/4 v0, 0x1
 
     :try_start_0
     iput-boolean v0, p0, Lcom/qualcomm/ims/vt/CameraController;->mIsRecordingEnabled:Z
 
-    .line 376
+    .line 385
     invoke-direct {p0}, Lcom/qualcomm/ims/vt/CameraController;->updateCameraSession()V
     :try_end_0
     .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 379
+    .line 388
     goto :goto_0
 
-    .line 377
+    .line 386
     :catch_0
     move-exception v0
 
-    .line 378
+    .line 387
     .local v0, "e":Landroid/hardware/camera2/CameraAccessException;
     invoke-virtual {v0}, Landroid/hardware/camera2/CameraAccessException;->getReason()I
 
@@ -1970,7 +2005,7 @@
 
     invoke-direct {p0, v1}, Lcom/qualcomm/ims/vt/CameraController;->sendCameraStatus(I)V
 
-    .line 380
+    .line 389
     .end local v0    # "e":Landroid/hardware/camera2/CameraAccessException;
     :goto_0
     return-void
@@ -1981,7 +2016,7 @@
     .param p1, "session"    # Lorg/codeaurora/ims/ImsCallSessionImpl;
     .param p2, "callModify"    # Lorg/codeaurora/ims/CallModify;
 
-    .line 545
+    .line 553
     return-void
 .end method
 
@@ -1989,7 +2024,7 @@
     .locals 2
     .param p1, "rate"    # I
 
-    .line 465
+    .line 473
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2006,10 +2041,10 @@
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 466
+    .line 474
     iput p1, p0, Lcom/qualcomm/ims/vt/CameraController;->mRecorderFrameRate:I
 
-    .line 467
+    .line 475
     iget-object v0, p0, Lcom/qualcomm/ims/vt/CameraController;->mCamera:Lcom/qualcomm/ims/vt/Camera;
 
     if-eqz v0, :cond_1
@@ -2022,7 +2057,7 @@
 
     goto :goto_1
 
-    .line 473
+    .line 481
     :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/qualcomm/ims/vt/CameraController;->mCamera:Lcom/qualcomm/ims/vt/Camera;
@@ -2031,14 +2066,14 @@
     :try_end_0
     .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 476
+    .line 484
     goto :goto_0
 
-    .line 474
+    .line 482
     :catch_0
     move-exception v0
 
-    .line 475
+    .line 483
     .local v0, "e":Landroid/hardware/camera2/CameraAccessException;
     invoke-virtual {v0}, Landroid/hardware/camera2/CameraAccessException;->getReason()I
 
@@ -2046,19 +2081,19 @@
 
     invoke-direct {p0, v1}, Lcom/qualcomm/ims/vt/CameraController;->sendCameraStatus(I)V
 
-    .line 477
+    .line 485
     .end local v0    # "e":Landroid/hardware/camera2/CameraAccessException;
     :goto_0
     return-void
 
-    .line 468
+    .line 476
     :cond_1
     :goto_1
     const-string v0, "onUpdateRecorderFrameRate: Camera is not open deferring..."
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 469
+    .line 477
     return-void
 .end method
 
@@ -2067,7 +2102,7 @@
     .param p1, "cameraId"    # Ljava/lang/String;
     .param p2, "session"    # Lorg/codeaurora/ims/ImsCallSessionImpl;
 
-    .line 149
+    .line 158
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2094,23 +2129,23 @@
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 150
+    .line 159
     if-eqz p1, :cond_0
 
-    .line 156
+    .line 165
     :try_start_0
     invoke-direct {p0, p1, p2}, Lcom/qualcomm/ims/vt/CameraController;->doOpen(Ljava/lang/String;Lorg/codeaurora/ims/ImsCallSessionImpl;)V
     :try_end_0
     .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 160
+    .line 169
     goto :goto_0
 
-    .line 157
+    .line 166
     :catch_0
     move-exception v0
 
-    .line 158
+    .line 167
     .local v0, "e":Landroid/hardware/camera2/CameraAccessException;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -2134,19 +2169,19 @@
 
     invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 159
+    .line 168
     invoke-virtual {v0}, Landroid/hardware/camera2/CameraAccessException;->getReason()I
 
     move-result v1
 
     invoke-direct {p0, p2, v1}, Lcom/qualcomm/ims/vt/CameraController;->sendCameraStatus(Lorg/codeaurora/ims/ImsCallSessionImpl;I)V
 
-    .line 161
+    .line 170
     .end local v0    # "e":Landroid/hardware/camera2/CameraAccessException;
     :goto_0
     return-void
 
-    .line 151
+    .line 160
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -2164,7 +2199,7 @@
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 152
+    .line 161
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "CameraController: Invalid camera id."
@@ -2179,12 +2214,12 @@
     .param p1, "surface"    # Landroid/view/Surface;
     .param p2, "session"    # Lorg/codeaurora/ims/ImsCallSessionImpl;
 
-    .line 179
+    .line 188
     iget-object v0, p0, Lcom/qualcomm/ims/vt/CameraController;->mSyncObject:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 180
+    .line 189
     :try_start_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -2200,7 +2235,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 181
+    .line 190
     invoke-direct {p0, p2}, Lcom/qualcomm/ims/vt/CameraController;->getSessionInfo(Lorg/codeaurora/ims/ImsCallSessionImpl;)Ljava/lang/String;
 
     move-result-object v2
@@ -2211,17 +2246,17 @@
 
     move-result-object v1
 
-    .line 180
+    .line 189
     invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 183
+    .line 192
     invoke-virtual {p0, p2}, Lcom/qualcomm/ims/vt/CameraController;->isOwner(Lorg/codeaurora/ims/ImsCallSessionImpl;)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 184
+    .line 193
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -2242,7 +2277,7 @@
 
     iget-object v2, p0, Lcom/qualcomm/ims/vt/CameraController;->mCameraOwner:Lorg/codeaurora/ims/ImsCallSessionImpl;
 
-    .line 185
+    .line 194
     invoke-direct {p0, v2}, Lcom/qualcomm/ims/vt/CameraController;->getSessionInfo(Lorg/codeaurora/ims/ImsCallSessionImpl;)Ljava/lang/String;
 
     move-result-object v2
@@ -2253,17 +2288,17 @@
 
     move-result-object v1
 
-    .line 184
+    .line 193
     invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 186
+    .line 195
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     return-void
 
-    .line 190
+    .line 199
     :cond_0
     if-eqz p1, :cond_3
 
@@ -2274,7 +2309,7 @@
 
     iget-object v1, p0, Lcom/qualcomm/ims/vt/CameraController;->mPreviewSurface:Landroid/view/Surface;
 
-    .line 191
+    .line 200
     invoke-static {v1, p1}, Lcom/qualcomm/ims/vt/ImsMedia;->haveSameParent(Landroid/view/Surface;Landroid/view/Surface;)Z
 
     move-result v1
@@ -2288,45 +2323,45 @@
 
     iget-object v1, p0, Lcom/qualcomm/ims/vt/CameraController;->mCamera:Lcom/qualcomm/ims/vt/Camera;
 
-    .line 193
+    .line 202
     invoke-virtual {v1, p1}, Lcom/qualcomm/ims/vt/Camera;->isRestartNeededOnPreviewSurfaceSizeChanged(Landroid/view/Surface;)Z
 
     move-result v1
 
     if-eqz v1, :cond_3
 
-    .line 194
+    .line 203
     :cond_2
     const-string v1, "setPreviewSurface: Restarting camera preview..."
 
     invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 195
+    .line 204
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/qualcomm/ims/vt/CameraController;->mPreviewSurface:Landroid/view/Surface;
 
-    .line 196
+    .line 205
     invoke-direct {p0}, Lcom/qualcomm/ims/vt/CameraController;->updateCameraSession()V
 
-    .line 198
+    .line 207
     :cond_3
     iput-object p1, p0, Lcom/qualcomm/ims/vt/CameraController;->mPreviewSurface:Landroid/view/Surface;
 
-    .line 199
+    .line 208
     invoke-direct {p0}, Lcom/qualcomm/ims/vt/CameraController;->updateCameraSession()V
     :try_end_1
     .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 202
+    .line 211
     goto :goto_0
 
-    .line 200
+    .line 209
     :catch_0
     move-exception v1
 
-    .line 201
+    .line 210
     .local v1, "e":Landroid/hardware/camera2/CameraAccessException;
     :try_start_2
     invoke-virtual {v1}, Landroid/hardware/camera2/CameraAccessException;->getReason()I
@@ -2335,15 +2370,15 @@
 
     invoke-direct {p0, v2}, Lcom/qualcomm/ims/vt/CameraController;->sendCameraStatus(I)V
 
-    .line 203
+    .line 212
     .end local v1    # "e":Landroid/hardware/camera2/CameraAccessException;
     :goto_0
     monitor-exit v0
 
-    .line 204
+    .line 213
     return-void
 
-    .line 203
+    .line 212
     :catchall_0
     move-exception v1
 
@@ -2358,7 +2393,7 @@
     .locals 5
     .param p1, "value"    # F
 
-    .line 207
+    .line 216
     iget-object v0, p0, Lcom/qualcomm/ims/vt/CameraController;->mCamera:Lcom/qualcomm/ims/vt/Camera;
 
     if-eqz v0, :cond_1
@@ -2371,7 +2406,7 @@
 
     goto :goto_1
 
-    .line 218
+    .line 227
     :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/qualcomm/ims/vt/CameraController;->mCamera:Lcom/qualcomm/ims/vt/Camera;
@@ -2380,7 +2415,7 @@
 
     move-result v0
 
-    .line 219
+    .line 228
     .local v0, "maxZoom":F
     iget-object v1, p0, Lcom/qualcomm/ims/vt/CameraController;->mCamera:Lcom/qualcomm/ims/vt/Camera;
 
@@ -2388,7 +2423,7 @@
 
     move-result v1
 
-    .line 220
+    .line 229
     .local v1, "minZoom":F
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -2418,7 +2453,7 @@
 
     invoke-static {p0, v2}, Lcom/qualcomm/ims/utils/Log;->v(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 222
+    .line 231
     iget-object v2, p0, Lcom/qualcomm/ims/vt/CameraController;->mCamera:Lcom/qualcomm/ims/vt/Camera;
 
     sub-float v3, v0, v1
@@ -2435,16 +2470,16 @@
     :try_end_0
     .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 226
+    .line 235
     .end local v0    # "maxZoom":F
     .end local v1    # "minZoom":F
     goto :goto_0
 
-    .line 224
+    .line 233
     :catch_0
     move-exception v0
 
-    .line 225
+    .line 234
     .local v0, "e":Landroid/hardware/camera2/CameraAccessException;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -2468,12 +2503,12 @@
 
     invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->v(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 227
+    .line 236
     .end local v0    # "e":Landroid/hardware/camera2/CameraAccessException;
     :goto_0
     return-void
 
-    .line 208
+    .line 217
     :cond_1
     :goto_1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -2494,6 +2529,6 @@
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->w(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 209
+    .line 218
     return-void
 .end method
