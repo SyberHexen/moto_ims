@@ -1,5 +1,5 @@
 .class Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;
-.super Lvendor/qti/hardware/radio/ims/V1_6/IImsRadioResponse$Stub;
+.super Lvendor/qti/hardware/radio/ims/V1_4/IImsRadioResponse$Stub;
 .source "ImsSenderRxr.java"
 
 
@@ -23,10 +23,10 @@
     .locals 0
     .param p1, "this$0"    # Lorg/codeaurora/ims/ImsSenderRxr;
 
-    .line 852
+    .line 827
     iput-object p1, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
-    invoke-direct {p0}, Lvendor/qti/hardware/radio/ims/V1_6/IImsRadioResponse$Stub;-><init>()V
+    invoke-direct {p0}, Lvendor/qti/hardware/radio/ims/V1_4/IImsRadioResponse$Stub;-><init>()V
 
     return-void
 .end method
@@ -37,27 +37,27 @@
     .param p2, "errorCode"    # I
     .param p3, "errorInfo"    # Lvendor/qti/hardware/radio/ims/V1_0/SipErrorInfo;
 
-    .line 981
+    .line 911
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v0, p1}, Lorg/codeaurora/ims/ImsSenderRxr;->access$300(Lorg/codeaurora/ims/ImsSenderRxr;I)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v0
 
-    .line 982
+    .line 912
     .local v0, "rr":Lorg/codeaurora/ims/IFRequest;
     if-nez v0, :cond_0
 
-    .line 983
+    .line 913
     return-void
 
-    .line 986
+    .line 916
     :cond_0
     invoke-static {p3}, Lorg/codeaurora/ims/ImsRadioUtils;->sipErrorFromHal(Lvendor/qti/hardware/radio/ims/V1_0/SipErrorInfo;)Landroid/telephony/ims/ImsReasonInfo;
 
     move-result-object v1
 
-    .line 987
+    .line 917
     .local v1, "sipErrorInfo":Landroid/telephony/ims/ImsReasonInfo;
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -93,12 +93,12 @@
 
     invoke-static {p0, v2}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 989
+    .line 919
     iget-object v2, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v2, v0, p2, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->access$400(Lorg/codeaurora/ims/ImsSenderRxr;Lorg/codeaurora/ims/IFRequest;ILjava/lang/Object;)V
 
-    .line 990
+    .line 920
     return-void
 .end method
 
@@ -109,7 +109,7 @@
     .param p1, "token"    # I
     .param p2, "errorCode"    # I
 
-    .line 1317
+    .line 1232
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -126,12 +126,12 @@
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1318
+    .line 1233
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v0, p1, p2}, Lorg/codeaurora/ims/ImsSenderRxr;->access$200(Lorg/codeaurora/ims/ImsSenderRxr;II)V
 
-    .line 1319
+    .line 1234
     return-void
 .end method
 
@@ -140,17 +140,17 @@
     .param p1, "token"    # I
     .param p2, "errorCode"    # I
 
-    .line 1018
+    .line 948
     const-string v0, "Got answer response from ImsRadio."
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1019
+    .line 949
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v0, p1, p2}, Lorg/codeaurora/ims/ImsSenderRxr;->access$200(Lorg/codeaurora/ims/ImsSenderRxr;II)V
 
-    .line 1020
+    .line 950
     return-void
 .end method
 
@@ -159,17 +159,17 @@
     .param p1, "token"    # I
     .param p2, "errorCode"    # I
 
-    .line 1265
+    .line 1180
     const-string v0, "Got cancel modify call response from ImsRadio."
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1266
+    .line 1181
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v0, p1, p2}, Lorg/codeaurora/ims/ImsSenderRxr;->access$200(Lorg/codeaurora/ims/ImsSenderRxr;II)V
 
-    .line 1267
+    .line 1182
     return-void
 .end method
 
@@ -179,10 +179,10 @@
     .param p2, "errorCode"    # I
     .param p3, "errorInfo"    # Lvendor/qti/hardware/radio/ims/V1_0/SipErrorInfo;
 
-    .line 1088
+    .line 1003
     invoke-direct {p0, p1, p2, p3}, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->sendSipErrorInfo(IILvendor/qti/hardware/radio/ims/V1_0/SipErrorInfo;)V
 
-    .line 1089
+    .line 1004
     return-void
 .end method
 
@@ -191,17 +191,17 @@
     .param p1, "token"    # I
     .param p2, "errorCode"    # I
 
-    .line 1323
+    .line 1238
     const-string v0, "Got deflect call response from ImsRadio."
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1324
+    .line 1239
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v0, p1, p2}, Lorg/codeaurora/ims/ImsSenderRxr;->access$200(Lorg/codeaurora/ims/ImsSenderRxr;II)V
 
-    .line 1325
+    .line 1240
     return-void
 .end method
 
@@ -210,12 +210,12 @@
     .param p1, "token"    # I
     .param p2, "errorCode"    # I
 
-    .line 866
+    .line 841
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v0, p1, p2}, Lorg/codeaurora/ims/ImsSenderRxr;->access$200(Lorg/codeaurora/ims/ImsSenderRxr;II)V
 
-    .line 867
+    .line 842
     return-void
 .end method
 
@@ -224,7 +224,7 @@
     .param p1, "token"    # I
     .param p2, "errorCode"    # I
 
-    .line 1229
+    .line 1144
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -241,12 +241,12 @@
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1230
+    .line 1145
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v0, p1, p2}, Lorg/codeaurora/ims/ImsSenderRxr;->access$200(Lorg/codeaurora/ims/ImsSenderRxr;II)V
 
-    .line 1231
+    .line 1146
     return-void
 .end method
 
@@ -255,17 +255,17 @@
     .param p1, "token"    # I
     .param p2, "errorCode"    # I
 
-    .line 1277
+    .line 1192
     const-string v0, "Got explicit call transfer response from ImsRadio."
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1278
+    .line 1193
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v0, p1, p2}, Lorg/codeaurora/ims/ImsSenderRxr;->access$200(Lorg/codeaurora/ims/ImsSenderRxr;II)V
 
-    .line 1279
+    .line 1194
     return-void
 .end method
 
@@ -277,36 +277,36 @@
     .param p4, "serviceClass"    # I
     .param p5, "errorDetails"    # Lvendor/qti/hardware/radio/ims/V1_0/SipErrorInfo;
 
-    .line 1160
+    .line 1075
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v0, p1}, Lorg/codeaurora/ims/ImsSenderRxr;->access$300(Lorg/codeaurora/ims/ImsSenderRxr;I)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v0
 
-    .line 1161
+    .line 1076
     .local v0, "rr":Lorg/codeaurora/ims/IFRequest;
     if-nez v0, :cond_0
 
-    .line 1162
+    .line 1077
     return-void
 
-    .line 1164
+    .line 1079
     :cond_0
     const/4 v1, 0x0
 
-    .line 1166
+    .line 1081
     .local v1, "response":[I
     const/4 v2, 0x2
 
     if-eq p3, v2, :cond_2
 
-    .line 1167
+    .line 1082
     invoke-static {p3}, Lorg/codeaurora/ims/ImsRadioUtils;->serviceClassStatusFromHal(I)I
 
     move-result v3
 
-    .line 1168
+    .line 1083
     .local v3, "outServiceStatus":I
     const/4 v4, 0x1
 
@@ -314,25 +314,25 @@
 
     if-nez v3, :cond_1
 
-    .line 1169
+    .line 1084
     new-array v1, v4, [I
 
-    .line 1170
+    .line 1085
     aput v5, v1, v5
 
     goto :goto_0
 
-    .line 1172
+    .line 1087
     :cond_1
     new-array v1, v2, [I
 
-    .line 1173
+    .line 1088
     aput v4, v1, v5
 
-    .line 1174
+    .line 1089
     aput p4, v1, v4
 
-    .line 1178
+    .line 1093
     .end local v3    # "outServiceStatus":I
     :cond_2
     :goto_0
@@ -340,7 +340,7 @@
 
     invoke-static {v2, v0, p2, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->access$400(Lorg/codeaurora/ims/ImsSenderRxr;Lorg/codeaurora/ims/IFRequest;ILjava/lang/Object;)V
 
-    .line 1179
+    .line 1094
     return-void
 .end method
 
@@ -350,37 +350,37 @@
     .param p2, "errorCode"    # I
     .param p3, "clipProvisionStatus"    # Lvendor/qti/hardware/radio/ims/V1_0/ClipProvisionStatus;
 
-    .line 1094
+    .line 1009
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v0, p1}, Lorg/codeaurora/ims/ImsSenderRxr;->access$300(Lorg/codeaurora/ims/ImsSenderRxr;I)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v0
 
-    .line 1095
+    .line 1010
     .local v0, "rr":Lorg/codeaurora/ims/IFRequest;
     if-nez v0, :cond_0
 
-    .line 1096
+    .line 1011
     return-void
 
-    .line 1099
+    .line 1014
     :cond_0
     new-instance v1, Lorg/codeaurora/ims/SuppService;
 
     invoke-direct {v1}, Lorg/codeaurora/ims/SuppService;-><init>()V
 
-    .line 1101
+    .line 1016
     .local v1, "clipProvStatus":Lorg/codeaurora/ims/SuppService;
     iget v2, p3, Lvendor/qti/hardware/radio/ims/V1_0/ClipProvisionStatus;->clipStatus:I
 
-    .line 1102
+    .line 1017
     .local v2, "clipStatus":I
     const/4 v3, 0x3
 
     if-eq v2, v3, :cond_1
 
-    .line 1103
+    .line 1018
     iget v3, p3, Lvendor/qti/hardware/radio/ims/V1_0/ClipProvisionStatus;->clipStatus:I
 
     invoke-static {v3}, Lorg/codeaurora/ims/ImsRadioUtils;->clipStatusFromHal(I)I
@@ -389,7 +389,7 @@
 
     invoke-virtual {v1, v3}, Lorg/codeaurora/ims/SuppService;->setStatus(I)V
 
-    .line 1105
+    .line 1020
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -406,13 +406,13 @@
 
     invoke-static {p0, v3}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1108
+    .line 1023
     :cond_1
     iget-boolean v3, p3, Lvendor/qti/hardware/radio/ims/V1_0/ClipProvisionStatus;->hasErrorDetails:Z
 
     if-eqz v3, :cond_2
 
-    .line 1109
+    .line 1024
     iget-object v3, p3, Lvendor/qti/hardware/radio/ims/V1_0/ClipProvisionStatus;->errorDetails:Lvendor/qti/hardware/radio/ims/V1_0/SipErrorInfo;
 
     invoke-static {v3}, Lorg/codeaurora/ims/ImsRadioUtils;->sipErrorFromHal(Lvendor/qti/hardware/radio/ims/V1_0/SipErrorInfo;)Landroid/telephony/ims/ImsReasonInfo;
@@ -421,7 +421,7 @@
 
     invoke-virtual {v1, v3}, Lorg/codeaurora/ims/SuppService;->setErrorDetails(Landroid/telephony/ims/ImsReasonInfo;)V
 
-    .line 1111
+    .line 1026
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -452,13 +452,13 @@
 
     invoke-static {p0, v3}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1116
+    .line 1031
     :cond_2
     iget-object v3, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v3, v0, p2, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->access$400(Lorg/codeaurora/ims/ImsSenderRxr;Lorg/codeaurora/ims/IFRequest;ILjava/lang/Object;)V
 
-    .line 1117
+    .line 1032
     return-void
 .end method
 
@@ -469,61 +469,61 @@
     .param p3, "clirInfo"    # Lvendor/qti/hardware/radio/ims/V1_0/ClirInfo;
     .param p4, "hasClirInfo"    # Z
 
-    .line 1122
+    .line 1037
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v0, p1}, Lorg/codeaurora/ims/ImsSenderRxr;->access$300(Lorg/codeaurora/ims/ImsSenderRxr;I)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v0
 
-    .line 1123
+    .line 1038
     .local v0, "rr":Lorg/codeaurora/ims/IFRequest;
     if-nez v0, :cond_0
 
-    .line 1124
+    .line 1039
     return-void
 
-    .line 1127
+    .line 1042
     :cond_0
     const/4 v1, 0x0
 
-    .line 1129
+    .line 1044
     .local v1, "response":[I
     if-eqz p4, :cond_3
 
-    .line 1130
+    .line 1045
     const/4 v2, 0x2
 
     new-array v1, v2, [I
 
-    .line 1131
+    .line 1046
     iget v2, p3, Lvendor/qti/hardware/radio/ims/V1_0/ClirInfo;->paramN:I
 
     const v3, 0x7fffffff
 
     if-eq v2, v3, :cond_1
 
-    .line 1132
+    .line 1047
     const/4 v2, 0x0
 
     iget v4, p3, Lvendor/qti/hardware/radio/ims/V1_0/ClirInfo;->paramN:I
 
     aput v4, v1, v2
 
-    .line 1134
+    .line 1049
     :cond_1
     iget v2, p3, Lvendor/qti/hardware/radio/ims/V1_0/ClirInfo;->paramM:I
 
     if-eq v2, v3, :cond_2
 
-    .line 1135
+    .line 1050
     const/4 v2, 0x1
 
     iget v3, p3, Lvendor/qti/hardware/radio/ims/V1_0/ClirInfo;->paramM:I
 
     aput v3, v1, v2
 
-    .line 1137
+    .line 1052
     :cond_2
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -551,13 +551,13 @@
 
     invoke-static {p0, v2}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1141
+    .line 1056
     :cond_3
     iget-object v2, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v2, v0, p2, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->access$400(Lorg/codeaurora/ims/ImsSenderRxr;Lorg/codeaurora/ims/IFRequest;ILjava/lang/Object;)V
 
-    .line 1142
+    .line 1057
     return-void
 .end method
 
@@ -567,19 +567,19 @@
     .param p2, "errorCode"    # I
     .param p3, "colrInfo"    # Lvendor/qti/hardware/radio/ims/V1_0/ColrInfo;
 
-    .line 1222
+    .line 1137
     nop
 
-    .line 1223
+    .line 1138
     invoke-static {p3}, Lorg/codeaurora/ims/ImsRadioUtilsV13;->migrateColrInfoFromV10(Lvendor/qti/hardware/radio/ims/V1_0/ColrInfo;)Lvendor/qti/hardware/radio/ims/V1_3/ColrInfo;
 
     move-result-object v0
 
-    .line 1224
+    .line 1139
     .local v0, "ci":Lvendor/qti/hardware/radio/ims/V1_3/ColrInfo;
     invoke-virtual {p0, p1, p2, v0}, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->getColrResponse_1_3(IILvendor/qti/hardware/radio/ims/V1_3/ColrInfo;)V
 
-    .line 1225
+    .line 1140
     return-void
 .end method
 
@@ -589,77 +589,77 @@
     .param p2, "errorCode"    # I
     .param p3, "colrInfo"    # Lvendor/qti/hardware/radio/ims/V1_3/ColrInfo;
 
-    .line 1190
+    .line 1105
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v0, p1}, Lorg/codeaurora/ims/ImsSenderRxr;->access$300(Lorg/codeaurora/ims/ImsSenderRxr;I)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v0
 
-    .line 1191
+    .line 1106
     .local v0, "rr":Lorg/codeaurora/ims/IFRequest;
     if-nez v0, :cond_0
 
-    .line 1192
+    .line 1107
     return-void
 
-    .line 1195
+    .line 1110
     :cond_0
     new-instance v1, Lorg/codeaurora/ims/SuppService;
 
     invoke-direct {v1}, Lorg/codeaurora/ims/SuppService;-><init>()V
 
-    .line 1197
+    .line 1112
     .local v1, "colrValue":Lorg/codeaurora/ims/SuppService;
     iget v2, p3, Lvendor/qti/hardware/radio/ims/V1_3/ColrInfo;->status:I
 
-    .line 1198
+    .line 1113
     invoke-static {v2}, Lorg/codeaurora/ims/ImsRadioUtils;->serviceClassStatusFromHal(I)I
 
     move-result v2
 
-    .line 1197
+    .line 1112
     invoke-virtual {v1, v2}, Lorg/codeaurora/ims/SuppService;->setServiceClassStatus(I)V
 
-    .line 1199
+    .line 1114
     iget v2, p3, Lvendor/qti/hardware/radio/ims/V1_3/ColrInfo;->provisionStatus:I
 
-    .line 1200
+    .line 1115
     invoke-static {v2}, Lorg/codeaurora/ims/ImsRadioUtils;->serviceClassProvisionStatusFromHal(I)I
 
     move-result v2
 
-    .line 1199
+    .line 1114
     invoke-virtual {v1, v2}, Lorg/codeaurora/ims/SuppService;->setProvisionStatus(I)V
 
-    .line 1201
+    .line 1116
     iget v2, p3, Lvendor/qti/hardware/radio/ims/V1_3/ColrInfo;->status:I
 
-    .line 1202
+    .line 1117
     invoke-static {v2}, Lorg/codeaurora/ims/ImsRadioUtils;->serviceClassStatusFromHal(I)I
 
     move-result v2
 
-    .line 1201
+    .line 1116
     invoke-virtual {v1, v2}, Lorg/codeaurora/ims/SuppService;->setStatus(I)V
 
-    .line 1204
+    .line 1119
     iget v2, p3, Lvendor/qti/hardware/radio/ims/V1_3/ColrInfo;->presentation:I
 
     invoke-static {v2}, Lorg/codeaurora/ims/ImsRadioUtils;->ipPresentationFromHal(I)I
 
     move-result v2
 
-    .line 1205
+    .line 1120
     .local v2, "presentation":I
     const/4 v3, 0x3
 
     if-eq v2, v3, :cond_1
 
-    .line 1206
+    .line 1121
     invoke-virtual {v1, v2}, Lorg/codeaurora/ims/SuppService;->setPresentation(I)V
 
-    .line 1207
+    .line 1122
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -676,13 +676,13 @@
 
     invoke-static {p0, v3}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1210
+    .line 1125
     :cond_1
     iget-boolean v3, p3, Lvendor/qti/hardware/radio/ims/V1_3/ColrInfo;->hasErrorDetails:Z
 
     if-eqz v3, :cond_2
 
-    .line 1211
+    .line 1126
     iget-object v3, p3, Lvendor/qti/hardware/radio/ims/V1_3/ColrInfo;->errorDetails:Lvendor/qti/hardware/radio/ims/V1_0/SipErrorInfo;
 
     invoke-static {v3}, Lorg/codeaurora/ims/ImsRadioUtils;->sipErrorFromHal(Lvendor/qti/hardware/radio/ims/V1_0/SipErrorInfo;)Landroid/telephony/ims/ImsReasonInfo;
@@ -691,7 +691,7 @@
 
     invoke-virtual {v1, v3}, Lorg/codeaurora/ims/SuppService;->setErrorDetails(Landroid/telephony/ims/ImsReasonInfo;)V
 
-    .line 1212
+    .line 1127
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -722,13 +722,13 @@
 
     invoke-static {p0, v3}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1217
+    .line 1132
     :cond_2
     iget-object v3, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v3, v0, p2, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->access$400(Lorg/codeaurora/ims/ImsSenderRxr;Lorg/codeaurora/ims/IFRequest;ILjava/lang/Object;)V
 
-    .line 1218
+    .line 1133
     return-void
 .end method
 
@@ -738,44 +738,40 @@
     .param p2, "errorCode"    # I
     .param p3, "config"    # Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;
 
-    .line 923
+    .line 878
     const-string v0, "Get config response received."
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 924
+    .line 879
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v0, p1}, Lorg/codeaurora/ims/ImsSenderRxr;->access$300(Lorg/codeaurora/ims/ImsSenderRxr;I)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v0
 
-    .line 925
+    .line 880
     .local v0, "rr":Lorg/codeaurora/ims/IFRequest;
     if-nez v0, :cond_0
 
-    .line 926
+    .line 881
     return-void
 
-    .line 929
+    .line 884
     :cond_0
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
-    invoke-static {p3}, Lorg/codeaurora/ims/ImsRadioUtilsV16;->migrateConfigInfoFrom(Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;)Lvendor/qti/hardware/radio/ims/V1_6/ConfigInfo;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->access$500(Lorg/codeaurora/ims/ImsSenderRxr;Lvendor/qti/hardware/radio/ims/V1_6/ConfigInfo;)Ljava/lang/Object;
+    invoke-static {v1, p3}, Lorg/codeaurora/ims/ImsSenderRxr;->access$500(Lorg/codeaurora/ims/ImsSenderRxr;Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 930
+    .line 885
     .local v1, "ret":Ljava/lang/Object;
     iget-object v2, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v2, v0, p2, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->access$400(Lorg/codeaurora/ims/ImsSenderRxr;Lorg/codeaurora/ims/IFRequest;ILjava/lang/Object;)V
 
-    .line 931
+    .line 886
     return-void
 .end method
 
@@ -785,112 +781,81 @@
     .param p2, "errorCode"    # I
     .param p3, "subConfigInfo"    # Lvendor/qti/hardware/radio/ims/V1_0/ImsSubConfigInfo;
 
-    .line 1336
+    .line 1251
     const-string v0, "Received Subconfig response from ImsRadio."
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1337
+    .line 1252
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v0, p1}, Lorg/codeaurora/ims/ImsSenderRxr;->access$300(Lorg/codeaurora/ims/ImsSenderRxr;I)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v0
 
-    .line 1338
+    .line 1253
     .local v0, "rr":Lorg/codeaurora/ims/IFRequest;
     if-nez v0, :cond_0
 
-    .line 1339
+    .line 1254
     return-void
 
-    .line 1341
+    .line 1256
     :cond_0
     invoke-static {p3}, Lorg/codeaurora/ims/ImsRadioUtils;->imsSubconfigFromHal(Lvendor/qti/hardware/radio/ims/V1_0/ImsSubConfigInfo;)Lorg/codeaurora/ims/ImsSubConfigDetails;
 
     move-result-object v1
 
-    .line 1342
+    .line 1257
     .local v1, "ret":Ljava/lang/Object;
     iget-object v2, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v2, v0, p2, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->access$400(Lorg/codeaurora/ims/ImsSenderRxr;Lorg/codeaurora/ims/IFRequest;ILjava/lang/Object;)V
 
-    .line 1343
+    .line 1258
     return-void
 .end method
 
 .method public getRegistrationResponse(IILvendor/qti/hardware/radio/ims/V1_0/RegistrationInfo;)V
-    .locals 1
+    .locals 3
     .param p1, "token"    # I
     .param p2, "errorCode"    # I
     .param p3, "registration"    # Lvendor/qti/hardware/radio/ims/V1_0/RegistrationInfo;
 
-    .line 1031
-    const-string v0, "getRegistrationResponse()"
-
-    invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 1032
-    nop
-
-    .line 1033
-    invoke-static {p3}, Lorg/codeaurora/ims/ImsRadioUtilsV16;->migrateRegistrationInfo(Lvendor/qti/hardware/radio/ims/V1_0/RegistrationInfo;)Lvendor/qti/hardware/radio/ims/V1_6/RegistrationInfo;
-
-    move-result-object v0
-
-    .line 1032
-    invoke-virtual {p0, p1, p2, v0}, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->getRegistrationResponse_1_6(IILvendor/qti/hardware/radio/ims/V1_6/RegistrationInfo;)V
-
-    .line 1034
-    return-void
-.end method
-
-.method public getRegistrationResponse_1_6(IILvendor/qti/hardware/radio/ims/V1_6/RegistrationInfo;)V
-    .locals 3
-    .param p1, "token"    # I
-    .param p2, "errorCode"    # I
-    .param p3, "registration"    # Lvendor/qti/hardware/radio/ims/V1_6/RegistrationInfo;
-
-    .line 1039
-    const-string v0, "getRegistrationResponse_1_6()"
-
-    invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 1040
+    .line 961
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v0, p1}, Lorg/codeaurora/ims/ImsSenderRxr;->access$300(Lorg/codeaurora/ims/ImsSenderRxr;I)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v0
 
-    .line 1041
+    .line 962
     .local v0, "rr":Lorg/codeaurora/ims/IFRequest;
     if-nez v0, :cond_0
 
-    .line 1042
+    .line 963
     return-void
 
-    .line 1045
+    .line 966
     :cond_0
     const/4 v1, 0x0
 
-    .line 1046
+    .line 967
     .local v1, "regMessage":Lorg/codeaurora/ims/ImsRegistrationInfo;
     if-eqz p3, :cond_1
 
-    .line 1047
-    invoke-static {p3}, Lorg/codeaurora/ims/ImsRadioUtils;->registrationFromHal(Lvendor/qti/hardware/radio/ims/V1_6/RegistrationInfo;)Lorg/codeaurora/ims/ImsRegistrationInfo;
+    .line 968
+    invoke-static {p3}, Lorg/codeaurora/ims/ImsRadioUtils;->registrationFromHal(Lvendor/qti/hardware/radio/ims/V1_0/RegistrationInfo;)Lorg/codeaurora/ims/ImsRegistrationInfo;
 
     move-result-object v1
 
-    .line 1049
+    .line 970
     :cond_1
     iget-object v2, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v2, v0, p2, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->access$400(Lorg/codeaurora/ims/ImsSenderRxr;Lorg/codeaurora/ims/IFRequest;ILjava/lang/Object;)V
 
-    .line 1050
+    .line 971
     return-void
 .end method
 
@@ -900,7 +865,7 @@
     .param p2, "errorCode"    # I
     .param p3, "packetErrorCount"    # J
 
-    .line 1303
+    .line 1218
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -923,21 +888,21 @@
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1305
+    .line 1220
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v0, p1}, Lorg/codeaurora/ims/ImsSenderRxr;->access$300(Lorg/codeaurora/ims/ImsSenderRxr;I)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v0
 
-    .line 1306
+    .line 1221
     .local v0, "rr":Lorg/codeaurora/ims/IFRequest;
     if-nez v0, :cond_0
 
-    .line 1307
+    .line 1222
     return-void
 
-    .line 1309
+    .line 1224
     :cond_0
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
@@ -947,7 +912,7 @@
 
     invoke-static {v1, v0, p2, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->access$400(Lorg/codeaurora/ims/ImsSenderRxr;Lorg/codeaurora/ims/IFRequest;ILjava/lang/Object;)V
 
-    .line 1310
+    .line 1225
     return-void
 .end method
 
@@ -957,7 +922,7 @@
     .param p2, "errorCode"    # I
     .param p3, "packetCount"    # J
 
-    .line 1291
+    .line 1206
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -980,21 +945,21 @@
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1293
+    .line 1208
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v0, p1}, Lorg/codeaurora/ims/ImsSenderRxr;->access$300(Lorg/codeaurora/ims/ImsSenderRxr;I)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v0
 
-    .line 1294
+    .line 1209
     .local v0, "rr":Lorg/codeaurora/ims/IFRequest;
     if-nez v0, :cond_0
 
-    .line 1295
+    .line 1210
     return-void
 
-    .line 1297
+    .line 1212
     :cond_0
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
@@ -1004,7 +969,7 @@
 
     invoke-static {v1, v0, p2, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->access$400(Lorg/codeaurora/ims/ImsSenderRxr;Lorg/codeaurora/ims/IFRequest;ILjava/lang/Object;)V
 
-    .line 1298
+    .line 1213
     return-void
 .end method
 
@@ -1013,17 +978,17 @@
     .param p1, "token"    # I
     .param p2, "errorCode"    # I
 
-    .line 1004
+    .line 934
     const-string v0, "Got hangup response from ImsRadio."
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1005
+    .line 935
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v0, p1, p2}, Lorg/codeaurora/ims/ImsSenderRxr;->access$200(Lorg/codeaurora/ims/ImsSenderRxr;II)V
 
-    .line 1007
+    .line 937
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     iget-object v0, v0, Lorg/codeaurora/ims/ImsSenderRxr;->mTestingEmergencyCall:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -1036,28 +1001,28 @@
 
     if-eqz v0, :cond_0
 
-    .line 1008
+    .line 938
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     iget-object v0, v0, Lorg/codeaurora/ims/ImsSenderRxr;->mEmergencyCallbackModeRegistrant:Lorg/codeaurora/telephony/utils/Registrant;
 
     if-eqz v0, :cond_0
 
-    .line 1009
+    .line 939
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     const-string v1, "End testing emergency call, notify ECM Registrants"
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->log(Ljava/lang/String;)V
 
-    .line 1010
+    .line 940
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     iget-object v0, v0, Lorg/codeaurora/ims/ImsSenderRxr;->mEmergencyCallbackModeRegistrant:Lorg/codeaurora/telephony/utils/Registrant;
 
     invoke-virtual {v0}, Lorg/codeaurora/telephony/utils/Registrant;->notifyRegistrant()V
 
-    .line 1014
+    .line 944
     :cond_0
     return-void
 .end method
@@ -1068,10 +1033,10 @@
     .param p2, "errorCode"    # I
     .param p3, "errorInfo"    # Lvendor/qti/hardware/radio/ims/V1_0/SipErrorInfo;
 
-    .line 999
+    .line 929
     invoke-direct {p0, p1, p2, p3}, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->sendSipErrorInfo(IILvendor/qti/hardware/radio/ims/V1_0/SipErrorInfo;)V
 
-    .line 1000
+    .line 930
     return-void
 .end method
 
@@ -1080,17 +1045,17 @@
     .param p1, "token"    # I
     .param p2, "errorCode"    # I
 
-    .line 1271
+    .line 1186
     const-string v0, "Got modify call confirm response from ImsRadio."
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1272
+    .line 1187
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v0, p1, p2}, Lorg/codeaurora/ims/ImsSenderRxr;->access$200(Lorg/codeaurora/ims/ImsSenderRxr;II)V
 
-    .line 1273
+    .line 1188
     return-void
 .end method
 
@@ -1099,17 +1064,17 @@
     .param p1, "token"    # I
     .param p2, "errorCode"    # I
 
-    .line 1259
+    .line 1174
     const-string v0, "Got modify call initiate response from ImsRadio."
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1260
+    .line 1175
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v0, p1, p2}, Lorg/codeaurora/ims/ImsSenderRxr;->access$200(Lorg/codeaurora/ims/ImsSenderRxr;II)V
 
-    .line 1261
+    .line 1176
     return-void
 .end method
 
@@ -1129,7 +1094,7 @@
         }
     .end annotation
 
-    .line 1148
+    .line 1063
     .local p3, "callForwardInfoList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;>;"
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
@@ -1137,31 +1102,31 @@
 
     move-result-object v0
 
-    .line 1149
+    .line 1064
     .local v0, "rr":Lorg/codeaurora/ims/IFRequest;
     if-nez v0, :cond_0
 
-    .line 1150
+    .line 1065
     return-void
 
-    .line 1153
+    .line 1068
     :cond_0
     invoke-static {p3}, Lorg/codeaurora/ims/ImsRadioUtils;->buildCFStatusResponseFromHal(Ljava/util/ArrayList;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 1154
+    .line 1069
     .local v1, "ret":Ljava/lang/Object;
     iget-object v2, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v2, v0, p2, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->access$400(Lorg/codeaurora/ims/ImsSenderRxr;Lorg/codeaurora/ims/IFRequest;ILjava/lang/Object;)V
 
-    .line 1155
+    .line 1070
     return-void
 .end method
 
 .method public queryServiceStatusResponse(IILjava/util/ArrayList;)V
-    .locals 1
+    .locals 3
     .param p1, "token"    # I
     .param p2, "errorCode"    # I
     .annotation system Ldalvik/annotation/Signature;
@@ -1173,80 +1138,46 @@
         }
     .end annotation
 
-    .line 936
+    .line 891
     .local p3, "serviceStatusInfoList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;>;"
-    const-string v0, "queryServiceStatusResponse()"
+    const-string v0, "queryServiceStatus response received."
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 937
-    nop
-
-    .line 938
-    invoke-static {p3}, Lorg/codeaurora/ims/ImsRadioUtilsV16;->migrateServiceStatusInfo(Ljava/util/ArrayList;)Ljava/util/ArrayList;
-
-    move-result-object v0
-
-    .line 937
-    invoke-virtual {p0, p1, p2, v0}, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->queryServiceStatusResponse_1_6(IILjava/util/ArrayList;)V
-
-    .line 939
-    return-void
-.end method
-
-.method public queryServiceStatusResponse_1_6(IILjava/util/ArrayList;)V
-    .locals 3
-    .param p1, "token"    # I
-    .param p2, "errorCode"    # I
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(II",
-            "Ljava/util/ArrayList<",
-            "Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;",
-            ">;)V"
-        }
-    .end annotation
-
-    .line 944
-    .local p3, "infoList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;>;"
-    const-string v0, "queryServiceStatusResponse_1_6()"
-
-    invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 945
+    .line 892
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v0, p1}, Lorg/codeaurora/ims/ImsSenderRxr;->access$300(Lorg/codeaurora/ims/ImsSenderRxr;I)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v0
 
-    .line 946
+    .line 893
     .local v0, "rr":Lorg/codeaurora/ims/IFRequest;
     if-nez v0, :cond_0
 
-    .line 947
+    .line 894
     return-void
 
-    .line 950
+    .line 897
     :cond_0
     const/4 v1, 0x0
 
-    .line 951
+    .line 898
     .local v1, "ret":Ljava/lang/Object;
     if-eqz p3, :cond_1
 
-    .line 952
+    .line 899
     invoke-static {p3}, Lorg/codeaurora/ims/ImsRadioUtils;->handleSrvStatus(Ljava/util/ArrayList;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 954
+    .line 901
     :cond_1
     iget-object v2, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v2, v0, p2, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->access$400(Lorg/codeaurora/ims/ImsSenderRxr;Lorg/codeaurora/ims/IFRequest;ILjava/lang/Object;)V
 
-    .line 955
+    .line 902
     return-void
 .end method
 
@@ -1256,7 +1187,7 @@
     .param p2, "errorCode"    # I
     .param p3, "ssacInfo"    # Lvendor/qti/hardware/radio/ims/V1_0/SsacInfo;
 
-    .line 1413
+    .line 1315
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1273,33 +1204,33 @@
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1414
+    .line 1316
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v0, p1}, Lorg/codeaurora/ims/ImsSenderRxr;->access$300(Lorg/codeaurora/ims/ImsSenderRxr;I)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v0
 
-    .line 1415
+    .line 1317
     .local v0, "rr":Lorg/codeaurora/ims/IFRequest;
     if-nez v0, :cond_0
 
-    .line 1416
+    .line 1318
     return-void
 
-    .line 1419
+    .line 1321
     :cond_0
     invoke-static {p3}, Lorg/codeaurora/ims/ImsRadioUtils;->ssacInfoFromHal(Lvendor/qti/hardware/radio/ims/V1_0/SsacInfo;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 1421
+    .line 1323
     .local v1, "ret":Ljava/lang/Object;
     iget-object v2, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v2, v0, p2, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->access$400(Lorg/codeaurora/ims/ImsSenderRxr;Lorg/codeaurora/ims/IFRequest;ILjava/lang/Object;)V
 
-    .line 1423
+    .line 1325
     return-void
 .end method
 
@@ -1317,7 +1248,7 @@
         }
     .end annotation
 
-    .line 1358
+    .line 1273
     .local p3, "virtualLineInfo":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
@@ -1325,20 +1256,20 @@
 
     move-result-object v0
 
-    .line 1359
+    .line 1274
     .local v0, "rr":Lorg/codeaurora/ims/IFRequest;
     if-nez v0, :cond_0
 
-    .line 1360
+    .line 1275
     return-void
 
-    .line 1362
+    .line 1277
     :cond_0
     new-instance v1, Lorg/codeaurora/ims/VirtualLineInfo;
 
     invoke-direct {v1, p2, p3}, Lorg/codeaurora/ims/VirtualLineInfo;-><init>(Ljava/lang/String;Ljava/util/ArrayList;)V
 
-    .line 1363
+    .line 1278
     .local v1, "virtualInfo":Lorg/codeaurora/ims/VirtualLineInfo;
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -1356,14 +1287,14 @@
 
     invoke-static {p0, v2}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1364
+    .line 1279
     iget-object v2, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     const/4 v3, 0x0
 
     invoke-static {v2, v0, v3, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->access$400(Lorg/codeaurora/ims/ImsSenderRxr;Lorg/codeaurora/ims/IFRequest;ILjava/lang/Object;)V
 
-    .line 1365
+    .line 1280
     return-void
 .end method
 
@@ -1373,7 +1304,7 @@
     .param p2, "errorCode"    # I
     .param p3, "voltePref"    # I
 
-    .line 1388
+    .line 1290
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1390,33 +1321,33 @@
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1389
+    .line 1291
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v0, p1}, Lorg/codeaurora/ims/ImsSenderRxr;->access$300(Lorg/codeaurora/ims/ImsSenderRxr;I)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v0
 
-    .line 1390
+    .line 1292
     .local v0, "rr":Lorg/codeaurora/ims/IFRequest;
     if-nez v0, :cond_0
 
-    .line 1391
+    .line 1293
     return-void
 
-    .line 1393
+    .line 1295
     :cond_0
     invoke-static {p3}, Lorg/codeaurora/ims/ImsRadioUtils;->voltePrefFromHal(I)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 1394
+    .line 1296
     .local v1, "ret":Ljava/lang/Object;
     iget-object v2, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v2, v0, p2, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->access$400(Lorg/codeaurora/ims/ImsSenderRxr;Lorg/codeaurora/ims/IFRequest;ILjava/lang/Object;)V
 
-    .line 1395
+    .line 1297
     return-void
 .end method
 
@@ -1426,7 +1357,7 @@
     .param p2, "errorCode"    # I
     .param p3, "vopsInfo"    # Lvendor/qti/hardware/radio/ims/V1_0/VopsInfo;
 
-    .line 1401
+    .line 1303
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1443,33 +1374,33 @@
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1402
+    .line 1304
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v0, p1}, Lorg/codeaurora/ims/ImsSenderRxr;->access$300(Lorg/codeaurora/ims/ImsSenderRxr;I)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v0
 
-    .line 1403
+    .line 1305
     .local v0, "rr":Lorg/codeaurora/ims/IFRequest;
     if-nez v0, :cond_0
 
-    .line 1404
+    .line 1306
     return-void
 
-    .line 1406
+    .line 1308
     :cond_0
     invoke-static {p3}, Lorg/codeaurora/ims/ImsRadioUtils;->vopsInfoFromHal(Lvendor/qti/hardware/radio/ims/V1_0/VopsInfo;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 1408
+    .line 1310
     .local v1, "ret":Ljava/lang/Object;
     iget-object v2, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v2, v0, p2, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->access$400(Lorg/codeaurora/ims/ImsSenderRxr;Lorg/codeaurora/ims/IFRequest;ILjava/lang/Object;)V
 
-    .line 1409
+    .line 1311
     return-void
 .end method
 
@@ -1478,7 +1409,7 @@
     .param p1, "token"    # I
     .param p2, "errorCode"    # I
 
-    .line 1352
+    .line 1267
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1495,12 +1426,12 @@
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1353
+    .line 1268
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v0, p1, p2}, Lorg/codeaurora/ims/ImsSenderRxr;->access$200(Lorg/codeaurora/ims/ImsSenderRxr;II)V
 
-    .line 1354
+    .line 1269
     return-void
 .end method
 
@@ -1509,17 +1440,17 @@
     .param p1, "token"    # I
     .param p2, "errorCode"    # I
 
-    .line 1024
+    .line 954
     const-string v0, "Got registration change response from ImsRadio."
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1025
+    .line 955
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v0, p1, p2}, Lorg/codeaurora/ims/ImsSenderRxr;->access$200(Lorg/codeaurora/ims/ImsSenderRxr;II)V
 
-    .line 1026
+    .line 956
     return-void
 .end method
 
@@ -1529,10 +1460,10 @@
     .param p2, "errorCode"    # I
     .param p3, "errorInfo"    # Lvendor/qti/hardware/radio/ims/V1_0/SipErrorInfo;
 
-    .line 994
+    .line 924
     invoke-direct {p0, p1, p2, p3}, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->sendSipErrorInfo(IILvendor/qti/hardware/radio/ims/V1_0/SipErrorInfo;)V
 
-    .line 995
+    .line 925
     return-void
 .end method
 
@@ -1541,7 +1472,7 @@
     .param p1, "token"    # I
     .param p2, "errorCode"    # I
 
-    .line 1235
+    .line 1150
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1558,12 +1489,12 @@
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1236
+    .line 1151
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v0, p1, p2}, Lorg/codeaurora/ims/ImsSenderRxr;->access$200(Lorg/codeaurora/ims/ImsSenderRxr;II)V
 
-    .line 1237
+    .line 1152
     return-void
 .end method
 
@@ -1572,67 +1503,53 @@
     .param p1, "token"    # I
     .param p2, "errorCode"    # I
 
-    .line 1329
+    .line 1244
     const-string v0, "Received GeoLocationInfo response from ImsRadio."
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1330
+    .line 1245
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v0, p1, p2}, Lorg/codeaurora/ims/ImsSenderRxr;->access$200(Lorg/codeaurora/ims/ImsSenderRxr;II)V
 
-    .line 1331
+    .line 1246
     return-void
 .end method
 
 .method public sendImsSmsResponse(IIII)V
-    .locals 0
-    .param p1, "token"    # I
-    .param p2, "messageRef"    # I
-    .param p3, "smsStatusResult"    # I
-    .param p4, "reason"    # I
-
-    .line 899
-    invoke-virtual {p0, p1, p2, p3, p4}, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->sendImsSmsResponse_1_5(IIII)V
-
-    .line 900
-    return-void
-.end method
-
-.method public sendImsSmsResponse_1_5(IIII)V
     .locals 4
     .param p1, "token"    # I
     .param p2, "messageRef"    # I
     .param p3, "smsStatusResult"    # I
     .param p4, "reason"    # I
 
-    .line 879
+    .line 853
     const-string v0, "Ims sms response received"
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 880
+    .line 854
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v0, p1}, Lorg/codeaurora/ims/ImsSenderRxr;->access$300(Lorg/codeaurora/ims/ImsSenderRxr;I)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v0
 
-    .line 881
+    .line 855
     .local v0, "rr":Lorg/codeaurora/ims/IFRequest;
     if-nez v0, :cond_0
 
-    .line 882
+    .line 856
     return-void
 
-    .line 885
+    .line 859
     :cond_0
     invoke-static {p2, p3, p4}, Lorg/codeaurora/ims/ImsRadioUtils;->imsSmsResponsefromHidl(III)Lorg/codeaurora/ims/sms/SmsResponse;
 
     move-result-object v1
 
-    .line 887
+    .line 861
     .local v1, "response":Lorg/codeaurora/ims/sms/SmsResponse;
     iget-object v2, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
@@ -1640,7 +1557,7 @@
 
     invoke-static {v2, v0, v3, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->access$400(Lorg/codeaurora/ims/ImsSenderRxr;Lorg/codeaurora/ims/IFRequest;ILjava/lang/Object;)V
 
-    .line 888
+    .line 862
     return-void
 .end method
 
@@ -1649,7 +1566,7 @@
     .param p1, "token"    # I
     .param p2, "errorCode"    # I
 
-    .line 1347
+    .line 1262
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1666,65 +1583,12 @@
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1348
+    .line 1263
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v0, p1, p2}, Lorg/codeaurora/ims/ImsSenderRxr;->access$200(Lorg/codeaurora/ims/ImsSenderRxr;II)V
 
-    .line 1349
-    return-void
-.end method
-
-.method public setCallForwardStatusResponse(IILvendor/qti/hardware/radio/ims/V1_5/CallForwardStatusInfo;)V
-    .locals 4
-    .param p1, "token"    # I
-    .param p2, "errorCode"    # I
-    .param p3, "callForwardStatusInfo"    # Lvendor/qti/hardware/radio/ims/V1_5/CallForwardStatusInfo;
-
-    .line 1369
-    iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
-
-    invoke-static {v0, p1}, Lorg/codeaurora/ims/ImsSenderRxr;->access$300(Lorg/codeaurora/ims/ImsSenderRxr;I)Lorg/codeaurora/ims/IFRequest;
-
-    move-result-object v0
-
-    .line 1370
-    .local v0, "rr":Lorg/codeaurora/ims/IFRequest;
-    if-nez v0, :cond_0
-
-    .line 1371
-    return-void
-
-    .line 1374
-    :cond_0
-    invoke-static {p3}, Lorg/codeaurora/ims/ImsRadioUtilsV15;->callForwardStatusInfoFromHal(Lvendor/qti/hardware/radio/ims/V1_5/CallForwardStatusInfo;)Lorg/codeaurora/ims/CallForwardStatusInfo;
-
-    move-result-object v1
-
-    .line 1376
-    .local v1, "cfStatusInfo":Lorg/codeaurora/ims/CallForwardStatusInfo;
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "setCallForwardStatusResponse :: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {p0, v2}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 1377
-    iget-object v2, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
-
-    invoke-static {v2, v0, p2, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->access$400(Lorg/codeaurora/ims/ImsSenderRxr;Lorg/codeaurora/ims/IFRequest;ILjava/lang/Object;)V
-
-    .line 1378
+    .line 1264
     return-void
 .end method
 
@@ -1733,7 +1597,7 @@
     .param p1, "token"    # I
     .param p2, "errorCode"    # I
 
-    .line 1183
+    .line 1098
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1750,168 +1614,74 @@
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1184
+    .line 1099
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v0, p1, p2}, Lorg/codeaurora/ims/ImsSenderRxr;->access$200(Lorg/codeaurora/ims/ImsSenderRxr;II)V
 
-    .line 1185
+    .line 1100
     return-void
 .end method
 
 .method public setConfigResponse(IILvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;)V
-    .locals 1
+    .locals 3
     .param p1, "token"    # I
     .param p2, "errorCode"    # I
     .param p3, "config"    # Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;
 
-    .line 904
-    nop
-
-    .line 905
-    invoke-static {p3}, Lorg/codeaurora/ims/ImsRadioUtilsV16;->migrateConfigInfoFrom(Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;)Lvendor/qti/hardware/radio/ims/V1_6/ConfigInfo;
-
-    move-result-object v0
-
-    .line 904
-    invoke-virtual {p0, p1, p2, v0}, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->setConfigResponse_1_6(IILvendor/qti/hardware/radio/ims/V1_6/ConfigInfo;)V
-
-    .line 906
-    return-void
-.end method
-
-.method public setConfigResponse_1_6(IILvendor/qti/hardware/radio/ims/V1_6/ConfigInfo;)V
-    .locals 3
-    .param p1, "token"    # I
-    .param p2, "errorCode"    # I
-    .param p3, "config"    # Lvendor/qti/hardware/radio/ims/V1_6/ConfigInfo;
-
-    .line 911
+    .line 866
     const-string v0, "Set config response received."
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 912
+    .line 867
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v0, p1}, Lorg/codeaurora/ims/ImsSenderRxr;->access$300(Lorg/codeaurora/ims/ImsSenderRxr;I)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v0
 
-    .line 913
+    .line 868
     .local v0, "rr":Lorg/codeaurora/ims/IFRequest;
     if-nez v0, :cond_0
 
-    .line 914
+    .line 869
     return-void
 
-    .line 917
+    .line 872
     :cond_0
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
-    invoke-static {v1, p3}, Lorg/codeaurora/ims/ImsSenderRxr;->access$500(Lorg/codeaurora/ims/ImsSenderRxr;Lvendor/qti/hardware/radio/ims/V1_6/ConfigInfo;)Ljava/lang/Object;
+    invoke-static {v1, p3}, Lorg/codeaurora/ims/ImsSenderRxr;->access$500(Lorg/codeaurora/ims/ImsSenderRxr;Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 918
+    .line 873
     .local v1, "ret":Ljava/lang/Object;
     iget-object v2, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v2, v0, p2, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->access$400(Lorg/codeaurora/ims/ImsSenderRxr;Lorg/codeaurora/ims/IFRequest;ILjava/lang/Object;)V
 
-    .line 919
+    .line 874
     return-void
 .end method
 
 .method public setServiceStatusResponse(II)V
-    .locals 5
+    .locals 1
     .param p1, "token"    # I
     .param p2, "errorCode"    # I
 
-    .line 959
+    .line 906
     const-string v0, "SetServiceStatus response received."
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 960
+    .line 907
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
-    invoke-static {v0, p1}, Lorg/codeaurora/ims/ImsSenderRxr;->access$300(Lorg/codeaurora/ims/ImsSenderRxr;I)Lorg/codeaurora/ims/IFRequest;
+    invoke-static {v0, p1, p2}, Lorg/codeaurora/ims/ImsSenderRxr;->access$200(Lorg/codeaurora/ims/ImsSenderRxr;II)V
 
-    move-result-object v0
-
-    .line 961
-    .local v0, "rr":Lorg/codeaurora/ims/IFRequest;
-    if-nez v0, :cond_0
-
-    .line 962
-    const-string v1, "SetServiceStatusResponsse rr is NULL"
-
-    invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 963
-    return-void
-
-    .line 967
-    :cond_0
-    :try_start_0
-    iget-object v1, v0, Lorg/codeaurora/ims/IFRequest;->mResult:Landroid/os/Message;
-
-    iget-object v1, v1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v1, Lorg/codeaurora/telephony/utils/SomeArgs;
-
-    .line 968
-    .local v1, "setCapArgs":Lorg/codeaurora/telephony/utils/SomeArgs;
-    iget-object v2, v1, Lorg/codeaurora/telephony/utils/SomeArgs;->arg1:Ljava/lang/Object;
-
-    check-cast v2, Landroid/os/Message;
-
-    .line 973
-    .local v2, "orgMsg":Landroid/os/Message;
-    invoke-virtual {v0, v2}, Lorg/codeaurora/ims/IFRequest;->setResult(Landroid/os/Message;)V
-
-    .line 974
-    iget-object v3, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
-
-    iget-object v4, v1, Lorg/codeaurora/telephony/utils/SomeArgs;->arg2:Ljava/lang/Object;
-
-    check-cast v4, Ljava/util/ArrayList;
-
-    invoke-static {v3, v0, p2, v4}, Lorg/codeaurora/ims/ImsSenderRxr;->access$400(Lorg/codeaurora/ims/ImsSenderRxr;Lorg/codeaurora/ims/IFRequest;ILjava/lang/Object;)V
-    :try_end_0
-    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 977
-    .end local v1    # "setCapArgs":Lorg/codeaurora/telephony/utils/SomeArgs;
-    .end local v2    # "orgMsg":Landroid/os/Message;
-    goto :goto_0
-
-    .line 975
-    :catch_0
-    move-exception v1
-
-    .line 976
-    .local v1, "ex":Ljava/lang/ClassCastException;
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "setServiceStatusResponse exception = "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {p0, v2}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 978
-    .end local v1    # "ex":Ljava/lang/ClassCastException;
-    :goto_0
+    .line 908
     return-void
 .end method
 
@@ -1921,17 +1691,17 @@
     .param p2, "errorCode"    # I
     .param p3, "serviceStatusClass"    # I
 
-    .line 1284
+    .line 1199
     const-string v0, "Got set supp service notification response from ImsRadio."
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1285
+    .line 1200
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v0, p1, p2}, Lorg/codeaurora/ims/ImsSenderRxr;->access$200(Lorg/codeaurora/ims/ImsSenderRxr;II)V
 
-    .line 1286
+    .line 1201
     return-void
 .end method
 
@@ -1940,7 +1710,7 @@
     .param p1, "token"    # I
     .param p2, "errorCode"    # I
 
-    .line 1253
+    .line 1168
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1957,12 +1727,12 @@
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1254
+    .line 1169
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v0, p1, p2}, Lorg/codeaurora/ims/ImsSenderRxr;->access$200(Lorg/codeaurora/ims/ImsSenderRxr;II)V
 
-    .line 1255
+    .line 1170
     return-void
 .end method
 
@@ -1971,7 +1741,7 @@
     .param p1, "token"    # I
     .param p2, "errorCode"    # I
 
-    .line 1241
+    .line 1156
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1988,12 +1758,12 @@
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1242
+    .line 1157
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v0, p1, p2}, Lorg/codeaurora/ims/ImsSenderRxr;->access$200(Lorg/codeaurora/ims/ImsSenderRxr;II)V
 
-    .line 1243
+    .line 1158
     return-void
 .end method
 
@@ -2002,7 +1772,7 @@
     .param p1, "token"    # I
     .param p2, "errorCode"    # I
 
-    .line 1247
+    .line 1162
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2019,12 +1789,12 @@
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1248
+    .line 1163
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v0, p1, p2}, Lorg/codeaurora/ims/ImsSenderRxr;->access$200(Lorg/codeaurora/ims/ImsSenderRxr;II)V
 
-    .line 1249
+    .line 1164
     return-void
 .end method
 
@@ -2034,43 +1804,43 @@
     .param p2, "errorCode"    # I
     .param p3, "suppServiceStatus"    # Lvendor/qti/hardware/radio/ims/V1_0/SuppServiceStatus;
 
-    .line 1081
+    .line 996
     nop
 
-    .line 1082
+    .line 997
     invoke-static {p3}, Lorg/codeaurora/ims/ImsRadioUtilsV13;->migrateSuppServiceStatusFromV10(Lvendor/qti/hardware/radio/ims/V1_0/SuppServiceStatus;)Lvendor/qti/hardware/radio/ims/V1_3/SuppServiceStatus;
 
     move-result-object v0
 
-    .line 1083
+    .line 998
     .local v0, "status":Lvendor/qti/hardware/radio/ims/V1_3/SuppServiceStatus;
     invoke-virtual {p0, p1, p2, v0}, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->suppServiceStatusResponse_1_3(IILvendor/qti/hardware/radio/ims/V1_3/SuppServiceStatus;)V
 
-    .line 1084
+    .line 999
     return-void
 .end method
 
 .method public suppServiceStatusResponse_1_3(IILvendor/qti/hardware/radio/ims/V1_3/SuppServiceStatus;)V
-    .locals 5
+    .locals 3
     .param p1, "token"    # I
     .param p2, "errorCode"    # I
     .param p3, "suppServiceStatus"    # Lvendor/qti/hardware/radio/ims/V1_3/SuppServiceStatus;
 
-    .line 1055
+    .line 976
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v0, p1}, Lorg/codeaurora/ims/ImsSenderRxr;->access$300(Lorg/codeaurora/ims/ImsSenderRxr;I)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v0
 
-    .line 1056
+    .line 977
     .local v0, "rr":Lorg/codeaurora/ims/IFRequest;
     if-nez v0, :cond_0
 
-    .line 1057
+    .line 978
     return-void
 
-    .line 1060
+    .line 981
     :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -2136,52 +1906,21 @@
 
     invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1067
+    .line 988
     nop
 
-    .line 1068
+    .line 989
     invoke-static {p3}, Lorg/codeaurora/ims/ImsRadioUtils;->suppSvcStatusResponseFromHal(Lvendor/qti/hardware/radio/ims/V1_3/SuppServiceStatus;)Lorg/codeaurora/ims/SuppSvcResponse;
 
     move-result-object v1
 
-    .line 1069
+    .line 990
     .local v1, "suppSvcResponse":Lorg/codeaurora/ims/SuppSvcResponse;
-    iget v2, v0, Lorg/codeaurora/ims/IFRequest;->mRequest:I
-
-    const/16 v3, 0x17
-
-    if-ne v2, v3, :cond_1
-
-    .line 1070
-    new-instance v2, Lorg/codeaurora/ims/CallForwardStatusInfo;
-
-    .line 1071
-    invoke-virtual {v1}, Lorg/codeaurora/ims/SuppSvcResponse;->getErrorDetails()Landroid/telephony/ims/ImsReasonInfo;
-
-    move-result-object v3
-
-    const/4 v4, 0x0
-
-    invoke-direct {v2, v3, v4}, Lorg/codeaurora/ims/CallForwardStatusInfo;-><init>(Landroid/telephony/ims/ImsReasonInfo;[Lorg/codeaurora/ims/CallForwardStatus;)V
-
-    .line 1072
-    .local v2, "cfStatusInfo":Lorg/codeaurora/ims/CallForwardStatusInfo;
-    iget-object v3, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
-
-    invoke-static {v3, v0, p2, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->access$400(Lorg/codeaurora/ims/ImsSenderRxr;Lorg/codeaurora/ims/IFRequest;ILjava/lang/Object;)V
-
-    .line 1073
-    .end local v2    # "cfStatusInfo":Lorg/codeaurora/ims/CallForwardStatusInfo;
-    goto :goto_0
-
-    .line 1074
-    :cond_1
     iget-object v2, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v2, v0, p2, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->access$400(Lorg/codeaurora/ims/ImsSenderRxr;Lorg/codeaurora/ims/IFRequest;ILjava/lang/Object;)V
 
-    .line 1076
-    :goto_0
+    .line 991
     return-void
 .end method
 
@@ -2190,16 +1929,16 @@
     .param p1, "token"    # I
     .param p2, "errorCode"    # I
 
-    .line 1382
+    .line 1284
     const-string v0, "Received update VoltePref response from ImsRadio."
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1383
+    .line 1285
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;->this$0:Lorg/codeaurora/ims/ImsSenderRxr;
 
     invoke-static {v0, p1, p2}, Lorg/codeaurora/ims/ImsSenderRxr;->access$200(Lorg/codeaurora/ims/ImsSenderRxr;II)V
 
-    .line 1384
+    .line 1286
     return-void
 .end method

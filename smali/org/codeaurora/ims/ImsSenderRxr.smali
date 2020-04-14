@@ -61,8 +61,6 @@
 
 .field private volatile mImsRadioV15:Lvendor/qti/hardware/radio/ims/V1_5/IImsRadio;
 
-.field private volatile mImsRadioV16:Lvendor/qti/hardware/radio/ims/V1_6/IImsRadio;
-
 .field private mImsSubConfigChangeRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
 .field private mIncomingSmsRegistrant:Lorg/codeaurora/telephony/utils/Registrant;
@@ -152,7 +150,7 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 268
+    .line 261
     const-string v0, "imsradio0"
 
     const-string v1, "imsradio1"
@@ -173,63 +171,63 @@
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "phoneId"    # I
 
-    .line 2129
+    .line 1999
     invoke-direct {p0, p1}, Lorg/codeaurora/ims/ImsPhoneBaseCommands;-><init>(Landroid/content/Context;)V
 
-    .line 247
+    .line 240
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mIsUnsolCallListPresent:Z
 
-    .line 249
+    .line 242
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mWfcRoamingConfigurationSupport:Z
 
-    .line 252
+    .line 245
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mRequestsList:Ljava/util/ArrayList;
 
-    .line 255
+    .line 248
     new-instance v1, Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-direct {v1, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
 
     iput-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mTestingEmergencyCall:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    .line 261
+    .line 254
     new-instance v1, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioServiceNotification;
 
     invoke-direct {v1, p0}, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioServiceNotification;-><init>(Lorg/codeaurora/ims/ImsSenderRxr;)V
 
     iput-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mServiceNotification:Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioServiceNotification;
 
-    .line 299
+    .line 292
     new-instance v1, Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-direct {v1}, Ljava/util/concurrent/CopyOnWriteArrayList;-><init>()V
 
     iput-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mListeners:Ljava/util/List;
 
-    .line 302
+    .line 295
     new-instance v1, Ljava/lang/Object;
 
     invoke-direct {v1}, Ljava/lang/Object;-><init>()V
 
     iput-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mHalSync:Ljava/lang/Object;
 
-    .line 2131
+    .line 2001
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
     iput-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mPhoneId:Ljava/lang/Integer;
 
-    .line 2132
+    .line 2002
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->initNotifyRegistrants()V
 
-    .line 2134
+    .line 2004
     const-string v1, "power"
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -238,7 +236,7 @@
 
     check-cast v1, Landroid/os/PowerManager;
 
-    .line 2135
+    .line 2005
     .local v1, "pm":Landroid/os/PowerManager;
     const/4 v2, 0x1
 
@@ -250,12 +248,12 @@
 
     iput-object v2, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
-    .line 2136
+    .line 2006
     iget-object v2, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v2, v0}, Landroid/os/PowerManager$WakeLock;->setReferenceCounted(Z)V
 
-    .line 2137
+    .line 2007
     const-string v2, "ro.ril.wake_lock_timeout"
 
     const v3, 0xea60
@@ -266,27 +264,27 @@
 
     iput v2, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mWakeLockTimeout:I
 
-    .line 2139
+    .line 2009
     new-instance v2, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioHandler;
 
     invoke-direct {v2, p0}, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioHandler;-><init>(Lorg/codeaurora/ims/ImsSenderRxr;)V
 
     iput-object v2, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mImsRadioHandler:Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioHandler;
 
-    .line 2140
+    .line 2010
     iput v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mRequestMessagesWaiting:I
 
-    .line 2142
+    .line 2012
     new-instance v0, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioDeathRecipient;
 
     invoke-direct {v0, p0}, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioDeathRecipient;-><init>(Lorg/codeaurora/ims/ImsSenderRxr;)V
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mDeathRecipient:Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioDeathRecipient;
 
-    .line 2144
+    .line 2014
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->registerForImsRadioServiceNotification()V
 
-    .line 2145
+    .line 2015
     return-void
 .end method
 
@@ -294,7 +292,7 @@
     .locals 0
     .param p0, "x0"    # Lorg/codeaurora/ims/ImsSenderRxr;
 
-    .line 216
+    .line 209
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->resetServiceAndRequestList()V
 
     return-void
@@ -304,7 +302,7 @@
     .locals 0
     .param p0, "x0"    # Lorg/codeaurora/ims/ImsSenderRxr;
 
-    .line 216
+    .line 209
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->initImsRadio()V
 
     return-void
@@ -314,7 +312,7 @@
     .locals 1
     .param p0, "x0"    # Lorg/codeaurora/ims/ImsSenderRxr;
 
-    .line 216
+    .line 209
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mHandoverStatusRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     return-object v0
@@ -324,7 +322,7 @@
     .locals 1
     .param p0, "x0"    # Lorg/codeaurora/ims/ImsSenderRxr;
 
-    .line 216
+    .line 209
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mSrvStatusRegistrations:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     return-object v0
@@ -334,7 +332,7 @@
     .locals 1
     .param p0, "x0"    # Lorg/codeaurora/ims/ImsSenderRxr;
 
-    .line 216
+    .line 209
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mTtyStatusRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     return-object v0
@@ -344,7 +342,7 @@
     .locals 1
     .param p0, "x0"    # Lorg/codeaurora/ims/ImsSenderRxr;
 
-    .line 216
+    .line 209
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mRefreshConfInfoRegistrations:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     return-object v0
@@ -354,7 +352,7 @@
     .locals 1
     .param p0, "x0"    # Lorg/codeaurora/ims/ImsSenderRxr;
 
-    .line 216
+    .line 209
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mGeolocationRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     return-object v0
@@ -364,7 +362,7 @@
     .locals 1
     .param p0, "x0"    # Lorg/codeaurora/ims/ImsSenderRxr;
 
-    .line 216
+    .line 209
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mAutoRejectRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     return-object v0
@@ -374,7 +372,7 @@
     .locals 1
     .param p0, "x0"    # Lorg/codeaurora/ims/ImsSenderRxr;
 
-    .line 216
+    .line 209
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mImsSubConfigChangeRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     return-object v0
@@ -384,7 +382,7 @@
     .locals 1
     .param p0, "x0"    # Lorg/codeaurora/ims/ImsSenderRxr;
 
-    .line 216
+    .line 209
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mParticipantStatusRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     return-object v0
@@ -394,7 +392,7 @@
     .locals 1
     .param p0, "x0"    # Lorg/codeaurora/ims/ImsSenderRxr;
 
-    .line 216
+    .line 209
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mRegistrationBlockStatusRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     return-object v0
@@ -404,7 +402,7 @@
     .locals 1
     .param p0, "x0"    # Lorg/codeaurora/ims/ImsSenderRxr;
 
-    .line 216
+    .line 209
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mRttMessageRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     return-object v0
@@ -416,7 +414,7 @@
     .param p1, "x1"    # I
     .param p2, "x2"    # I
 
-    .line 216
+    .line 209
     invoke-direct {p0, p1, p2}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(II)V
 
     return-void
@@ -426,7 +424,7 @@
     .locals 1
     .param p0, "x0"    # Lorg/codeaurora/ims/ImsSenderRxr;
 
-    .line 216
+    .line 209
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mVoiceInfoStatusRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     return-object v0
@@ -436,7 +434,7 @@
     .locals 1
     .param p0, "x0"    # Lorg/codeaurora/ims/ImsSenderRxr;
 
-    .line 216
+    .line 209
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mVoWiFiCallQualityRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     return-object v0
@@ -446,7 +444,7 @@
     .locals 1
     .param p0, "x0"    # Lorg/codeaurora/ims/ImsSenderRxr;
 
-    .line 216
+    .line 209
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mMotoVopsRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     return-object v0
@@ -456,7 +454,7 @@
     .locals 1
     .param p0, "x0"    # Lorg/codeaurora/ims/ImsSenderRxr;
 
-    .line 216
+    .line 209
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mSsaccRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     return-object v0
@@ -466,7 +464,7 @@
     .locals 1
     .param p0, "x0"    # Lorg/codeaurora/ims/ImsSenderRxr;
 
-    .line 216
+    .line 209
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mVopsRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     return-object v0
@@ -476,7 +474,7 @@
     .locals 1
     .param p0, "x0"    # Lorg/codeaurora/ims/ImsSenderRxr;
 
-    .line 216
+    .line 209
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mMultiIdentityStatusChangeRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     return-object v0
@@ -486,7 +484,7 @@
     .locals 1
     .param p0, "x0"    # Lorg/codeaurora/ims/ImsSenderRxr;
 
-    .line 216
+    .line 209
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mMultiIdentityInfoPendingRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     return-object v0
@@ -497,7 +495,7 @@
     .param p0, "x0"    # Lorg/codeaurora/ims/ImsSenderRxr;
     .param p1, "x1"    # Z
 
-    .line 216
+    .line 209
     iput-boolean p1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mWfcRoamingConfigurationSupport:Z
 
     return p1
@@ -507,7 +505,7 @@
     .locals 1
     .param p0, "x0"    # Lorg/codeaurora/ims/ImsSenderRxr;
 
-    .line 216
+    .line 209
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mWfcRoamingModeConfigRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     return-object v0
@@ -517,7 +515,7 @@
     .locals 1
     .param p0, "x0"    # Lorg/codeaurora/ims/ImsSenderRxr;
 
-    .line 216
+    .line 209
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mUssdInfoRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     return-object v0
@@ -528,7 +526,7 @@
     .param p0, "x0"    # Lorg/codeaurora/ims/ImsSenderRxr;
     .param p1, "x1"    # I
 
-    .line 216
+    .line 209
     invoke-direct {p0, p1}, Lorg/codeaurora/ims/ImsSenderRxr;->findAndRemoveRequestFromList(I)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v0
@@ -543,19 +541,19 @@
     .param p2, "x2"    # I
     .param p3, "x3"    # Ljava/lang/Object;
 
-    .line 216
+    .line 209
     invoke-direct {p0, p1, p2, p3}, Lorg/codeaurora/ims/ImsSenderRxr;->sendResponse(Lorg/codeaurora/ims/IFRequest;ILjava/lang/Object;)V
 
     return-void
 .end method
 
-.method static synthetic access$500(Lorg/codeaurora/ims/ImsSenderRxr;Lvendor/qti/hardware/radio/ims/V1_6/ConfigInfo;)Ljava/lang/Object;
+.method static synthetic access$500(Lorg/codeaurora/ims/ImsSenderRxr;Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;)Ljava/lang/Object;
     .locals 1
     .param p0, "x0"    # Lorg/codeaurora/ims/ImsSenderRxr;
-    .param p1, "x1"    # Lvendor/qti/hardware/radio/ims/V1_6/ConfigInfo;
+    .param p1, "x1"    # Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;
 
-    .line 216
-    invoke-direct {p0, p1}, Lorg/codeaurora/ims/ImsSenderRxr;->processConfigResponse(Lvendor/qti/hardware/radio/ims/V1_6/ConfigInfo;)Ljava/lang/Object;
+    .line 209
+    invoke-direct {p0, p1}, Lorg/codeaurora/ims/ImsSenderRxr;->processConfigResponse(Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -567,7 +565,7 @@
     .param p0, "x0"    # Lorg/codeaurora/ims/ImsSenderRxr;
     .param p1, "x1"    # Z
 
-    .line 216
+    .line 209
     iput-boolean p1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mIsUnsolCallListPresent:Z
 
     return p1
@@ -577,7 +575,7 @@
     .locals 1
     .param p0, "x0"    # Lorg/codeaurora/ims/ImsSenderRxr;
 
-    .line 216
+    .line 209
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mPhoneId:Ljava/lang/Integer;
 
     return-object v0
@@ -587,7 +585,7 @@
     .locals 1
     .param p0, "x0"    # Lorg/codeaurora/ims/ImsSenderRxr;
 
-    .line 216
+    .line 209
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mSendSmsStatusReportRegistrant:Lorg/codeaurora/telephony/utils/Registrant;
 
     return-object v0
@@ -597,7 +595,7 @@
     .locals 1
     .param p0, "x0"    # Lorg/codeaurora/ims/ImsSenderRxr;
 
-    .line 216
+    .line 209
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mIncomingSmsRegistrant:Lorg/codeaurora/telephony/utils/Registrant;
 
     return-object v0
@@ -606,32 +604,32 @@
 .method private acquireWakeLock()V
     .locals 5
 
-    .line 2181
+    .line 2051
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
     monitor-enter v0
 
-    .line 2182
+    .line 2052
     :try_start_0
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v1}, Landroid/os/PowerManager$WakeLock;->acquire()V
 
-    .line 2184
+    .line 2054
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mImsRadioHandler:Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioHandler;
 
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioHandler;->removeMessages(I)V
 
-    .line 2185
+    .line 2055
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mImsRadioHandler:Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioHandler;
 
     invoke-virtual {v1, v2}, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioHandler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v1
 
-    .line 2186
+    .line 2056
     .local v1, "msg":Landroid/os/Message;
     iget-object v2, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mImsRadioHandler:Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioHandler;
 
@@ -641,16 +639,16 @@
 
     invoke-virtual {v2, v1, v3, v4}, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 2187
+    .line 2057
     nop
 
     .end local v1    # "msg":Landroid/os/Message;
     monitor-exit v0
 
-    .line 2188
+    .line 2058
     return-void
 
-    .line 2187
+    .line 2057
     :catchall_0
     move-exception v1
 
@@ -666,12 +664,12 @@
     .param p1, "error"    # I
     .param p2, "loggable"    # Z
 
-    .line 2222
+    .line 2092
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mRequestsList:Ljava/util/ArrayList;
 
     monitor-enter v0
 
-    .line 2223
+    .line 2093
     :try_start_0
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mRequestsList:Ljava/util/ArrayList;
 
@@ -679,11 +677,11 @@
 
     move-result v1
 
-    .line 2224
+    .line 2094
     .local v1, "count":I
     if-eqz p2, :cond_0
 
-    .line 2225
+    .line 2095
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -700,7 +698,7 @@
 
     invoke-static {p0, v2}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 2228
+    .line 2098
     :cond_0
     const/4 v2, 0x0
 
@@ -710,7 +708,7 @@
 
     if-ge v2, v1, :cond_2
 
-    .line 2229
+    .line 2099
     iget-object v4, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mRequestsList:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -719,11 +717,11 @@
 
     check-cast v4, Lorg/codeaurora/ims/IFRequest;
 
-    .line 2230
+    .line 2100
     .local v4, "rr":Lorg/codeaurora/ims/IFRequest;
     if-eqz p2, :cond_1
 
-    .line 2231
+    .line 2101
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -744,7 +742,7 @@
 
     iget v6, v4, Lorg/codeaurora/ims/IFRequest;->mRequest:I
 
-    .line 2232
+    .line 2102
     invoke-static {v6}, Lorg/codeaurora/ims/ImsSenderRxr;->msgIdToString(I)Ljava/lang/String;
 
     move-result-object v6
@@ -755,22 +753,22 @@
 
     move-result-object v5
 
-    .line 2231
+    .line 2101
     invoke-static {p0, v5}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 2234
+    .line 2104
     :cond_1
     invoke-virtual {v4, p1, v3}, Lorg/codeaurora/ims/IFRequest;->onError(ILjava/lang/Object;)V
 
-    .line 2235
+    .line 2105
     invoke-virtual {v4}, Lorg/codeaurora/ims/IFRequest;->release()V
 
-    .line 2228
+    .line 2098
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 2237
+    .line 2107
     .end local v2    # "i":I
     .end local v4    # "rr":Lorg/codeaurora/ims/IFRequest;
     :cond_2
@@ -778,36 +776,36 @@
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
 
-    .line 2238
+    .line 2108
     const/4 v2, 0x0
 
     iput v2, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mRequestMessagesWaiting:I
 
-    .line 2239
+    .line 2109
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->releaseWakeLockIfDone()V
 
-    .line 2240
+    .line 2110
     .end local v1    # "count":I
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 2243
+    .line 2113
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mIsUnsolCallListPresent:Z
 
     if-eqz v0, :cond_3
 
-    .line 2244
+    .line 2114
     iput-boolean v2, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mIsUnsolCallListPresent:Z
 
-    .line 2245
+    .line 2115
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mCallStateRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     new-instance v1, Lorg/codeaurora/telephony/utils/AsyncResult;
 
     new-instance v2, Ljava/lang/RuntimeException;
 
-    .line 2247
+    .line 2117
     invoke-static {p1}, Lorg/codeaurora/ims/ImsSenderRxr;->errorIdToString(I)Ljava/lang/String;
 
     move-result-object v4
@@ -816,14 +814,14 @@
 
     invoke-direct {v1, v3, v3, v2}, Lorg/codeaurora/telephony/utils/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
 
-    .line 2246
+    .line 2116
     invoke-virtual {v0, v1}, Lorg/codeaurora/telephony/utils/RegistrantList;->notifyRegistrants(Lorg/codeaurora/telephony/utils/AsyncResult;)V
 
-    .line 2249
+    .line 2119
     :cond_3
     return-void
 
-    .line 2240
+    .line 2110
     :catchall_0
     move-exception v1
 
@@ -838,17 +836,17 @@
 .method private disableSrvStatus()V
     .locals 4
 
-    .line 3358
+    .line 3138
     const-string v0, "disableSrvStatus"
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->v(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3359
+    .line 3139
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mSrvStatusRegistrations:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     if-eqz v0, :cond_0
 
-    .line 3360
+    .line 3140
     new-instance v0, Lorg/codeaurora/ims/ImsRilException;
 
     const/4 v1, 0x1
@@ -857,7 +855,7 @@
 
     invoke-direct {v0, v1, v2}, Lorg/codeaurora/ims/ImsRilException;-><init>(ILjava/lang/String;)V
 
-    .line 3361
+    .line 3141
     .local v0, "ex":Lorg/codeaurora/ims/ImsRilException;
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mSrvStatusRegistrations:Lorg/codeaurora/telephony/utils/RegistrantList;
 
@@ -865,10 +863,10 @@
 
     invoke-direct {v3, v2, v2, v0}, Lorg/codeaurora/telephony/utils/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
 
-    .line 3362
+    .line 3142
     invoke-virtual {v1, v3}, Lorg/codeaurora/telephony/utils/RegistrantList;->notifyRegistrants(Lorg/codeaurora/telephony/utils/AsyncResult;)V
 
-    .line 3364
+    .line 3144
     .end local v0    # "ex":Lorg/codeaurora/ims/ImsRilException;
     :cond_0
     return-void
@@ -878,7 +876,7 @@
     .locals 1
     .param p0, "request"    # I
 
-    .line 2336
+    .line 2206
     if-eqz p0, :cond_8
 
     const/4 v0, 0x1
@@ -915,90 +913,90 @@
 
     packed-switch p0, :pswitch_data_0
 
-    .line 2366
+    .line 2236
     const-string v0, "E_UNKNOWN"
 
     return-object v0
 
-    .line 2364
+    .line 2234
     :pswitch_0
     const-string v0, "E_SS_MODIFIED_TO_DIAL_VIDEO"
 
     return-object v0
 
-    .line 2362
+    .line 2232
     :pswitch_1
     const-string v0, "E_SS_MODIFIED_TO_SS"
 
     return-object v0
 
-    .line 2360
+    .line 2230
     :pswitch_2
     const-string v0, "E_SS_MODIFIED_TO_USSD"
 
     return-object v0
 
-    .line 2358
+    .line 2228
     :pswitch_3
     const-string v0, "E_SS_MODIFIED_TO_DIAL"
 
     return-object v0
 
-    .line 2356
+    .line 2226
     :pswitch_4
     const-string v0, "E_FDN_CHECK_FAILURE"
 
     return-object v0
 
-    .line 2352
+    .line 2222
     :cond_0
     const-string v0, "E_REJECTED_BY_REMOTE"
 
     return-object v0
 
-    .line 2350
+    .line 2220
     :cond_1
     const-string v0, "E_INVALID_PARAMETER"
 
     return-object v0
 
-    .line 2354
+    .line 2224
     :cond_2
     const-string v0, "E_NETWORK_NOT_SUPPORTED"
 
     return-object v0
 
-    .line 2348
+    .line 2218
     :cond_3
     const-string v0, "E_UNUSED"
 
     return-object v0
 
-    .line 2346
+    .line 2216
     :cond_4
     const-string v0, "E_CANCELLED"
 
     return-object v0
 
-    .line 2344
+    .line 2214
     :cond_5
     const-string v0, "E_REQUEST_NOT_SUPPORTED"
 
     return-object v0
 
-    .line 2342
+    .line 2212
     :cond_6
     const-string v0, "E_GENERIC_FAILURE"
 
     return-object v0
 
-    .line 2340
+    .line 2210
     :cond_7
     const-string v0, "E_RADIO_NOT_AVAILABLE"
 
     return-object v0
 
-    .line 2338
+    .line 2208
     :cond_8
     const-string v0, "SUCCESS"
 
@@ -1018,10 +1016,10 @@
     .locals 2
     .param p0, "sc"    # Ljava/lang/String;
 
-    .line 3725
+    .line 3505
     if-eqz p0, :cond_2
 
-    .line 3729
+    .line 3509
     const-string v0, "CLIP"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1030,12 +1028,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 3730
+    .line 3510
     const/4 v0, 0x1
 
     return v0
 
-    .line 3732
+    .line 3512
     :cond_0
     const-string v0, "COLP"
 
@@ -1045,18 +1043,18 @@
 
     if-eqz v0, :cond_1
 
-    .line 3733
+    .line 3513
     const/4 v0, 0x2
 
     return v0
 
-    .line 3735
+    .line 3515
     :cond_1
     const/4 v0, 0x0
 
     return v0
 
-    .line 3726
+    .line 3506
     :cond_2
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -1071,12 +1069,12 @@
     .locals 5
     .param p1, "serial"    # I
 
-    .line 2252
+    .line 2122
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mRequestsList:Ljava/util/ArrayList;
 
     monitor-enter v0
 
-    .line 2253
+    .line 2123
     const/4 v1, 0x0
 
     .local v1, "i":I
@@ -1091,7 +1089,7 @@
     :goto_0
     if-ge v1, v2, :cond_2
 
-    .line 2254
+    .line 2124
     iget-object v3, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mRequestsList:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1100,54 +1098,54 @@
 
     check-cast v3, Lorg/codeaurora/ims/IFRequest;
 
-    .line 2256
+    .line 2126
     .local v3, "rr":Lorg/codeaurora/ims/IFRequest;
     iget v4, v3, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     if-ne v4, p1, :cond_1
 
-    .line 2257
+    .line 2127
     iget-object v4, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mRequestsList:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 2258
+    .line 2128
     iget v4, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mRequestMessagesWaiting:I
 
     if-lez v4, :cond_0
 
-    .line 2259
+    .line 2129
     iget v4, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mRequestMessagesWaiting:I
 
     add-int/lit8 v4, v4, -0x1
 
     iput v4, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mRequestMessagesWaiting:I
 
-    .line 2260
+    .line 2130
     :cond_0
     monitor-exit v0
 
     return-object v3
 
-    .line 2253
+    .line 2123
     .end local v3    # "rr":Lorg/codeaurora/ims/IFRequest;
     :cond_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 2263
+    .line 2133
     .end local v1    # "i":I
     .end local v2    # "s":I
     :cond_2
     monitor-exit v0
 
-    .line 2265
+    .line 2135
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 2263
+    .line 2133
     :catchall_0
     move-exception v1
 
@@ -1161,28 +1159,28 @@
 .method private imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
     .locals 3
 
-    .line 463
+    .line 452
     const/4 v0, 0x0
 
-    .line 464
+    .line 453
     .local v0, "imsRadio":Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mHalSync:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 465
+    .line 454
     :try_start_0
     iget-object v2, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mImsRadio:Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     move-object v0, v2
 
-    .line 466
+    .line 455
     monitor-exit v1
 
-    .line 467
+    .line 456
     return-object v0
 
-    .line 466
+    .line 455
     :catchall_0
     move-exception v2
 
@@ -1196,28 +1194,28 @@
 .method private imsRadioV12()Lvendor/qti/hardware/radio/ims/V1_2/IImsRadio;
     .locals 3
 
-    .line 471
+    .line 460
     const/4 v0, 0x0
 
-    .line 472
+    .line 461
     .local v0, "imsRadio":Lvendor/qti/hardware/radio/ims/V1_2/IImsRadio;
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mHalSync:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 473
+    .line 462
     :try_start_0
     iget-object v2, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mImsRadioV12:Lvendor/qti/hardware/radio/ims/V1_2/IImsRadio;
 
     move-object v0, v2
 
-    .line 474
+    .line 463
     monitor-exit v1
 
-    .line 475
+    .line 464
     return-object v0
 
-    .line 474
+    .line 463
     :catchall_0
     move-exception v2
 
@@ -1231,28 +1229,28 @@
 .method private imsRadioV13()Lvendor/qti/hardware/radio/ims/V1_3/IImsRadio;
     .locals 3
 
-    .line 479
+    .line 468
     const/4 v0, 0x0
 
-    .line 480
+    .line 469
     .local v0, "imsRadio":Lvendor/qti/hardware/radio/ims/V1_3/IImsRadio;
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mHalSync:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 481
+    .line 470
     :try_start_0
     iget-object v2, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mImsRadioV13:Lvendor/qti/hardware/radio/ims/V1_3/IImsRadio;
 
     move-object v0, v2
 
-    .line 482
+    .line 471
     monitor-exit v1
 
-    .line 483
+    .line 472
     return-object v0
 
-    .line 482
+    .line 471
     :catchall_0
     move-exception v2
 
@@ -1266,28 +1264,28 @@
 .method private imsRadioV14()Lvendor/qti/hardware/radio/ims/V1_4/IImsRadio;
     .locals 3
 
-    .line 487
+    .line 476
     const/4 v0, 0x0
 
-    .line 488
+    .line 477
     .local v0, "imsRadio":Lvendor/qti/hardware/radio/ims/V1_4/IImsRadio;
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mHalSync:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 489
+    .line 478
     :try_start_0
     iget-object v2, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mImsRadioV14:Lvendor/qti/hardware/radio/ims/V1_4/IImsRadio;
 
     move-object v0, v2
 
-    .line 490
+    .line 479
     monitor-exit v1
 
-    .line 491
+    .line 480
     return-object v0
 
-    .line 490
+    .line 479
     :catchall_0
     move-exception v2
 
@@ -1301,63 +1299,28 @@
 .method private imsRadioV15()Lvendor/qti/hardware/radio/ims/V1_5/IImsRadio;
     .locals 3
 
-    .line 495
+    .line 484
     const/4 v0, 0x0
 
-    .line 496
+    .line 485
     .local v0, "imsRadio":Lvendor/qti/hardware/radio/ims/V1_5/IImsRadio;
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mHalSync:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 497
+    .line 486
     :try_start_0
     iget-object v2, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mImsRadioV15:Lvendor/qti/hardware/radio/ims/V1_5/IImsRadio;
 
     move-object v0, v2
 
-    .line 498
+    .line 487
     monitor-exit v1
 
-    .line 499
+    .line 488
     return-object v0
 
-    .line 498
-    :catchall_0
-    move-exception v2
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v2
-.end method
-
-.method private imsRadioV16()Lvendor/qti/hardware/radio/ims/V1_6/IImsRadio;
-    .locals 3
-
-    .line 503
-    const/4 v0, 0x0
-
-    .line 504
-    .local v0, "imsRadio":Lvendor/qti/hardware/radio/ims/V1_6/IImsRadio;
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mHalSync:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    .line 505
-    :try_start_0
-    iget-object v2, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mImsRadioV16:Lvendor/qti/hardware/radio/ims/V1_6/IImsRadio;
-
-    move-object v0, v2
-
-    .line 506
-    monitor-exit v1
-
-    .line 507
-    return-object v0
-
-    .line 506
+    .line 487
     :catchall_0
     move-exception v2
 
@@ -1369,15 +1332,15 @@
 .end method
 
 .method private initImsRadio()V
-    .locals 13
+    .locals 12
 
-    .line 524
+    .line 505
     :try_start_0
     sget-object v0, Lorg/codeaurora/ims/ImsSenderRxr;->IIMS_RADIO_SERVICE_NAME:[Ljava/lang/String;
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mPhoneId:Ljava/lang/Integer;
 
-    .line 525
+    .line 506
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
@@ -1388,22 +1351,22 @@
 
     move-result-object v0
 
-    .line 526
+    .line 507
     .local v0, "imsRadio":Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
     if-nez v0, :cond_0
 
-    .line 527
+    .line 508
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->resetHalInterfaces()V
 
-    .line 528
+    .line 509
     const-string v1, "initImsRadio: imsRadio is null."
 
     invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 529
+    .line 510
     return-void
 
-    .line 531
+    .line 512
     :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1427,15 +1390,15 @@
 
     invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 534
+    .line 515
     nop
 
-    .line 535
+    .line 516
     invoke-static {v0}, Lvendor/qti/hardware/radio/ims/V1_1/IImsRadio;->castFrom(Landroid/os/IHwInterface;)Lvendor/qti/hardware/radio/ims/V1_1/IImsRadio;
 
     move-result-object v1
 
-    .line 536
+    .line 517
     .local v1, "imsRadioV11":Lvendor/qti/hardware/radio/ims/V1_1/IImsRadio;
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -1469,15 +1432,15 @@
 
     invoke-static {p0, v3}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 539
+    .line 520
     nop
 
-    .line 540
+    .line 521
     invoke-static {v0}, Lvendor/qti/hardware/radio/ims/V1_2/IImsRadio;->castFrom(Landroid/os/IHwInterface;)Lvendor/qti/hardware/radio/ims/V1_2/IImsRadio;
 
     move-result-object v3
 
-    .line 541
+    .line 522
     .local v3, "imsRadioV12":Lvendor/qti/hardware/radio/ims/V1_2/IImsRadio;
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -1509,15 +1472,15 @@
 
     invoke-static {p0, v5}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 544
+    .line 525
     nop
 
-    .line 545
+    .line 526
     invoke-static {v0}, Lvendor/qti/hardware/radio/ims/V1_3/IImsRadio;->castFrom(Landroid/os/IHwInterface;)Lvendor/qti/hardware/radio/ims/V1_3/IImsRadio;
 
     move-result-object v5
 
-    .line 546
+    .line 527
     .local v5, "imsRadioV13":Lvendor/qti/hardware/radio/ims/V1_3/IImsRadio;
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -1549,15 +1512,15 @@
 
     invoke-static {p0, v6}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 549
+    .line 530
     nop
 
-    .line 550
+    .line 531
     invoke-static {v0}, Lvendor/qti/hardware/radio/ims/V1_4/IImsRadio;->castFrom(Landroid/os/IHwInterface;)Lvendor/qti/hardware/radio/ims/V1_4/IImsRadio;
 
     move-result-object v6
 
-    .line 551
+    .line 532
     .local v6, "imsRadioV14":Lvendor/qti/hardware/radio/ims/V1_4/IImsRadio;
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -1589,15 +1552,15 @@
 
     invoke-static {p0, v7}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 554
+    .line 535
     nop
 
-    .line 555
+    .line 536
     invoke-static {v0}, Lvendor/qti/hardware/radio/ims/V1_5/IImsRadio;->castFrom(Landroid/os/IHwInterface;)Lvendor/qti/hardware/radio/ims/V1_5/IImsRadio;
 
     move-result-object v7
 
-    .line 556
+    .line 537
     .local v7, "imsRadioV15":Lvendor/qti/hardware/radio/ims/V1_5/IImsRadio;
     new-instance v8, Ljava/lang/StringBuilder;
 
@@ -1609,144 +1572,101 @@
 
     if-eqz v7, :cond_5
 
-    move v9, v2
-
     goto :goto_4
 
     :cond_5
-    move v9, v4
-
-    :goto_4
-    invoke-static {v9}, Lorg/codeaurora/ims/ImsSenderRxr;->toAvailability(Z)Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {p0, v8}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 559
-    nop
-
-    .line 560
-    invoke-static {v0}, Lvendor/qti/hardware/radio/ims/V1_6/IImsRadio;->castFrom(Landroid/os/IHwInterface;)Lvendor/qti/hardware/radio/ims/V1_6/IImsRadio;
-
-    move-result-object v8
-
-    .line 561
-    .local v8, "imsRadioV16":Lvendor/qti/hardware/radio/ims/V1_6/IImsRadio;
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v10, "initImsRadio: imsRadioV16 availability: "
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    if-eqz v8, :cond_6
-
-    goto :goto_5
-
-    :cond_6
     move v2, v4
 
-    :goto_5
+    :goto_4
     invoke-static {v2}, Lorg/codeaurora/ims/ImsSenderRxr;->toAvailability(Z)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v9, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
 
     invoke-static {p0, v2}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 564
+    .line 540
     new-instance v2, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;
 
     invoke-direct {v2, p0}, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;-><init>(Lorg/codeaurora/ims/ImsSenderRxr;)V
 
-    .line 565
+    .line 541
     .local v2, "imsRadioResponse":Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;
     new-instance v4, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioIndication;
 
     invoke-direct {v4, p0}, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioIndication;-><init>(Lorg/codeaurora/ims/ImsSenderRxr;)V
 
-    .line 567
+    .line 543
     .local v4, "imsRadioIndication":Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioIndication;
-    iget-object v9, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mHalSync:Ljava/lang/Object;
+    iget-object v8, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mHalSync:Ljava/lang/Object;
 
-    monitor-enter v9
+    monitor-enter v8
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 568
+    .line 544
     :try_start_1
     iput-object v2, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mImsRadioResponse:Lvendor/qti/hardware/radio/ims/V1_0/IImsRadioResponse;
 
-    .line 569
+    .line 545
     iput-object v4, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mImsRadioIndication:Lvendor/qti/hardware/radio/ims/V1_0/IImsRadioIndication;
 
-    .line 570
-    iget-object v10, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mImsRadioResponse:Lvendor/qti/hardware/radio/ims/V1_0/IImsRadioResponse;
+    .line 546
+    iget-object v9, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mImsRadioResponse:Lvendor/qti/hardware/radio/ims/V1_0/IImsRadioResponse;
 
-    iget-object v11, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mImsRadioIndication:Lvendor/qti/hardware/radio/ims/V1_0/IImsRadioIndication;
+    iget-object v10, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mImsRadioIndication:Lvendor/qti/hardware/radio/ims/V1_0/IImsRadioIndication;
 
-    invoke-interface {v0, v10, v11}, Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;->setCallback(Lvendor/qti/hardware/radio/ims/V1_0/IImsRadioResponse;Lvendor/qti/hardware/radio/ims/V1_0/IImsRadioIndication;)V
+    invoke-interface {v0, v9, v10}, Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;->setCallback(Lvendor/qti/hardware/radio/ims/V1_0/IImsRadioResponse;Lvendor/qti/hardware/radio/ims/V1_0/IImsRadioIndication;)V
 
-    .line 571
-    iget-object v10, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mDeathRecipient:Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioDeathRecipient;
+    .line 547
+    iget-object v9, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mDeathRecipient:Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioDeathRecipient;
 
-    const-wide/16 v11, 0x0
+    const-wide/16 v10, 0x0
 
-    invoke-interface {v0, v10, v11, v12}, Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;->linkToDeath(Landroid/os/IHwBinder$DeathRecipient;J)Z
+    invoke-interface {v0, v9, v10, v11}, Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;->linkToDeath(Landroid/os/IHwBinder$DeathRecipient;J)Z
 
-    .line 573
+    .line 549
     iput-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mImsRadio:Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
-    .line 574
+    .line 550
     iput-object v3, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mImsRadioV12:Lvendor/qti/hardware/radio/ims/V1_2/IImsRadio;
 
-    .line 575
+    .line 551
     iput-object v5, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mImsRadioV13:Lvendor/qti/hardware/radio/ims/V1_3/IImsRadio;
 
-    .line 576
+    .line 552
     iput-object v6, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mImsRadioV14:Lvendor/qti/hardware/radio/ims/V1_4/IImsRadio;
 
-    .line 577
+    .line 553
     iput-object v7, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mImsRadioV15:Lvendor/qti/hardware/radio/ims/V1_5/IImsRadio;
 
-    .line 578
-    iput-object v8, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mImsRadioV16:Lvendor/qti/hardware/radio/ims/V1_6/IImsRadio;
-
-    .line 579
-    monitor-exit v9
+    .line 554
+    monitor-exit v8
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 581
+    .line 556
     :try_start_2
-    sget-object v9, Lorg/codeaurora/ims/ImsSenderRxr;->IIMS_RADIO_SERVICE_NAME:[Ljava/lang/String;
+    sget-object v8, Lorg/codeaurora/ims/ImsSenderRxr;->IIMS_RADIO_SERVICE_NAME:[Ljava/lang/String;
 
-    iget-object v10, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mPhoneId:Ljava/lang/Integer;
+    iget-object v9, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mPhoneId:Ljava/lang/Integer;
 
-    invoke-virtual {v10}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
 
-    move-result v10
+    move-result v9
 
-    aget-object v9, v9, v10
+    aget-object v8, v8, v9
 
-    invoke-direct {p0, v9}, Lorg/codeaurora/ims/ImsSenderRxr;->notifyServiceUp(Ljava/lang/String;)V
+    invoke-direct {p0, v8}, Lorg/codeaurora/ims/ImsSenderRxr;->notifyServiceUp(Ljava/lang/String;)V
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 586
+    .line 561
     .end local v0    # "imsRadio":Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
     .end local v1    # "imsRadioV11":Lvendor/qti/hardware/radio/ims/V1_1/IImsRadio;
     .end local v2    # "imsRadioResponse":Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;
@@ -1755,10 +1675,9 @@
     .end local v5    # "imsRadioV13":Lvendor/qti/hardware/radio/ims/V1_3/IImsRadio;
     .end local v6    # "imsRadioV14":Lvendor/qti/hardware/radio/ims/V1_4/IImsRadio;
     .end local v7    # "imsRadioV15":Lvendor/qti/hardware/radio/ims/V1_5/IImsRadio;
-    .end local v8    # "imsRadioV16":Lvendor/qti/hardware/radio/ims/V1_6/IImsRadio;
-    goto :goto_6
+    goto :goto_5
 
-    .line 579
+    .line 554
     .restart local v0    # "imsRadio":Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
     .restart local v1    # "imsRadioV11":Lvendor/qti/hardware/radio/ims/V1_1/IImsRadio;
     .restart local v2    # "imsRadioResponse":Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;
@@ -1767,22 +1686,21 @@
     .restart local v5    # "imsRadioV13":Lvendor/qti/hardware/radio/ims/V1_3/IImsRadio;
     .restart local v6    # "imsRadioV14":Lvendor/qti/hardware/radio/ims/V1_4/IImsRadio;
     .restart local v7    # "imsRadioV15":Lvendor/qti/hardware/radio/ims/V1_5/IImsRadio;
-    .restart local v8    # "imsRadioV16":Lvendor/qti/hardware/radio/ims/V1_6/IImsRadio;
     :catchall_0
-    move-exception v10
+    move-exception v9
 
     :try_start_3
-    monitor-exit v9
+    monitor-exit v8
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .end local p0    # "this":Lorg/codeaurora/ims/ImsSenderRxr;
     :try_start_4
-    throw v10
+    throw v9
     :try_end_4
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_0
 
-    .line 583
+    .line 558
     .end local v0    # "imsRadio":Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
     .end local v1    # "imsRadioV11":Lvendor/qti/hardware/radio/ims/V1_1/IImsRadio;
     .end local v2    # "imsRadioResponse":Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioResponse;
@@ -1791,12 +1709,11 @@
     .end local v5    # "imsRadioV13":Lvendor/qti/hardware/radio/ims/V1_3/IImsRadio;
     .end local v6    # "imsRadioV14":Lvendor/qti/hardware/radio/ims/V1_4/IImsRadio;
     .end local v7    # "imsRadioV15":Lvendor/qti/hardware/radio/ims/V1_5/IImsRadio;
-    .end local v8    # "imsRadioV16":Lvendor/qti/hardware/radio/ims/V1_6/IImsRadio;
     .restart local p0    # "this":Lorg/codeaurora/ims/ImsSenderRxr;
     :catch_0
     move-exception v0
 
-    .line 584
+    .line 559
     .local v0, "ex":Ljava/lang/Exception;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1814,19 +1731,19 @@
 
     invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 585
+    .line 560
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->resetServiceAndRequestList()V
 
-    .line 587
+    .line 562
     .end local v0    # "ex":Ljava/lang/Exception;
-    :goto_6
+    :goto_5
     return-void
 .end method
 
 .method private initNotifyRegistrants()V
     .locals 2
 
-    .line 2148
+    .line 2018
     new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrantList;
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
@@ -1835,7 +1752,7 @@
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mHandoverStatusRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
-    .line 2149
+    .line 2019
     new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrantList;
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
@@ -1844,7 +1761,7 @@
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mRefreshConfInfoRegistrations:Lorg/codeaurora/telephony/utils/RegistrantList;
 
-    .line 2150
+    .line 2020
     new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrantList;
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
@@ -1853,7 +1770,7 @@
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mSrvStatusRegistrations:Lorg/codeaurora/telephony/utils/RegistrantList;
 
-    .line 2151
+    .line 2021
     new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrantList;
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
@@ -1862,7 +1779,7 @@
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mTtyStatusRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
-    .line 2152
+    .line 2022
     new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrantList;
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
@@ -1871,7 +1788,7 @@
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mRadioStateRegistrations:Lorg/codeaurora/telephony/utils/RegistrantList;
 
-    .line 2153
+    .line 2023
     new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrantList;
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
@@ -1880,7 +1797,7 @@
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mGeolocationRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
-    .line 2154
+    .line 2024
     new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrantList;
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
@@ -1889,7 +1806,7 @@
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mVoWiFiCallQualityRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
-    .line 2155
+    .line 2025
     new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrantList;
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
@@ -1898,7 +1815,7 @@
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mSsaccRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
-    .line 2156
+    .line 2026
     new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrantList;
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
@@ -1907,7 +1824,7 @@
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mVopsRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
-    .line 2157
+    .line 2027
     new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrantList;
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
@@ -1916,7 +1833,7 @@
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mParticipantStatusRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
-    .line 2158
+    .line 2028
     new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrantList;
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
@@ -1925,7 +1842,7 @@
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mImsSubConfigChangeRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
-    .line 2159
+    .line 2029
     new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrantList;
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
@@ -1934,7 +1851,7 @@
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mRegistrationBlockStatusRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
-    .line 2160
+    .line 2030
     new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrantList;
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
@@ -1943,7 +1860,7 @@
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mModifyCallRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
-    .line 2161
+    .line 2031
     new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrantList;
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
@@ -1952,7 +1869,7 @@
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mMwiRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
-    .line 2162
+    .line 2032
     new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrantList;
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
@@ -1961,7 +1878,7 @@
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mRttMessageRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
-    .line 2163
+    .line 2033
     new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrantList;
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
@@ -1970,7 +1887,7 @@
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mRttModifyRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
-    .line 2164
+    .line 2034
     new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrantList;
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
@@ -1979,7 +1896,7 @@
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mAutoRejectRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
-    .line 2165
+    .line 2035
     new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrantList;
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
@@ -1988,7 +1905,7 @@
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mVoiceInfoStatusRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
-    .line 2166
+    .line 2036
     new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrantList;
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
@@ -1997,7 +1914,7 @@
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mMultiIdentityStatusChangeRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
-    .line 2167
+    .line 2037
     new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrantList;
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
@@ -2006,7 +1923,7 @@
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mMultiIdentityInfoPendingRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
-    .line 2168
+    .line 2038
     new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrantList;
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
@@ -2015,7 +1932,7 @@
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mWfcRoamingModeConfigRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
-    .line 2169
+    .line 2039
     new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrantList;
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
@@ -2024,7 +1941,7 @@
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mUssdInfoRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
-    .line 2170
+    .line 2040
     new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrantList;
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
@@ -2033,7 +1950,7 @@
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mMotoVopsRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
-    .line 2171
+    .line 2041
     return-void
 .end method
 
@@ -2041,7 +1958,7 @@
     .locals 1
     .param p0, "request"    # I
 
-    .line 2372
+    .line 2242
     packed-switch p0, :pswitch_data_0
 
     packed-switch p0, :pswitch_data_1
@@ -2050,552 +1967,552 @@
 
     packed-switch p0, :pswitch_data_3
 
-    .line 2556
+    .line 2426
     const-string v0, "<unknown message>"
 
     return-object v0
 
-    .line 2554
+    .line 2424
     :pswitch_0
     const-string v0, "UNSOL_USSD_FAILED"
 
     return-object v0
 
-    .line 2552
+    .line 2422
     :pswitch_1
     const-string v0, "UNSOL_MODEM_SUPPORTS_WFC_ROAMING_MODE"
 
     return-object v0
 
-    .line 2550
+    .line 2420
     :pswitch_2
     const-string v0, "UNSOL_MULTI_IDENTITY_INFO_PENDING"
 
     return-object v0
 
-    .line 2548
+    .line 2418
     :pswitch_3
     const-string v0, "UNSOL_MULTI_IDENTITY_REGISTRATION_STATUS_CHANGE"
 
     return-object v0
 
-    .line 2546
+    .line 2416
     :pswitch_4
     const-string v0, "UNSOL_VOICE_INFO"
 
     return-object v0
 
-    .line 2544
+    .line 2414
     :pswitch_5
     const-string v0, "UNSOL_AUTO_CALL_REJECTION_IND"
 
     return-object v0
 
-    .line 2542
+    .line 2412
     :pswitch_6
     const-string v0, "UNSOL_INCOMING_IMS_SMS"
 
     return-object v0
 
-    .line 2540
+    .line 2410
     :pswitch_7
     const-string v0, "UNSOL_IMS_SMS_STATUS_REPORT"
 
     return-object v0
 
-    .line 2538
+    .line 2408
     :pswitch_8
     const-string v0, "UNSOL_ON_SS"
 
     return-object v0
 
-    .line 2536
+    .line 2406
     :pswitch_9
     const-string v0, "UNSOL_RESPONSE_RTT_MSG_RECEIVED"
 
     return-object v0
 
-    .line 2534
+    .line 2404
     :pswitch_a
     const-string v0, "UNSOL_RESPONSE_REGISTRATION_BLOCK_STATUS"
 
     return-object v0
 
-    .line 2532
+    .line 2402
     :pswitch_b
     const-string v0, "UNSOL_IMS_SUB_CONFIG_CHANGED"
 
     return-object v0
 
-    .line 2530
+    .line 2400
     :pswitch_c
     const-string v0, "UNSOL_PARTICIPANT_STATUS_INFO"
 
     return-object v0
 
-    .line 2528
+    .line 2398
     :pswitch_d
     const-string v0, "UNSOL_SSAC_CHANGED"
 
     return-object v0
 
-    .line 2526
+    .line 2396
     :pswitch_e
     const-string v0, "UNSOL_VOPS_CHANGED"
 
     return-object v0
 
-    .line 2524
+    .line 2394
     :pswitch_f
     const-string v0, "UNSOL_VOWIFI_CALL_QUALITY"
 
     return-object v0
 
-    .line 2520
+    .line 2390
     :pswitch_10
     const-string v0, "UNSOL_REQUEST_GEOLOCATION"
 
     return-object v0
 
-    .line 2522
+    .line 2392
     :pswitch_11
     const-string v0, "UNSOL_REFRESH_VICE_INFO"
 
     return-object v0
 
-    .line 2518
+    .line 2388
     :pswitch_12
     const-string v0, "UNSOL_MWI"
 
     return-object v0
 
-    .line 2516
+    .line 2386
     :pswitch_13
     const-string v0, "UNSOL_RADIO_STATE_CHANGED"
 
     return-object v0
 
-    .line 2514
+    .line 2384
     :pswitch_14
     const-string v0, "UNSOL_TTY_NOTIFICATION"
 
     return-object v0
 
-    .line 2512
+    .line 2382
     :pswitch_15
     const-string v0, "UNSOL_SUPP_SVC_NOTIFICATION"
 
     return-object v0
 
-    .line 2510
+    .line 2380
     :pswitch_16
     const-string v0, "UNSOL_SRV_STATUS_UPDATE"
 
     return-object v0
 
-    .line 2508
+    .line 2378
     :pswitch_17
     const-string v0, "UNSOL_REFRESH_CONF_INFO"
 
     return-object v0
 
-    .line 2506
+    .line 2376
     :pswitch_18
     const-string v0, "UNSOL_RESPONSE_HANDOVER"
 
     return-object v0
 
-    .line 2402
+    .line 2272
     :pswitch_19
     const-string v0, "UNSOL_MODIFY_CALL"
 
     return-object v0
 
-    .line 2502
+    .line 2372
     :pswitch_1a
     const-string v0, "UNSOL_EXIT_EMERGENCY_CALLBACK_MODE"
 
     return-object v0
 
-    .line 2498
+    .line 2368
     :pswitch_1b
     const-string v0, "UNSOL_ENTER_EMERGENCY_CALLBACK_MODE"
 
     return-object v0
 
-    .line 2492
+    .line 2362
     :pswitch_1c
     const-string v0, "UNSOL_RESPONSE_IMS_NETWORK_STATE_CHANGED"
 
     return-object v0
 
-    .line 2500
+    .line 2370
     :pswitch_1d
     const-string v0, "UNSOL_RINGBACK_TONE"
 
     return-object v0
 
-    .line 2496
+    .line 2366
     :pswitch_1e
     const-string v0, "UNSOL_CALL_RING"
 
     return-object v0
 
-    .line 2494
+    .line 2364
     :pswitch_1f
     const-string v0, "UNSOL_RESPONSE_CALL_STATE_CHANGED"
 
     return-object v0
 
-    .line 2490
+    .line 2360
     :pswitch_20
     const-string v0, "REQUEST_EMERGENCY_DIAL"
 
     return-object v0
 
-    .line 2488
+    .line 2358
     :pswitch_21
     const-string v0, "REQUEST_QUERY_VIRTUAL_LINE_INFO"
 
     return-object v0
 
-    .line 2486
+    .line 2356
     :pswitch_22
     const-string v0, "REQUEST_REGISTER_MULTI_IDENTITY_LINES"
 
     return-object v0
 
-    .line 2484
+    .line 2354
     :pswitch_23
     const-string v0, "REQUEST_ACK_IMS_SMS_STATUS_REPORT"
 
     return-object v0
 
-    .line 2482
+    .line 2352
     :pswitch_24
     const-string v0, "REQUEST_ACK_IMS_SMS"
 
     return-object v0
 
-    .line 2480
+    .line 2350
     :pswitch_25
     const-string v0, "REQUEST_SEND_IMS_SMS"
 
     return-object v0
 
-    .line 2478
+    .line 2348
     :pswitch_26
     const-string v0, "REQUEST_CANCEL_MODIFY_CALL"
 
     return-object v0
 
-    .line 2476
+    .line 2346
     :pswitch_27
     const-string v0, "REQUEST_SEND_RTT_MSG"
 
     return-object v0
 
-    .line 2474
+    .line 2344
     :pswitch_28
     const-string v0, "REQUEST_GET_IMS_SUB_CONFIG"
 
     return-object v0
 
-    .line 2472
+    .line 2342
     :pswitch_29
     const-string v0, "REQUEST_SET_HANDOVER_CONFIG"
 
     return-object v0
 
-    .line 2470
+    .line 2340
     :pswitch_2a
     const-string v0, "REQUEST_GET_HANDOVER_CONFIG"
 
     return-object v0
 
-    .line 2468
+    .line 2338
     :pswitch_2b
     const-string v0, "REQUEST_GET_VOLTE_PREF"
 
     return-object v0
 
-    .line 2466
+    .line 2336
     :pswitch_2c
     const-string v0, "REQUEST_SET_VOLTE_PREF"
 
     return-object v0
 
-    .line 2464
+    .line 2334
     :pswitch_2d
     const-string v0, "REQUEST_GET_SSAC_INFO"
 
     return-object v0
 
-    .line 2462
+    .line 2332
     :pswitch_2e
     const-string v0, "REQUEST_GET_VOPS_INFO"
 
     return-object v0
 
-    .line 2460
+    .line 2330
     :pswitch_2f
     const-string v0, "REQUEST_SEND_GEOLOCATION_INFO"
 
     return-object v0
 
-    .line 2458
+    .line 2328
     :pswitch_30
     const-string v0, "REQUEST_GET_IMS_CONFIG"
 
     return-object v0
 
-    .line 2456
+    .line 2326
     :pswitch_31
     const-string v0, "REQUEST_SET_IMS_CONFIG"
 
     return-object v0
 
-    .line 2446
+    .line 2316
     :pswitch_32
     const-string v0, "REQUEST_SET_WIFI_CALLING_STATUS"
 
     return-object v0
 
-    .line 2444
+    .line 2314
     :pswitch_33
     const-string v0, "REQUEST_GET_WIFI_CALLING_STATUS"
 
     return-object v0
 
-    .line 2442
+    .line 2312
     :pswitch_34
     const-string v0, "REQUEST_GET_RTP_ERROR_STATISTICS"
 
     return-object v0
 
-    .line 2440
+    .line 2310
     :pswitch_35
     const-string v0, "REQUEST_GET_RTP_STATISTICS"
 
     return-object v0
 
-    .line 2396
+    .line 2266
     :pswitch_36
     const-string v0, "REQUEST_SEND_UI_TTY_MODE"
 
     return-object v0
 
-    .line 2454
+    .line 2324
     :pswitch_37
     const-string v0, "REQUEST_RESUME"
 
     return-object v0
 
-    .line 2452
+    .line 2322
     :pswitch_38
     const-string v0, "REQUEST_HOLD"
 
     return-object v0
 
-    .line 2450
+    .line 2320
     :pswitch_39
     const-string v0, "REQUEST_SET_COLR"
 
     return-object v0
 
-    .line 2448
+    .line 2318
     :pswitch_3a
     const-string v0, "REQUEST_GET_COLR"
 
     return-object v0
 
-    .line 2380
+    .line 2250
     :pswitch_3b
     const-string v0, "REQUEST_DEFLECT_CALL"
 
     return-object v0
 
-    .line 2438
+    .line 2308
     :pswitch_3c
     const-string v0, "REQUEST_SUPP_SVC_STATUS"
 
     return-object v0
 
-    .line 2422
+    .line 2292
     :pswitch_3d
     const-string v0, "REQUEST_SET_SERVICE_STATUS"
 
     return-object v0
 
-    .line 2420
+    .line 2290
     :pswitch_3e
     const-string v0, "REQUEST_QUERY_SERVICE_STATUS"
 
     return-object v0
 
-    .line 2382
+    .line 2252
     :pswitch_3f
     const-string v0, "REQUEST_ADD_PARTICIPANT"
 
     return-object v0
 
-    .line 2436
+    .line 2306
     :pswitch_40
     const-string v0, "REQUEST_SET_SUPP_SVC_NOTIFICATION"
 
     return-object v0
 
-    .line 2504
+    .line 2374
     :pswitch_41
     const-string v0, "REQUEST_IMS_REG_STATE_CHANGE"
 
     return-object v0
 
-    .line 2434
+    .line 2304
     :pswitch_42
     const-string v0, "REQUEST_SET_CALL_WAITING"
 
     return-object v0
 
-    .line 2432
+    .line 2302
     :pswitch_43
     const-string v0, "REQUEST_QUERY_CALL_WAITING"
 
     return-object v0
 
-    .line 2430
+    .line 2300
     :pswitch_44
     const-string v0, "REQUEST_SET_CALL_FORWARD_STATUS"
 
     return-object v0
 
-    .line 2428
+    .line 2298
     :pswitch_45
     const-string v0, "REQUEST_QUERY_CALL_FORWARD_STATUS"
 
     return-object v0
 
-    .line 2426
+    .line 2296
     :pswitch_46
     const-string v0, "REQUEST_SET_CLIR"
 
     return-object v0
 
-    .line 2424
+    .line 2294
     :pswitch_47
     const-string v0, "REQUEST_GET_CLIR"
 
     return-object v0
 
-    .line 2418
+    .line 2288
     :pswitch_48
     const-string v0, "REQUEST_QUERY_CLIP"
 
     return-object v0
 
-    .line 2400
+    .line 2270
     :pswitch_49
     const-string v0, "MODIFY_CALL_CONFIRM"
 
     return-object v0
 
-    .line 2398
+    .line 2268
     :pswitch_4a
     const-string v0, "MODIFY_CALL_INITIATE"
 
     return-object v0
 
-    .line 2394
+    .line 2264
     :pswitch_4b
     const-string v0, "UDUB"
 
     return-object v0
 
-    .line 2410
+    .line 2280
     :pswitch_4c
     const-string v0, "DTMF_STOP"
 
     return-object v0
 
-    .line 2408
+    .line 2278
     :pswitch_4d
     const-string v0, "DTMF_START"
 
     return-object v0
 
-    .line 2406
+    .line 2276
     :pswitch_4e
     const-string v0, "DTMF"
 
     return-object v0
 
-    .line 2412
+    .line 2282
     :pswitch_4f
     const-string v0, "MessageId.REQUEST_EXPLICIT_CALL_TRANSFER"
 
     return-object v0
 
-    .line 2414
+    .line 2284
     :pswitch_50
     const-string v0, "MessageId.REQUEST_EXIT_EMERGENCY_CALLBACK_MODE"
 
     return-object v0
 
-    .line 2392
+    .line 2262
     :pswitch_51
     const-string v0, "CONFERENCE"
 
     return-object v0
 
-    .line 2390
+    .line 2260
     :pswitch_52
     const-string v0, "MessageId.REQUEST_SWITCH_WAITING_OR_HOLDING_AND_ACTIVE"
 
     return-object v0
 
-    .line 2388
+    .line 2258
     :pswitch_53
     const-string v0, "HANGUP_FOREGROUND_RESUME_BACKGROUND"
 
     return-object v0
 
-    .line 2386
+    .line 2256
     :pswitch_54
     const-string v0, "HANGUP_WAITING_OR_BACKGROUND"
 
     return-object v0
 
-    .line 2374
+    .line 2244
     :pswitch_55
     const-string v0, "GET_CURRENT_CALLS"
 
     return-object v0
 
-    .line 2404
+    .line 2274
     :pswitch_56
     const-string v0, "LAST_CALL_FAIL_CAUSE"
 
     return-object v0
 
-    .line 2384
+    .line 2254
     :pswitch_57
     const-string v0, "HANGUP"
 
     return-object v0
 
-    .line 2378
+    .line 2248
     :pswitch_58
     const-string v0, "REQUEST_ANSWER"
 
     return-object v0
 
-    .line 2376
+    .line 2246
     :pswitch_59
     const-string v0, "DIAL"
 
     return-object v0
 
-    .line 2416
+    .line 2286
     :pswitch_5a
     const-string v0, "REQUEST_IMS_REGISTRATION_STATE"
 
@@ -2713,7 +2630,7 @@
     .locals 4
     .param p1, "instanceName"    # Ljava/lang/String;
 
-    .line 382
+    .line 374
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2730,12 +2647,12 @@
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 383
+    .line 375
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mListeners:Ljava/util/List;
 
     monitor-enter v0
 
-    .line 384
+    .line 376
     :try_start_0
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mListeners:Ljava/util/List;
 
@@ -2756,7 +2673,7 @@
 
     check-cast v2, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioServiceListener;
 
-    .line 385
+    .line 377
     .local v2, "l":Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioServiceListener;
     iget-object v3, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mPhoneId:Ljava/lang/Integer;
 
@@ -2766,18 +2683,18 @@
 
     invoke-interface {v2, v3}, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioServiceListener;->onServiceDown(I)V
 
-    .line 386
+    .line 378
     .end local v2    # "l":Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioServiceListener;
     goto :goto_0
 
-    .line 387
+    .line 379
     :cond_0
     monitor-exit v0
 
-    .line 388
+    .line 380
     return-void
 
-    .line 387
+    .line 379
     :catchall_0
     move-exception v1
 
@@ -2792,7 +2709,7 @@
     .locals 4
     .param p1, "instanceName"    # Ljava/lang/String;
 
-    .line 373
+    .line 365
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2809,12 +2726,12 @@
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 374
+    .line 366
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mListeners:Ljava/util/List;
 
     monitor-enter v0
 
-    .line 375
+    .line 367
     :try_start_0
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mListeners:Ljava/util/List;
 
@@ -2835,7 +2752,7 @@
 
     check-cast v2, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioServiceListener;
 
-    .line 376
+    .line 368
     .local v2, "l":Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioServiceListener;
     iget-object v3, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mPhoneId:Ljava/lang/Integer;
 
@@ -2845,18 +2762,18 @@
 
     invoke-interface {v2, v3}, Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioServiceListener;->onServiceUp(I)V
 
-    .line 377
+    .line 369
     .end local v2    # "l":Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioServiceListener;
     goto :goto_0
 
-    .line 378
+    .line 370
     :cond_0
     monitor-exit v0
 
-    .line 379
+    .line 371
     return-void
 
-    .line 378
+    .line 370
     :catchall_0
     move-exception v1
 
@@ -2867,17 +2784,17 @@
     throw v1
 .end method
 
-.method private processConfigResponse(Lvendor/qti/hardware/radio/ims/V1_6/ConfigInfo;)Ljava/lang/Object;
+.method private processConfigResponse(Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;)Ljava/lang/Object;
     .locals 2
-    .param p1, "configInfo"    # Lvendor/qti/hardware/radio/ims/V1_6/ConfigInfo;
+    .param p1, "configInfo"    # Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;
 
-    .line 3345
-    iget-boolean v0, p1, Lvendor/qti/hardware/radio/ims/V1_6/ConfigInfo;->hasBoolValue:Z
+    .line 3125
+    iget-boolean v0, p1, Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;->hasBoolValue:Z
 
     if-eqz v0, :cond_0
 
-    .line 3346
-    iget-boolean v0, p1, Lvendor/qti/hardware/radio/ims/V1_6/ConfigInfo;->boolValue:Z
+    .line 3126
+    iget-boolean v0, p1, Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;->boolValue:Z
 
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -2885,16 +2802,16 @@
 
     return-object v0
 
-    .line 3347
+    .line 3127
     :cond_0
-    iget v0, p1, Lvendor/qti/hardware/radio/ims/V1_6/ConfigInfo;->intValue:I
+    iget v0, p1, Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;->intValue:I
 
     const v1, 0x7fffffff
 
     if-eq v0, v1, :cond_1
 
-    .line 3348
-    iget v0, p1, Lvendor/qti/hardware/radio/ims/V1_6/ConfigInfo;->intValue:I
+    .line 3128
+    iget v0, p1, Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;->intValue:I
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -2902,27 +2819,27 @@
 
     return-object v0
 
-    .line 3349
+    .line 3129
     :cond_1
-    iget-object v0, p1, Lvendor/qti/hardware/radio/ims/V1_6/ConfigInfo;->stringValue:Ljava/lang/String;
+    iget-object v0, p1, Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;->stringValue:Ljava/lang/String;
 
     if-eqz v0, :cond_2
 
-    .line 3350
-    iget-object v0, p1, Lvendor/qti/hardware/radio/ims/V1_6/ConfigInfo;->stringValue:Ljava/lang/String;
+    .line 3130
+    iget-object v0, p1, Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;->stringValue:Ljava/lang/String;
 
     return-object v0
 
-    .line 3351
+    .line 3131
     :cond_2
-    iget v0, p1, Lvendor/qti/hardware/radio/ims/V1_6/ConfigInfo;->errorCause:I
+    iget v0, p1, Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;->errorCause:I
 
     const/4 v1, 0x6
 
     if-eq v0, v1, :cond_3
 
-    .line 3352
-    iget v0, p1, Lvendor/qti/hardware/radio/ims/V1_6/ConfigInfo;->errorCause:I
+    .line 3132
+    iget v0, p1, Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;->errorCause:I
 
     invoke-static {v0}, Lorg/codeaurora/ims/ImsRadioUtils;->configFailureCauseFromHal(I)I
 
@@ -2934,9 +2851,9 @@
 
     return-object v0
 
-    .line 3354
+    .line 3134
     :cond_3
-    invoke-static {p1}, Lorg/codeaurora/ims/ImsRadioUtilsV16;->configInfoFromHal(Lvendor/qti/hardware/radio/ims/V1_6/ConfigInfo;)Lorg/codeaurora/ims/ImsConfigItem;
+    invoke-static {p1}, Lorg/codeaurora/ims/ImsRadioUtils;->configInfoFromHal(Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;)Lorg/codeaurora/ims/ImsConfigItem;
 
     move-result-object v0
 
@@ -2947,34 +2864,34 @@
     .locals 2
     .param p1, "rr"    # Lorg/codeaurora/ims/IFRequest;
 
-    .line 2206
+    .line 2076
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->acquireWakeLock()V
 
-    .line 2208
+    .line 2078
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mRequestsList:Ljava/util/ArrayList;
 
     monitor-enter v0
 
-    .line 2209
+    .line 2079
     :try_start_0
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mRequestsList:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2210
+    .line 2080
     iget v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mRequestMessagesWaiting:I
 
     add-int/lit8 v1, v1, 0x1
 
     iput v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mRequestMessagesWaiting:I
 
-    .line 2211
+    .line 2081
     monitor-exit v0
 
-    .line 2212
+    .line 2082
     return-void
 
-    .line 2211
+    .line 2081
     :catchall_0
     move-exception v1
 
@@ -2988,7 +2905,7 @@
 .method private registerForImsRadioServiceNotification()V
     .locals 4
 
-    .line 451
+    .line 440
     :try_start_0
     invoke-static {}, Landroid/hidl/manager/V1_0/IServiceManager;->getService()Landroid/hidl/manager/V1_0/IServiceManager;
 
@@ -3000,7 +2917,7 @@
 
     iget-object v3, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mPhoneId:Ljava/lang/Integer;
 
-    .line 453
+    .line 442
     invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
 
     move-result v3
@@ -3009,32 +2926,32 @@
 
     iget-object v3, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mServiceNotification:Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioServiceNotification;
 
-    .line 452
+    .line 441
     invoke-interface {v0, v1, v2, v3}, Landroid/hidl/manager/V1_0/IServiceManager;->registerForNotifications(Ljava/lang/String;Ljava/lang/String;Landroid/hidl/manager/V1_0/IServiceNotification;)Z
 
     move-result v0
 
-    .line 454
+    .line 443
     .local v0, "ret":Z
     if-nez v0, :cond_0
 
-    .line 455
+    .line 444
     const-string v1, "Failed to register for service start notifications"
 
     invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 459
+    .line 448
     .end local v0    # "ret":Z
     :cond_0
     goto :goto_0
 
-    .line 457
+    .line 446
     :catch_0
     move-exception v0
 
-    .line 458
+    .line 447
     .local v0, "ex":Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -3052,7 +2969,7 @@
 
     invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 460
+    .line 449
     .end local v0    # "ex":Landroid/os/RemoteException;
     :goto_0
     return-void
@@ -3061,12 +2978,12 @@
 .method private releaseWakeLockIfDone()V
     .locals 2
 
-    .line 2191
+    .line 2061
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
     monitor-enter v0
 
-    .line 2192
+    .line 2062
     :try_start_0
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
@@ -3080,19 +2997,19 @@
 
     if-nez v1, :cond_0
 
-    .line 2194
+    .line 2064
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v1}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    .line 2196
+    .line 2066
     :cond_0
     monitor-exit v0
 
-    .line 2197
+    .line 2067
     return-void
 
-    .line 2196
+    .line 2066
     :catchall_0
     move-exception v1
 
@@ -3107,45 +3024,30 @@
     .locals 1
     .param p1, "token"    # I
 
-    .line 2067
+    .line 1946
     const/4 v0, 0x2
 
     invoke-direct {p0, p1, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(II)V
 
-    .line 2068
+    .line 1947
     return-void
 .end method
 
 .method private removeFromQueueAndSendResponse(II)V
-    .locals 1
-    .param p1, "token"    # I
-    .param p2, "errorCode"    # I
-
-    .line 2084
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, p2, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(IILjava/lang/Object;)V
-
-    .line 2085
-    return-void
-.end method
-
-.method private removeFromQueueAndSendResponse(IILjava/lang/Object;)V
     .locals 3
     .param p1, "token"    # I
     .param p2, "errorCode"    # I
-    .param p3, "ret"    # Ljava/lang/Object;
 
-    .line 2088
+    .line 1958
     invoke-direct {p0, p1}, Lorg/codeaurora/ims/ImsSenderRxr;->findAndRemoveRequestFromList(I)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v0
 
-    .line 2090
+    .line 1960
     .local v0, "rr":Lorg/codeaurora/ims/IFRequest;
     if-nez v0, :cond_0
 
-    .line 2091
+    .line 1961
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3168,78 +3070,57 @@
 
     invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->w(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 2093
+    .line 1963
     return-void
 
-    .line 2095
+    .line 1965
     :cond_0
-    invoke-direct {p0, v0, p2, p3}, Lorg/codeaurora/ims/ImsSenderRxr;->sendResponse(Lorg/codeaurora/ims/IFRequest;ILjava/lang/Object;)V
+    const/4 v1, 0x0
 
-    .line 2096
-    return-void
-.end method
+    invoke-direct {p0, v0, p2, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->sendResponse(Lorg/codeaurora/ims/IFRequest;ILjava/lang/Object;)V
 
-.method private removeFromQueueAndSendResponse(ILjava/lang/Object;)V
-    .locals 1
-    .param p1, "token"    # I
-    .param p2, "ret"    # Ljava/lang/Object;
-
-    .line 2071
-    const/4 v0, 0x2
-
-    invoke-direct {p0, p1, v0, p2}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(IILjava/lang/Object;)V
-
-    .line 2072
+    .line 1966
     return-void
 .end method
 
 .method private resetHalInterfaces()V
     .locals 2
 
-    .line 412
+    .line 404
     const-string v0, "resetHalInterfaces: Resetting HAL interfaces."
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 413
+    .line 405
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mHalSync:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 414
+    .line 406
     const/4 v1, 0x0
 
     :try_start_0
     iput-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mImsRadio:Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
-    .line 415
+    .line 407
     iput-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mImsRadioV12:Lvendor/qti/hardware/radio/ims/V1_2/IImsRadio;
 
-    .line 416
+    .line 408
     iput-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mImsRadioV13:Lvendor/qti/hardware/radio/ims/V1_3/IImsRadio;
 
-    .line 417
-    iput-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mImsRadioV14:Lvendor/qti/hardware/radio/ims/V1_4/IImsRadio;
-
-    .line 418
-    iput-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mImsRadioV15:Lvendor/qti/hardware/radio/ims/V1_5/IImsRadio;
-
-    .line 419
-    iput-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mImsRadioV16:Lvendor/qti/hardware/radio/ims/V1_6/IImsRadio;
-
-    .line 420
+    .line 409
     iput-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mImsRadioResponse:Lvendor/qti/hardware/radio/ims/V1_0/IImsRadioResponse;
 
-    .line 421
+    .line 410
     iput-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mImsRadioIndication:Lvendor/qti/hardware/radio/ims/V1_0/IImsRadioIndication;
 
-    .line 422
+    .line 411
     monitor-exit v0
 
-    .line 423
+    .line 412
     return-void
 
-    .line 422
+    .line 411
     :catchall_0
     move-exception v1
 
@@ -3255,7 +3136,7 @@
 
     monitor-enter p0
 
-    .line 406
+    .line 398
     :try_start_0
     sget-object v0, Lorg/codeaurora/ims/ImsSenderRxr;->IIMS_RADIO_SERVICE_NAME:[Ljava/lang/String;
 
@@ -3269,24 +3150,24 @@
 
     invoke-direct {p0, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->notifyServiceDown(Ljava/lang/String;)V
 
-    .line 407
+    .line 399
     const/4 v0, 0x1
 
     const/4 v1, 0x0
 
     invoke-direct {p0, v0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->clearRequestsList(IZ)V
 
-    .line 408
+    .line 400
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->resetHalInterfaces()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 409
+    .line 401
     monitor-exit p0
 
     return-void
 
-    .line 405
+    .line 397
     .end local p0    # "this":Lorg/codeaurora/ims/ImsSenderRxr;
     :catchall_0
     move-exception v0
@@ -3301,15 +3182,15 @@
     .param p1, "req"    # I
     .param p2, "ret"    # Ljava/lang/Object;
 
-    .line 2270
+    .line 2140
     if-nez p2, :cond_0
 
-    .line 2271
+    .line 2141
     const-string v0, ""
 
     return-object v0
 
-    .line 2276
+    .line 2146
     :cond_0
     instance-of v0, p2, [I
 
@@ -3321,16 +3202,16 @@
 
     if-eqz v0, :cond_2
 
-    .line 2277
+    .line 2147
     move-object v0, p2
 
     check-cast v0, [I
 
-    .line 2278
+    .line 2148
     .local v0, "intArray":[I
     array-length v4, v0
 
-    .line 2279
+    .line 2149
     .local v4, "length":I
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -3338,14 +3219,14 @@
 
     move-object v3, v5
 
-    .line 2280
+    .line 2150
     .local v3, "sb":Ljava/lang/StringBuilder;
     if-lez v4, :cond_1
 
-    .line 2281
+    .line 2151
     const/4 v5, 0x0
 
-    .line 2282
+    .line 2152
     .local v5, "i":I
     add-int/lit8 v6, v5, 0x1
 
@@ -3355,11 +3236,11 @@
 
     invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 2283
+    .line 2153
     :goto_0
     if-ge v6, v4, :cond_1
 
-    .line 2284
+    .line 2154
     invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     add-int/lit8 v5, v6, 0x1
@@ -3374,17 +3255,17 @@
 
     goto :goto_0
 
-    .line 2287
+    .line 2157
     .end local v5    # "i":I
     :cond_1
     invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2288
+    .line 2158
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 2289
+    .line 2159
     .local v0, "s":Ljava/lang/String;
     goto :goto_4
 
@@ -3396,16 +3277,16 @@
 
     if-eqz v0, :cond_4
 
-    .line 2290
+    .line 2160
     move-object v0, p2
 
     check-cast v0, [Ljava/lang/String;
 
-    .line 2291
+    .line 2161
     .local v0, "strings":[Ljava/lang/String;
     array-length v4, v0
 
-    .line 2292
+    .line 2162
     .restart local v4    # "length":I
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -3413,14 +3294,14 @@
 
     move-object v3, v5
 
-    .line 2293
+    .line 2163
     .restart local v3    # "sb":Ljava/lang/StringBuilder;
     if-lez v4, :cond_3
 
-    .line 2294
+    .line 2164
     const/4 v5, 0x0
 
-    .line 2295
+    .line 2165
     .restart local v5    # "i":I
     add-int/lit8 v6, v5, 0x1
 
@@ -3430,11 +3311,11 @@
 
     invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2296
+    .line 2166
     :goto_1
     if-ge v6, v4, :cond_3
 
-    .line 2297
+    .line 2167
     invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     add-int/lit8 v5, v6, 0x1
@@ -3449,17 +3330,17 @@
 
     goto :goto_1
 
-    .line 2300
+    .line 2170
     .end local v5    # "i":I
     :cond_3
     invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2301
+    .line 2171
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 2302
+    .line 2172
     .local v0, "s":Ljava/lang/String;
     goto :goto_4
 
@@ -3477,7 +3358,7 @@
 
     goto :goto_2
 
-    .line 2311
+    .line 2181
     :cond_5
     invoke-virtual {p2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -3486,7 +3367,7 @@
     .restart local v0    # "s":Ljava/lang/String;
     goto :goto_4
 
-    .line 2304
+    .line 2174
     .end local v0    # "s":Ljava/lang/String;
     :cond_6
     :goto_2
@@ -3494,7 +3375,7 @@
 
     check-cast v0, Ljava/util/ArrayList;
 
-    .line 2305
+    .line 2175
     .local v0, "calls":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lorg/codeaurora/ims/DriverCallIms;>;"
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -3502,7 +3383,7 @@
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 2306
+    .line 2176
     .local v1, "sb":Ljava/lang/StringBuilder;
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -3521,7 +3402,7 @@
 
     check-cast v3, Lorg/codeaurora/ims/DriverCallIms;
 
-    .line 2307
+    .line 2177
     .local v3, "dc":Lorg/codeaurora/ims/DriverCallIms;
     const-string v4, "["
 
@@ -3533,55 +3414,39 @@
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2308
+    .line 2178
     .end local v3    # "dc":Lorg/codeaurora/ims/DriverCallIms;
     goto :goto_3
 
-    .line 2309
+    .line 2179
     :cond_7
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 2310
+    .line 2180
     .local v0, "s":Ljava/lang/String;
     nop
 
-    .line 2313
+    .line 2183
     .end local v1    # "sb":Ljava/lang/StringBuilder;
     :goto_4
     return-object v0
 .end method
 
 .method private sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
-    .locals 1
-    .param p1, "rr"    # Lorg/codeaurora/ims/IFRequest;
-    .param p2, "msgIdString"    # Ljava/lang/String;
-
-    .line 2647
-    const/4 v0, 0x0
-
-    invoke-direct {p0, p1, p2, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method private sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;Ljava/lang/Object;)Z
     .locals 2
     .param p1, "rr"    # Lorg/codeaurora/ims/IFRequest;
     .param p2, "msgIdString"    # Ljava/lang/String;
-    .param p3, "ret"    # Ljava/lang/Object;
 
-    .line 2658
+    .line 2524
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     move-result-object v0
 
     if-nez v0, :cond_0
 
-    .line 2659
+    .line 2525
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -3602,18 +3467,20 @@
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 2660
-    const/4 v0, 0x1
+    .line 2526
+    const/4 v0, 0x0
 
-    invoke-virtual {p1, v0, p3}, Lorg/codeaurora/ims/IFRequest;->onError(ILjava/lang/Object;)V
+    const/4 v1, 0x1
 
-    .line 2661
+    invoke-virtual {p1, v1, v0}, Lorg/codeaurora/ims/IFRequest;->onError(ILjava/lang/Object;)V
+
+    .line 2527
     invoke-virtual {p1}, Lorg/codeaurora/ims/IFRequest;->release()V
 
-    .line 2662
-    return v0
+    .line 2528
+    return v1
 
-    .line 2664
+    .line 2530
     :cond_0
     const/4 v0, 0x0
 
@@ -3626,22 +3493,22 @@
     .param p2, "error"    # I
     .param p3, "ret"    # Ljava/lang/Object;
 
-    .line 2108
+    .line 1978
     if-eqz p2, :cond_0
 
-    .line 2109
+    .line 1979
     invoke-virtual {p1, p2, p3}, Lorg/codeaurora/ims/IFRequest;->onError(ILjava/lang/Object;)V
 
-    .line 2110
+    .line 1980
     invoke-virtual {p1}, Lorg/codeaurora/ims/IFRequest;->release()V
 
-    .line 2111
+    .line 1981
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->releaseWakeLockIfDone()V
 
-    .line 2112
+    .line 1982
     return-void
 
-    .line 2115
+    .line 1985
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -3671,7 +3538,7 @@
 
     iget v1, p1, Lorg/codeaurora/ims/IFRequest;->mRequest:I
 
-    .line 2116
+    .line 1986
     invoke-direct {p0, v1, p3}, Lorg/codeaurora/ims/ImsSenderRxr;->retToString(ILjava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
@@ -3682,34 +3549,34 @@
 
     move-result-object v0
 
-    .line 2115
+    .line 1985
     invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->log(Ljava/lang/String;)V
 
-    .line 2118
+    .line 1988
     iget-object v0, p1, Lorg/codeaurora/ims/IFRequest;->mResult:Landroid/os/Message;
 
     if-eqz v0, :cond_1
 
-    .line 2119
+    .line 1989
     iget-object v0, p1, Lorg/codeaurora/ims/IFRequest;->mResult:Landroid/os/Message;
 
     const/4 v1, 0x0
 
     invoke-static {v0, p3, v1}, Lorg/codeaurora/telephony/utils/AsyncResult;->forMessage(Landroid/os/Message;Ljava/lang/Object;Ljava/lang/Throwable;)Lorg/codeaurora/telephony/utils/AsyncResult;
 
-    .line 2120
+    .line 1990
     iget-object v0, p1, Lorg/codeaurora/ims/IFRequest;->mResult:Landroid/os/Message;
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 2123
+    .line 1993
     :cond_1
     invoke-virtual {p1}, Lorg/codeaurora/ims/IFRequest;->release()V
 
-    .line 2124
+    .line 1994
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->releaseWakeLockIfDone()V
 
-    .line 2125
+    .line 1995
     return-void
 .end method
 
@@ -3726,7 +3593,7 @@
     .param p9, "timeSeconds"    # I
     .param p10, "response"    # Landroid/os/Message;
 
-    .line 3504
+    .line 3284
     move-object/from16 v1, p0
 
     move/from16 v2, p1
@@ -3795,10 +3662,10 @@
 
     invoke-virtual {v1, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->logv(Ljava/lang/String;)V
 
-    .line 3508
+    .line 3288
     const/16 v9, 0x17
 
-    .line 3509
+    .line 3289
     .local v9, "msgId":I
     const/16 v0, 0x17
 
@@ -3806,7 +3673,7 @@
 
     move-result-object v10
 
-    .line 3510
+    .line 3290
     .local v10, "msgIdString":Ljava/lang/String;
     move-object/from16 v11, p10
 
@@ -3814,7 +3681,7 @@
 
     move-result-object v12
 
-    .line 3512
+    .line 3292
     .local v12, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {v1, v12, v10}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -3822,17 +3689,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 3513
+    .line 3293
     return-void
 
-    .line 3516
+    .line 3296
     :cond_0
     invoke-direct {v1, v12}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3517
+    .line 3297
     nop
 
-    .line 3518
+    .line 3298
     move/from16 v13, p5
 
     move/from16 v14, p9
@@ -3841,7 +3708,7 @@
 
     move-result-object v15
 
-    .line 3520
+    .line 3300
     .local v15, "cfInfo":Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;
     const v0, 0x7fffffff
 
@@ -3849,17 +3716,17 @@
 
     if-eq v3, v0, :cond_1
 
-    .line 3521
+    .line 3301
     const/4 v0, 0x1
 
     iput-boolean v0, v15, Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;->hasCallFwdTimerStart:Z
 
-    .line 3522
+    .line 3302
     iget-object v0, v15, Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;->callFwdTimerStart:Lvendor/qti/hardware/radio/ims/V1_0/CallFwdTimerInfo;
 
     invoke-static {v0, v2, v3}, Lorg/codeaurora/ims/ImsRadioUtils;->buildCallFwdTimerInfo(Lvendor/qti/hardware/radio/ims/V1_0/CallFwdTimerInfo;II)V
 
-    .line 3525
+    .line 3305
     :cond_1
     const v0, 0x7fffffff
 
@@ -3867,22 +3734,22 @@
 
     if-eq v5, v0, :cond_2
 
-    .line 3526
+    .line 3306
     const/4 v0, 0x1
 
     iput-boolean v0, v15, Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;->hasCallFwdTimerEnd:Z
 
-    .line 3527
+    .line 3307
     iget-object v0, v15, Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;->callFwdTimerEnd:Lvendor/qti/hardware/radio/ims/V1_0/CallFwdTimerInfo;
 
     invoke-static {v0, v4, v5}, Lorg/codeaurora/ims/ImsRadioUtils;->buildCallFwdTimerInfo(Lvendor/qti/hardware/radio/ims/V1_0/CallFwdTimerInfo;II)V
 
-    .line 3530
+    .line 3310
     :cond_2
     :try_start_0
     invoke-virtual {v1, v12}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3531
+    .line 3311
     invoke-direct/range {p0 .. p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     move-result-object v0
@@ -3893,20 +3760,20 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3535
+    .line 3315
     goto :goto_0
 
-    .line 3532
+    .line 3312
     :catch_0
     move-exception v0
 
-    .line 3533
+    .line 3313
     .local v0, "ex":Ljava/lang/Exception;
     iget v2, v12, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {v1, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 3534
+    .line 3314
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -3925,7 +3792,7 @@
 
     invoke-static {v1, v2}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3536
+    .line 3316
     .end local v0    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
@@ -3939,10 +3806,10 @@
     .param p4, "serviceClass"    # I
     .param p5, "response"    # Landroid/os/Message;
 
-    .line 3662
+    .line 3442
     const/16 v0, 0x1f
 
-    .line 3663
+    .line 3443
     .local v0, "msgId":I
     const/16 v1, 0x1f
 
@@ -3950,13 +3817,13 @@
 
     move-result-object v2
 
-    .line 3664
+    .line 3444
     .local v2, "msgIdString":Ljava/lang/String;
     invoke-static {v1, p5}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v1
 
-    .line 3666
+    .line 3446
     .local v1, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {p0, v1, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -3964,54 +3831,54 @@
 
     if-eqz v3, :cond_0
 
-    .line 3667
+    .line 3447
     return-void
 
-    .line 3670
+    .line 3450
     :cond_0
     invoke-direct {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3671
+    .line 3451
     invoke-static {p3, p4}, Lorg/codeaurora/ims/ImsRadioUtils;->buildCbNumListInfo([Ljava/lang/String;I)Lvendor/qti/hardware/radio/ims/V1_0/CbNumListInfo;
 
     move-result-object v3
 
-    .line 3673
+    .line 3453
     .local v3, "cbNumListInfo":Lvendor/qti/hardware/radio/ims/V1_0/CbNumListInfo;
     :try_start_0
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3674
+    .line 3454
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     move-result-object v4
 
     iget v5, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
-    .line 3675
+    .line 3455
     invoke-static {p2}, Lorg/codeaurora/ims/ImsRadioUtils;->facilityTypeToHal(I)I
 
     move-result v6
 
-    .line 3674
+    .line 3454
     invoke-interface {v4, v5, p1, v6, v3}, Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;->suppServiceStatus(IIILvendor/qti/hardware/radio/ims/V1_0/CbNumListInfo;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3679
+    .line 3459
     goto :goto_0
 
-    .line 3676
+    .line 3456
     :catch_0
     move-exception v4
 
-    .line 3677
+    .line 3457
     .local v4, "ex":Ljava/lang/Exception;
     iget v5, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {p0, v5}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 3678
+    .line 3458
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -4030,7 +3897,7 @@
 
     invoke-static {p0, v5}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3680
+    .line 3460
     .end local v4    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
@@ -4040,7 +3907,7 @@
     .locals 1
     .param p0, "v"    # Z
 
-    .line 511
+    .line 492
     if-eqz p0, :cond_0
 
     const-string v0, "available"
@@ -4061,12 +3928,12 @@
     .param p1, "result"    # Landroid/os/Message;
     .param p2, "callType"    # I
 
-    .line 2721
+    .line 2587
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, p2, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->acceptCall(Landroid/os/Message;II)V
 
-    .line 2722
+    .line 2588
     return-void
 .end method
 
@@ -4076,12 +3943,12 @@
     .param p2, "callType"    # I
     .param p3, "rttMode"    # I
 
-    .line 2726
+    .line 2592
     const/4 v0, 0x2
 
     invoke-virtual {p0, p1, p2, v0, p3}, Lorg/codeaurora/ims/ImsSenderRxr;->acceptCall(Landroid/os/Message;III)V
 
-    .line 2727
+    .line 2593
     return-void
 .end method
 
@@ -4092,10 +3959,10 @@
     .param p3, "ipPresentation"    # I
     .param p4, "rttMode"    # I
 
-    .line 2731
+    .line 2597
     const/4 v0, 0x3
 
-    .line 2732
+    .line 2598
     .local v0, "msgId":I
     const/4 v1, 0x3
 
@@ -4103,13 +3970,13 @@
 
     move-result-object v2
 
-    .line 2734
+    .line 2600
     .local v2, "msgIdString":Ljava/lang/String;
     invoke-static {v1, p1}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v1
 
-    .line 2736
+    .line 2602
     .local v1, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {p0, v1, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -4117,18 +3984,18 @@
 
     if-eqz v3, :cond_0
 
-    .line 2737
+    .line 2603
     return-void
 
-    .line 2740
+    .line 2606
     :cond_0
     invoke-direct {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 2742
+    .line 2608
     :try_start_0
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 2743
+    .line 2609
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     move-result-object v3
@@ -4141,7 +4008,7 @@
 
     invoke-interface {v3, v4, v5, p3, p4}, Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;->answer(IIII)V
 
-    .line 2745
+    .line 2611
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -4170,20 +4037,20 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2750
+    .line 2616
     goto :goto_0
 
-    .line 2747
+    .line 2613
     :catch_0
     move-exception v3
 
-    .line 2748
+    .line 2614
     .local v3, "ex":Ljava/lang/Exception;
     iget v4, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {p0, v4}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 2749
+    .line 2615
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4202,19 +4069,19 @@
 
     invoke-static {p0, v4}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 2751
+    .line 2617
     .end local v3    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
 .end method
 
 .method public acknowledgeSms(IILandroid/os/Message;)V
-    .locals 8
+    .locals 7
     .param p1, "messageRef"    # I
     .param p2, "result"    # I
     .param p3, "target"    # Landroid/os/Message;
 
-    .line 2802
+    .line 2668
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -4237,10 +4104,10 @@
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 2804
+    .line 2670
     const/16 v0, 0x3a
 
-    .line 2805
+    .line 2671
     .local v0, "msgId":I
     const/16 v1, 0x3a
 
@@ -4248,13 +4115,13 @@
 
     move-result-object v2
 
-    .line 2808
+    .line 2674
     .local v2, "msgIdString":Ljava/lang/String;
     invoke-static {v1, p3}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v3
 
-    .line 2809
+    .line 2675
     .local v3, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {p0, v3, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -4262,186 +4129,39 @@
 
     if-eqz v4, :cond_0
 
-    .line 2810
+    .line 2676
     return-void
 
-    .line 2813
+    .line 2679
     :cond_0
     invoke-static {p2}, Lorg/codeaurora/ims/ImsRadioUtils;->imsSmsDeliverStatusToHidl(I)I
 
     move-result v4
 
-    .line 2815
+    .line 2681
     .local v4, "deliverStatus":I
     :try_start_0
     invoke-virtual {p0, v3}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 2816
-    invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV15()Lvendor/qti/hardware/radio/ims/V1_5/IImsRadio;
-
-    move-result-object v5
-
-    .line 2817
-    .local v5, "imsRadioV15":Lvendor/qti/hardware/radio/ims/V1_5/IImsRadio;
-    if-eqz v5, :cond_1
-
-    .line 2818
-    invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV15()Lvendor/qti/hardware/radio/ims/V1_5/IImsRadio;
-
-    move-result-object v6
-
-    iget v7, v3, Lorg/codeaurora/ims/IFRequest;->mSerial:I
-
-    invoke-interface {v6, v7, p1, v4}, Lvendor/qti/hardware/radio/ims/V1_5/IImsRadio;->acknowledgeSms_1_5(III)V
-
-    goto :goto_0
-
-    .line 2820
-    :cond_1
-    const-string v6, "ImsRadioV15 is null. Invoking ImsRadioV12.acknowledgeSms()"
-
-    invoke-static {p0, v6}, Lcom/qualcomm/ims/utils/Log;->w(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 2821
-    invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV12()Lvendor/qti/hardware/radio/ims/V1_2/IImsRadio;
-
-    move-result-object v6
-
-    iget v7, v3, Lorg/codeaurora/ims/IFRequest;->mSerial:I
-
-    invoke-interface {v6, v7, p1, v4}, Lvendor/qti/hardware/radio/ims/V1_2/IImsRadio;->acknowledgeSms(III)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 2825
-    .end local v5    # "imsRadioV15":Lvendor/qti/hardware/radio/ims/V1_5/IImsRadio;
-    :goto_0
-    goto :goto_1
-
-    .line 2823
-    :catch_0
-    move-exception v5
-
-    .line 2824
-    .local v5, "ex":Ljava/lang/Exception;
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-static {v1}, Lorg/codeaurora/ims/ImsSenderRxr;->msgIdToString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, "request to ImsRadio: Exception: "
-
-    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 2826
-    .end local v5    # "ex":Ljava/lang/Exception;
-    :goto_1
-    invoke-virtual {v3}, Lorg/codeaurora/ims/IFRequest;->release()V
-
-    .line 2827
-    return-void
-.end method
-
-.method public acknowledgeSmsReport(IILandroid/os/Message;)V
-    .locals 7
-    .param p1, "messageRef"    # I
-    .param p2, "result"    # I
-    .param p3, "target"    # Landroid/os/Message;
-
-    .line 2830
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "acknowledgeSmsReport: messageRef: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v1, " result: "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 2832
-    const/16 v0, 0x3b
-
-    .line 2833
-    .local v0, "msgId":I
-    const/16 v1, 0x3b
-
-    invoke-static {v1}, Lorg/codeaurora/ims/ImsSenderRxr;->msgIdToString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 2836
-    .local v2, "msgIdString":Ljava/lang/String;
-    invoke-static {v1, p3}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
-
-    move-result-object v3
-
-    .line 2838
-    .local v3, "rr":Lorg/codeaurora/ims/IFRequest;
-    invoke-direct {p0, v3, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_0
-
-    .line 2839
-    return-void
-
-    .line 2842
-    :cond_0
-    invoke-static {p2}, Lorg/codeaurora/ims/ImsRadioUtils;->imsSmsStatusReportStatusToHidl(I)I
-
-    move-result v4
-
-    .line 2844
-    .local v4, "statusReportStatus":I
-    :try_start_0
-    invoke-virtual {p0, v3}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
-
-    .line 2845
+    .line 2682
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV12()Lvendor/qti/hardware/radio/ims/V1_2/IImsRadio;
 
     move-result-object v5
 
     iget v6, v3, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
-    invoke-interface {v5, v6, p1, v4}, Lvendor/qti/hardware/radio/ims/V1_2/IImsRadio;->acknowledgeSmsReport(III)V
+    invoke-interface {v5, v6, p1, v4}, Lvendor/qti/hardware/radio/ims/V1_2/IImsRadio;->acknowledgeSms(III)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2848
+    .line 2685
     goto :goto_0
 
-    .line 2846
+    .line 2683
     :catch_0
     move-exception v5
 
-    .line 2847
+    .line 2684
     .local v5, "ex":Ljava/lang/Exception;
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -4465,12 +4185,131 @@
 
     invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 2849
+    .line 2686
     .end local v5    # "ex":Ljava/lang/Exception;
     :goto_0
     invoke-virtual {v3}, Lorg/codeaurora/ims/IFRequest;->release()V
 
-    .line 2850
+    .line 2687
+    return-void
+.end method
+
+.method public acknowledgeSmsReport(IILandroid/os/Message;)V
+    .locals 7
+    .param p1, "messageRef"    # I
+    .param p2, "result"    # I
+    .param p3, "target"    # Landroid/os/Message;
+
+    .line 2690
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "acknowledgeSmsReport: messageRef: "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, " result: "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 2692
+    const/16 v0, 0x3b
+
+    .line 2693
+    .local v0, "msgId":I
+    const/16 v1, 0x3b
+
+    invoke-static {v1}, Lorg/codeaurora/ims/ImsSenderRxr;->msgIdToString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 2696
+    .local v2, "msgIdString":Ljava/lang/String;
+    invoke-static {v1, p3}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
+
+    move-result-object v3
+
+    .line 2698
+    .local v3, "rr":Lorg/codeaurora/ims/IFRequest;
+    invoke-direct {p0, v3, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    .line 2699
+    return-void
+
+    .line 2702
+    :cond_0
+    invoke-static {p2}, Lorg/codeaurora/ims/ImsRadioUtils;->imsSmsStatusReportStatusToHidl(I)I
+
+    move-result v4
+
+    .line 2704
+    .local v4, "statusReportStatus":I
+    :try_start_0
+    invoke-virtual {p0, v3}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
+
+    .line 2705
+    invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV12()Lvendor/qti/hardware/radio/ims/V1_2/IImsRadio;
+
+    move-result-object v5
+
+    iget v6, v3, Lorg/codeaurora/ims/IFRequest;->mSerial:I
+
+    invoke-interface {v5, v6, p1, v4}, Lvendor/qti/hardware/radio/ims/V1_2/IImsRadio;->acknowledgeSmsReport(III)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 2708
+    goto :goto_0
+
+    .line 2706
+    :catch_0
+    move-exception v5
+
+    .line 2707
+    .local v5, "ex":Ljava/lang/Exception;
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-static {v1}, Lorg/codeaurora/ims/ImsSenderRxr;->msgIdToString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, "to ImsRadioV12: Exception: "
+
+    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 2709
+    .end local v5    # "ex":Ljava/lang/Exception;
+    :goto_0
+    invoke-virtual {v3}, Lorg/codeaurora/ims/IFRequest;->release()V
+
+    .line 2710
     return-void
 .end method
 
@@ -4481,7 +4320,7 @@
     .param p3, "callDetails"    # Lorg/codeaurora/ims/CallDetails;
     .param p4, "result"    # Landroid/os/Message;
 
-    .line 2610
+    .line 2480
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -4514,10 +4353,10 @@
 
     invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->log(Ljava/lang/String;)V
 
-    .line 2612
+    .line 2482
     const/16 v0, 0x1c
 
-    .line 2613
+    .line 2483
     .local v0, "msgId":I
     const/16 v1, 0x1c
 
@@ -4525,13 +4364,13 @@
 
     move-result-object v2
 
-    .line 2614
+    .line 2484
     .local v2, "msgIdString":Ljava/lang/String;
     invoke-static {v1, p4}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v1
 
-    .line 2616
+    .line 2486
     .local v1, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {p0, v1, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -4539,49 +4378,49 @@
 
     if-eqz v3, :cond_0
 
-    .line 2617
+    .line 2487
     return-void
 
-    .line 2620
+    .line 2490
     :cond_0
     invoke-direct {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 2621
+    .line 2491
     const/4 v3, 0x0
 
-    .line 2622
+    .line 2492
     invoke-static {p1, p2, p3, v3}, Lorg/codeaurora/ims/ImsRadioUtils;->buildDialRequest(Ljava/lang/String;ILorg/codeaurora/ims/CallDetails;Z)Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;
 
     move-result-object v3
 
-    .line 2625
+    .line 2495
     .local v3, "dialRequest":Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;
     :try_start_0
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 2626
+    .line 2496
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV14()Lvendor/qti/hardware/radio/ims/V1_4/IImsRadio;
 
     move-result-object v4
 
-    .line 2627
+    .line 2497
     .local v4, "imsRadio":Lvendor/qti/hardware/radio/ims/V1_4/IImsRadio;
     if-eqz v4, :cond_1
 
-    .line 2628
+    .line 2498
     iget v5, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-interface {v4, v5, v3}, Lvendor/qti/hardware/radio/ims/V1_4/IImsRadio;->addParticipant_1_4(ILvendor/qti/hardware/radio/ims/V1_4/DialRequest;)V
 
     goto :goto_0
 
-    .line 2630
+    .line 2500
     :cond_1
     const-string v5, "mImsRadio V1.4 is null. invoking mImsRadio.dial()"
 
     invoke-static {p0, v5}, Lcom/qualcomm/ims/utils/Log;->w(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 2631
+    .line 2501
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     move-result-object v5
@@ -4594,7 +4433,7 @@
 
     invoke-interface {v5, v6, v7}, Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;->addParticipant(ILvendor/qti/hardware/radio/ims/V1_0/DialRequest;)V
 
-    .line 2634
+    .line 2504
     :goto_0
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -4670,21 +4509,21 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2643
+    .line 2513
     .end local v4    # "imsRadio":Lvendor/qti/hardware/radio/ims/V1_4/IImsRadio;
     goto :goto_1
 
-    .line 2640
+    .line 2510
     :catch_0
     move-exception v4
 
-    .line 2641
+    .line 2511
     .local v4, "ex":Ljava/lang/Exception;
     iget v5, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {p0, v5}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 2642
+    .line 2512
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -4703,7 +4542,7 @@
 
     invoke-static {p0, v5}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 2644
+    .line 2514
     .end local v4    # "ex":Ljava/lang/Exception;
     :goto_1
     return-void
@@ -4714,15 +4553,15 @@
     .param p1, "result"    # Landroid/os/Message;
     .param p2, "callId"    # I
 
-    .line 3111
+    .line 2892
     const-string v0, "cancelModifyCall"
 
     invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->logv(Ljava/lang/String;)V
 
-    .line 3112
+    .line 2893
     const/16 v0, 0x38
 
-    .line 3113
+    .line 2894
     .local v0, "msgId":I
     const/16 v1, 0x38
 
@@ -4730,13 +4569,13 @@
 
     move-result-object v2
 
-    .line 3114
+    .line 2895
     .local v2, "msgIdString":Ljava/lang/String;
     invoke-static {v1, p1}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v1
 
-    .line 3116
+    .line 2897
     .local v1, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {p0, v1, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -4744,18 +4583,18 @@
 
     if-eqz v3, :cond_0
 
-    .line 3117
+    .line 2898
     return-void
 
-    .line 3120
+    .line 2901
     :cond_0
     invoke-direct {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3122
+    .line 2903
     :try_start_0
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3123
+    .line 2904
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -4782,7 +4621,7 @@
 
     invoke-static {p0, v3}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3125
+    .line 2906
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     move-result-object v3
@@ -4793,20 +4632,20 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3129
+    .line 2910
     goto :goto_0
 
-    .line 3126
+    .line 2907
     :catch_0
     move-exception v3
 
-    .line 3127
+    .line 2908
     .local v3, "ex":Ljava/lang/Exception;
     iget v4, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {p0, v4}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 3128
+    .line 2909
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4825,7 +4664,7 @@
 
     invoke-static {p0, v4}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3130
+    .line 2911
     .end local v3    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
@@ -4835,10 +4674,10 @@
     .locals 6
     .param p1, "result"    # Landroid/os/Message;
 
-    .line 3196
+    .line 2977
     const/16 v0, 0xa
 
-    .line 3197
+    .line 2978
     .local v0, "msgId":I
     const/16 v1, 0xa
 
@@ -4846,13 +4685,13 @@
 
     move-result-object v2
 
-    .line 3198
+    .line 2979
     .local v2, "msgIdString":Ljava/lang/String;
     invoke-static {v1, p1}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v1
 
-    .line 3200
+    .line 2981
     .local v1, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {p0, v1, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -4860,18 +4699,18 @@
 
     if-eqz v3, :cond_0
 
-    .line 3201
+    .line 2982
     return-void
 
-    .line 3204
+    .line 2985
     :cond_0
     invoke-direct {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3206
+    .line 2987
     :try_start_0
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3207
+    .line 2988
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     move-result-object v3
@@ -4882,20 +4721,20 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3211
+    .line 2992
     goto :goto_0
 
-    .line 3208
+    .line 2989
     :catch_0
     move-exception v3
 
-    .line 3209
+    .line 2990
     .local v3, "ex":Ljava/lang/Exception;
     iget v4, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {p0, v4}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 3210
+    .line 2991
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4914,7 +4753,7 @@
 
     invoke-static {p0, v4}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3212
+    .line 2993
     .end local v3    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
@@ -4926,7 +4765,7 @@
     .param p2, "number"    # Ljava/lang/String;
     .param p3, "result"    # Landroid/os/Message;
 
-    .line 2754
+    .line 2620
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -4949,10 +4788,10 @@
 
     invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->logv(Ljava/lang/String;)V
 
-    .line 2755
+    .line 2621
     const/16 v0, 0x20
 
-    .line 2756
+    .line 2622
     .local v0, "msgId":I
     const/16 v1, 0x20
 
@@ -4960,13 +4799,13 @@
 
     move-result-object v2
 
-    .line 2757
+    .line 2623
     .local v2, "msgIdString":Ljava/lang/String;
     invoke-static {v1, p3}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v1
 
-    .line 2759
+    .line 2625
     .local v1, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {p0, v1, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -4974,30 +4813,30 @@
 
     if-eqz v3, :cond_0
 
-    .line 2760
+    .line 2626
     return-void
 
-    .line 2763
+    .line 2629
     :cond_0
     invoke-direct {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 2764
+    .line 2630
     new-instance v3, Lvendor/qti/hardware/radio/ims/V1_0/DeflectRequestInfo;
 
     invoke-direct {v3}, Lvendor/qti/hardware/radio/ims/V1_0/DeflectRequestInfo;-><init>()V
 
-    .line 2765
+    .line 2631
     .local v3, "deflectRequestInfo":Lvendor/qti/hardware/radio/ims/V1_0/DeflectRequestInfo;
     iput p1, v3, Lvendor/qti/hardware/radio/ims/V1_0/DeflectRequestInfo;->connIndex:I
 
-    .line 2766
+    .line 2632
     iput-object p2, v3, Lvendor/qti/hardware/radio/ims/V1_0/DeflectRequestInfo;->number:Ljava/lang/String;
 
-    .line 2768
+    .line 2634
     :try_start_0
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 2769
+    .line 2635
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     move-result-object v4
@@ -5008,20 +4847,20 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2773
+    .line 2639
     goto :goto_0
 
-    .line 2770
+    .line 2636
     :catch_0
     move-exception v4
 
-    .line 2771
+    .line 2637
     .local v4, "ex":Ljava/lang/Exception;
     iget v5, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {p0, v5}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 2772
+    .line 2638
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -5040,7 +4879,7 @@
 
     invoke-static {p0, v5}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 2774
+    .line 2640
     .end local v4    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
@@ -5050,12 +4889,12 @@
     .locals 1
     .param p1, "h"    # Landroid/os/Handler;
 
-    .line 598
+    .line 573
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mImsSubConfigChangeRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/telephony/utils/RegistrantList;->remove(Landroid/os/Handler;)V
 
-    .line 599
+    .line 574
     return-void
 .end method
 
@@ -5063,12 +4902,12 @@
     .locals 1
     .param p1, "h"    # Landroid/os/Handler;
 
-    .line 3941
+    .line 3721
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mRttMessageRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/telephony/utils/RegistrantList;->remove(Landroid/os/Handler;)V
 
-    .line 3942
+    .line 3722
     return-void
 .end method
 
@@ -5076,12 +4915,12 @@
     .locals 1
     .param p1, "h"    # Landroid/os/Handler;
 
-    .line 3949
+    .line 3729
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mVoiceInfoStatusRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/telephony/utils/RegistrantList;->remove(Landroid/os/Handler;)V
 
-    .line 3950
+    .line 3730
     return-void
 .end method
 
@@ -5094,7 +4933,7 @@
     .param p5, "isEncrypted"    # Z
     .param p6, "result"    # Landroid/os/Message;
 
-    .line 2670
+    .line 2536
     move-object/from16 v1, p0
 
     move/from16 v2, p3
@@ -5141,27 +4980,27 @@
 
     invoke-virtual {v1, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->log(Ljava/lang/String;)V
 
-    .line 2672
+    .line 2538
     if-nez p2, :cond_0
 
     const/4 v0, 0x2
 
     goto :goto_0
 
-    .line 2673
+    .line 2539
     :cond_0
     const/16 v0, 0x3e
 
     :goto_0
     move v5, v0
 
-    .line 2674
+    .line 2540
     .local v5, "msgId":I
     invoke-static {v5}, Lorg/codeaurora/ims/ImsSenderRxr;->msgIdToString(I)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 2675
+    .line 2541
     .local v6, "msgIdString":Ljava/lang/String;
     move-object/from16 v7, p6
 
@@ -5169,7 +5008,7 @@
 
     move-result-object v8
 
-    .line 2677
+    .line 2543
     .local v8, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {v1, v8, v6}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -5177,31 +5016,31 @@
 
     if-eqz v0, :cond_1
 
-    .line 2678
+    .line 2544
     return-void
 
-    .line 2681
+    .line 2547
     :cond_1
     invoke-direct {v1, v8}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 2682
+    .line 2548
     nop
 
-    .line 2683
+    .line 2549
     move-object/from16 v9, p1
 
     invoke-static {v9, v2, v3, v4}, Lorg/codeaurora/ims/ImsRadioUtils;->buildDialRequest(Ljava/lang/String;ILorg/codeaurora/ims/CallDetails;Z)Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;
 
     move-result-object v12
 
-    .line 2685
+    .line 2551
     .local v12, "dialRequest":Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;
     :try_start_0
     invoke-virtual {v1, v8}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_4
 
-    .line 2686
+    .line 2552
     if-eqz p2, :cond_2
 
     :try_start_1
@@ -5211,34 +5050,34 @@
 
     if-eqz v0, :cond_2
 
-    .line 2687
+    .line 2553
     nop
 
-    .line 2688
+    .line 2554
     invoke-virtual/range {p2 .. p2}, Lorg/codeaurora/ims/EmergencyCallInfo;->getEmergencyServiceCategories()I
 
     move-result v0
 
-    .line 2687
+    .line 2553
     invoke-static {v0}, Lorg/codeaurora/ims/ImsRadioUtilsV15;->mapEmergencyServiceCategoryToHal(I)I
 
     move-result v13
 
-    .line 2689
+    .line 2555
     .local v13, "categories":I
     nop
 
-    .line 2690
+    .line 2556
     invoke-virtual/range {p2 .. p2}, Lorg/codeaurora/ims/EmergencyCallInfo;->getEmergencyCallRouting()I
 
     move-result v0
 
-    .line 2689
+    .line 2555
     invoke-static {v0}, Lorg/codeaurora/ims/ImsRadioUtilsV15;->mapEmergencyCallRoutingToHal(I)I
 
     move-result v15
 
-    .line 2691
+    .line 2557
     .local v15, "route":I
     new-instance v14, Ljava/util/ArrayList;
 
@@ -5248,32 +5087,32 @@
 
     invoke-direct {v14, v0}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 2692
+    .line 2558
     .local v14, "urns":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     const-string v0, "Dialing emergency call"
 
     invoke-virtual {v1, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->log(Ljava/lang/String;)V
 
-    .line 2693
+    .line 2559
     invoke-direct/range {p0 .. p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV15()Lvendor/qti/hardware/radio/ims/V1_5/IImsRadio;
 
     move-result-object v10
 
     iget v11, v8, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
-    .line 2694
+    .line 2560
     invoke-virtual/range {p2 .. p2}, Lorg/codeaurora/ims/EmergencyCallInfo;->hasKnownUserIntentEmergency()Z
 
     move-result v16
 
-    .line 2695
+    .line 2561
     invoke-virtual/range {p2 .. p2}, Lorg/codeaurora/ims/EmergencyCallInfo;->isEmergencyCallTesting()Z
 
     move-result v17
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 2693
+    .line 2559
     move-object/from16 v18, v12
 
     .end local v12    # "dialRequest":Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;
@@ -5283,7 +5122,7 @@
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 2696
+    .line 2562
     .end local v13    # "categories":I
     .end local v14    # "urns":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     .end local v15    # "route":I
@@ -5291,7 +5130,7 @@
 
     goto :goto_1
 
-    .line 2713
+    .line 2579
     :catch_0
     move-exception v0
 
@@ -5310,13 +5149,13 @@
     .restart local v18    # "dialRequest":Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;
     goto/16 :goto_2
 
-    .line 2686
+    .line 2552
     .end local v18    # "dialRequest":Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;
     .restart local v12    # "dialRequest":Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;
     :cond_2
     move-object/from16 v18, v12
 
-    .line 2697
+    .line 2563
     .end local v12    # "dialRequest":Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;
     .restart local v18    # "dialRequest":Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;
     :try_start_3
@@ -5324,11 +5163,11 @@
 
     move-result-object v0
 
-    .line 2698
+    .line 2564
     .local v0, "imsRadio":Lvendor/qti/hardware/radio/ims/V1_4/IImsRadio;
     if-eqz v0, :cond_3
 
-    .line 2699
+    .line 2565
     iget v10, v8, Lorg/codeaurora/ims/IFRequest;->mSerial:I
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_3
@@ -5342,7 +5181,7 @@
 
     goto :goto_1
 
-    .line 2701
+    .line 2567
     .end local v11    # "dialRequest":Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;
     .restart local v18    # "dialRequest":Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;
     :cond_3
@@ -5354,7 +5193,7 @@
 
     invoke-static {v1, v10}, Lcom/qualcomm/ims/utils/Log;->w(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 2702
+    .line 2568
     invoke-direct/range {p0 .. p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     move-result-object v10
@@ -5367,7 +5206,7 @@
 
     invoke-interface {v10, v12, v13}, Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;->dial(ILvendor/qti/hardware/radio/ims/V1_0/DialRequest;)V
 
-    .line 2706
+    .line 2572
     .end local v0    # "imsRadio":Lvendor/qti/hardware/radio/ims/V1_4/IImsRadio;
     :goto_1
     new-instance v0, Ljava/lang/StringBuilder;
@@ -5454,10 +5293,10 @@
     :try_end_4
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_2
 
-    .line 2716
+    .line 2582
     goto :goto_3
 
-    .line 2713
+    .line 2579
     :catch_2
     move-exception v0
 
@@ -5481,7 +5320,7 @@
 
     move-object v11, v12
 
-    .line 2714
+    .line 2580
     .end local v12    # "dialRequest":Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;
     .local v0, "ex":Ljava/lang/Exception;
     .restart local v11    # "dialRequest":Lvendor/qti/hardware/radio/ims/V1_4/DialRequest;
@@ -5490,7 +5329,7 @@
 
     invoke-direct {v1, v10}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 2715
+    .line 2581
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -5509,7 +5348,7 @@
 
     invoke-static {v1, v10}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 2717
+    .line 2583
     .end local v0    # "ex":Ljava/lang/Exception;
     :goto_3
     return-void
@@ -5519,15 +5358,15 @@
     .locals 6
     .param p1, "response"    # Landroid/os/Message;
 
-    .line 3606
+    .line 3386
     const-string v0, "exitEmergencyCallbackMode"
 
     invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->logv(Ljava/lang/String;)V
 
-    .line 3607
+    .line 3387
     const/16 v0, 0xb
 
-    .line 3608
+    .line 3388
     .local v0, "msgId":I
     const/16 v1, 0xb
 
@@ -5535,13 +5374,13 @@
 
     move-result-object v2
 
-    .line 3609
+    .line 3389
     .local v2, "msgIdString":Ljava/lang/String;
     invoke-static {v1, p1}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v1
 
-    .line 3611
+    .line 3391
     .local v1, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {p0, v1, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -5549,18 +5388,18 @@
 
     if-eqz v3, :cond_0
 
-    .line 3612
+    .line 3392
     return-void
 
-    .line 3615
+    .line 3395
     :cond_0
     invoke-direct {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3617
+    .line 3397
     :try_start_0
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3618
+    .line 3398
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     move-result-object v3
@@ -5571,20 +5410,20 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3622
+    .line 3402
     goto :goto_0
 
-    .line 3619
+    .line 3399
     :catch_0
     move-exception v3
 
-    .line 3620
+    .line 3400
     .local v3, "ex":Ljava/lang/Exception;
     iget v4, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {p0, v4}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 3621
+    .line 3401
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -5603,7 +5442,7 @@
 
     invoke-static {p0, v4}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3623
+    .line 3403
     .end local v3    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
@@ -5617,7 +5456,7 @@
     .param p4, "destCallId"    # I
     .param p5, "result"    # Landroid/os/Message;
 
-    .line 3216
+    .line 2997
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -5652,10 +5491,10 @@
 
     invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->logv(Ljava/lang/String;)V
 
-    .line 3218
+    .line 2999
     const/16 v0, 0xc
 
-    .line 3219
+    .line 3000
     .local v0, "msgId":I
     const/16 v1, 0xc
 
@@ -5663,13 +5502,13 @@
 
     move-result-object v2
 
-    .line 3220
+    .line 3001
     .local v2, "msgIdString":Ljava/lang/String;
     invoke-static {v1, p5}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v1
 
-    .line 3222
+    .line 3003
     .local v1, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {p0, v1, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -5677,24 +5516,24 @@
 
     if-eqz v3, :cond_0
 
-    .line 3223
+    .line 3004
     return-void
 
-    .line 3226
+    .line 3007
     :cond_0
     invoke-direct {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3227
+    .line 3008
     invoke-static {p1, p2, p3, p4}, Lorg/codeaurora/ims/ImsRadioUtils;->buildExplicitCallTransferInfo(IILjava/lang/String;I)Lvendor/qti/hardware/radio/ims/V1_0/ExplicitCallTransferInfo;
 
     move-result-object v3
 
-    .line 3230
+    .line 3011
     .local v3, "ectInfo":Lvendor/qti/hardware/radio/ims/V1_0/ExplicitCallTransferInfo;
     :try_start_0
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3231
+    .line 3012
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     move-result-object v4
@@ -5705,20 +5544,20 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3235
+    .line 3016
     goto :goto_0
 
-    .line 3232
+    .line 3013
     :catch_0
     move-exception v4
 
-    .line 3233
+    .line 3014
     .local v4, "ex":Ljava/lang/Exception;
     iget v5, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {p0, v5}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 3234
+    .line 3015
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -5737,7 +5576,7 @@
 
     invoke-static {p0, v5}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3236
+    .line 3017
     .end local v4    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
@@ -5747,12 +5586,12 @@
     .locals 1
     .param p1, "result"    # Landroid/os/Message;
 
-    .line 3929
+    .line 3709
     const-string v0, "explicitCallTransfer : Not supported"
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3930
+    .line 3710
     return-void
 .end method
 
@@ -5760,15 +5599,15 @@
     .locals 6
     .param p1, "result"    # Landroid/os/Message;
 
-    .line 3389
+    .line 3169
     const-string v0, "getCLIR"
 
     invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->logv(Ljava/lang/String;)V
 
-    .line 3390
+    .line 3170
     const/16 v0, 0x14
 
-    .line 3391
+    .line 3171
     .local v0, "msgId":I
     const/16 v1, 0x14
 
@@ -5776,13 +5615,13 @@
 
     move-result-object v2
 
-    .line 3392
+    .line 3172
     .local v2, "msgIdString":Ljava/lang/String;
     invoke-static {v1, p1}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v1
 
-    .line 3394
+    .line 3174
     .local v1, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {p0, v1, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -5790,18 +5629,18 @@
 
     if-eqz v3, :cond_0
 
-    .line 3395
+    .line 3175
     return-void
 
-    .line 3398
+    .line 3178
     :cond_0
     invoke-direct {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3400
+    .line 3180
     :try_start_0
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3401
+    .line 3181
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     move-result-object v3
@@ -5812,20 +5651,20 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3405
+    .line 3185
     goto :goto_0
 
-    .line 3402
+    .line 3182
     :catch_0
     move-exception v3
 
-    .line 3403
+    .line 3183
     .local v3, "ex":Ljava/lang/Exception;
     iget v4, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {p0, v4}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 3404
+    .line 3184
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -5842,7 +5681,7 @@
 
     invoke-static {p0, v4}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3406
+    .line 3186
     .end local v3    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
@@ -5852,15 +5691,15 @@
     .locals 6
     .param p1, "result"    # Landroid/os/Message;
 
-    .line 3683
+    .line 3463
     const-string v0, "getCOLR"
 
     invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->logv(Ljava/lang/String;)V
 
-    .line 3684
+    .line 3464
     const/16 v0, 0x21
 
-    .line 3685
+    .line 3465
     .local v0, "msgId":I
     const/16 v1, 0x21
 
@@ -5868,13 +5707,13 @@
 
     move-result-object v2
 
-    .line 3686
+    .line 3466
     .local v2, "msgIdString":Ljava/lang/String;
     invoke-static {v1, p1}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v1
 
-    .line 3688
+    .line 3468
     .local v1, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {p0, v1, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -5882,18 +5721,18 @@
 
     if-eqz v3, :cond_0
 
-    .line 3689
+    .line 3469
     return-void
 
-    .line 3692
+    .line 3472
     :cond_0
     invoke-direct {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3694
+    .line 3474
     :try_start_0
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3695
+    .line 3475
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     move-result-object v3
@@ -5904,20 +5743,20 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3699
+    .line 3479
     goto :goto_0
 
-    .line 3696
+    .line 3476
     :catch_0
     move-exception v3
 
-    .line 3697
+    .line 3477
     .local v3, "ex":Ljava/lang/Exception;
     iget v4, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {p0, v4}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 3698
+    .line 3478
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -5934,7 +5773,7 @@
 
     invoke-static {p0, v4}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3700
+    .line 3480
     .end local v3    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
@@ -5944,12 +5783,12 @@
     .locals 1
     .param p1, "result"    # Landroid/os/Message;
 
-    .line 3921
+    .line 3701
     const-string v0, "getCurrentCalls : Not supported"
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3922
+    .line 3702
     return-void
 .end method
 
@@ -5957,14 +5796,14 @@
     .locals 2
     .param p1, "response"    # Landroid/os/Message;
 
-    .line 3808
+    .line 3588
     const-string v0, "ImsSenderRxr"
 
     const-string v1, "getHandoverConfig : Not supported"
 
     invoke-static {v0, v1}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3809
+    .line 3589
     return-void
 .end method
 
@@ -5972,10 +5811,10 @@
     .locals 6
     .param p1, "result"    # Landroid/os/Message;
 
-    .line 3049
+    .line 2830
     const/4 v0, 0x1
 
-    .line 3050
+    .line 2831
     .local v0, "msgId":I
     const/4 v1, 0x1
 
@@ -5983,13 +5822,13 @@
 
     move-result-object v2
 
-    .line 3051
+    .line 2832
     .local v2, "msgIdString":Ljava/lang/String;
     invoke-static {v1, p1}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v1
 
-    .line 3053
+    .line 2834
     .local v1, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {p0, v1, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -5997,18 +5836,18 @@
 
     if-eqz v3, :cond_0
 
-    .line 3054
+    .line 2835
     return-void
 
-    .line 3057
+    .line 2838
     :cond_0
     invoke-direct {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3059
+    .line 2840
     :try_start_0
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3060
+    .line 2841
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     move-result-object v3
@@ -6019,20 +5858,20 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3064
+    .line 2845
     goto :goto_0
 
-    .line 3061
+    .line 2842
     :catch_0
     move-exception v3
 
-    .line 3062
+    .line 2843
     .local v3, "ex":Ljava/lang/Exception;
     iget v4, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {p0, v4}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 3063
+    .line 2844
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -6051,7 +5890,7 @@
 
     invoke-static {p0, v4}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3065
+    .line 2846
     .end local v3    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
@@ -6061,15 +5900,15 @@
     .locals 6
     .param p1, "response"    # Landroid/os/Message;
 
-    .line 3779
+    .line 3559
     const-string v0, "getImsSubConfig"
 
     invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->logv(Ljava/lang/String;)V
 
-    .line 3780
+    .line 3560
     const/16 v0, 0x36
 
-    .line 3781
+    .line 3561
     .local v0, "msgId":I
     const/16 v1, 0x36
 
@@ -6077,13 +5916,13 @@
 
     move-result-object v2
 
-    .line 3782
+    .line 3562
     .local v2, "msgIdString":Ljava/lang/String;
     invoke-static {v1, p1}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v1
 
-    .line 3784
+    .line 3564
     .local v1, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {p0, v1, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -6091,18 +5930,18 @@
 
     if-eqz v3, :cond_0
 
-    .line 3785
+    .line 3565
     return-void
 
-    .line 3788
+    .line 3568
     :cond_0
     invoke-direct {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3790
+    .line 3570
     :try_start_0
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3791
+    .line 3571
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     move-result-object v3
@@ -6113,20 +5952,20 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3795
+    .line 3575
     goto :goto_0
 
-    .line 3792
+    .line 3572
     :catch_0
     move-exception v3
 
-    .line 3793
+    .line 3573
     .local v3, "ex":Ljava/lang/Exception;
     iget v4, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {p0, v4}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 3794
+    .line 3574
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -6145,7 +5984,7 @@
 
     invoke-static {p0, v4}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3796
+    .line 3576
     .end local v3    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
@@ -6156,7 +5995,7 @@
     .annotation build Lcom/android/internal/annotations/VisibleForTesting;
     .end annotation
 
-    .line 791
+    .line 766
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mIncomingSmsRegistrant:Lorg/codeaurora/telephony/utils/Registrant;
 
     return-object v0
@@ -6166,12 +6005,12 @@
     .locals 1
     .param p1, "result"    # Landroid/os/Message;
 
-    .line 3913
+    .line 3693
     const-string v0, "getLastCallFailCause : Not supported"
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3914
+    .line 3694
     return-void
 .end method
 
@@ -6179,15 +6018,15 @@
     .locals 6
     .param p1, "response"    # Landroid/os/Message;
 
-    .line 3739
+    .line 3519
     const-string v0, "getPacketCount"
 
     invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->logv(Ljava/lang/String;)V
 
-    .line 3740
+    .line 3520
     const/16 v0, 0x28
 
-    .line 3741
+    .line 3521
     .local v0, "msgId":I
     const/16 v1, 0x28
 
@@ -6195,13 +6034,13 @@
 
     move-result-object v2
 
-    .line 3742
+    .line 3522
     .local v2, "msgIdString":Ljava/lang/String;
     invoke-static {v1, p1}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v1
 
-    .line 3744
+    .line 3524
     .local v1, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {p0, v1, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -6209,18 +6048,18 @@
 
     if-eqz v3, :cond_0
 
-    .line 3745
+    .line 3525
     return-void
 
-    .line 3748
+    .line 3528
     :cond_0
     invoke-direct {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3750
+    .line 3530
     :try_start_0
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3751
+    .line 3531
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     move-result-object v3
@@ -6231,20 +6070,20 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3755
+    .line 3535
     goto :goto_0
 
-    .line 3752
+    .line 3532
     :catch_0
     move-exception v3
 
-    .line 3753
+    .line 3533
     .local v3, "ex":Ljava/lang/Exception;
     iget v4, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {p0, v4}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 3754
+    .line 3534
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -6263,7 +6102,7 @@
 
     invoke-static {p0, v4}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3756
+    .line 3536
     .end local v3    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
@@ -6273,15 +6112,15 @@
     .locals 6
     .param p1, "response"    # Landroid/os/Message;
 
-    .line 3759
+    .line 3539
     const-string v0, "getPacketErrorCount"
 
     invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->logv(Ljava/lang/String;)V
 
-    .line 3760
+    .line 3540
     const/16 v0, 0x29
 
-    .line 3761
+    .line 3541
     .local v0, "msgId":I
     const/16 v1, 0x29
 
@@ -6289,13 +6128,13 @@
 
     move-result-object v2
 
-    .line 3762
+    .line 3542
     .local v2, "msgIdString":Ljava/lang/String;
     invoke-static {v1, p1}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v1
 
-    .line 3764
+    .line 3544
     .local v1, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {p0, v1, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -6303,18 +6142,18 @@
 
     if-eqz v3, :cond_0
 
-    .line 3765
+    .line 3545
     return-void
 
-    .line 3768
+    .line 3548
     :cond_0
     invoke-direct {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3770
+    .line 3550
     :try_start_0
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3771
+    .line 3551
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     move-result-object v3
@@ -6325,20 +6164,20 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3775
+    .line 3555
     goto :goto_0
 
-    .line 3772
+    .line 3552
     :catch_0
     move-exception v3
 
-    .line 3773
+    .line 3553
     .local v3, "ex":Ljava/lang/Exception;
     iget v4, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {p0, v4}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 3774
+    .line 3554
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -6357,7 +6196,7 @@
 
     invoke-static {p0, v4}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3776
+    .line 3556
     .end local v3    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
@@ -6366,7 +6205,7 @@
 .method public getPhoneId()I
     .locals 1
 
-    .line 590
+    .line 565
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mPhoneId:Ljava/lang/Integer;
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
@@ -6381,7 +6220,7 @@
     .annotation build Lcom/android/internal/annotations/VisibleForTesting;
     .end annotation
 
-    .line 796
+    .line 771
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mSendSmsStatusReportRegistrant:Lorg/codeaurora/telephony/utils/Registrant;
 
     return-object v0
@@ -6390,7 +6229,7 @@
 .method public getSmsFormat()Ljava/lang/String;
     .locals 3
 
-    .line 2854
+    .line 2714
     :try_start_0
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV12()Lvendor/qti/hardware/radio/ims/V1_2/IImsRadio;
 
@@ -6404,11 +6243,11 @@
 
     return-object v0
 
-    .line 2855
+    .line 2715
     :catch_0
     move-exception v0
 
-    .line 2856
+    .line 2716
     .local v0, "ex":Ljava/lang/Exception;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -6426,7 +6265,7 @@
 
     invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 2858
+    .line 2718
     .end local v0    # "ex":Ljava/lang/Exception;
     const/4 v0, 0x0
 
@@ -6438,7 +6277,7 @@
     .param p1, "facility"    # Ljava/lang/String;
     .param p2, "response"    # Landroid/os/Message;
 
-    .line 3639
+    .line 3419
     invoke-static {p1}, Lorg/codeaurora/ims/ImsSenderRxr;->facilityStringToInt(Ljava/lang/String;)I
 
     move-result v0
@@ -6447,7 +6286,7 @@
 
     invoke-virtual {p0, v1, v0, p2}, Lorg/codeaurora/ims/ImsSenderRxr;->suppSvcStatus(IILandroid/os/Message;)V
 
-    .line 3640
+    .line 3420
     return-void
 .end method
 
@@ -6455,12 +6294,12 @@
     .locals 1
     .param p1, "response"    # Landroid/os/Message;
 
-    .line 3799
+    .line 3579
     const-string v0, "getWifiCallingPreference : Not supported"
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3800
+    .line 3580
     return-void
 .end method
 
@@ -6469,7 +6308,7 @@
     .param p1, "index"    # I
     .param p2, "result"    # Landroid/os/Message;
 
-    .line 2891
+    .line 2751
     const/4 v2, 0x0
 
     const/4 v3, 0x0
@@ -6488,7 +6327,7 @@
 
     invoke-virtual/range {v0 .. v7}, Lorg/codeaurora/ims/ImsSenderRxr;->hangupWithReason(ILjava/lang/String;Ljava/lang/String;ZILjava/lang/String;Landroid/os/Message;)V
 
-    .line 2892
+    .line 2752
     return-void
 .end method
 
@@ -6496,12 +6335,12 @@
     .locals 1
     .param p1, "result"    # Landroid/os/Message;
 
-    .line 3933
+    .line 3713
     const-string v0, "hangupForegroundResumeBackground : Not supported"
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3934
+    .line 3714
     return-void
 .end method
 
@@ -6509,12 +6348,12 @@
     .locals 1
     .param p1, "result"    # Landroid/os/Message;
 
-    .line 3917
+    .line 3697
     const-string v0, "hangupWaitingOrBackground : Not supported"
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3918
+    .line 3698
     return-void
 .end method
 
@@ -6528,10 +6367,10 @@
     .param p6, "errorInfo"    # Ljava/lang/String;
     .param p7, "result"    # Landroid/os/Message;
 
-    .line 2897
+    .line 2757
     const/4 v0, 0x4
 
-    .line 2898
+    .line 2758
     .local v0, "msgId":I
     const/4 v1, 0x4
 
@@ -6539,13 +6378,13 @@
 
     move-result-object v2
 
-    .line 2899
+    .line 2759
     .local v2, "msgIdString":Ljava/lang/String;
     invoke-static {v1, p7}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v1
 
-    .line 2901
+    .line 2761
     .local v1, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {p0, v1, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -6553,81 +6392,81 @@
 
     if-eqz v3, :cond_0
 
-    .line 2902
+    .line 2762
     return-void
 
-    .line 2905
+    .line 2765
     :cond_0
     invoke-direct {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 2906
+    .line 2766
     nop
 
-    .line 2907
+    .line 2767
     invoke-static/range {p1 .. p6}, Lorg/codeaurora/ims/ImsRadioUtils;->buildHangupRequest(ILjava/lang/String;Ljava/lang/String;ZILjava/lang/String;)Lvendor/qti/hardware/radio/ims/V1_3/HangupRequestInfo;
 
     move-result-object v3
 
-    .line 2910
+    .line 2770
     .local v3, "hangup":Lvendor/qti/hardware/radio/ims/V1_3/HangupRequestInfo;
     :try_start_0
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 2911
+    .line 2771
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV13()Lvendor/qti/hardware/radio/ims/V1_3/IImsRadio;
 
     move-result-object v4
 
-    .line 2912
+    .line 2772
     .local v4, "imsRadioV13":Lvendor/qti/hardware/radio/ims/V1_3/IImsRadio;
     if-eqz v4, :cond_1
 
-    .line 2913
+    .line 2773
     iget v5, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-interface {v4, v5, v3}, Lvendor/qti/hardware/radio/ims/V1_3/IImsRadio;->hangup_1_3(ILvendor/qti/hardware/radio/ims/V1_3/HangupRequestInfo;)V
 
     goto :goto_0
 
-    .line 2915
+    .line 2775
     :cond_1
     const-string v5, "ImsRadioV13 is null. Invoking ImsRadioV10.hangup()"
 
     invoke-static {p0, v5}, Lcom/qualcomm/ims/utils/Log;->w(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 2916
+    .line 2776
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     move-result-object v5
 
     iget v6, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
-    .line 2917
+    .line 2777
     invoke-static {v3}, Lorg/codeaurora/ims/ImsRadioUtils;->migrateHangupRequestInfoFromV13(Lvendor/qti/hardware/radio/ims/V1_3/HangupRequestInfo;)Lvendor/qti/hardware/radio/ims/V1_0/HangupRequestInfo;
 
     move-result-object v7
 
-    .line 2916
+    .line 2776
     invoke-interface {v5, v6, v7}, Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;->hangup(ILvendor/qti/hardware/radio/ims/V1_0/HangupRequestInfo;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2922
+    .line 2782
     .end local v4    # "imsRadioV13":Lvendor/qti/hardware/radio/ims/V1_3/IImsRadio;
     :goto_0
     goto :goto_1
 
-    .line 2919
+    .line 2779
     :catch_0
     move-exception v4
 
-    .line 2920
+    .line 2780
     .local v4, "ex":Ljava/lang/Exception;
     iget v5, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {p0, v5}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 2921
+    .line 2781
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -6646,7 +6485,7 @@
 
     invoke-static {p0, v5}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 2923
+    .line 2783
     .end local v4    # "ex":Ljava/lang/Exception;
     :goto_1
     return-void
@@ -6657,10 +6496,10 @@
     .param p1, "result"    # Landroid/os/Message;
     .param p2, "callId"    # I
 
-    .line 3154
+    .line 2935
     const/16 v0, 0x25
 
-    .line 3155
+    .line 2936
     .local v0, "msgId":I
     const/16 v1, 0x25
 
@@ -6668,13 +6507,13 @@
 
     move-result-object v2
 
-    .line 3156
+    .line 2937
     .local v2, "msgIdString":Ljava/lang/String;
     invoke-static {v1, p1}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v1
 
-    .line 3158
+    .line 2939
     .local v1, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {p0, v1, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -6682,18 +6521,18 @@
 
     if-eqz v3, :cond_0
 
-    .line 3159
+    .line 2940
     return-void
 
-    .line 3162
+    .line 2943
     :cond_0
     invoke-direct {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3164
+    .line 2945
     :try_start_0
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3165
+    .line 2946
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -6720,7 +6559,7 @@
 
     invoke-static {p0, v3}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3167
+    .line 2948
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     move-result-object v3
@@ -6731,20 +6570,20 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3171
+    .line 2952
     goto :goto_0
 
-    .line 3168
+    .line 2949
     :catch_0
     move-exception v3
 
-    .line 3169
+    .line 2950
     .local v3, "ex":Ljava/lang/Exception;
     iget v4, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {p0, v4}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 3170
+    .line 2951
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -6763,7 +6602,7 @@
 
     invoke-static {p0, v4}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3172
+    .line 2953
     .end local v3    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
@@ -6772,7 +6611,7 @@
 .method public isSmsSupported()Z
     .locals 1
 
-    .line 515
+    .line 496
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mImsRadioV12:Lvendor/qti/hardware/radio/ims/V1_2/IImsRadio;
 
     if-eqz v0, :cond_0
@@ -6792,7 +6631,7 @@
     .locals 2
     .param p1, "msg"    # Ljava/lang/String;
 
-    .line 2561
+    .line 2431
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -6817,7 +6656,7 @@
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 2562
+    .line 2432
     return-void
 .end method
 
@@ -6825,7 +6664,7 @@
     .locals 2
     .param p1, "rr"    # Lorg/codeaurora/ims/IFRequest;
 
-    .line 2599
+    .line 2469
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -6858,20 +6697,20 @@
 
     invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->log(Ljava/lang/String;)V
 
-    .line 2600
+    .line 2470
     return-void
 .end method
 
 .method public logUnimplemented()V
     .locals 2
 
-    .line 2574
+    .line 2444
     :try_start_0
     new-instance v0, Ljava/lang/Exception;
 
     invoke-direct {v0}, Ljava/lang/Exception;-><init>()V
 
-    .line 2575
+    .line 2445
     .local v0, "e":Ljava/lang/Exception;
     nop
 
@@ -6880,22 +6719,22 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2576
+    .line 2446
     .end local v0    # "e":Ljava/lang/Exception;
     .restart local p0    # "this":Lorg/codeaurora/ims/ImsSenderRxr;
     :catch_0
     move-exception v0
 
-    .line 2577
+    .line 2447
     .restart local v0    # "e":Ljava/lang/Exception;
     const-string v1, "Unimplemented method. Stack trace: "
 
     invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 2578
+    .line 2448
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 2580
+    .line 2450
     .end local v0    # "e":Ljava/lang/Exception;
     return-void
 .end method
@@ -6904,7 +6743,7 @@
     .locals 2
     .param p1, "msg"    # Ljava/lang/String;
 
-    .line 2565
+    .line 2435
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -6929,7 +6768,7 @@
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->v(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 2566
+    .line 2436
     return-void
 .end method
 
@@ -6938,7 +6777,7 @@
     .param p1, "result"    # Landroid/os/Message;
     .param p2, "callModify"    # Lorg/codeaurora/ims/CallModify;
 
-    .line 3133
+    .line 2914
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -6955,10 +6794,10 @@
 
     invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->logv(Ljava/lang/String;)V
 
-    .line 3134
+    .line 2915
     const/16 v0, 0x12
 
-    .line 3135
+    .line 2916
     .local v0, "msgId":I
     const/16 v1, 0x12
 
@@ -6966,13 +6805,13 @@
 
     move-result-object v2
 
-    .line 3136
+    .line 2917
     .local v2, "msgIdString":Ljava/lang/String;
     invoke-static {v1, p1}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v1
 
-    .line 3138
+    .line 2919
     .local v1, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {p0, v1, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -6980,48 +6819,48 @@
 
     if-eqz v3, :cond_0
 
-    .line 3139
+    .line 2920
     return-void
 
-    .line 3142
+    .line 2923
     :cond_0
     invoke-direct {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3144
+    .line 2925
     :try_start_0
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3145
+    .line 2926
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     move-result-object v3
 
     iget v4, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
-    .line 3146
+    .line 2927
     invoke-static {p2}, Lorg/codeaurora/ims/ImsRadioUtils;->buildCallModifyInfo(Lorg/codeaurora/ims/CallModify;)Lvendor/qti/hardware/radio/ims/V1_0/CallModifyInfo;
 
     move-result-object v5
 
-    .line 3145
+    .line 2926
     invoke-interface {v3, v4, v5}, Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;->modifyCallConfirm(ILvendor/qti/hardware/radio/ims/V1_0/CallModifyInfo;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3150
+    .line 2931
     goto :goto_0
 
-    .line 3147
+    .line 2928
     :catch_0
     move-exception v3
 
-    .line 3148
+    .line 2929
     .local v3, "ex":Ljava/lang/Exception;
     iget v4, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {p0, v4}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 3149
+    .line 2930
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -7040,7 +6879,7 @@
 
     invoke-static {p0, v4}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3151
+    .line 2932
     .end local v3    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
@@ -7051,7 +6890,7 @@
     .param p1, "result"    # Landroid/os/Message;
     .param p2, "callModify"    # Lorg/codeaurora/ims/CallModify;
 
-    .line 3090
+    .line 2871
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -7068,10 +6907,10 @@
 
     invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->logv(Ljava/lang/String;)V
 
-    .line 3091
+    .line 2872
     const/16 v0, 0x11
 
-    .line 3092
+    .line 2873
     .local v0, "msgId":I
     const/16 v1, 0x11
 
@@ -7079,13 +6918,13 @@
 
     move-result-object v2
 
-    .line 3093
+    .line 2874
     .local v2, "msgIdString":Ljava/lang/String;
     invoke-static {v1, p1}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v1
 
-    .line 3095
+    .line 2876
     .local v1, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {p0, v1, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -7093,48 +6932,48 @@
 
     if-eqz v3, :cond_0
 
-    .line 3096
+    .line 2877
     return-void
 
-    .line 3099
+    .line 2880
     :cond_0
     invoke-direct {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3101
+    .line 2882
     :try_start_0
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3102
+    .line 2883
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     move-result-object v3
 
     iget v4, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
-    .line 3103
+    .line 2884
     invoke-static {p2}, Lorg/codeaurora/ims/ImsRadioUtils;->buildCallModifyInfo(Lorg/codeaurora/ims/CallModify;)Lvendor/qti/hardware/radio/ims/V1_0/CallModifyInfo;
 
     move-result-object v5
 
-    .line 3102
+    .line 2883
     invoke-interface {v3, v4, v5}, Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;->modifyCallInitiate(ILvendor/qti/hardware/radio/ims/V1_0/CallModifyInfo;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3107
+    .line 2888
     goto :goto_0
 
-    .line 3104
+    .line 2885
     :catch_0
     move-exception v3
 
-    .line 3105
+    .line 2886
     .local v3, "ex":Ljava/lang/Exception;
     iget v4, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {p0, v4}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 3106
+    .line 2887
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -7153,7 +6992,7 @@
 
     invoke-static {p0, v4}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3108
+    .line 2889
     .end local v3    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
@@ -7163,15 +7002,15 @@
     .locals 6
     .param p1, "response"    # Landroid/os/Message;
 
-    .line 3564
+    .line 3344
     const-string v0, "queryClip"
 
     invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->logv(Ljava/lang/String;)V
 
-    .line 3565
+    .line 3345
     const/16 v0, 0x13
 
-    .line 3566
+    .line 3346
     .local v0, "msgId":I
     const/16 v1, 0x13
 
@@ -7179,13 +7018,13 @@
 
     move-result-object v2
 
-    .line 3567
+    .line 3347
     .local v2, "msgIdString":Ljava/lang/String;
     invoke-static {v1, p1}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v1
 
-    .line 3569
+    .line 3349
     .local v1, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {p0, v1, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -7193,18 +7032,18 @@
 
     if-eqz v3, :cond_0
 
-    .line 3570
+    .line 3350
     return-void
 
-    .line 3573
+    .line 3353
     :cond_0
     invoke-direct {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3575
+    .line 3355
     :try_start_0
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3576
+    .line 3356
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     move-result-object v3
@@ -7215,20 +7054,20 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3580
+    .line 3360
     goto :goto_0
 
-    .line 3577
+    .line 3357
     :catch_0
     move-exception v3
 
-    .line 3578
+    .line 3358
     .local v3, "ex":Ljava/lang/Exception;
     iget v4, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {p0, v4}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 3579
+    .line 3359
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -7245,7 +7084,7 @@
 
     invoke-static {p0, v4}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3581
+    .line 3361
     .end local v3    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
@@ -7258,7 +7097,7 @@
     .param p3, "number"    # Ljava/lang/String;
     .param p4, "response"    # Landroid/os/Message;
 
-    .line 3540
+    .line 3320
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -7287,10 +7126,10 @@
 
     invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->logv(Ljava/lang/String;)V
 
-    .line 3542
+    .line 3322
     const/16 v0, 0x16
 
-    .line 3543
+    .line 3323
     .local v0, "msgId":I
     const/16 v1, 0x16
 
@@ -7298,13 +7137,13 @@
 
     move-result-object v2
 
-    .line 3544
+    .line 3324
     .local v2, "msgIdString":Ljava/lang/String;
     invoke-static {v1, p4}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v1
 
-    .line 3546
+    .line 3326
     .local v1, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {p0, v1, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -7312,29 +7151,29 @@
 
     if-eqz v3, :cond_0
 
-    .line 3547
+    .line 3327
     return-void
 
-    .line 3550
+    .line 3330
     :cond_0
     invoke-direct {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3551
+    .line 3331
     const/4 v3, 0x2
 
     const/4 v4, 0x0
 
-    .line 3552
+    .line 3332
     invoke-static {p1, p2, p3, v3, v4}, Lorg/codeaurora/ims/ImsRadioUtils;->buildCallForwardInfo(IILjava/lang/String;II)Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;
 
     move-result-object v3
 
-    .line 3555
+    .line 3335
     .local v3, "cfInfo":Lvendor/qti/hardware/radio/ims/V1_0/CallForwardInfo;
     :try_start_0
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3556
+    .line 3336
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     move-result-object v4
@@ -7345,20 +7184,20 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3560
+    .line 3340
     goto :goto_0
 
-    .line 3557
+    .line 3337
     :catch_0
     move-exception v4
 
-    .line 3558
+    .line 3338
     .local v4, "ex":Ljava/lang/Exception;
     iget v5, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {p0, v5}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 3559
+    .line 3339
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -7377,7 +7216,7 @@
 
     invoke-static {p0, v5}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3561
+    .line 3341
     .end local v4    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
@@ -7388,7 +7227,7 @@
     .param p1, "serviceClass"    # I
     .param p2, "response"    # Landroid/os/Message;
 
-    .line 3431
+    .line 3211
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -7405,10 +7244,10 @@
 
     invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->logv(Ljava/lang/String;)V
 
-    .line 3432
+    .line 3212
     const/16 v0, 0x18
 
-    .line 3433
+    .line 3213
     .local v0, "msgId":I
     const/16 v1, 0x18
 
@@ -7416,13 +7255,13 @@
 
     move-result-object v2
 
-    .line 3435
+    .line 3215
     .local v2, "msgIdString":Ljava/lang/String;
     invoke-static {v1, p2}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v1
 
-    .line 3437
+    .line 3217
     .local v1, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {p0, v1, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -7430,18 +7269,18 @@
 
     if-eqz v3, :cond_0
 
-    .line 3438
+    .line 3218
     return-void
 
-    .line 3441
+    .line 3221
     :cond_0
     invoke-direct {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3443
+    .line 3223
     :try_start_0
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3444
+    .line 3224
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     move-result-object v3
@@ -7452,20 +7291,20 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3448
+    .line 3228
     goto :goto_0
 
-    .line 3445
+    .line 3225
     :catch_0
     move-exception v3
 
-    .line 3446
+    .line 3226
     .local v3, "ex":Ljava/lang/Exception;
     iget v4, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {p0, v4}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 3447
+    .line 3227
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -7484,7 +7323,7 @@
 
     invoke-static {p0, v4}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3449
+    .line 3229
     .end local v3    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
@@ -7497,7 +7336,7 @@
     .param p3, "serviceClass"    # I
     .param p4, "response"    # Landroid/os/Message;
 
-    .line 3628
+    .line 3408
     invoke-static {p1}, Lorg/codeaurora/ims/ImsSenderRxr;->facilityStringToInt(Ljava/lang/String;)I
 
     move-result v0
@@ -7506,7 +7345,7 @@
 
     invoke-virtual {p0, v1, v0, p4}, Lorg/codeaurora/ims/ImsSenderRxr;->suppSvcStatus(IILandroid/os/Message;)V
 
-    .line 3629
+    .line 3409
     return-void
 .end method
 
@@ -7516,7 +7355,7 @@
     .param p2, "serviceClass"    # I
     .param p3, "response"    # Landroid/os/Message;
 
-    .line 3476
+    .line 3256
     invoke-static {p1}, Lorg/codeaurora/ims/ImsSenderRxr;->facilityStringToInt(Ljava/lang/String;)I
 
     move-result v2
@@ -7533,7 +7372,7 @@
 
     invoke-virtual/range {v0 .. v5}, Lorg/codeaurora/ims/ImsSenderRxr;->suppSvcStatus(II[Ljava/lang/String;ILandroid/os/Message;)V
 
-    .line 3478
+    .line 3258
     return-void
 .end method
 
@@ -7541,10 +7380,10 @@
     .locals 6
     .param p1, "result"    # Landroid/os/Message;
 
-    .line 2926
+    .line 2786
     const/16 v0, 0x1d
 
-    .line 2927
+    .line 2787
     .local v0, "msgId":I
     const/16 v1, 0x1d
 
@@ -7552,13 +7391,13 @@
 
     move-result-object v2
 
-    .line 2928
+    .line 2788
     .local v2, "msgIdString":Ljava/lang/String;
     invoke-static {v1, p1}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v1
 
-    .line 2930
+    .line 2790
     .local v1, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {p0, v1, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -7566,18 +7405,18 @@
 
     if-eqz v3, :cond_0
 
-    .line 2931
+    .line 2791
     return-void
 
-    .line 2934
+    .line 2794
     :cond_0
     invoke-direct {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 2936
+    .line 2796
     :try_start_0
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 2937
+    .line 2797
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     move-result-object v3
@@ -7588,20 +7427,20 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2941
+    .line 2801
     goto :goto_0
 
-    .line 2938
+    .line 2798
     :catch_0
     move-exception v3
 
-    .line 2939
+    .line 2799
     .local v3, "ex":Ljava/lang/Exception;
     iget v4, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {p0, v4}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 2940
+    .line 2800
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -7618,7 +7457,7 @@
 
     invoke-static {p0, v4}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 2942
+    .line 2802
     .end local v3    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
@@ -7628,15 +7467,15 @@
     .locals 6
     .param p1, "response"    # Landroid/os/Message;
 
-    .line 3839
+    .line 3619
     const-string v0, "querySsacStatus"
 
     invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->logv(Ljava/lang/String;)V
 
-    .line 3840
+    .line 3620
     const/16 v0, 0x31
 
-    .line 3841
+    .line 3621
     .local v0, "msgId":I
     const/16 v1, 0x31
 
@@ -7644,13 +7483,13 @@
 
     move-result-object v2
 
-    .line 3842
+    .line 3622
     .local v2, "msgIdString":Ljava/lang/String;
     invoke-static {v1, p1}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v1
 
-    .line 3844
+    .line 3624
     .local v1, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {p0, v1, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -7658,18 +7497,18 @@
 
     if-eqz v3, :cond_0
 
-    .line 3845
+    .line 3625
     return-void
 
-    .line 3848
+    .line 3628
     :cond_0
     invoke-direct {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3850
+    .line 3630
     :try_start_0
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3851
+    .line 3631
     iget-object v3, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mImsRadio:Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     iget v4, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
@@ -7678,20 +7517,20 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3855
+    .line 3635
     goto :goto_0
 
-    .line 3852
+    .line 3632
     :catch_0
     move-exception v3
 
-    .line 3853
+    .line 3633
     .local v3, "ex":Ljava/lang/Exception;
     iget v4, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {p0, v4}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 3854
+    .line 3634
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -7710,7 +7549,7 @@
 
     invoke-static {p0, v4}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3857
+    .line 3637
     .end local v3    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
@@ -7721,7 +7560,7 @@
     .param p1, "msisdn"    # Ljava/lang/String;
     .param p2, "response"    # Landroid/os/Message;
 
-    .line 3973
+    .line 3753
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -7738,10 +7577,10 @@
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3974
+    .line 3754
     const/16 v0, 0x3d
 
-    .line 3975
+    .line 3755
     .local v0, "msgId":I
     const/16 v1, 0x3d
 
@@ -7749,13 +7588,13 @@
 
     move-result-object v2
 
-    .line 3976
+    .line 3756
     .local v2, "msgIdString":Ljava/lang/String;
     invoke-static {v1, p2}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v3
 
-    .line 3978
+    .line 3758
     .local v3, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {p0, v3, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -7763,18 +7602,18 @@
 
     if-eqz v4, :cond_0
 
-    .line 3979
+    .line 3759
     return-void
 
-    .line 3981
+    .line 3761
     :cond_0
     invoke-direct {p0, v3}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3983
+    .line 3763
     :try_start_0
     invoke-virtual {p0, v3}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3984
+    .line 3764
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV14()Lvendor/qti/hardware/radio/ims/V1_4/IImsRadio;
 
     move-result-object v4
@@ -7785,20 +7624,20 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3988
+    .line 3768
     goto :goto_0
 
-    .line 3985
+    .line 3765
     :catch_0
     move-exception v4
 
-    .line 3986
+    .line 3766
     .local v4, "ex":Ljava/lang/Exception;
     iget v5, v3, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {p0, v5}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 3987
+    .line 3767
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -7821,7 +7660,7 @@
 
     invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3989
+    .line 3769
     .end local v4    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
@@ -7831,15 +7670,15 @@
     .locals 6
     .param p1, "response"    # Landroid/os/Message;
 
-    .line 3886
+    .line 3666
     const-string v0, "queryVoltePref"
 
     invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->logv(Ljava/lang/String;)V
 
-    .line 3887
+    .line 3667
     const/16 v0, 0x33
 
-    .line 3888
+    .line 3668
     .local v0, "msgId":I
     const/16 v1, 0x33
 
@@ -7847,13 +7686,13 @@
 
     move-result-object v2
 
-    .line 3889
+    .line 3669
     .local v2, "msgIdString":Ljava/lang/String;
     invoke-static {v1, p1}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v1
 
-    .line 3891
+    .line 3671
     .local v1, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {p0, v1, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -7861,18 +7700,18 @@
 
     if-eqz v3, :cond_0
 
-    .line 3892
+    .line 3672
     return-void
 
-    .line 3895
+    .line 3675
     :cond_0
     invoke-direct {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3897
+    .line 3677
     :try_start_0
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3898
+    .line 3678
     iget-object v3, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mImsRadio:Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     iget v4, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
@@ -7881,20 +7720,20 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3902
+    .line 3682
     goto :goto_0
 
-    .line 3899
+    .line 3679
     :catch_0
     move-exception v3
 
-    .line 3900
+    .line 3680
     .local v3, "ex":Ljava/lang/Exception;
     iget v4, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {p0, v4}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 3901
+    .line 3681
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -7913,7 +7752,7 @@
 
     invoke-static {p0, v4}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3904
+    .line 3684
     .end local v3    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
@@ -7923,15 +7762,15 @@
     .locals 6
     .param p1, "response"    # Landroid/os/Message;
 
-    .line 3817
+    .line 3597
     const-string v0, "queryVopsStatus"
 
     invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->logv(Ljava/lang/String;)V
 
-    .line 3818
+    .line 3598
     const/16 v0, 0x30
 
-    .line 3819
+    .line 3599
     .local v0, "msgId":I
     const/16 v1, 0x30
 
@@ -7939,13 +7778,13 @@
 
     move-result-object v2
 
-    .line 3820
+    .line 3600
     .local v2, "msgIdString":Ljava/lang/String;
     invoke-static {v1, p1}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v1
 
-    .line 3822
+    .line 3602
     .local v1, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {p0, v1, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -7953,18 +7792,18 @@
 
     if-eqz v3, :cond_0
 
-    .line 3823
+    .line 3603
     return-void
 
-    .line 3826
+    .line 3606
     :cond_0
     invoke-direct {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3828
+    .line 3608
     :try_start_0
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3829
+    .line 3609
     iget-object v3, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mImsRadio:Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     iget v4, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
@@ -7973,20 +7812,20 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3833
+    .line 3613
     goto :goto_0
 
-    .line 3830
+    .line 3610
     :catch_0
     move-exception v3
 
-    .line 3831
+    .line 3611
     .local v3, "ex":Ljava/lang/Exception;
     iget v4, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {p0, v4}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 3832
+    .line 3612
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -8005,7 +7844,7 @@
 
     invoke-static {p0, v4}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3835
+    .line 3615
     .end local v3    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
@@ -8017,20 +7856,20 @@
     .param p2, "what"    # I
     .param p3, "obj"    # Ljava/lang/Object;
 
-    .line 750
+    .line 725
     new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrant;
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-direct {v0, p1, p2, p3, v1}, Lorg/codeaurora/ims/WakeLockRegistrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;Landroid/os/PowerManager$WakeLock;)V
 
-    .line 751
+    .line 726
     .local v0, "r":Lorg/codeaurora/telephony/utils/Registrant;
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mAutoRejectRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     invoke-virtual {v1, v0}, Lorg/codeaurora/telephony/utils/RegistrantList;->add(Lorg/codeaurora/telephony/utils/Registrant;)V
 
-    .line 752
+    .line 727
     return-void
 .end method
 
@@ -8040,20 +7879,20 @@
     .param p2, "what"    # I
     .param p3, "obj"    # Ljava/lang/Object;
 
-    .line 667
+    .line 642
     new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrant;
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-direct {v0, p1, p2, p3, v1}, Lorg/codeaurora/ims/WakeLockRegistrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;Landroid/os/PowerManager$WakeLock;)V
 
-    .line 668
+    .line 643
     .local v0, "r":Lorg/codeaurora/telephony/utils/Registrant;
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mGeolocationRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     invoke-virtual {v1, v0}, Lorg/codeaurora/telephony/utils/RegistrantList;->add(Lorg/codeaurora/telephony/utils/Registrant;)V
 
-    .line 669
+    .line 644
     return-void
 .end method
 
@@ -8063,20 +7902,20 @@
     .param p2, "what"    # I
     .param p3, "obj"    # Ljava/lang/Object;
 
-    .line 631
+    .line 606
     new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrant;
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-direct {v0, p1, p2, p3, v1}, Lorg/codeaurora/ims/WakeLockRegistrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;Landroid/os/PowerManager$WakeLock;)V
 
-    .line 632
+    .line 607
     .local v0, "r":Lorg/codeaurora/telephony/utils/Registrant;
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mHandoverStatusRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     invoke-virtual {v1, v0}, Lorg/codeaurora/telephony/utils/RegistrantList;->add(Lorg/codeaurora/telephony/utils/Registrant;)V
 
-    .line 633
+    .line 608
     return-void
 .end method
 
@@ -8086,12 +7925,12 @@
     .param p2, "what"    # I
     .param p3, "obj"    # Ljava/lang/Object;
 
-    .line 594
+    .line 569
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mImsSubConfigChangeRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     invoke-virtual {v0, p1, p2, p3}, Lorg/codeaurora/telephony/utils/RegistrantList;->addUnique(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 595
+    .line 570
     return-void
 .end method
 
@@ -8101,20 +7940,20 @@
     .param p2, "what"    # I
     .param p3, "obj"    # Ljava/lang/Object;
 
-    .line 2317
+    .line 2187
     new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrant;
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-direct {v0, p1, p2, p3, v1}, Lorg/codeaurora/ims/WakeLockRegistrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;Landroid/os/PowerManager$WakeLock;)V
 
-    .line 2318
+    .line 2188
     .local v0, "r":Lorg/codeaurora/telephony/utils/Registrant;
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mModifyCallRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     invoke-virtual {v1, v0}, Lorg/codeaurora/telephony/utils/RegistrantList;->add(Lorg/codeaurora/telephony/utils/Registrant;)V
 
-    .line 2319
+    .line 2189
     return-void
 .end method
 
@@ -8124,20 +7963,20 @@
     .param p2, "what"    # I
     .param p3, "obj"    # Ljava/lang/Object;
 
-    .line 780
+    .line 755
     new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrant;
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-direct {v0, p1, p2, p3, v1}, Lorg/codeaurora/ims/WakeLockRegistrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;Landroid/os/PowerManager$WakeLock;)V
 
-    .line 781
+    .line 756
     .local v0, "r":Lorg/codeaurora/telephony/utils/Registrant;
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mMotoVopsRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     invoke-virtual {v1, v0}, Lorg/codeaurora/telephony/utils/RegistrantList;->add(Lorg/codeaurora/telephony/utils/Registrant;)V
 
-    .line 782
+    .line 757
     return-void
 .end method
 
@@ -8147,20 +7986,20 @@
     .param p2, "what"    # I
     .param p3, "obj"    # Ljava/lang/Object;
 
-    .line 766
+    .line 741
     new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrant;
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-direct {v0, p1, p2, p3, v1}, Lorg/codeaurora/ims/WakeLockRegistrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;Landroid/os/PowerManager$WakeLock;)V
 
-    .line 767
+    .line 742
     .local v0, "r":Lorg/codeaurora/telephony/utils/Registrant;
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mMultiIdentityInfoPendingRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     invoke-virtual {v1, v0}, Lorg/codeaurora/telephony/utils/RegistrantList;->add(Lorg/codeaurora/telephony/utils/Registrant;)V
 
-    .line 768
+    .line 743
     return-void
 .end method
 
@@ -8170,20 +8009,20 @@
     .param p2, "what"    # I
     .param p3, "obj"    # Ljava/lang/Object;
 
-    .line 760
+    .line 735
     new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrant;
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-direct {v0, p1, p2, p3, v1}, Lorg/codeaurora/ims/WakeLockRegistrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;Landroid/os/PowerManager$WakeLock;)V
 
-    .line 761
+    .line 736
     .local v0, "r":Lorg/codeaurora/telephony/utils/Registrant;
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mMultiIdentityStatusChangeRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     invoke-virtual {v1, v0}, Lorg/codeaurora/telephony/utils/RegistrantList;->add(Lorg/codeaurora/telephony/utils/Registrant;)V
 
-    .line 762
+    .line 737
     return-void
 .end method
 
@@ -8193,20 +8032,20 @@
     .param p2, "what"    # I
     .param p3, "obj"    # Ljava/lang/Object;
 
-    .line 2326
+    .line 2196
     new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrant;
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-direct {v0, p1, p2, p3, v1}, Lorg/codeaurora/ims/WakeLockRegistrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;Landroid/os/PowerManager$WakeLock;)V
 
-    .line 2327
+    .line 2197
     .local v0, "r":Lorg/codeaurora/telephony/utils/Registrant;
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mMwiRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     invoke-virtual {v1, v0}, Lorg/codeaurora/telephony/utils/RegistrantList;->add(Lorg/codeaurora/telephony/utils/Registrant;)V
 
-    .line 2328
+    .line 2198
     return-void
 .end method
 
@@ -8216,20 +8055,20 @@
     .param p2, "what"    # I
     .param p3, "obj"    # Ljava/lang/Object;
 
-    .line 685
+    .line 660
     new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrant;
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-direct {v0, p1, p2, p3, v1}, Lorg/codeaurora/ims/WakeLockRegistrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;Landroid/os/PowerManager$WakeLock;)V
 
-    .line 686
+    .line 661
     .local v0, "r":Lorg/codeaurora/telephony/utils/Registrant;
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mParticipantStatusRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     invoke-virtual {v1, v0}, Lorg/codeaurora/telephony/utils/RegistrantList;->add(Lorg/codeaurora/telephony/utils/Registrant;)V
 
-    .line 687
+    .line 662
     return-void
 .end method
 
@@ -8239,24 +8078,148 @@
     .param p2, "what"    # I
     .param p3, "obj"    # Ljava/lang/Object;
 
-    .line 640
+    .line 615
     new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrant;
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-direct {v0, p1, p2, p3, v1}, Lorg/codeaurora/ims/WakeLockRegistrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;Landroid/os/PowerManager$WakeLock;)V
 
-    .line 641
+    .line 616
     .local v0, "r":Lorg/codeaurora/telephony/utils/Registrant;
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mRefreshConfInfoRegistrations:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     invoke-virtual {v1, v0}, Lorg/codeaurora/telephony/utils/RegistrantList;->add(Lorg/codeaurora/telephony/utils/Registrant;)V
 
-    .line 642
+    .line 617
     return-void
 .end method
 
 .method public registerForRegistrationBlockStatus(Landroid/os/Handler;ILjava/lang/Object;)V
+    .locals 2
+    .param p1, "h"    # Landroid/os/Handler;
+    .param p2, "what"    # I
+    .param p3, "obj"    # Ljava/lang/Object;
+
+    .line 669
+    new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrant;
+
+    iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
+
+    invoke-direct {v0, p1, p2, p3, v1}, Lorg/codeaurora/ims/WakeLockRegistrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;Landroid/os/PowerManager$WakeLock;)V
+
+    .line 670
+    .local v0, "r":Lorg/codeaurora/telephony/utils/Registrant;
+    iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mRegistrationBlockStatusRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
+
+    invoke-virtual {v1, v0}, Lorg/codeaurora/telephony/utils/RegistrantList;->add(Lorg/codeaurora/telephony/utils/Registrant;)V
+
+    .line 671
+    return-void
+.end method
+
+.method public registerForRttMessage(Landroid/os/Handler;ILjava/lang/Object;)V
+    .locals 1
+    .param p1, "h"    # Landroid/os/Handler;
+    .param p2, "what"    # I
+    .param p3, "obj"    # Ljava/lang/Object;
+
+    .line 3717
+    iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mRttMessageRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
+
+    invoke-virtual {v0, p1, p2, p3}, Lorg/codeaurora/telephony/utils/RegistrantList;->addUnique(Landroid/os/Handler;ILjava/lang/Object;)V
+
+    .line 3718
+    return-void
+.end method
+
+.method public registerForSrvStatusUpdate(Landroid/os/Handler;ILjava/lang/Object;)V
+    .locals 2
+    .param p1, "h"    # Landroid/os/Handler;
+    .param p2, "what"    # I
+    .param p3, "obj"    # Ljava/lang/Object;
+
+    .line 624
+    new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrant;
+
+    iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
+
+    invoke-direct {v0, p1, p2, p3, v1}, Lorg/codeaurora/ims/WakeLockRegistrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;Landroid/os/PowerManager$WakeLock;)V
+
+    .line 625
+    .local v0, "r":Lorg/codeaurora/telephony/utils/Registrant;
+    iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mSrvStatusRegistrations:Lorg/codeaurora/telephony/utils/RegistrantList;
+
+    invoke-virtual {v1, v0}, Lorg/codeaurora/telephony/utils/RegistrantList;->add(Lorg/codeaurora/telephony/utils/Registrant;)V
+
+    .line 626
+    return-void
+.end method
+
+.method public registerForSsacStatusChanged(Landroid/os/Handler;ILjava/lang/Object;)V
+    .locals 2
+    .param p1, "h"    # Landroid/os/Handler;
+    .param p2, "what"    # I
+    .param p3, "obj"    # Ljava/lang/Object;
+
+    .line 577
+    new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrant;
+
+    iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
+
+    invoke-direct {v0, p1, p2, p3, v1}, Lorg/codeaurora/ims/WakeLockRegistrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;Landroid/os/PowerManager$WakeLock;)V
+
+    .line 578
+    .local v0, "r":Lorg/codeaurora/telephony/utils/Registrant;
+    iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mSsaccRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
+
+    invoke-virtual {v1, v0}, Lorg/codeaurora/telephony/utils/RegistrantList;->add(Lorg/codeaurora/telephony/utils/Registrant;)V
+
+    .line 579
+    return-void
+.end method
+
+.method public registerForSuppServiceIndication(Landroid/os/Handler;ILjava/lang/Object;)V
+    .locals 1
+    .param p1, "h"    # Landroid/os/Handler;
+    .param p2, "what"    # I
+    .param p3, "obj"    # Ljava/lang/Object;
+
+    .line 686
+    new-instance v0, Lorg/codeaurora/telephony/utils/Registrant;
+
+    invoke-direct {v0, p1, p2, p3}, Lorg/codeaurora/telephony/utils/Registrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;)V
+
+    iput-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mSsIndicationRegistrant:Lorg/codeaurora/telephony/utils/Registrant;
+
+    .line 687
+    return-void
+.end method
+
+.method public registerForTtyStatusChanged(Landroid/os/Handler;ILjava/lang/Object;)V
+    .locals 2
+    .param p1, "h"    # Landroid/os/Handler;
+    .param p2, "what"    # I
+    .param p3, "obj"    # Ljava/lang/Object;
+
+    .line 633
+    new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrant;
+
+    iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
+
+    invoke-direct {v0, p1, p2, p3, v1}, Lorg/codeaurora/ims/WakeLockRegistrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;Landroid/os/PowerManager$WakeLock;)V
+
+    .line 634
+    .local v0, "r":Lorg/codeaurora/telephony/utils/Registrant;
+    iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mTtyStatusRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
+
+    invoke-virtual {v1, v0}, Lorg/codeaurora/telephony/utils/RegistrantList;->add(Lorg/codeaurora/telephony/utils/Registrant;)V
+
+    .line 635
+    return-void
+.end method
+
+.method public registerForUssdInfo(Landroid/os/Handler;ILjava/lang/Object;)V
     .locals 2
     .param p1, "h"    # Landroid/os/Handler;
     .param p2, "what"    # I
@@ -8271,135 +8234,11 @@
 
     .line 695
     .local v0, "r":Lorg/codeaurora/telephony/utils/Registrant;
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mRegistrationBlockStatusRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
-
-    invoke-virtual {v1, v0}, Lorg/codeaurora/telephony/utils/RegistrantList;->add(Lorg/codeaurora/telephony/utils/Registrant;)V
-
-    .line 696
-    return-void
-.end method
-
-.method public registerForRttMessage(Landroid/os/Handler;ILjava/lang/Object;)V
-    .locals 1
-    .param p1, "h"    # Landroid/os/Handler;
-    .param p2, "what"    # I
-    .param p3, "obj"    # Ljava/lang/Object;
-
-    .line 3937
-    iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mRttMessageRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
-
-    invoke-virtual {v0, p1, p2, p3}, Lorg/codeaurora/telephony/utils/RegistrantList;->addUnique(Landroid/os/Handler;ILjava/lang/Object;)V
-
-    .line 3938
-    return-void
-.end method
-
-.method public registerForSrvStatusUpdate(Landroid/os/Handler;ILjava/lang/Object;)V
-    .locals 2
-    .param p1, "h"    # Landroid/os/Handler;
-    .param p2, "what"    # I
-    .param p3, "obj"    # Ljava/lang/Object;
-
-    .line 649
-    new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrant;
-
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
-
-    invoke-direct {v0, p1, p2, p3, v1}, Lorg/codeaurora/ims/WakeLockRegistrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;Landroid/os/PowerManager$WakeLock;)V
-
-    .line 650
-    .local v0, "r":Lorg/codeaurora/telephony/utils/Registrant;
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mSrvStatusRegistrations:Lorg/codeaurora/telephony/utils/RegistrantList;
-
-    invoke-virtual {v1, v0}, Lorg/codeaurora/telephony/utils/RegistrantList;->add(Lorg/codeaurora/telephony/utils/Registrant;)V
-
-    .line 651
-    return-void
-.end method
-
-.method public registerForSsacStatusChanged(Landroid/os/Handler;ILjava/lang/Object;)V
-    .locals 2
-    .param p1, "h"    # Landroid/os/Handler;
-    .param p2, "what"    # I
-    .param p3, "obj"    # Ljava/lang/Object;
-
-    .line 602
-    new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrant;
-
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
-
-    invoke-direct {v0, p1, p2, p3, v1}, Lorg/codeaurora/ims/WakeLockRegistrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;Landroid/os/PowerManager$WakeLock;)V
-
-    .line 603
-    .local v0, "r":Lorg/codeaurora/telephony/utils/Registrant;
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mSsaccRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
-
-    invoke-virtual {v1, v0}, Lorg/codeaurora/telephony/utils/RegistrantList;->add(Lorg/codeaurora/telephony/utils/Registrant;)V
-
-    .line 604
-    return-void
-.end method
-
-.method public registerForSuppServiceIndication(Landroid/os/Handler;ILjava/lang/Object;)V
-    .locals 1
-    .param p1, "h"    # Landroid/os/Handler;
-    .param p2, "what"    # I
-    .param p3, "obj"    # Ljava/lang/Object;
-
-    .line 711
-    new-instance v0, Lorg/codeaurora/telephony/utils/Registrant;
-
-    invoke-direct {v0, p1, p2, p3}, Lorg/codeaurora/telephony/utils/Registrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;)V
-
-    iput-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mSsIndicationRegistrant:Lorg/codeaurora/telephony/utils/Registrant;
-
-    .line 712
-    return-void
-.end method
-
-.method public registerForTtyStatusChanged(Landroid/os/Handler;ILjava/lang/Object;)V
-    .locals 2
-    .param p1, "h"    # Landroid/os/Handler;
-    .param p2, "what"    # I
-    .param p3, "obj"    # Ljava/lang/Object;
-
-    .line 658
-    new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrant;
-
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
-
-    invoke-direct {v0, p1, p2, p3, v1}, Lorg/codeaurora/ims/WakeLockRegistrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;Landroid/os/PowerManager$WakeLock;)V
-
-    .line 659
-    .local v0, "r":Lorg/codeaurora/telephony/utils/Registrant;
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mTtyStatusRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
-
-    invoke-virtual {v1, v0}, Lorg/codeaurora/telephony/utils/RegistrantList;->add(Lorg/codeaurora/telephony/utils/Registrant;)V
-
-    .line 660
-    return-void
-.end method
-
-.method public registerForUssdInfo(Landroid/os/Handler;ILjava/lang/Object;)V
-    .locals 2
-    .param p1, "h"    # Landroid/os/Handler;
-    .param p2, "what"    # I
-    .param p3, "obj"    # Ljava/lang/Object;
-
-    .line 719
-    new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrant;
-
-    iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
-
-    invoke-direct {v0, p1, p2, p3, v1}, Lorg/codeaurora/ims/WakeLockRegistrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;Landroid/os/PowerManager$WakeLock;)V
-
-    .line 720
-    .local v0, "r":Lorg/codeaurora/telephony/utils/Registrant;
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mUssdInfoRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     invoke-virtual {v1, v0}, Lorg/codeaurora/telephony/utils/RegistrantList;->add(Lorg/codeaurora/telephony/utils/Registrant;)V
 
-    .line 721
+    .line 696
     return-void
 .end method
 
@@ -8409,20 +8248,20 @@
     .param p2, "what"    # I
     .param p3, "obj"    # Ljava/lang/Object;
 
-    .line 676
+    .line 651
     new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrant;
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-direct {v0, p1, p2, p3, v1}, Lorg/codeaurora/ims/WakeLockRegistrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;Landroid/os/PowerManager$WakeLock;)V
 
-    .line 677
+    .line 652
     .local v0, "r":Lorg/codeaurora/telephony/utils/Registrant;
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mVoWiFiCallQualityRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     invoke-virtual {v1, v0}, Lorg/codeaurora/telephony/utils/RegistrantList;->add(Lorg/codeaurora/telephony/utils/Registrant;)V
 
-    .line 678
+    .line 653
     return-void
 .end method
 
@@ -8432,12 +8271,12 @@
     .param p2, "what"    # I
     .param p3, "obj"    # Ljava/lang/Object;
 
-    .line 3945
+    .line 3725
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mVoiceInfoStatusRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     invoke-virtual {v0, p1, p2, p3}, Lorg/codeaurora/telephony/utils/RegistrantList;->addUnique(Landroid/os/Handler;ILjava/lang/Object;)V
 
-    .line 3946
+    .line 3726
     return-void
 .end method
 
@@ -8447,20 +8286,20 @@
     .param p2, "what"    # I
     .param p3, "obj"    # Ljava/lang/Object;
 
-    .line 611
+    .line 586
     new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrant;
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-direct {v0, p1, p2, p3, v1}, Lorg/codeaurora/ims/WakeLockRegistrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;Landroid/os/PowerManager$WakeLock;)V
 
-    .line 612
+    .line 587
     .local v0, "r":Lorg/codeaurora/telephony/utils/Registrant;
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mVopsRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     invoke-virtual {v1, v0}, Lorg/codeaurora/telephony/utils/RegistrantList;->add(Lorg/codeaurora/telephony/utils/Registrant;)V
 
-    .line 613
+    .line 588
     return-void
 .end method
 
@@ -8470,27 +8309,27 @@
     .param p2, "what"    # I
     .param p3, "obj"    # Ljava/lang/Object;
 
-    .line 620
+    .line 595
     new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrant;
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-direct {v0, p1, p2, p3, v1}, Lorg/codeaurora/ims/WakeLockRegistrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;Landroid/os/PowerManager$WakeLock;)V
 
-    .line 621
+    .line 596
     .local v0, "r":Lorg/codeaurora/telephony/utils/Registrant;
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mWfcRoamingModeConfigRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     invoke-virtual {v1, v0}, Lorg/codeaurora/telephony/utils/RegistrantList;->add(Lorg/codeaurora/telephony/utils/Registrant;)V
 
-    .line 622
+    .line 597
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mWfcRoamingModeConfigRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     new-instance v2, Lorg/codeaurora/telephony/utils/AsyncResult;
 
     iget-boolean v3, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mWfcRoamingConfigurationSupport:Z
 
-    .line 623
+    .line 598
     invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v3
@@ -8499,10 +8338,10 @@
 
     invoke-direct {v2, v4, v3, v4}, Lorg/codeaurora/telephony/utils/AsyncResult;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Throwable;)V
 
-    .line 622
+    .line 597
     invoke-virtual {v1, v2}, Lorg/codeaurora/telephony/utils/RegistrantList;->notifyRegistrants(Lorg/codeaurora/telephony/utils/AsyncResult;)V
 
-    .line 624
+    .line 599
     return-void
 .end method
 
@@ -8510,15 +8349,15 @@
     .locals 3
     .param p1, "listener"    # Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioServiceListener;
 
-    .line 335
+    .line 327
     if-eqz p1, :cond_2
 
-    .line 338
+    .line 330
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mListeners:Ljava/util/List;
 
     monitor-enter v0
 
-    .line 339
+    .line 331
     :try_start_0
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mListeners:Ljava/util/List;
 
@@ -8528,19 +8367,19 @@
 
     if-nez v1, :cond_1
 
-    .line 340
+    .line 332
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mListeners:Ljava/util/List;
 
     invoke-interface {v1, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 342
+    .line 334
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     move-result-object v1
 
     if-eqz v1, :cond_0
 
-    .line 343
+    .line 335
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mPhoneId:Ljava/lang/Integer;
 
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
@@ -8551,7 +8390,7 @@
 
     goto :goto_0
 
-    .line 345
+    .line 337
     :cond_0
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mPhoneId:Ljava/lang/Integer;
 
@@ -8563,7 +8402,7 @@
 
     goto :goto_0
 
-    .line 348
+    .line 340
     :cond_1
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -8581,14 +8420,14 @@
 
     invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 350
+    .line 342
     :goto_0
     monitor-exit v0
 
-    .line 351
+    .line 343
     return-void
 
-    .line 350
+    .line 342
     :catchall_0
     move-exception v1
 
@@ -8598,7 +8437,7 @@
 
     throw v1
 
-    .line 336
+    .line 328
     :cond_2
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -8613,12 +8452,12 @@
     .locals 1
     .param p1, "result"    # Landroid/os/Message;
 
-    .line 3908
+    .line 3688
     const-string v0, "rejectCall : Not supported"
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3909
+    .line 3689
     return-void
 .end method
 
@@ -8636,7 +8475,7 @@
         }
     .end annotation
 
-    .line 3993
+    .line 3773
     .local p1, "linesInfo":Ljava/util/Collection;, "Ljava/util/Collection<Lorg/codeaurora/ims/MultiIdentityLineInfo;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -8654,10 +8493,10 @@
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3994
+    .line 3774
     const/16 v0, 0x3c
 
-    .line 3995
+    .line 3775
     .local v0, "msgId":I
     const/16 v1, 0x3c
 
@@ -8665,13 +8504,13 @@
 
     move-result-object v2
 
-    .line 3996
+    .line 3776
     .local v2, "msgIdString":Ljava/lang/String;
     invoke-static {v1, p2}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v3
 
-    .line 3998
+    .line 3778
     .local v3, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {p0, v3, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -8679,19 +8518,19 @@
 
     if-eqz v4, :cond_0
 
-    .line 3999
+    .line 3779
     return-void
 
-    .line 4002
+    .line 3782
     :cond_0
     invoke-direct {p0, v3}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 4003
+    .line 3783
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    .line 4004
+    .line 3784
     .local v4, "halLinesInfo":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lvendor/qti/hardware/radio/ims/V1_4/MultiIdentityLineInfoHal;>;"
     invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
@@ -8710,30 +8549,30 @@
 
     check-cast v6, Lorg/codeaurora/ims/MultiIdentityLineInfo;
 
-    .line 4005
+    .line 3785
     .local v6, "line":Lorg/codeaurora/ims/MultiIdentityLineInfo;
     nop
 
-    .line 4006
+    .line 3786
     invoke-static {v6}, Lorg/codeaurora/ims/ImsRadioUtilsV14;->toMultiIdentityLineInfoHal(Lorg/codeaurora/ims/MultiIdentityLineInfo;)Lvendor/qti/hardware/radio/ims/V1_4/MultiIdentityLineInfoHal;
 
     move-result-object v7
 
-    .line 4007
+    .line 3787
     .local v7, "lineInfo":Lvendor/qti/hardware/radio/ims/V1_4/MultiIdentityLineInfoHal;
     invoke-virtual {v4, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4008
+    .line 3788
     .end local v6    # "line":Lorg/codeaurora/ims/MultiIdentityLineInfo;
     .end local v7    # "lineInfo":Lvendor/qti/hardware/radio/ims/V1_4/MultiIdentityLineInfoHal;
     goto :goto_0
 
-    .line 4010
+    .line 3790
     :cond_1
     :try_start_0
     invoke-virtual {p0, v3}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 4011
+    .line 3791
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV14()Lvendor/qti/hardware/radio/ims/V1_4/IImsRadio;
 
     move-result-object v5
@@ -8744,20 +8583,20 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 4015
+    .line 3795
     goto :goto_1
 
-    .line 4012
+    .line 3792
     :catch_0
     move-exception v5
 
-    .line 4013
+    .line 3793
     .local v5, "ex":Ljava/lang/Exception;
     iget v6, v3, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {p0, v6}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 4014
+    .line 3794
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -8780,7 +8619,7 @@
 
     invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 4016
+    .line 3796
     .end local v5    # "ex":Ljava/lang/Exception;
     :goto_1
     return-void
@@ -8791,10 +8630,10 @@
     .param p1, "result"    # Landroid/os/Message;
     .param p2, "callId"    # I
 
-    .line 3175
+    .line 2956
     const/16 v0, 0x26
 
-    .line 3176
+    .line 2957
     .local v0, "msgId":I
     const/16 v1, 0x26
 
@@ -8802,13 +8641,13 @@
 
     move-result-object v2
 
-    .line 3177
+    .line 2958
     .local v2, "msgIdString":Ljava/lang/String;
     invoke-static {v1, p1}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v1
 
-    .line 3179
+    .line 2960
     .local v1, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {p0, v1, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -8816,18 +8655,18 @@
 
     if-eqz v3, :cond_0
 
-    .line 3180
+    .line 2961
     return-void
 
-    .line 3183
+    .line 2964
     :cond_0
     invoke-direct {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3185
+    .line 2966
     :try_start_0
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3186
+    .line 2967
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -8854,7 +8693,7 @@
 
     invoke-static {p0, v3}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3188
+    .line 2969
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     move-result-object v3
@@ -8865,20 +8704,20 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3192
+    .line 2973
     goto :goto_0
 
-    .line 3189
+    .line 2970
     :catch_0
     move-exception v3
 
-    .line 3190
+    .line 2971
     .local v3, "ex":Ljava/lang/Exception;
     iget v4, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {p0, v4}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 3191
+    .line 2972
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -8897,7 +8736,7 @@
 
     invoke-static {p0, v4}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3193
+    .line 2974
     .end local v3    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
@@ -8913,7 +8752,7 @@
     .param p6, "errorCause"    # I
     .param p7, "result"    # Landroid/os/Message;
 
-    .line 3240
+    .line 3021
     move-object/from16 v1, p0
 
     move/from16 v2, p1
@@ -8930,7 +8769,7 @@
 
     move-result-object v7
 
-    .line 3241
+    .line 3022
     .local v7, "msgIdString":Ljava/lang/String;
     move-object/from16 v8, p7
 
@@ -8938,7 +8777,7 @@
 
     move-result-object v9
 
-    .line 3243
+    .line 3024
     .local v9, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {v1, v9, v7}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -8946,20 +8785,20 @@
 
     if-eqz v0, :cond_0
 
-    .line 3244
+    .line 3025
     return-void
 
-    .line 3247
+    .line 3028
     :cond_0
     invoke-direct {v1, v9}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3249
+    .line 3030
     :try_start_0
     invoke-virtual {v1, v9}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3250
+    .line 3031
     const/16 v0, 0x2d
 
     const-string v10, " errorCause:"
@@ -8976,13 +8815,13 @@
 
     if-ne v2, v0, :cond_1
 
-    .line 3251
+    .line 3032
     :try_start_1
     invoke-static/range {p2 .. p6}, Lorg/codeaurora/ims/ImsRadioUtils;->buildConfigInfo(IZILjava/lang/String;I)Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;
 
     move-result-object v0
 
-    .line 3253
+    .line 3034
     .local v0, "configInfo":Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -9024,7 +8863,7 @@
 
     invoke-static {v1, v2}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3256
+    .line 3037
     invoke-direct/range {p0 .. p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     move-result-object v2
@@ -9033,27 +8872,27 @@
 
     invoke-interface {v2, v10, v0}, Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;->getConfig(ILvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;)V
 
-    .line 3257
+    .line 3038
     .end local v0    # "configInfo":Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;
     goto :goto_0
 
-    .line 3258
+    .line 3039
     :cond_1
-    invoke-direct/range {p0 .. p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV16()Lvendor/qti/hardware/radio/ims/V1_6/IImsRadio;
+    invoke-direct/range {p0 .. p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV15()Lvendor/qti/hardware/radio/ims/V1_5/IImsRadio;
 
     move-result-object v0
 
-    .line 3259
-    .local v0, "imsRadioV16":Lvendor/qti/hardware/radio/ims/V1_6/IImsRadio;
+    .line 3040
+    .local v0, "imsRadioV15":Lvendor/qti/hardware/radio/ims/V1_5/IImsRadio;
     nop
 
-    .line 3260
-    invoke-static/range {p2 .. p6}, Lorg/codeaurora/ims/ImsRadioUtilsV16;->buildConfigInfo(IZILjava/lang/String;I)Lvendor/qti/hardware/radio/ims/V1_6/ConfigInfo;
+    .line 3041
+    invoke-static/range {p2 .. p6}, Lorg/codeaurora/ims/ImsRadioUtilsV15;->buildConfigInfo(IZILjava/lang/String;I)Lvendor/qti/hardware/radio/ims/V1_5/ConfigInfo;
 
     move-result-object v2
 
-    .line 3261
-    .local v2, "configInfo":Lvendor/qti/hardware/radio/ims/V1_6/ConfigInfo;
+    .line 3042
+    .local v2, "configInfo":Lvendor/qti/hardware/radio/ims/V1_5/ConfigInfo;
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -9068,7 +8907,7 @@
 
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v14, v2, Lvendor/qti/hardware/radio/ims/V1_6/ConfigInfo;->item:I
+    iget v14, v2, Lvendor/qti/hardware/radio/ims/V1_5/ConfigInfo;->item:I
 
     invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -9094,80 +8933,78 @@
 
     invoke-static {v1, v8}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3264
+    .line 3045
     if-eqz v0, :cond_2
 
-    .line 3265
+    .line 3046
     iget v8, v9, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
-    invoke-interface {v0, v8, v2}, Lvendor/qti/hardware/radio/ims/V1_6/IImsRadio;->setConfig_1_6(ILvendor/qti/hardware/radio/ims/V1_6/ConfigInfo;)V
+    invoke-interface {v0, v8, v2}, Lvendor/qti/hardware/radio/ims/V1_5/IImsRadio;->setConfig_1_5(ILvendor/qti/hardware/radio/ims/V1_5/ConfigInfo;)V
 
     goto :goto_0
 
-    .line 3267
+    .line 3048
     :cond_2
-    nop
+    iget v8, v2, Lvendor/qti/hardware/radio/ims/V1_5/ConfigInfo;->item:I
 
-    .line 3268
-    invoke-static {v2}, Lorg/codeaurora/ims/ImsRadioUtilsV15;->migrateConfigInfoFromV16(Lvendor/qti/hardware/radio/ims/V1_6/ConfigInfo;)Lvendor/qti/hardware/radio/ims/V1_5/ConfigInfo;
+    invoke-static {v8}, Lorg/codeaurora/ims/ImsRadioUtilsV15;->isConfigItemIntroducedInV15(I)Ljava/lang/Boolean;
 
     move-result-object v8
 
-    .line 3269
-    .local v8, "configInfoV15":Lvendor/qti/hardware/radio/ims/V1_5/ConfigInfo;
-    invoke-direct/range {p0 .. p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV15()Lvendor/qti/hardware/radio/ims/V1_5/IImsRadio;
+    invoke-virtual {v8}, Ljava/lang/Boolean;->booleanValue()Z
 
-    move-result-object v10
+    move-result v8
 
-    if-eqz v10, :cond_3
+    if-eqz v8, :cond_3
 
-    .line 3270
-    invoke-direct/range {p0 .. p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV15()Lvendor/qti/hardware/radio/ims/V1_5/IImsRadio;
+    .line 3049
+    const-string v8, "Item is present in V15 HAL which is unavailable. So Ignore"
 
-    move-result-object v10
+    invoke-static {v1, v8}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget v11, v9, Lorg/codeaurora/ims/IFRequest;->mSerial:I
+    .line 3050
+    iget v8, v9, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
-    invoke-interface {v10, v11, v8}, Lvendor/qti/hardware/radio/ims/V1_5/IImsRadio;->setConfig_1_5(ILvendor/qti/hardware/radio/ims/V1_5/ConfigInfo;)V
+    invoke-direct {v1, v8}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    goto :goto_0
+    .line 3051
+    return-void
 
-    .line 3272
+    .line 3053
     :cond_3
     invoke-direct/range {p0 .. p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
-    move-result-object v10
+    move-result-object v8
 
-    iget v11, v9, Lorg/codeaurora/ims/IFRequest;->mSerial:I
+    iget v10, v9, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
-    .line 3273
-    invoke-static {v8}, Lorg/codeaurora/ims/ImsRadioUtils;->migrateConfigInfoFromV15(Lvendor/qti/hardware/radio/ims/V1_5/ConfigInfo;)Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;
+    .line 3054
+    invoke-static {v2}, Lorg/codeaurora/ims/ImsRadioUtils;->migrateConfigInfoFromV15(Lvendor/qti/hardware/radio/ims/V1_5/ConfigInfo;)Lvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;
 
-    move-result-object v12
+    move-result-object v11
 
-    .line 3272
-    invoke-interface {v10, v11, v12}, Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;->setConfig(ILvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;)V
+    .line 3053
+    invoke-interface {v8, v10, v11}, Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;->setConfig(ILvendor/qti/hardware/radio/ims/V1_0/ConfigInfo;)V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 3280
-    .end local v0    # "imsRadioV16":Lvendor/qti/hardware/radio/ims/V1_6/IImsRadio;
-    .end local v2    # "configInfo":Lvendor/qti/hardware/radio/ims/V1_6/ConfigInfo;
-    .end local v8    # "configInfoV15":Lvendor/qti/hardware/radio/ims/V1_5/ConfigInfo;
+    .line 3060
+    .end local v0    # "imsRadioV15":Lvendor/qti/hardware/radio/ims/V1_5/IImsRadio;
+    .end local v2    # "configInfo":Lvendor/qti/hardware/radio/ims/V1_5/ConfigInfo;
     :goto_0
     goto :goto_1
 
-    .line 3277
+    .line 3057
     :catch_0
     move-exception v0
 
-    .line 3278
+    .line 3058
     .local v0, "ex":Ljava/lang/Exception;
     iget v2, v9, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {v1, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 3279
+    .line 3059
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -9186,7 +9023,7 @@
 
     invoke-static {v1, v2}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3281
+    .line 3061
     .end local v0    # "ex":Ljava/lang/Exception;
     :goto_1
     return-void
@@ -9197,10 +9034,10 @@
     .param p1, "c"    # C
     .param p2, "result"    # Landroid/os/Message;
 
-    .line 3284
+    .line 3064
     const/16 v0, 0xd
 
-    .line 3285
+    .line 3065
     .local v0, "msgId":I
     const/16 v1, 0xd
 
@@ -9208,13 +9045,13 @@
 
     move-result-object v2
 
-    .line 3286
+    .line 3066
     .local v2, "msgIdString":Ljava/lang/String;
     invoke-static {v1, p2}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v1
 
-    .line 3288
+    .line 3068
     .local v1, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {p0, v1, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -9222,19 +9059,19 @@
 
     if-eqz v3, :cond_0
 
-    .line 3289
+    .line 3069
     return-void
 
-    .line 3292
+    .line 3072
     :cond_0
     invoke-direct {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3293
+    .line 3073
     new-instance v3, Lvendor/qti/hardware/radio/ims/V1_0/DtmfInfo;
 
     invoke-direct {v3}, Lvendor/qti/hardware/radio/ims/V1_0/DtmfInfo;-><init>()V
 
-    .line 3294
+    .line 3074
     .local v3, "dtmfValue":Lvendor/qti/hardware/radio/ims/V1_0/DtmfInfo;
     invoke-static {p1}, Ljava/lang/Character;->toString(C)Ljava/lang/String;
 
@@ -9242,11 +9079,11 @@
 
     iput-object v4, v3, Lvendor/qti/hardware/radio/ims/V1_0/DtmfInfo;->dtmf:Ljava/lang/String;
 
-    .line 3296
+    .line 3076
     :try_start_0
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3297
+    .line 3077
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     move-result-object v4
@@ -9257,20 +9094,20 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3301
+    .line 3081
     goto :goto_0
 
-    .line 3298
+    .line 3078
     :catch_0
     move-exception v4
 
-    .line 3299
+    .line 3079
     .local v4, "ex":Ljava/lang/Exception;
     iget v5, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {p0, v5}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 3300
+    .line 3080
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -9289,7 +9126,7 @@
 
     invoke-static {p0, v5}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3302
+    .line 3082
     .end local v4    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
@@ -9306,7 +9143,7 @@
 
     monitor-enter p0
 
-    .line 2863
+    .line 2723
     :try_start_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -9342,10 +9179,10 @@
 
     invoke-static {v1, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 2864
+    .line 2724
     const/16 v17, 0x2e
 
-    .line 2865
+    .line 2725
     .local v17, "msgId":I
     const/16 v0, 0x2e
 
@@ -9355,7 +9192,7 @@
 
     move-object v11, v3
 
-    .line 2866
+    .line 2726
     .local v11, "msgIdString":Ljava/lang/String;
     move-object/from16 v10, p6
 
@@ -9365,7 +9202,7 @@
 
     move-object v7, v0
 
-    .line 2867
+    .line 2727
     .local v7, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {v1, v7, v11}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -9375,32 +9212,32 @@
 
     if-eqz v0, :cond_0
 
-    .line 2868
+    .line 2728
     monitor-exit p0
 
     return-void
 
-    .line 2870
+    .line 2730
     :cond_0
     :try_start_1
     invoke-direct {v1, v7}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 2872
+    .line 2732
     nop
 
-    .line 2873
+    .line 2733
     invoke-static/range {p1 .. p5}, Lorg/codeaurora/ims/ImsRadioUtils;->getHidlAddressInfo(DDLandroid/location/Address;)Lvendor/qti/hardware/radio/ims/V1_2/AddressInfo;
 
     move-result-object v9
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 2875
+    .line 2735
     .local v9, "addressInfo":Lvendor/qti/hardware/radio/ims/V1_2/AddressInfo;
     :try_start_2
     invoke-virtual {v1, v7}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 2876
+    .line 2736
     invoke-direct/range {p0 .. p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV12()Lvendor/qti/hardware/radio/ims/V1_2/IImsRadio;
 
     move-result-object v0
@@ -9408,11 +9245,11 @@
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_4
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 2877
+    .line 2737
     .local v0, "imsRadioV12":Lvendor/qti/hardware/radio/ims/V1_2/IImsRadio;
     if-eqz v0, :cond_1
 
-    .line 2878
+    .line 2738
     :try_start_3
     iget v4, v7, Lorg/codeaurora/ims/IFRequest;->mSerial:I
     :try_end_3
@@ -9439,7 +9276,7 @@
 
     goto :goto_0
 
-    .line 2883
+    .line 2743
     .end local v0    # "imsRadioV12":Lvendor/qti/hardware/radio/ims/V1_2/IImsRadio;
     .end local p0    # "this":Lorg/codeaurora/ims/ImsSenderRxr;
     :catch_0
@@ -9462,7 +9299,7 @@
     .restart local v2    # "rr":Lorg/codeaurora/ims/IFRequest;
     goto :goto_1
 
-    .line 2880
+    .line 2740
     .end local v2    # "rr":Lorg/codeaurora/ims/IFRequest;
     .restart local v0    # "imsRadioV12":Lvendor/qti/hardware/radio/ims/V1_2/IImsRadio;
     .restart local v7    # "rr":Lorg/codeaurora/ims/IFRequest;
@@ -9478,7 +9315,7 @@
 
     iget v4, v2, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
-    .line 2881
+    .line 2741
     invoke-static {v9}, Lorg/codeaurora/ims/ImsRadioUtils;->migrateAddressToV10(Lvendor/qti/hardware/radio/ims/V1_2/AddressInfo;)Lvendor/qti/hardware/radio/ims/V1_0/AddressInfo;
 
     move-result-object v16
@@ -9486,7 +9323,7 @@
     .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_3
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
-    .line 2880
+    .line 2740
     move-object v10, v3
 
     move-object v3, v11
@@ -9505,12 +9342,12 @@
     .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_2
     .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
-    .line 2886
+    .line 2746
     .end local v0    # "imsRadioV12":Lvendor/qti/hardware/radio/ims/V1_2/IImsRadio;
     :goto_0
     goto :goto_2
 
-    .line 2883
+    .line 2743
     :catch_2
     move-exception v0
 
@@ -9538,7 +9375,7 @@
 
     move-object v3, v11
 
-    .line 2884
+    .line 2744
     .end local v7    # "rr":Lorg/codeaurora/ims/IFRequest;
     .end local v11    # "msgIdString":Ljava/lang/String;
     .local v0, "ex":Ljava/lang/Exception;
@@ -9550,7 +9387,7 @@
 
     invoke-direct {v1, v4}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 2885
+    .line 2745
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -9571,14 +9408,14 @@
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_0
 
-    .line 2887
+    .line 2747
     .end local v0    # "ex":Ljava/lang/Exception;
     :goto_2
     monitor-exit p0
 
     return-void
 
-    .line 2862
+    .line 2722
     .end local v2    # "rr":Lorg/codeaurora/ims/IFRequest;
     .end local v3    # "msgIdString":Ljava/lang/String;
     .end local v9    # "addressInfo":Lvendor/qti/hardware/radio/ims/V1_2/AddressInfo;
@@ -9600,10 +9437,10 @@
     .param p1, "imsRegState"    # I
     .param p2, "result"    # Landroid/os/Message;
 
-    .line 3068
+    .line 2849
     const/16 v0, 0x1a
 
-    .line 3069
+    .line 2850
     .local v0, "msgId":I
     const/16 v1, 0x1a
 
@@ -9611,13 +9448,13 @@
 
     move-result-object v2
 
-    .line 3070
+    .line 2851
     .local v2, "msgIdString":Ljava/lang/String;
     invoke-static {v1, p2}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v1
 
-    .line 3072
+    .line 2853
     .local v1, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {p0, v1, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -9625,18 +9462,18 @@
 
     if-eqz v3, :cond_0
 
-    .line 3073
+    .line 2854
     return-void
 
-    .line 3076
+    .line 2857
     :cond_0
     invoke-direct {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3078
+    .line 2859
     :try_start_0
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3079
+    .line 2860
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -9663,37 +9500,37 @@
 
     invoke-static {p0, v3}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3081
+    .line 2862
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     move-result-object v3
 
     iget v4, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
-    .line 3082
+    .line 2863
     invoke-static {p1}, Lorg/codeaurora/ims/ImsRadioUtils;->regStateToHal(I)I
 
     move-result v5
 
-    .line 3081
+    .line 2862
     invoke-interface {v3, v4, v5}, Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;->requestRegistrationChange(II)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3086
+    .line 2867
     goto :goto_0
 
-    .line 3083
+    .line 2864
     :catch_0
     move-exception v3
 
-    .line 3084
+    .line 2865
     .local v3, "ex":Ljava/lang/Exception;
     iget v4, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {p0, v4}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 3085
+    .line 2866
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -9712,7 +9549,7 @@
 
     invoke-static {p0, v4}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3087
+    .line 2868
     .end local v3    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
@@ -9723,7 +9560,7 @@
     .param p1, "message"    # Ljava/lang/String;
     .param p2, "response"    # Landroid/os/Message;
 
-    .line 3953
+    .line 3733
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -9740,10 +9577,10 @@
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3954
+    .line 3734
     const/16 v0, 0x37
 
-    .line 3955
+    .line 3735
     .local v0, "msgId":I
     const/16 v1, 0x37
 
@@ -9751,13 +9588,13 @@
 
     move-result-object v2
 
-    .line 3956
+    .line 3736
     .local v2, "msgIdString":Ljava/lang/String;
     invoke-static {v1, p2}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v3
 
-    .line 3958
+    .line 3738
     .local v3, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {p0, v3, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -9765,18 +9602,18 @@
 
     if-eqz v4, :cond_0
 
-    .line 3959
+    .line 3739
     return-void
 
-    .line 3962
+    .line 3742
     :cond_0
     invoke-direct {p0, v3}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3964
+    .line 3744
     :try_start_0
     invoke-virtual {p0, v3}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3965
+    .line 3745
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     move-result-object v4
@@ -9787,20 +9624,20 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3969
+    .line 3749
     goto :goto_0
 
-    .line 3966
+    .line 3746
     :catch_0
     move-exception v4
 
-    .line 3967
+    .line 3747
     .local v4, "ex":Ljava/lang/Exception;
     iget v5, v3, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {p0, v5}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 3968
+    .line 3748
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -9823,7 +9660,7 @@
 
     invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3970
+    .line 3750
     .end local v4    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
@@ -9838,7 +9675,7 @@
     .param p5, "pdu"    # [B
     .param p6, "result"    # Landroid/os/Message;
 
-    .line 2778
+    .line 2644
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -9855,10 +9692,10 @@
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 2780
+    .line 2646
     const/16 v0, 0x39
 
-    .line 2781
+    .line 2647
     .local v0, "msgId":I
     const/16 v1, 0x39
 
@@ -9866,13 +9703,13 @@
 
     move-result-object v2
 
-    .line 2782
+    .line 2648
     .local v2, "msgIdString":Ljava/lang/String;
     invoke-static {v1, p6}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v3
 
-    .line 2784
+    .line 2650
     .local v3, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {p0, v3, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -9880,24 +9717,24 @@
 
     if-eqz v4, :cond_0
 
-    .line 2785
+    .line 2651
     return-void
 
-    .line 2788
+    .line 2654
     :cond_0
     invoke-direct {p0, v3}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 2790
+    .line 2656
     invoke-static {p1, p2, p3, p4, p5}, Lorg/codeaurora/ims/ImsRadioUtils;->buildImsSms(ILjava/lang/String;Ljava/lang/String;Z[B)Lvendor/qti/hardware/radio/ims/V1_2/ImsSmsMessage;
 
     move-result-object v4
 
-    .line 2793
+    .line 2659
     .local v4, "imsSms":Lvendor/qti/hardware/radio/ims/V1_2/ImsSmsMessage;
     :try_start_0
     invoke-virtual {p0, v3}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 2794
+    .line 2660
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV12()Lvendor/qti/hardware/radio/ims/V1_2/IImsRadio;
 
     move-result-object v5
@@ -9908,20 +9745,20 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2798
+    .line 2664
     goto :goto_0
 
-    .line 2795
+    .line 2661
     :catch_0
     move-exception v5
 
-    .line 2796
+    .line 2662
     .local v5, "ex":Ljava/lang/Exception;
     iget v6, v3, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {p0, v6}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 2797
+    .line 2663
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -9948,7 +9785,7 @@
 
     invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 2799
+    .line 2665
     .end local v5    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
@@ -9959,7 +9796,7 @@
     .param p1, "clirMode"    # I
     .param p2, "result"    # Landroid/os/Message;
 
-    .line 3409
+    .line 3189
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -9976,10 +9813,10 @@
 
     invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->logv(Ljava/lang/String;)V
 
-    .line 3410
+    .line 3190
     const/16 v0, 0x15
 
-    .line 3411
+    .line 3191
     .local v0, "msgId":I
     const/16 v1, 0x15
 
@@ -9987,13 +9824,13 @@
 
     move-result-object v2
 
-    .line 3412
+    .line 3192
     .local v2, "msgIdString":Ljava/lang/String;
     invoke-static {v1, p2}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v3
 
-    .line 3414
+    .line 3194
     .local v3, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {p0, v3, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -10001,27 +9838,27 @@
 
     if-eqz v4, :cond_0
 
-    .line 3415
+    .line 3195
     return-void
 
-    .line 3418
+    .line 3198
     :cond_0
     invoke-direct {p0, v3}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3419
+    .line 3199
     new-instance v4, Lvendor/qti/hardware/radio/ims/V1_0/ClirInfo;
 
     invoke-direct {v4}, Lvendor/qti/hardware/radio/ims/V1_0/ClirInfo;-><init>()V
 
-    .line 3420
+    .line 3200
     .local v4, "clirValue":Lvendor/qti/hardware/radio/ims/V1_0/ClirInfo;
     iput p1, v4, Lvendor/qti/hardware/radio/ims/V1_0/ClirInfo;->paramN:I
 
-    .line 3422
+    .line 3202
     :try_start_0
     invoke-virtual {p0, v3}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3423
+    .line 3203
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     move-result-object v5
@@ -10032,20 +9869,20 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3427
+    .line 3207
     goto :goto_0
 
-    .line 3424
+    .line 3204
     :catch_0
     move-exception v5
 
-    .line 3425
+    .line 3205
     .local v5, "ex":Ljava/lang/Exception;
     iget v6, v3, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {p0, v6}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 3426
+    .line 3206
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -10068,7 +9905,7 @@
 
     invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3428
+    .line 3208
     .end local v5    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
@@ -10079,7 +9916,7 @@
     .param p1, "presentationValue"    # I
     .param p2, "result"    # Landroid/os/Message;
 
-    .line 3703
+    .line 3483
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -10096,10 +9933,10 @@
 
     invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->logv(Ljava/lang/String;)V
 
-    .line 3704
+    .line 3484
     const/16 v0, 0x22
 
-    .line 3705
+    .line 3485
     .local v0, "msgId":I
     const/16 v1, 0x22
 
@@ -10107,13 +9944,13 @@
 
     move-result-object v2
 
-    .line 3706
+    .line 3486
     .local v2, "msgIdString":Ljava/lang/String;
     invoke-static {v1, p2}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v3
 
-    .line 3708
+    .line 3488
     .local v3, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {p0, v3, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -10121,19 +9958,19 @@
 
     if-eqz v4, :cond_0
 
-    .line 3709
+    .line 3489
     return-void
 
-    .line 3712
+    .line 3492
     :cond_0
     invoke-direct {p0, v3}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3713
+    .line 3493
     new-instance v4, Lvendor/qti/hardware/radio/ims/V1_0/ColrInfo;
 
     invoke-direct {v4}, Lvendor/qti/hardware/radio/ims/V1_0/ColrInfo;-><init>()V
 
-    .line 3714
+    .line 3494
     .local v4, "colrValue":Lvendor/qti/hardware/radio/ims/V1_0/ColrInfo;
     invoke-static {p1}, Lorg/codeaurora/ims/ImsRadioUtils;->ipPresentationToHal(I)I
 
@@ -10141,11 +9978,11 @@
 
     iput v5, v4, Lvendor/qti/hardware/radio/ims/V1_0/ColrInfo;->presentation:I
 
-    .line 3716
+    .line 3496
     :try_start_0
     invoke-virtual {p0, v3}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3717
+    .line 3497
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     move-result-object v5
@@ -10156,20 +9993,20 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3721
+    .line 3501
     goto :goto_0
 
-    .line 3718
+    .line 3498
     :catch_0
     move-exception v5
 
-    .line 3719
+    .line 3499
     .local v5, "ex":Ljava/lang/Exception;
     iget v6, v3, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {p0, v6}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 3720
+    .line 3500
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -10192,7 +10029,7 @@
 
     invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3722
+    .line 3502
     .end local v5    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
@@ -10207,7 +10044,7 @@
     .param p5, "timeSeconds"    # I
     .param p6, "response"    # Landroid/os/Message;
 
-    .line 3487
+    .line 3267
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -10252,7 +10089,7 @@
 
     invoke-virtual {v12, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->logv(Ljava/lang/String;)V
 
-    .line 3490
+    .line 3270
     const v3, 0x7fffffff
 
     const v4, 0x7fffffff
@@ -10277,7 +10114,7 @@
 
     invoke-direct/range {v2 .. v12}, Lorg/codeaurora/ims/ImsSenderRxr;->setCallForwardInternal(IIIIIIILjava/lang/String;ILandroid/os/Message;)V
 
-    .line 3492
+    .line 3272
     return-void
 .end method
 
@@ -10293,7 +10130,7 @@
     .param p8, "number"    # Ljava/lang/String;
     .param p9, "response"    # Landroid/os/Message;
 
-    .line 3497
+    .line 3277
     const/4 v9, 0x0
 
     move-object v0, p0
@@ -10318,7 +10155,7 @@
 
     invoke-direct/range {v0 .. v10}, Lorg/codeaurora/ims/ImsSenderRxr;->setCallForwardInternal(IIIIIIILjava/lang/String;ILandroid/os/Message;)V
 
-    .line 3499
+    .line 3279
     return-void
 .end method
 
@@ -10328,7 +10165,7 @@
     .param p2, "serviceClass"    # I
     .param p3, "response"    # Landroid/os/Message;
 
-    .line 3453
+    .line 3233
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -10351,10 +10188,10 @@
 
     invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->logv(Ljava/lang/String;)V
 
-    .line 3455
+    .line 3235
     const/16 v0, 0x19
 
-    .line 3456
+    .line 3236
     .local v0, "msgId":I
     const/16 v1, 0x19
 
@@ -10362,13 +10199,13 @@
 
     move-result-object v2
 
-    .line 3458
+    .line 3238
     .local v2, "msgIdString":Ljava/lang/String;
     invoke-static {v1, p3}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v1
 
-    .line 3460
+    .line 3240
     .local v1, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {p0, v1, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -10376,14 +10213,14 @@
 
     if-eqz v3, :cond_0
 
-    .line 3461
+    .line 3241
     return-void
 
-    .line 3464
+    .line 3244
     :cond_0
     invoke-direct {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3466
+    .line 3246
     if-eqz p1, :cond_1
 
     const/4 v3, 0x1
@@ -10393,13 +10230,13 @@
     :cond_1
     const/4 v3, 0x0
 
-    .line 3467
+    .line 3247
     .local v3, "serviceStatus":I
     :goto_0
     :try_start_0
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3468
+    .line 3248
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     move-result-object v4
@@ -10410,21 +10247,21 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3472
+    .line 3252
     .end local v3    # "serviceStatus":I
     goto :goto_1
 
-    .line 3469
+    .line 3249
     :catch_0
     move-exception v3
 
-    .line 3470
+    .line 3250
     .local v3, "ex":Ljava/lang/Exception;
     iget v4, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {p0, v4}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 3471
+    .line 3251
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -10443,7 +10280,7 @@
 
     invoke-static {p0, v4}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3473
+    .line 3253
     .end local v3    # "ex":Ljava/lang/Exception;
     :goto_1
     return-void
@@ -10457,7 +10294,7 @@
     .param p4, "serviceClass"    # I
     .param p5, "response"    # Landroid/os/Message;
 
-    .line 3634
+    .line 3414
     if-eqz p2, :cond_0
 
     const/4 v0, 0x1
@@ -10467,7 +10304,7 @@
     :cond_0
     const/4 v0, 0x2
 
-    .line 3635
+    .line 3415
     .local v0, "operation":I
     :goto_0
     invoke-static {p1}, Lorg/codeaurora/ims/ImsSenderRxr;->facilityStringToInt(Ljava/lang/String;)I
@@ -10476,7 +10313,7 @@
 
     invoke-virtual {p0, v0, v1, p5}, Lorg/codeaurora/ims/ImsSenderRxr;->suppSvcStatus(IILandroid/os/Message;)V
 
-    .line 3636
+    .line 3416
     return-void
 .end method
 
@@ -10485,14 +10322,14 @@
     .param p1, "hoConfig"    # I
     .param p2, "response"    # Landroid/os/Message;
 
-    .line 3812
+    .line 3592
     const-string v0, "ImsSenderRxr"
 
     const-string v1, "setHandoverConfig : Not supported"
 
     invoke-static {v0, v1}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3813
+    .line 3593
     return-void
 .end method
 
@@ -10504,7 +10341,7 @@
     .param p4, "serviceClass"    # I
     .param p5, "response"    # Landroid/os/Message;
 
-    .line 3482
+    .line 3262
     invoke-static {p2}, Lorg/codeaurora/ims/ImsSenderRxr;->facilityStringToInt(Ljava/lang/String;)I
 
     move-result v2
@@ -10521,7 +10358,7 @@
 
     invoke-virtual/range {v0 .. v5}, Lorg/codeaurora/ims/ImsSenderRxr;->suppSvcStatus(II[Ljava/lang/String;ILandroid/os/Message;)V
 
-    .line 3483
+    .line 3263
     return-void
 .end method
 
@@ -10531,14 +10368,14 @@
     .param p2, "what"    # I
     .param p3, "obj"    # Ljava/lang/Object;
 
-    .line 739
+    .line 714
     new-instance v0, Lorg/codeaurora/telephony/utils/Registrant;
 
     invoke-direct {v0, p1, p2, p3}, Lorg/codeaurora/telephony/utils/Registrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;)V
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mSendSmsStatusReportRegistrant:Lorg/codeaurora/telephony/utils/Registrant;
 
-    .line 740
+    .line 715
     return-void
 .end method
 
@@ -10548,14 +10385,14 @@
     .param p2, "what"    # I
     .param p3, "obj"    # Ljava/lang/Object;
 
-    .line 728
+    .line 703
     new-instance v0, Lorg/codeaurora/telephony/utils/Registrant;
 
     invoke-direct {v0, p1, p2, p3}, Lorg/codeaurora/telephony/utils/Registrant;-><init>(Landroid/os/Handler;ILjava/lang/Object;)V
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mIncomingSmsRegistrant:Lorg/codeaurora/telephony/utils/Registrant;
 
-    .line 729
+    .line 704
     return-void
 .end method
 
@@ -10565,7 +10402,7 @@
     .param p2, "what"    # I
     .param p3, "obj"    # Ljava/lang/Object;
 
-    .line 703
+    .line 678
     new-instance v0, Lorg/codeaurora/ims/WakeLockRegistrant;
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mNotifyWakeLock:Landroid/os/PowerManager$WakeLock;
@@ -10574,7 +10411,7 @@
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mSsnRegistrant:Lorg/codeaurora/telephony/utils/Registrant;
 
-    .line 704
+    .line 679
     return-void
 .end method
 
@@ -10582,7 +10419,7 @@
     .locals 2
     .param p1, "phoneType"    # I
 
-    .line 2604
+    .line 2474
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -10607,450 +10444,153 @@
 
     invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->log(Ljava/lang/String;)V
 
-    .line 2605
+    .line 2475
     iput p1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mPhoneType:I
 
-    .line 2606
+    .line 2476
     return-void
 .end method
 
-.method public setServiceStatus(Landroid/os/Message;Ljava/util/ArrayList;I)V
-    .locals 19
+.method public setServiceStatus(Landroid/os/Message;IIII)V
+    .locals 6
     .param p1, "result"    # Landroid/os/Message;
-    .param p3, "restrictCause"    # I
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/os/Message;",
-            "Ljava/util/ArrayList<",
-            "Lorg/codeaurora/ims/CapabilityStatus;",
-            ">;I)V"
-        }
-    .end annotation
+    .param p2, "srvType"    # I
+    .param p3, "network"    # I
+    .param p4, "enabled"    # I
+    .param p5, "restrictCause"    # I
 
-    .line 2946
-    .local p2, "capabilityStatusList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lorg/codeaurora/ims/CapabilityStatus;>;"
-    move-object/from16 v1, p0
+    .line 2806
+    const/16 v0, 0x1e
 
-    move-object/from16 v2, p1
+    .line 2807
+    .local v0, "msgId":I
+    const/16 v1, 0x1e
 
-    move-object/from16 v3, p2
+    invoke-static {v1}, Lorg/codeaurora/ims/ImsSenderRxr;->msgIdToString(I)Ljava/lang/String;
 
-    move/from16 v4, p3
+    move-result-object v2
 
-    const/16 v5, 0x1e
+    .line 2808
+    .local v2, "msgIdString":Ljava/lang/String;
+    invoke-static {v1, p1}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
-    .line 2947
-    .local v5, "msgId":I
-    const/16 v6, 0x1e
+    move-result-object v1
 
-    invoke-static {v6}, Lorg/codeaurora/ims/ImsSenderRxr;->msgIdToString(I)Ljava/lang/String;
+    .line 2810
+    .local v1, "rr":Lorg/codeaurora/ims/IFRequest;
+    invoke-direct {p0, v1, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
-    move-result-object v7
+    move-result v3
 
-    .line 2949
-    .local v7, "msgIdString":Ljava/lang/String;
-    invoke-direct/range {p0 .. p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV16()Lvendor/qti/hardware/radio/ims/V1_6/IImsRadio;
+    if-eqz v3, :cond_0
 
-    move-result-object v8
-
-    .line 2950
-    .local v8, "imsRadio":Lvendor/qti/hardware/radio/ims/V1_6/IImsRadio;
-    const-string v9, "SetServiceStatus request to IImsRadio: Exception: "
-
-    const-string v10, " to ImsRadio: token -"
-
-    if-eqz v8, :cond_1
-
-    .line 2951
-    invoke-static {v6, v2}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
-
-    move-result-object v6
-
-    .line 2952
-    .local v6, "rr":Lorg/codeaurora/ims/IFRequest;
-    invoke-direct {v1, v6, v7, v3}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 2953
+    .line 2811
     return-void
 
-    .line 2960
+    .line 2814
     :cond_0
-    invoke-static {}, Lorg/codeaurora/telephony/utils/SomeArgs;->obtain()Lorg/codeaurora/telephony/utils/SomeArgs;
+    invoke-direct {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    move-result-object v11
-
-    .line 2962
-    .local v11, "setCapArgs":Lorg/codeaurora/telephony/utils/SomeArgs;
-    invoke-static/range {p1 .. p1}, Landroid/os/Message;->obtain(Landroid/os/Message;)Landroid/os/Message;
-
-    move-result-object v0
-
-    iput-object v0, v11, Lorg/codeaurora/telephony/utils/SomeArgs;->arg1:Ljava/lang/Object;
-
-    .line 2964
-    iput-object v3, v11, Lorg/codeaurora/telephony/utils/SomeArgs;->arg2:Ljava/lang/Object;
-
-    .line 2966
-    invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
-
-    move-result-object v12
-
-    .line 2967
-    .local v12, "newMsg":Landroid/os/Message;
-    iput-object v11, v12, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    .line 2973
-    invoke-virtual {v6, v12}, Lorg/codeaurora/ims/IFRequest;->setResult(Landroid/os/Message;)V
-
-    .line 2974
-    invoke-direct {v1, v6}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
-
-    .line 2975
-    nop
-
-    .line 2976
-    invoke-static/range {p2 .. p3}, Lorg/codeaurora/ims/ImsRadioUtils;->buildServiceStatusInfoList(Ljava/util/ArrayList;I)Ljava/util/ArrayList;
-
-    move-result-object v13
-
-    .line 2977
-    .local v13, "serviceStatusInfoList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;>;"
-    invoke-virtual {v1, v6}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
-
-    .line 2978
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v10, v6, Lorg/codeaurora/ims/IFRequest;->mSerial:I
-
-    invoke-virtual {v0, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v10, " RestrictCause:"
-
-    invoke-virtual {v0, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v1, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 2981
+    .line 2816
     :try_start_0
-    iget v0, v6, Lorg/codeaurora/ims/IFRequest;->mSerial:I
+    invoke-static {p2, p3, p4, p5}, Lorg/codeaurora/ims/ImsRadioUtils;->buildServiceStatusInfo(IIII)Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;
 
-    invoke-interface {v8, v0, v13}, Lvendor/qti/hardware/radio/ims/V1_6/IImsRadio;->setServiceStatus_1_6(ILjava/util/ArrayList;)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    move-result-object v3
 
-    .line 2987
-    goto :goto_0
+    .line 2818
+    .local v3, "serviceStatusInfo":Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;
+    invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 2982
-    :catch_0
-    move-exception v0
-
-    .line 2984
-    .local v0, "ex":Ljava/lang/Exception;
-    invoke-virtual {v6, v2}, Lorg/codeaurora/ims/IFRequest;->setResult(Landroid/os/Message;)V
-
-    .line 2985
-    iget v10, v6, Lorg/codeaurora/ims/IFRequest;->mSerial:I
-
-    invoke-direct {v1, v10, v3}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(ILjava/lang/Object;)V
-
-    .line 2986
-    new-instance v10, Ljava/lang/StringBuilder;
-
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v10, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v10, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-static {v1, v9}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 2988
-    .end local v0    # "ex":Ljava/lang/Exception;
-    .end local v6    # "rr":Lorg/codeaurora/ims/IFRequest;
-    .end local v11    # "setCapArgs":Lorg/codeaurora/telephony/utils/SomeArgs;
-    .end local v12    # "newMsg":Landroid/os/Message;
-    .end local v13    # "serviceStatusInfoList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;>;"
-    :goto_0
-    move/from16 v18, v5
-
-    goto/16 :goto_3
-
-    .line 2989
-    :cond_1
-    invoke-virtual/range {p2 .. p2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v11
-
-    :goto_1
-    invoke-interface {v11}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    invoke-interface {v11}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v12, v0
-
-    check-cast v12, Lorg/codeaurora/ims/CapabilityStatus;
-
-    .line 2991
-    .local v12, "capabilityStatus":Lorg/codeaurora/ims/CapabilityStatus;
-    invoke-static/range {p1 .. p1}, Landroid/os/Message;->obtain(Landroid/os/Message;)Landroid/os/Message;
-
-    move-result-object v13
-
-    .line 2992
-    .local v13, "cpResult":Landroid/os/Message;
-    invoke-static {v6, v13}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
-
-    move-result-object v14
-
-    .line 2994
-    .local v14, "rr":Lorg/codeaurora/ims/IFRequest;
-    invoke-direct {v1, v14, v7, v3}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    .line 2995
-    return-void
-
-    .line 3003
-    :cond_2
-    invoke-static {}, Lorg/codeaurora/telephony/utils/SomeArgs;->obtain()Lorg/codeaurora/telephony/utils/SomeArgs;
-
-    move-result-object v15
-
-    .line 3005
-    .local v15, "setCapArgs":Lorg/codeaurora/telephony/utils/SomeArgs;
-    iput-object v13, v15, Lorg/codeaurora/telephony/utils/SomeArgs;->arg1:Ljava/lang/Object;
-
-    .line 3008
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    move-object/from16 v16, v0
-
-    .line 3009
-    .local v16, "newCapabilityStatusList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lorg/codeaurora/ims/CapabilityStatus;>;"
-    move-object/from16 v6, v16
-
-    .end local v16    # "newCapabilityStatusList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lorg/codeaurora/ims/CapabilityStatus;>;"
-    .local v6, "newCapabilityStatusList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lorg/codeaurora/ims/CapabilityStatus;>;"
-    invoke-virtual {v6, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 3011
-    iput-object v6, v15, Lorg/codeaurora/telephony/utils/SomeArgs;->arg2:Ljava/lang/Object;
-
-    .line 3014
-    invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
-
-    move-result-object v2
-
-    .line 3015
-    .local v2, "newMsg":Landroid/os/Message;
-    iput-object v15, v2, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    .line 3021
-    invoke-virtual {v14, v2}, Lorg/codeaurora/ims/IFRequest;->setResult(Landroid/os/Message;)V
-
-    .line 3022
-    invoke-direct {v1, v14}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
-
-    .line 3023
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    move-object/from16 v16, v2
-
-    .end local v2    # "newMsg":Landroid/os/Message;
-    .local v16, "newMsg":Landroid/os/Message;
-    const-string v2, "SetServiceStatus capabilityStatus: "
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v1, v0}, Lcom/qualcomm/ims/utils/Log;->v(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 3024
-    nop
-
-    .line 3026
-    invoke-virtual {v12}, Lorg/codeaurora/ims/CapabilityStatus;->getCapability()I
-
-    move-result v0
-
-    invoke-static {v0}, Lorg/codeaurora/ims/ImsRadioUtils;->mapCapabilityToSrvType(I)I
-
-    move-result v0
-
-    .line 3027
-    invoke-virtual {v12}, Lorg/codeaurora/ims/CapabilityStatus;->getRadioTech()I
-
-    move-result v2
-
-    invoke-static {v2}, Lorg/codeaurora/ims/ImsRadioUtils;->mapRadioTechToHidlRadioTech(I)I
-
-    move-result v2
-
-    .line 3028
-    invoke-virtual {v12}, Lorg/codeaurora/ims/CapabilityStatus;->getStatus()I
-
-    move-result v17
-
-    move/from16 v18, v5
-
-    .end local v5    # "msgId":I
-    .local v18, "msgId":I
-    invoke-static/range {v17 .. v17}, Lorg/codeaurora/ims/ImsRadioUtils;->mapValueToServiceStatus(I)I
-
-    move-result v5
-
-    .line 3025
-    invoke-static {v0, v2, v5, v4}, Lorg/codeaurora/ims/ImsRadioUtils;->buildServiceStatusInfo(IIII)Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;
-
-    move-result-object v2
-
-    .line 3031
-    .local v2, "serviceStatusInfo":Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;
-    invoke-virtual {v1, v14}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
-
-    .line 3032
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v5, v14, Lorg/codeaurora/ims/IFRequest;->mSerial:I
-
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v1, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 3035
-    :try_start_1
-    const-string v0, "mImsRadio V1.6 is null. invoking mImsRadio.setServiceStatus()"
-
-    invoke-static {v1, v0}, Lcom/qualcomm/ims/utils/Log;->w(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 3036
-    invoke-direct/range {p0 .. p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
-
-    move-result-object v0
-
-    iget v5, v14, Lorg/codeaurora/ims/IFRequest;->mSerial:I
-
-    .line 3037
-    invoke-static {v2}, Lorg/codeaurora/ims/ImsRadioUtils;->migrateServiceStatusInfoFromV16(Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;)Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;
-
-    move-result-object v4
-
-    .line 3036
-    invoke-interface {v0, v5, v4}, Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;->setServiceStatus(ILvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;)V
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
-
-    .line 3043
-    goto :goto_2
-
-    .line 3038
-    :catch_1
-    move-exception v0
-
-    .line 3040
-    .restart local v0    # "ex":Ljava/lang/Exception;
-    invoke-virtual {v14, v13}, Lorg/codeaurora/ims/IFRequest;->setResult(Landroid/os/Message;)V
-
-    .line 3041
-    iget v4, v14, Lorg/codeaurora/ims/IFRequest;->mSerial:I
-
-    invoke-direct {v1, v4, v3}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(ILjava/lang/Object;)V
-
-    .line 3042
+    .line 2819
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v4, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    const-string v5, " to ImsRadio: token -"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v5, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v5, " SrvType:"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v5, " Network:"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v5, " enabled:"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, p4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v5, " RestrictCause:"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, p5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v4
 
-    invoke-static {v1, v4}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, v4}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3044
-    .end local v0    # "ex":Ljava/lang/Exception;
-    .end local v2    # "serviceStatusInfo":Lvendor/qti/hardware/radio/ims/V1_6/ServiceStatusInfo;
-    .end local v6    # "newCapabilityStatusList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lorg/codeaurora/ims/CapabilityStatus;>;"
-    .end local v12    # "capabilityStatus":Lorg/codeaurora/ims/CapabilityStatus;
-    .end local v13    # "cpResult":Landroid/os/Message;
-    .end local v14    # "rr":Lorg/codeaurora/ims/IFRequest;
-    .end local v15    # "setCapArgs":Lorg/codeaurora/telephony/utils/SomeArgs;
-    .end local v16    # "newMsg":Landroid/os/Message;
-    :goto_2
-    move-object/from16 v2, p1
+    .line 2822
+    invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
-    move/from16 v4, p3
+    move-result-object v4
 
-    move/from16 v5, v18
+    iget v5, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
-    const/16 v6, 0x1e
+    invoke-interface {v4, v5, v3}, Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;->setServiceStatus(ILvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto/16 :goto_1
+    .line 2826
+    .end local v3    # "serviceStatusInfo":Lvendor/qti/hardware/radio/ims/V1_0/ServiceStatusInfo;
+    goto :goto_0
 
-    .line 2989
-    .end local v18    # "msgId":I
-    .restart local v5    # "msgId":I
-    :cond_3
-    move/from16 v18, v5
+    .line 2823
+    :catch_0
+    move-exception v3
 
-    .line 3046
-    .end local v5    # "msgId":I
-    .restart local v18    # "msgId":I
-    :goto_3
+    .line 2824
+    .local v3, "ex":Ljava/lang/Exception;
+    iget v4, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
+
+    invoke-direct {p0, v4}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
+
+    .line 2825
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "SetServiceStatus request to IImsRadio: Exception: "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {p0, v4}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 2827
+    .end local v3    # "ex":Ljava/lang/Exception;
+    :goto_0
     return-void
 .end method
 
@@ -11059,7 +10599,7 @@
     .param p1, "enable"    # Z
     .param p2, "result"    # Landroid/os/Message;
 
-    .line 3367
+    .line 3147
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -11076,10 +10616,10 @@
 
     invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->logv(Ljava/lang/String;)V
 
-    .line 3368
+    .line 3148
     const/16 v0, 0x1b
 
-    .line 3369
+    .line 3149
     .local v0, "msgId":I
     const/16 v1, 0x1b
 
@@ -11087,13 +10627,13 @@
 
     move-result-object v2
 
-    .line 3371
+    .line 3151
     .local v2, "msgIdString":Ljava/lang/String;
     invoke-static {v1, p2}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v1
 
-    .line 3373
+    .line 3153
     .local v1, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {p0, v1, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -11101,14 +10641,14 @@
 
     if-eqz v3, :cond_0
 
-    .line 3374
+    .line 3154
     return-void
 
-    .line 3377
+    .line 3157
     :cond_0
     invoke-direct {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3379
+    .line 3159
     if-eqz p1, :cond_1
 
     const/4 v3, 0x1
@@ -11118,13 +10658,13 @@
     :cond_1
     const/4 v3, 0x0
 
-    .line 3380
+    .line 3160
     .local v3, "status":I
     :goto_0
     :try_start_0
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3381
+    .line 3161
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     move-result-object v4
@@ -11135,21 +10675,21 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3385
+    .line 3165
     .end local v3    # "status":I
     goto :goto_1
 
-    .line 3382
+    .line 3162
     :catch_0
     move-exception v3
 
-    .line 3383
+    .line 3163
     .local v3, "ex":Ljava/lang/Exception;
     iget v4, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {p0, v4}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 3384
+    .line 3164
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -11168,7 +10708,7 @@
 
     invoke-static {p0, v4}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3386
+    .line 3166
     .end local v3    # "ex":Ljava/lang/Exception;
     :goto_1
     return-void
@@ -11180,7 +10720,7 @@
     .param p2, "lockState"    # Z
     .param p3, "response"    # Landroid/os/Message;
 
-    .line 3643
+    .line 3423
     if-eqz p2, :cond_0
 
     const/4 v0, 0x1
@@ -11190,7 +10730,7 @@
     :cond_0
     const/4 v0, 0x2
 
-    .line 3644
+    .line 3424
     .local v0, "operation":I
     :goto_0
     invoke-static {p1}, Lorg/codeaurora/ims/ImsSenderRxr;->facilityStringToInt(Ljava/lang/String;)I
@@ -11199,7 +10739,7 @@
 
     invoke-virtual {p0, v0, v1, p3}, Lorg/codeaurora/ims/ImsSenderRxr;->suppSvcStatus(IILandroid/os/Message;)V
 
-    .line 3645
+    .line 3425
     return-void
 .end method
 
@@ -11208,7 +10748,7 @@
     .param p1, "uiTtyMode"    # I
     .param p2, "response"    # Landroid/os/Message;
 
-    .line 3584
+    .line 3364
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -11225,10 +10765,10 @@
 
     invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->logv(Ljava/lang/String;)V
 
-    .line 3585
+    .line 3365
     const/16 v0, 0x27
 
-    .line 3586
+    .line 3366
     .local v0, "msgId":I
     const/16 v1, 0x27
 
@@ -11236,13 +10776,13 @@
 
     move-result-object v2
 
-    .line 3587
+    .line 3367
     .local v2, "msgIdString":Ljava/lang/String;
     invoke-static {v1, p2}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v3
 
-    .line 3589
+    .line 3369
     .local v3, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {p0, v3, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -11250,19 +10790,19 @@
 
     if-eqz v4, :cond_0
 
-    .line 3590
+    .line 3370
     return-void
 
-    .line 3593
+    .line 3373
     :cond_0
     invoke-direct {p0, v3}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3594
+    .line 3374
     new-instance v4, Lvendor/qti/hardware/radio/ims/V1_0/TtyInfo;
 
     invoke-direct {v4}, Lvendor/qti/hardware/radio/ims/V1_0/TtyInfo;-><init>()V
 
-    .line 3595
+    .line 3375
     .local v4, "info":Lvendor/qti/hardware/radio/ims/V1_0/TtyInfo;
     invoke-static {p1}, Lorg/codeaurora/ims/ImsRadioUtils;->ttyModeToHal(I)I
 
@@ -11270,11 +10810,11 @@
 
     iput v5, v4, Lvendor/qti/hardware/radio/ims/V1_0/TtyInfo;->mode:I
 
-    .line 3597
+    .line 3377
     :try_start_0
     invoke-virtual {p0, v3}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3598
+    .line 3378
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     move-result-object v5
@@ -11285,20 +10825,20 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3602
+    .line 3382
     goto :goto_0
 
-    .line 3599
+    .line 3379
     :catch_0
     move-exception v5
 
-    .line 3600
+    .line 3380
     .local v5, "ex":Ljava/lang/Exception;
     iget v6, v3, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {p0, v6}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 3601
+    .line 3381
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -11321,7 +10861,7 @@
 
     invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3603
+    .line 3383
     .end local v5    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
@@ -11333,12 +10873,12 @@
     .param p2, "wifiCallingPreference"    # I
     .param p3, "response"    # Landroid/os/Message;
 
-    .line 3804
+    .line 3584
     const-string v0, "setWifiCallingPreference : Not supported"
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3805
+    .line 3585
     return-void
 .end method
 
@@ -11347,10 +10887,10 @@
     .param p1, "c"    # C
     .param p2, "result"    # Landroid/os/Message;
 
-    .line 3305
+    .line 3085
     const/16 v0, 0xe
 
-    .line 3306
+    .line 3086
     .local v0, "msgId":I
     const/16 v1, 0xe
 
@@ -11358,13 +10898,13 @@
 
     move-result-object v2
 
-    .line 3307
+    .line 3087
     .local v2, "msgIdString":Ljava/lang/String;
     invoke-static {v1, p2}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v3
 
-    .line 3309
+    .line 3089
     .local v3, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {p0, v3, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -11372,19 +10912,19 @@
 
     if-eqz v4, :cond_0
 
-    .line 3310
+    .line 3090
     return-void
 
-    .line 3313
+    .line 3093
     :cond_0
     invoke-direct {p0, v3}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3314
+    .line 3094
     new-instance v4, Lvendor/qti/hardware/radio/ims/V1_0/DtmfInfo;
 
     invoke-direct {v4}, Lvendor/qti/hardware/radio/ims/V1_0/DtmfInfo;-><init>()V
 
-    .line 3315
+    .line 3095
     .local v4, "dtmfValue":Lvendor/qti/hardware/radio/ims/V1_0/DtmfInfo;
     invoke-static {p1}, Ljava/lang/Character;->toString(C)Ljava/lang/String;
 
@@ -11392,11 +10932,11 @@
 
     iput-object v5, v4, Lvendor/qti/hardware/radio/ims/V1_0/DtmfInfo;->dtmf:Ljava/lang/String;
 
-    .line 3317
+    .line 3097
     :try_start_0
     invoke-virtual {p0, v3}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3318
+    .line 3098
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     move-result-object v5
@@ -11407,20 +10947,20 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3322
+    .line 3102
     goto :goto_0
 
-    .line 3319
+    .line 3099
     :catch_0
     move-exception v5
 
-    .line 3320
+    .line 3100
     .local v5, "ex":Ljava/lang/Exception;
     iget v6, v3, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {p0, v6}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 3321
+    .line 3101
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -11443,7 +10983,7 @@
 
     invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3323
+    .line 3103
     .end local v5    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
@@ -11453,10 +10993,10 @@
     .locals 6
     .param p1, "result"    # Landroid/os/Message;
 
-    .line 3326
+    .line 3106
     const/16 v0, 0xf
 
-    .line 3327
+    .line 3107
     .local v0, "msgId":I
     const/16 v1, 0xf
 
@@ -11464,13 +11004,13 @@
 
     move-result-object v2
 
-    .line 3328
+    .line 3108
     .local v2, "msgIdString":Ljava/lang/String;
     invoke-static {v1, p1}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v3
 
-    .line 3330
+    .line 3110
     .local v3, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {p0, v3, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -11478,18 +11018,18 @@
 
     if-eqz v4, :cond_0
 
-    .line 3331
+    .line 3111
     return-void
 
-    .line 3334
+    .line 3114
     :cond_0
     invoke-direct {p0, v3}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3336
+    .line 3116
     :try_start_0
     invoke-virtual {p0, v3}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3337
+    .line 3117
     invoke-direct {p0}, Lorg/codeaurora/ims/ImsSenderRxr;->imsRadioV10()Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     move-result-object v4
@@ -11500,20 +11040,20 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3341
+    .line 3121
     goto :goto_0
 
-    .line 3338
+    .line 3118
     :catch_0
     move-exception v4
 
-    .line 3339
+    .line 3119
     .local v4, "ex":Ljava/lang/Exception;
     iget v5, v3, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {p0, v5}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 3340
+    .line 3120
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -11536,7 +11076,7 @@
 
     invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3342
+    .line 3122
     .end local v4    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
@@ -11548,7 +11088,7 @@
     .param p2, "facility"    # I
     .param p3, "response"    # Landroid/os/Message;
 
-    .line 3655
+    .line 3435
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -11571,7 +11111,7 @@
 
     invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->logv(Ljava/lang/String;)V
 
-    .line 3657
+    .line 3437
     const/4 v4, 0x0
 
     const v5, 0x7fffffff
@@ -11586,7 +11126,7 @@
 
     invoke-direct/range {v1 .. v6}, Lorg/codeaurora/ims/ImsSenderRxr;->suppSvcStatusInternal(II[Ljava/lang/String;ILandroid/os/Message;)V
 
-    .line 3658
+    .line 3438
     return-void
 .end method
 
@@ -11598,7 +11138,7 @@
     .param p4, "serviceClassValue"    # I
     .param p5, "response"    # Landroid/os/Message;
 
-    .line 3649
+    .line 3429
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -11627,10 +11167,10 @@
 
     invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->logv(Ljava/lang/String;)V
 
-    .line 3651
+    .line 3431
     invoke-direct/range {p0 .. p5}, Lorg/codeaurora/ims/ImsSenderRxr;->suppSvcStatusInternal(II[Ljava/lang/String;ILandroid/os/Message;)V
 
-    .line 3652
+    .line 3432
     return-void
 .end method
 
@@ -11638,33 +11178,33 @@
     .locals 1
     .param p1, "result"    # Landroid/os/Message;
 
-    .line 3925
+    .line 3705
     const-string v0, "switchWaitingOrHoldingAndActive : Not supported"
 
     invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3926
+    .line 3706
     return-void
 .end method
 
 .method public testingEmergencyCall()V
     .locals 2
 
-    .line 4023
+    .line 3803
     const-string v0, "ImsSenderRxr"
 
     const-string v1, "testingEmergencyCall"
 
     invoke-static {v0, v1}, Lcom/qualcomm/ims/utils/Log;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4024
+    .line 3804
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mTestingEmergencyCall:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    .line 4025
+    .line 3805
     return-void
 .end method
 
@@ -11672,12 +11212,12 @@
     .locals 1
     .param p1, "h"    # Landroid/os/Handler;
 
-    .line 627
+    .line 602
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mWfcRoamingModeConfigRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/telephony/utils/RegistrantList;->remove(Landroid/os/Handler;)V
 
-    .line 628
+    .line 603
     return-void
 .end method
 
@@ -11685,20 +11225,20 @@
     .locals 1
     .param p1, "h"    # Landroid/os/Handler;
 
-    .line 743
+    .line 718
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mSendSmsStatusReportRegistrant:Lorg/codeaurora/telephony/utils/Registrant;
 
     if-eqz v0, :cond_0
 
-    .line 744
+    .line 719
     invoke-virtual {v0}, Lorg/codeaurora/telephony/utils/Registrant;->clear()V
 
-    .line 745
+    .line 720
     const/4 v0, 0x0
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mSendSmsStatusReportRegistrant:Lorg/codeaurora/telephony/utils/Registrant;
 
-    .line 747
+    .line 722
     :cond_0
     return-void
 .end method
@@ -11707,20 +11247,20 @@
     .locals 1
     .param p1, "h"    # Landroid/os/Handler;
 
-    .line 732
+    .line 707
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mIncomingSmsRegistrant:Lorg/codeaurora/telephony/utils/Registrant;
 
     if-eqz v0, :cond_0
 
-    .line 733
+    .line 708
     invoke-virtual {v0}, Lorg/codeaurora/telephony/utils/Registrant;->clear()V
 
-    .line 734
+    .line 709
     const/4 v0, 0x0
 
     iput-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mIncomingSmsRegistrant:Lorg/codeaurora/telephony/utils/Registrant;
 
-    .line 736
+    .line 711
     :cond_0
     return-void
 .end method
@@ -11729,12 +11269,12 @@
     .locals 1
     .param p1, "h"    # Landroid/os/Handler;
 
-    .line 707
+    .line 682
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mSsnRegistrant:Lorg/codeaurora/telephony/utils/Registrant;
 
     invoke-virtual {v0}, Lorg/codeaurora/telephony/utils/Registrant;->clear()V
 
-    .line 708
+    .line 683
     return-void
 .end method
 
@@ -11742,12 +11282,12 @@
     .locals 1
     .param p1, "h"    # Landroid/os/Handler;
 
-    .line 755
+    .line 730
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mAutoRejectRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/telephony/utils/RegistrantList;->remove(Landroid/os/Handler;)V
 
-    .line 756
+    .line 731
     return-void
 .end method
 
@@ -11755,12 +11295,12 @@
     .locals 1
     .param p1, "h"    # Landroid/os/Handler;
 
-    .line 672
+    .line 647
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mGeolocationRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/telephony/utils/RegistrantList;->remove(Landroid/os/Handler;)V
 
-    .line 673
+    .line 648
     return-void
 .end method
 
@@ -11768,12 +11308,12 @@
     .locals 1
     .param p1, "h"    # Landroid/os/Handler;
 
-    .line 636
+    .line 611
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mHandoverStatusRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/telephony/utils/RegistrantList;->remove(Landroid/os/Handler;)V
 
-    .line 637
+    .line 612
     return-void
 .end method
 
@@ -11781,12 +11321,12 @@
     .locals 1
     .param p1, "h"    # Landroid/os/Handler;
 
-    .line 2322
+    .line 2192
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mModifyCallRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/telephony/utils/RegistrantList;->remove(Landroid/os/Handler;)V
 
-    .line 2323
+    .line 2193
     return-void
 .end method
 
@@ -11794,12 +11334,12 @@
     .locals 1
     .param p1, "h"    # Landroid/os/Handler;
 
-    .line 785
+    .line 760
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mMotoVopsRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/telephony/utils/RegistrantList;->remove(Landroid/os/Handler;)V
 
-    .line 786
+    .line 761
     return-void
 .end method
 
@@ -11807,12 +11347,12 @@
     .locals 1
     .param p1, "h"    # Landroid/os/Handler;
 
-    .line 775
+    .line 750
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mMultiIdentityInfoPendingRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/telephony/utils/RegistrantList;->remove(Landroid/os/Handler;)V
 
-    .line 776
+    .line 751
     return-void
 .end method
 
@@ -11820,12 +11360,12 @@
     .locals 1
     .param p1, "h"    # Landroid/os/Handler;
 
-    .line 771
+    .line 746
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mMultiIdentityStatusChangeRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/telephony/utils/RegistrantList;->remove(Landroid/os/Handler;)V
 
-    .line 772
+    .line 747
     return-void
 .end method
 
@@ -11833,12 +11373,12 @@
     .locals 1
     .param p1, "h"    # Landroid/os/Handler;
 
-    .line 2331
+    .line 2201
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mMwiRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/telephony/utils/RegistrantList;->remove(Landroid/os/Handler;)V
 
-    .line 2332
+    .line 2202
     return-void
 .end method
 
@@ -11846,12 +11386,12 @@
     .locals 1
     .param p1, "h"    # Landroid/os/Handler;
 
-    .line 690
+    .line 665
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mParticipantStatusRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/telephony/utils/RegistrantList;->remove(Landroid/os/Handler;)V
 
-    .line 691
+    .line 666
     return-void
 .end method
 
@@ -11859,12 +11399,12 @@
     .locals 1
     .param p1, "h"    # Landroid/os/Handler;
 
-    .line 645
+    .line 620
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mRefreshConfInfoRegistrations:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/telephony/utils/RegistrantList;->remove(Landroid/os/Handler;)V
 
-    .line 646
+    .line 621
     return-void
 .end method
 
@@ -11872,12 +11412,12 @@
     .locals 1
     .param p1, "h"    # Landroid/os/Handler;
 
-    .line 699
+    .line 674
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mRegistrationBlockStatusRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/telephony/utils/RegistrantList;->remove(Landroid/os/Handler;)V
 
-    .line 700
+    .line 675
     return-void
 .end method
 
@@ -11885,12 +11425,12 @@
     .locals 1
     .param p1, "h"    # Landroid/os/Handler;
 
-    .line 654
+    .line 629
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mSrvStatusRegistrations:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/telephony/utils/RegistrantList;->remove(Landroid/os/Handler;)V
 
-    .line 655
+    .line 630
     return-void
 .end method
 
@@ -11898,12 +11438,12 @@
     .locals 1
     .param p1, "h"    # Landroid/os/Handler;
 
-    .line 607
+    .line 582
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mSsaccRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/telephony/utils/RegistrantList;->remove(Landroid/os/Handler;)V
 
-    .line 608
+    .line 583
     return-void
 .end method
 
@@ -11911,12 +11451,12 @@
     .locals 1
     .param p1, "h"    # Landroid/os/Handler;
 
-    .line 715
+    .line 690
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mSsIndicationRegistrant:Lorg/codeaurora/telephony/utils/Registrant;
 
     invoke-virtual {v0}, Lorg/codeaurora/telephony/utils/Registrant;->clear()V
 
-    .line 716
+    .line 691
     return-void
 .end method
 
@@ -11924,12 +11464,12 @@
     .locals 1
     .param p1, "h"    # Landroid/os/Handler;
 
-    .line 663
+    .line 638
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mTtyStatusRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/telephony/utils/RegistrantList;->remove(Landroid/os/Handler;)V
 
-    .line 664
+    .line 639
     return-void
 .end method
 
@@ -11937,12 +11477,12 @@
     .locals 1
     .param p1, "h"    # Landroid/os/Handler;
 
-    .line 724
+    .line 699
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mUssdInfoRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/telephony/utils/RegistrantList;->remove(Landroid/os/Handler;)V
 
-    .line 725
+    .line 700
     return-void
 .end method
 
@@ -11950,12 +11490,12 @@
     .locals 1
     .param p1, "h"    # Landroid/os/Handler;
 
-    .line 681
+    .line 656
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mVoWiFiCallQualityRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/telephony/utils/RegistrantList;->remove(Landroid/os/Handler;)V
 
-    .line 682
+    .line 657
     return-void
 .end method
 
@@ -11963,12 +11503,12 @@
     .locals 1
     .param p1, "h"    # Landroid/os/Handler;
 
-    .line 616
+    .line 591
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mVopsRegistrants:Lorg/codeaurora/telephony/utils/RegistrantList;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/telephony/utils/RegistrantList;->remove(Landroid/os/Handler;)V
 
-    .line 617
+    .line 592
     return-void
 .end method
 
@@ -11976,15 +11516,15 @@
     .locals 3
     .param p1, "listener"    # Lorg/codeaurora/ims/ImsSenderRxr$ImsRadioServiceListener;
 
-    .line 360
+    .line 352
     if-eqz p1, :cond_1
 
-    .line 363
+    .line 355
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mListeners:Ljava/util/List;
 
     monitor-enter v0
 
-    .line 364
+    .line 356
     :try_start_0
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mListeners:Ljava/util/List;
 
@@ -11994,14 +11534,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 365
+    .line 357
     iget-object v1, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mListeners:Ljava/util/List;
 
     invoke-interface {v1, p1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 367
+    .line 359
     :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -12019,14 +11559,14 @@
 
     invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 369
+    .line 361
     :goto_0
     monitor-exit v0
 
-    .line 370
+    .line 362
     return-void
 
-    .line 369
+    .line 361
     :catchall_0
     move-exception v1
 
@@ -12036,7 +11576,7 @@
 
     throw v1
 
-    .line 361
+    .line 353
     :cond_1
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -12051,7 +11591,7 @@
     .locals 2
     .param p1, "response"    # I
 
-    .line 2583
+    .line 2453
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -12072,7 +11612,7 @@
 
     invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->log(Ljava/lang/String;)V
 
-    .line 2584
+    .line 2454
     return-void
 .end method
 
@@ -12081,7 +11621,7 @@
     .param p1, "response"    # I
     .param p2, "more"    # Ljava/lang/String;
 
-    .line 2587
+    .line 2457
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -12108,7 +11648,7 @@
 
     invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->log(Ljava/lang/String;)V
 
-    .line 2588
+    .line 2458
     return-void
 .end method
 
@@ -12117,7 +11657,7 @@
     .param p1, "response"    # I
     .param p2, "ret"    # Ljava/lang/Object;
 
-    .line 2591
+    .line 2461
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -12148,7 +11688,7 @@
 
     invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->log(Ljava/lang/String;)V
 
-    .line 2592
+    .line 2462
     return-void
 .end method
 
@@ -12157,7 +11697,7 @@
     .param p1, "response"    # I
     .param p2, "ret"    # Ljava/lang/Object;
 
-    .line 2595
+    .line 2465
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -12188,7 +11728,7 @@
 
     invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->logv(Ljava/lang/String;)V
 
-    .line 2596
+    .line 2466
     return-void
 .end method
 
@@ -12197,15 +11737,15 @@
     .param p1, "preference"    # I
     .param p2, "response"    # Landroid/os/Message;
 
-    .line 3861
+    .line 3641
     const-string v0, "updateVoltePref"
 
     invoke-virtual {p0, v0}, Lorg/codeaurora/ims/ImsSenderRxr;->logv(Ljava/lang/String;)V
 
-    .line 3862
+    .line 3642
     const/16 v0, 0x32
 
-    .line 3863
+    .line 3643
     .local v0, "msgId":I
     const/16 v1, 0x32
 
@@ -12213,13 +11753,13 @@
 
     move-result-object v2
 
-    .line 3864
+    .line 3644
     .local v2, "msgIdString":Ljava/lang/String;
     invoke-static {v1, p2}, Lorg/codeaurora/ims/IFRequest;->obtain(ILandroid/os/Message;)Lorg/codeaurora/ims/IFRequest;
 
     move-result-object v1
 
-    .line 3866
+    .line 3646
     .local v1, "rr":Lorg/codeaurora/ims/IFRequest;
     invoke-direct {p0, v1, v2}, Lorg/codeaurora/ims/ImsSenderRxr;->sendErrorOnImsRadioDown(Lorg/codeaurora/ims/IFRequest;Ljava/lang/String;)Z
 
@@ -12227,10 +11767,10 @@
 
     if-eqz v3, :cond_0
 
-    .line 3867
+    .line 3647
     return-void
 
-    .line 3871
+    .line 3651
     :cond_0
     iget-object v3, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mContext:Landroid/content/Context;
 
@@ -12242,14 +11782,14 @@
 
     invoke-static {v3, v4, p1}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 3873
+    .line 3653
     invoke-direct {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->queueRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3875
+    .line 3655
     :try_start_0
     invoke-virtual {p0, v1}, Lorg/codeaurora/ims/ImsSenderRxr;->logSolicitedRequest(Lorg/codeaurora/ims/IFRequest;)V
 
-    .line 3876
+    .line 3656
     iget-object v3, p0, Lorg/codeaurora/ims/ImsSenderRxr;->mImsRadio:Lvendor/qti/hardware/radio/ims/V1_0/IImsRadio;
 
     iget v4, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
@@ -12258,20 +11798,20 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3880
+    .line 3660
     goto :goto_0
 
-    .line 3877
+    .line 3657
     :catch_0
     move-exception v3
 
-    .line 3878
+    .line 3658
     .local v3, "ex":Ljava/lang/Exception;
     iget v4, v1, Lorg/codeaurora/ims/IFRequest;->mSerial:I
 
     invoke-direct {p0, v4}, Lorg/codeaurora/ims/ImsSenderRxr;->removeFromQueueAndSendResponse(I)V
 
-    .line 3879
+    .line 3659
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -12290,7 +11830,7 @@
 
     invoke-static {p0, v4}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 3882
+    .line 3662
     .end local v3    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void

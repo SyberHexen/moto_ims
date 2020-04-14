@@ -14,8 +14,6 @@
 
 .field public static final AMR_WB_OCTET_ALIGNED_PT:I = 0x32
 
-.field public static final AUTO_REJECT_CALL_MODE:I = 0x4a
-
 .field public static final AVAILABILITY_CACHE_EXPIRATION:I = 0x13
 
 .field public static final CANCELLATION_TIMER:I = 0x5
@@ -152,7 +150,7 @@
 
 .field public static final VOICE_OVER_WIFI_ENABLED:I = 0x1b
 
-.field public static final VOICE_OVER_WIFI_MDN:I = 0x4b
+.field public static final VOICE_OVER_WIFI_MDN:I = 0x4a
 
 .field public static final VOICE_OVER_WIFI_MODE:I = 0x1d
 
@@ -191,29 +189,29 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 645
+    .line 633
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 646
+    .line 634
     const/4 v0, 0x0
 
     iput v0, p0, Lorg/codeaurora/ims/ImsConfigItem;->mItem:I
 
-    .line 647
+    .line 635
     iput-boolean v0, p0, Lorg/codeaurora/ims/ImsConfigItem;->mBoolValue:Z
 
-    .line 648
+    .line 636
     iput v0, p0, Lorg/codeaurora/ims/ImsConfigItem;->mIntValue:I
 
-    .line 649
+    .line 637
     const-string v1, ""
 
     iput-object v1, p0, Lorg/codeaurora/ims/ImsConfigItem;->mStringValue:Ljava/lang/String;
 
-    .line 650
+    .line 638
     iput v0, p0, Lorg/codeaurora/ims/ImsConfigItem;->mErrorCause:I
 
-    .line 651
+    .line 639
     return-void
 .end method
 
@@ -223,10 +221,10 @@
     .locals 0
     .param p1, "value"    # Z
 
-    .line 658
+    .line 646
     iput-boolean p1, p0, Lorg/codeaurora/ims/ImsConfigItem;->mBoolValue:Z
 
-    .line 659
+    .line 647
     return-void
 .end method
 
@@ -234,10 +232,10 @@
     .locals 0
     .param p1, "value"    # I
 
-    .line 670
+    .line 658
     iput p1, p0, Lorg/codeaurora/ims/ImsConfigItem;->mErrorCause:I
 
-    .line 671
+    .line 659
     return-void
 .end method
 
@@ -245,10 +243,10 @@
     .locals 0
     .param p1, "value"    # I
 
-    .line 662
+    .line 650
     iput p1, p0, Lorg/codeaurora/ims/ImsConfigItem;->mIntValue:I
 
-    .line 663
+    .line 651
     return-void
 .end method
 
@@ -256,10 +254,10 @@
     .locals 0
     .param p1, "value"    # I
 
-    .line 654
+    .line 642
     iput p1, p0, Lorg/codeaurora/ims/ImsConfigItem;->mItem:I
 
-    .line 655
+    .line 643
     return-void
 .end method
 
@@ -267,17 +265,17 @@
     .locals 0
     .param p1, "value"    # Ljava/lang/String;
 
-    .line 666
+    .line 654
     iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigItem;->mStringValue:Ljava/lang/String;
 
-    .line 667
+    .line 655
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 2
 
-    .line 674
+    .line 662
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

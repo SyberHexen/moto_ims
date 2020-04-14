@@ -104,44 +104,19 @@
 .end method
 
 .method protected onGetImsFeatureState(I)I
-    .locals 4
+    .locals 3
     .param p1, "phoneId"    # I
 
-    .line 199
-    const-string v0, "getImsFeatureState"
+    .line 192
+    iget-object v0, p0, Lorg/codeaurora/ims/QtiImsExt;->mContext:Landroid/content/Context;
 
-    :try_start_0
-    iget-object v1, p0, Lorg/codeaurora/ims/QtiImsExt;->mContext:Landroid/content/Context;
+    const-string v1, "android.permission.READ_PHONE_STATE"
 
-    const-string v2, "android.permission.READ_PHONE_STATE"
+    const-string v2, "getImsFeatureState"
 
-    invoke-virtual {v1, v2, v0}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_0
-    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 205
-    goto :goto_0
-
-    .line 201
-    :catch_0
-    move-exception v1
-
-    .line 202
-    .local v1, "e":Ljava/lang/SecurityException;
-    const-string v2, "no READ_PHONE_STATE permission, check READ_PRIVILEGED_PHONE_STATE"
-
-    invoke-static {p0, v2}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 203
-    iget-object v2, p0, Lorg/codeaurora/ims/QtiImsExt;->mContext:Landroid/content/Context;
-
-    const-string v3, "android.permission.READ_PRIVILEGED_PHONE_STATE"
-
-    invoke-virtual {v2, v3, v0}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 207
-    .end local v1    # "e":Ljava/lang/SecurityException;
-    :goto_0
+    .line 193
     iget-object v0, p0, Lorg/codeaurora/ims/QtiImsExt;->mServiceSub:[Lorg/codeaurora/ims/ImsServiceSub;
 
     aget-object v0, v0, p1
@@ -157,7 +132,7 @@
     .locals 3
     .param p1, "phoneId"    # I
 
-    .line 184
+    .line 178
     iget-object v0, p0, Lorg/codeaurora/ims/QtiImsExt;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.MODIFY_PHONE_STATE"
@@ -166,7 +141,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 185
+    .line 179
     iget-object v0, p0, Lorg/codeaurora/ims/QtiImsExt;->mServiceSub:[Lorg/codeaurora/ims/ImsServiceSub;
 
     aget-object v0, v0, p1
@@ -175,7 +150,7 @@
 
     move-result-object v0
 
-    .line 186
+    .line 180
     .local v0, "v":Lorg/codeaurora/ims/ImsMultiIdentityControllerBase;
     if-eqz v0, :cond_0
 
@@ -193,45 +168,20 @@
 .end method
 
 .method protected onGetRcsAppConfig(I)I
-    .locals 4
+    .locals 3
     .param p1, "phoneId"    # I
 
-    .line 153
-    const-string v0, "getRcsAppConfig"
+    .line 152
+    iget-object v0, p0, Lorg/codeaurora/ims/QtiImsExt;->mContext:Landroid/content/Context;
 
-    :try_start_0
-    iget-object v1, p0, Lorg/codeaurora/ims/QtiImsExt;->mContext:Landroid/content/Context;
+    const-string v1, "android.permission.READ_PHONE_STATE"
 
-    const-string v2, "android.permission.READ_PHONE_STATE"
+    const-string v2, "getRcsAppConfig"
 
-    invoke-virtual {v1, v2, v0}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_0
-    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 158
-    goto :goto_0
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 154
-    :catch_0
-    move-exception v1
-
-    .line 155
-    .local v1, "e":Ljava/lang/SecurityException;
-    const-string v2, "no READ_PHONE_STATE permission, check READ_PRIVILEGED_PHONE_STATE"
-
-    invoke-static {p0, v2}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 157
-    iget-object v2, p0, Lorg/codeaurora/ims/QtiImsExt;->mContext:Landroid/content/Context;
-
-    const-string v3, "android.permission.READ_PRIVILEGED_PHONE_STATE"
-
-    invoke-virtual {v2, v3, v0}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 160
-    .end local v1    # "e":Ljava/lang/SecurityException;
-    :goto_0
-    :try_start_1
+    :try_start_0
     iget-object v0, p0, Lorg/codeaurora/ims/QtiImsExt;->mServiceSub:[Lorg/codeaurora/ims/ImsServiceSub;
 
     aget-object v0, v0, p1
@@ -242,21 +192,21 @@
 
     const/16 v1, 0x48
 
-    .line 161
+    .line 155
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/ImsConfigImpl;->getConfigInt(I)I
 
     move-result v0
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 160
+    .line 154
     return v0
 
-    .line 162
-    :catch_1
+    .line 156
+    :catch_0
     move-exception v0
 
-    .line 163
+    .line 157
     .local v0, "re":Ljava/lang/Exception;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -278,7 +228,7 @@
 
     invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 166
+    .line 160
     .end local v0    # "re":Ljava/lang/Exception;
     const/4 v0, -0x1
 
@@ -289,7 +239,7 @@
     .locals 3
     .param p1, "phoneId"    # I
 
-    .line 191
+    .line 185
     iget-object v0, p0, Lorg/codeaurora/ims/QtiImsExt;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.MODIFY_PHONE_STATE"
@@ -298,7 +248,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 192
+    .line 186
     iget-object v0, p0, Lorg/codeaurora/ims/QtiImsExt;->mServiceSub:[Lorg/codeaurora/ims/ImsServiceSub;
 
     aget-object v0, v0, p1
@@ -307,7 +257,7 @@
 
     move-result-object v0
 
-    .line 193
+    .line 187
     .local v0, "v":Lorg/codeaurora/ims/ImsScreenShareControllerBase;
     if-eqz v0, :cond_0
 
@@ -594,7 +544,7 @@
     .param p1, "phoneId"    # I
     .param p2, "extras"    # Landroid/os/Bundle;
 
-    .line 212
+    .line 198
     iget-object v0, p0, Lorg/codeaurora/ims/QtiImsExt;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.READ_PHONE_STATE"
@@ -603,14 +553,14 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 213
+    .line 199
     iget-object v0, p0, Lorg/codeaurora/ims/QtiImsExt;->mServiceSub:[Lorg/codeaurora/ims/ImsServiceSub;
 
     aget-object v0, v0, p1
 
     invoke-virtual {v0, p2}, Lorg/codeaurora/ims/ImsServiceSub;->setAnswerExtras(Landroid/os/Bundle;)V
 
-    .line 214
+    .line 200
     return-void
 .end method
 
@@ -698,7 +648,7 @@
     .param p1, "phoneId"    # I
     .param p2, "defaultSmsApp"    # I
 
-    .line 171
+    .line 165
     iget-object v0, p0, Lorg/codeaurora/ims/QtiImsExt;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.MODIFY_PHONE_STATE"
@@ -707,7 +657,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 173
+    .line 167
     :try_start_0
     iget-object v0, p0, Lorg/codeaurora/ims/QtiImsExt;->mServiceSub:[Lorg/codeaurora/ims/ImsServiceSub;
 
@@ -727,11 +677,11 @@
 
     return v0
 
-    .line 175
+    .line 169
     :catch_0
     move-exception v0
 
-    .line 176
+    .line 170
     .local v0, "re":Ljava/lang/Exception;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -753,7 +703,7 @@
 
     invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 179
+    .line 173
     .end local v0    # "re":Ljava/lang/Exception;
     const/4 v0, -0x1
 

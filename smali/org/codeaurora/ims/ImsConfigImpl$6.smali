@@ -42,11 +42,11 @@
     .line 798
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$6;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    invoke-static {v0}, Lorg/codeaurora/ims/ImsConfigImpl;->access$1700(Lorg/codeaurora/ims/ImsConfigImpl;)I
+    invoke-static {v0}, Lorg/codeaurora/ims/ImsConfigImpl;->access$1400(Lorg/codeaurora/ims/ImsConfigImpl;)I
 
     move-result v1
 
-    invoke-static {v0, v1}, Lorg/codeaurora/ims/ImsConfigImpl;->access$1800(Lorg/codeaurora/ims/ImsConfigImpl;I)I
+    invoke-static {v0, v1}, Lorg/codeaurora/ims/ImsConfigImpl;->access$1500(Lorg/codeaurora/ims/ImsConfigImpl;I)I
 
     move-result v0
 
@@ -80,7 +80,7 @@
     .local v1, "bp":Ljava/lang/String;
     iget-object v3, p0, Lorg/codeaurora/ims/ImsConfigImpl$6;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    invoke-static {v3, v0}, Lorg/codeaurora/ims/ImsConfigImpl;->access$1900(Lorg/codeaurora/ims/ImsConfigImpl;I)Ljava/lang/String;
+    invoke-static {v3, v0}, Lorg/codeaurora/ims/ImsConfigImpl;->access$1600(Lorg/codeaurora/ims/ImsConfigImpl;I)Ljava/lang/String;
 
     move-result-object v3
 

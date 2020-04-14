@@ -2,6 +2,7 @@
 apkFileName: ims.apk
 compressionType: false
 doNotCompress:
+- classes.dex
 - resources.arsc
 - png
 - res/drawable-xhdpi-v4/volte_icon

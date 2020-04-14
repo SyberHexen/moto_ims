@@ -23,7 +23,7 @@
     .locals 0
     .param p1, "this$0"    # Lorg/codeaurora/ims/ImsConfigImpl;
 
-    .line 87
+    .line 85
     iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$3;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -38,24 +38,24 @@
     .param p1, "context"    # Landroid/content/Context;
     .param p2, "intent"    # Landroid/content/Intent;
 
-    .line 90
+    .line 88
     invoke-virtual {p2}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
     move-result-object v0
 
     if-nez v0, :cond_0
 
-    .line 91
+    .line 89
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$3;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
     const-string v1, "onReceive: null extras"
 
     invoke-static {v0, v1}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 92
+    .line 90
     return-void
 
-    .line 94
+    .line 92
     :cond_0
     invoke-virtual {p2}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
@@ -69,13 +69,13 @@
 
     move-result v0
 
-    .line 96
+    .line 94
     .local v0, "subId":I
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 97
+    .line 95
     .local v1, "action":Ljava/lang/String;
     iget-object v2, p0, Lorg/codeaurora/ims/ImsConfigImpl$3;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
@@ -101,7 +101,7 @@
 
     iget-object v4, p0, Lorg/codeaurora/ims/ImsConfigImpl$3;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    .line 98
+    .line 96
     invoke-static {v4}, Lorg/codeaurora/ims/ImsConfigImpl;->access$000(Lorg/codeaurora/ims/ImsConfigImpl;)I
 
     move-result v4
@@ -112,20 +112,20 @@
 
     move-result-object v3
 
-    .line 97
+    .line 95
     invoke-static {v2, v3}, Lcom/qualcomm/ims/utils/Log;->i(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 99
+    .line 97
     invoke-static {v0}, Landroid/telephony/SubscriptionManager;->isValidSubscriptionId(I)Z
 
     move-result v2
 
     if-nez v2, :cond_1
 
-    .line 100
+    .line 98
     return-void
 
-    .line 102
+    .line 100
     :cond_1
     const-string v2, "android.telephony.action.CARRIER_CONFIG_CHANGED"
 
@@ -137,36 +137,26 @@
 
     iget-object v2, p0, Lorg/codeaurora/ims/ImsConfigImpl$3;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    .line 103
+    .line 101
     invoke-static {v2}, Lorg/codeaurora/ims/ImsConfigImpl;->access$000(Lorg/codeaurora/ims/ImsConfigImpl;)I
 
     move-result v2
 
     if-ne v0, v2, :cond_2
 
-    .line 104
+    .line 102
     iget-object v2, p0, Lorg/codeaurora/ims/ImsConfigImpl$3;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
     const/4 v3, 0x1
 
     invoke-static {v2, v3}, Lorg/codeaurora/ims/ImsConfigImpl;->access$102(Lorg/codeaurora/ims/ImsConfigImpl;Z)Z
 
-    .line 105
+    .line 103
     iget-object v2, p0, Lorg/codeaurora/ims/ImsConfigImpl$3;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
     invoke-virtual {v2}, Lorg/codeaurora/ims/ImsConfigImpl;->updateWfcModeConfigurationsToModem()V
 
-    .line 106
-    iget-object v2, p0, Lorg/codeaurora/ims/ImsConfigImpl$3;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
-
-    invoke-static {v2}, Lorg/codeaurora/ims/ImsConfigImpl;->access$200(Lorg/codeaurora/ims/ImsConfigImpl;)V
-
-    .line 107
-    iget-object v2, p0, Lorg/codeaurora/ims/ImsConfigImpl$3;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
-
-    invoke-static {v2}, Lorg/codeaurora/ims/ImsConfigImpl;->access$300(Lorg/codeaurora/ims/ImsConfigImpl;)V
-
-    .line 109
+    .line 105
     :cond_2
     return-void
 .end method

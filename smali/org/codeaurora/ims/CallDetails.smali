@@ -606,59 +606,6 @@
     return v0
 .end method
 
-.method public isRadioTech5G()Z
-    .locals 7
-
-    .line 397
-    iget-object v0, p0, Lorg/codeaurora/ims/CallDetails;->localAbility:[Lorg/codeaurora/ims/ServiceStatus;
-
-    const/4 v1, 0x0
-
-    if-nez v0, :cond_0
-
-    .line 398
-    return v1
-
-    .line 400
-    :cond_0
-    array-length v2, v0
-
-    move v3, v1
-
-    :goto_0
-    if-ge v3, v2, :cond_2
-
-    aget-object v4, v0, v3
-
-    .line 402
-    .local v4, "srv":Lorg/codeaurora/ims/ServiceStatus;
-    if-eqz v4, :cond_1
-
-    iget v5, v4, Lorg/codeaurora/ims/ServiceStatus;->type:I
-
-    iget v6, p0, Lorg/codeaurora/ims/CallDetails;->call_type:I
-
-    if-ne v5, v6, :cond_1
-
-    .line 403
-    invoke-virtual {v4}, Lorg/codeaurora/ims/ServiceStatus;->isRadioTech5G()Z
-
-    move-result v0
-
-    return v0
-
-    .line 400
-    .end local v4    # "srv":Lorg/codeaurora/ims/ServiceStatus;
-    :cond_1
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_0
-
-    .line 406
-    :cond_2
-    return v1
-.end method
-
 .method public setCallPull(Z)V
     .locals 0
     .param p1, "value"    # Z
@@ -827,7 +774,7 @@
 .method public toString()Ljava/lang/String;
     .locals 19
 
-    .line 414
+    .line 401
     move-object/from16 v0, p0
 
     const-string v1, ""
@@ -838,13 +785,13 @@
     .local v2, "localSrvAbility":Ljava/lang/String;
     const-string v3, ""
 
-    .line 415
+    .line 402
     .local v3, "peerSrvAbility":Ljava/lang/String;
     iget-object v4, v0, Lorg/codeaurora/ims/CallDetails;->extras:[Ljava/lang/String;
 
     if-eqz v4, :cond_1
 
-    .line 416
+    .line 403
     array-length v6, v4
 
     move-object v7, v1
@@ -858,7 +805,7 @@
 
     aget-object v8, v4, v1
 
-    .line 417
+    .line 404
     .local v8, "s":Ljava/lang/String;
     new-instance v9, Ljava/lang/StringBuilder;
 
@@ -872,7 +819,7 @@
 
     move-result-object v7
 
-    .line 416
+    .line 403
     .end local v8    # "s":Ljava/lang/String;
     add-int/lit8 v1, v1, 0x1
 
@@ -881,7 +828,7 @@
     :cond_0
     move-object v1, v7
 
-    .line 421
+    .line 408
     .end local v7    # "extrasResult":Ljava/lang/String;
     .restart local v1    # "extrasResult":Ljava/lang/String;
     :cond_1
@@ -899,7 +846,7 @@
 
     if-eqz v4, :cond_6
 
-    .line 422
+    .line 409
     array-length v11, v4
 
     move-object v12, v2
@@ -913,11 +860,11 @@
 
     aget-object v13, v4, v2
 
-    .line 423
+    .line 410
     .local v13, "srv":Lorg/codeaurora/ims/ServiceStatus;
     if-eqz v13, :cond_4
 
-    .line 424
+    .line 411
     new-instance v14, Ljava/lang/StringBuilder;
 
     invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
@@ -952,12 +899,12 @@
 
     move-result-object v12
 
-    .line 426
+    .line 413
     iget-object v14, v13, Lorg/codeaurora/ims/ServiceStatus;->accessTechStatus:[Lorg/codeaurora/ims/ServiceStatus$StatusForAccessTech;
 
     if-eqz v14, :cond_3
 
-    .line 427
+    .line 414
     iget-object v14, v13, Lorg/codeaurora/ims/ServiceStatus;->accessTechStatus:[Lorg/codeaurora/ims/ServiceStatus$StatusForAccessTech;
 
     array-length v15, v14
@@ -977,7 +924,7 @@
     .local v16, "extrasResult":Ljava/lang/String;
     aget-object v1, v14, v12
 
-    .line 428
+    .line 415
     .local v1, "at":Lorg/codeaurora/ims/ServiceStatus$StatusForAccessTech;
     move-object/from16 v17, v3
 
@@ -997,7 +944,7 @@
 
     move-result-object v5
 
-    .line 427
+    .line 414
     .end local v1    # "at":Lorg/codeaurora/ims/ServiceStatus$StatusForAccessTech;
     add-int/lit8 v12, v12, 0x1
 
@@ -1024,7 +971,7 @@
 
     goto :goto_3
 
-    .line 426
+    .line 413
     .end local v5    # "localSrvAbility":Ljava/lang/String;
     .end local v16    # "extrasResult":Ljava/lang/String;
     .end local v17    # "peerSrvAbility":Ljava/lang/String;
@@ -1042,7 +989,7 @@
     .restart local v17    # "peerSrvAbility":Ljava/lang/String;
     goto :goto_3
 
-    .line 423
+    .line 410
     .end local v16    # "extrasResult":Ljava/lang/String;
     .end local v17    # "peerSrvAbility":Ljava/lang/String;
     .restart local v1    # "extrasResult":Ljava/lang/String;
@@ -1052,7 +999,7 @@
 
     move-object/from16 v17, v3
 
-    .line 422
+    .line 409
     .end local v1    # "extrasResult":Ljava/lang/String;
     .end local v3    # "peerSrvAbility":Ljava/lang/String;
     .end local v13    # "srv":Lorg/codeaurora/ims/ServiceStatus;
@@ -1084,7 +1031,7 @@
 
     goto :goto_4
 
-    .line 421
+    .line 408
     .end local v12    # "localSrvAbility":Ljava/lang/String;
     .end local v16    # "extrasResult":Ljava/lang/String;
     .end local v17    # "peerSrvAbility":Ljava/lang/String;
@@ -1096,7 +1043,7 @@
 
     move-object/from16 v17, v3
 
-    .line 435
+    .line 422
     .end local v1    # "extrasResult":Ljava/lang/String;
     .end local v3    # "peerSrvAbility":Ljava/lang/String;
     .restart local v16    # "extrasResult":Ljava/lang/String;
@@ -1106,7 +1053,7 @@
 
     if-eqz v1, :cond_a
 
-    .line 436
+    .line 423
     array-length v3, v1
 
     move-object/from16 v5, v17
@@ -1120,11 +1067,11 @@
 
     aget-object v11, v1, v4
 
-    .line 437
+    .line 424
     .local v11, "srv":Lorg/codeaurora/ims/ServiceStatus;
     if-eqz v11, :cond_9
 
-    .line 438
+    .line 425
     new-instance v12, Ljava/lang/StringBuilder;
 
     invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
@@ -1159,12 +1106,12 @@
 
     move-result-object v5
 
-    .line 440
+    .line 427
     iget-object v12, v11, Lorg/codeaurora/ims/ServiceStatus;->accessTechStatus:[Lorg/codeaurora/ims/ServiceStatus$StatusForAccessTech;
 
     if-eqz v12, :cond_8
 
-    .line 441
+    .line 428
     iget-object v12, v11, Lorg/codeaurora/ims/ServiceStatus;->accessTechStatus:[Lorg/codeaurora/ims/ServiceStatus$StatusForAccessTech;
 
     array-length v13, v12
@@ -1180,7 +1127,7 @@
 
     aget-object v15, v12, v5
 
-    .line 442
+    .line 429
     .local v15, "at":Lorg/codeaurora/ims/ServiceStatus$StatusForAccessTech;
     move-object/from16 v18, v1
 
@@ -1198,7 +1145,7 @@
 
     move-result-object v14
 
-    .line 441
+    .line 428
     .end local v15    # "at":Lorg/codeaurora/ims/ServiceStatus$StatusForAccessTech;
     add-int/lit8 v5, v5, 0x1
 
@@ -1213,7 +1160,7 @@
 
     goto :goto_7
 
-    .line 440
+    .line 427
     .end local v14    # "peerSrvAbility":Ljava/lang/String;
     .restart local v5    # "peerSrvAbility":Ljava/lang/String;
     :cond_8
@@ -1221,11 +1168,11 @@
 
     goto :goto_7
 
-    .line 437
+    .line 424
     :cond_9
     move-object/from16 v18, v1
 
-    .line 436
+    .line 423
     .end local v11    # "srv":Lorg/codeaurora/ims/ServiceStatus;
     :goto_7
     add-int/lit8 v4, v4, 0x1
@@ -1234,13 +1181,13 @@
 
     goto :goto_5
 
-    .line 435
+    .line 422
     .end local v5    # "peerSrvAbility":Ljava/lang/String;
     .restart local v17    # "peerSrvAbility":Ljava/lang/String;
     :cond_a
     move-object/from16 v5, v17
 
-    .line 449
+    .line 436
     .end local v17    # "peerSrvAbility":Ljava/lang/String;
     .restart local v5    # "peerSrvAbility":Ljava/lang/String;
     :cond_b

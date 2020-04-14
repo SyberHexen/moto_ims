@@ -38,18 +38,18 @@
     .param p2, "w"    # I
     .param p3, "h"    # I
 
-    .line 160
+    .line 151
     iput-object p1, p0, Lcom/qualcomm/ims/vt/MediaController$PauseImageTask;->this$0:Lcom/qualcomm/ims/vt/MediaController;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
-    .line 161
+    .line 152
     iput p2, p0, Lcom/qualcomm/ims/vt/MediaController$PauseImageTask;->width:I
 
-    .line 162
+    .line 153
     iput p3, p0, Lcom/qualcomm/ims/vt/MediaController$PauseImageTask;->height:I
 
-    .line 163
+    .line 154
     return-void
 .end method
 
@@ -57,10 +57,10 @@
     .locals 5
     .param p1, "uri"    # Ljava/lang/String;
 
-    .line 166
+    .line 157
     const/4 v0, 0x0
 
-    .line 167
+    .line 158
     .local v0, "b":Landroid/graphics/Bitmap;
     invoke-virtual {p1}, Ljava/lang/String;->isEmpty()Z
 
@@ -68,7 +68,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 169
+    .line 160
     iget-object v1, p0, Lcom/qualcomm/ims/vt/MediaController$PauseImageTask;->this$0:Lcom/qualcomm/ims/vt/MediaController;
 
     invoke-static {v1}, Lcom/qualcomm/ims/vt/MediaController;->access$100(Lcom/qualcomm/ims/vt/MediaController;)Landroid/content/Context;
@@ -91,7 +91,7 @@
 
     goto :goto_0
 
-    .line 172
+    .line 163
     :cond_0
     iget v1, p0, Lcom/qualcomm/ims/vt/MediaController$PauseImageTask;->width:I
 
@@ -101,7 +101,7 @@
 
     move-result-object v0
 
-    .line 175
+    .line 166
     :goto_0
     if-eqz v0, :cond_1
 
@@ -111,7 +111,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 176
+    .line 167
     iget v1, p0, Lcom/qualcomm/ims/vt/MediaController$PauseImageTask;->width:I
 
     iget v2, p0, Lcom/qualcomm/ims/vt/MediaController$PauseImageTask;->height:I
@@ -122,7 +122,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/graphics/Bitmap;->reconfigure(IILandroid/graphics/Bitmap$Config;)V
 
-    .line 177
+    .line 168
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -137,7 +137,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 178
+    .line 169
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v2
@@ -148,7 +148,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 179
+    .line 170
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v2
@@ -159,10 +159,10 @@
 
     move-result-object v1
 
-    .line 177
+    .line 168
     invoke-static {v1}, Lcom/qualcomm/ims/vt/MediaController;->access$200(Ljava/lang/String;)V
 
-    .line 181
+    .line 172
     :cond_1
     return-object v0
 .end method
@@ -173,12 +173,12 @@
     .locals 3
     .param p1, "params"    # [Ljava/lang/String;
 
-    .line 187
+    .line 178
     const/4 v0, 0x0
 
     aget-object v0, p1, v0
 
-    .line 189
+    .line 180
     .local v0, "uri":Ljava/lang/String;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -212,24 +212,24 @@
 
     invoke-static {v1}, Lcom/qualcomm/ims/vt/MediaController;->access$200(Ljava/lang/String;)V
 
-    .line 192
+    .line 183
     invoke-virtual {p0}, Lcom/qualcomm/ims/vt/MediaController$PauseImageTask;->isCancelled()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 193
+    .line 184
     const-string v1, "setPreviewImageAsync: PauseImageTask is cancelled"
 
     invoke-static {v1}, Lcom/qualcomm/ims/vt/MediaController;->access$200(Ljava/lang/String;)V
 
-    .line 194
+    .line 185
     const/4 v1, 0x0
 
     return-object v1
 
-    .line 197
+    .line 188
     :cond_0
     invoke-direct {p0, v0}, Lcom/qualcomm/ims/vt/MediaController$PauseImageTask;->reconfigureAndDecodeImage(Ljava/lang/String;)Landroid/graphics/Bitmap;
 
@@ -241,7 +241,7 @@
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 156
+    .line 147
     check-cast p1, [Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/qualcomm/ims/vt/MediaController$PauseImageTask;->doInBackground([Ljava/lang/String;)Landroid/graphics/Bitmap;
@@ -255,7 +255,7 @@
     .locals 2
     .param p1, "bitmap"    # Landroid/graphics/Bitmap;
 
-    .line 202
+    .line 193
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -272,26 +272,26 @@
 
     invoke-static {v0}, Lcom/qualcomm/ims/vt/MediaController;->access$200(Ljava/lang/String;)V
 
-    .line 204
+    .line 195
     if-nez p1, :cond_0
 
-    .line 205
+    .line 196
     return-void
 
-    .line 208
+    .line 199
     :cond_0
     iget-object v0, p0, Lcom/qualcomm/ims/vt/MediaController$PauseImageTask;->this$0:Lcom/qualcomm/ims/vt/MediaController;
 
     invoke-static {v0, p1}, Lcom/qualcomm/ims/vt/MediaController;->access$300(Lcom/qualcomm/ims/vt/MediaController;Landroid/graphics/Bitmap;)V
 
-    .line 209
+    .line 200
     return-void
 .end method
 
 .method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
     .locals 0
 
-    .line 156
+    .line 147
     check-cast p1, Landroid/graphics/Bitmap;
 
     invoke-virtual {p0, p1}, Lcom/qualcomm/ims/vt/MediaController$PauseImageTask;->onPostExecute(Landroid/graphics/Bitmap;)V

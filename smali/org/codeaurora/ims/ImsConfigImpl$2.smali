@@ -24,7 +24,7 @@
     .param p1, "this$0"    # Lorg/codeaurora/ims/ImsConfigImpl;
     .param p2, "x0"    # Landroid/os/Handler;
 
-    .line 80
+    .line 78
     iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$2;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -38,13 +38,13 @@
     .locals 2
     .param p1, "selfChange"    # Z
 
-    .line 83
+    .line 81
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$2;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/ImsConfigImpl;->updateWFCMode(Z)I
 
-    .line 84
+    .line 82
     return-void
 .end method

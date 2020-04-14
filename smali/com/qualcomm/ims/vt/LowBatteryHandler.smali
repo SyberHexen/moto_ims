@@ -63,7 +63,7 @@
 
     iput v0, p0, Lcom/qualcomm/ims/vt/LowBatteryHandler;->mPhoneId:I
 
-    .line 110
+    .line 102
     new-instance v0, Lcom/qualcomm/ims/vt/LowBatteryHandler$1;
 
     invoke-direct {v0, p0}, Lcom/qualcomm/ims/vt/LowBatteryHandler$1;-><init>(Lcom/qualcomm/ims/vt/LowBatteryHandler;)V
@@ -198,24 +198,24 @@
 .method private disconnectVideoCalls()V
     .locals 2
 
-    .line 197
+    .line 189
     sget-object v0, Lcom/qualcomm/ims/vt/LowBatteryHandler;->TAG:Ljava/lang/String;
 
     const-string v1, "disconnectVideoCalls "
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 198
+    .line 190
     sget-object v0, Lorg/codeaurora/ims/DriverCallIms$State;->ACTIVE:Lorg/codeaurora/ims/DriverCallIms$State;
 
     invoke-direct {p0, v0}, Lcom/qualcomm/ims/vt/LowBatteryHandler;->disconnectVideoCalls(Lorg/codeaurora/ims/DriverCallIms$State;)V
 
-    .line 199
+    .line 191
     sget-object v0, Lorg/codeaurora/ims/DriverCallIms$State;->HOLDING:Lorg/codeaurora/ims/DriverCallIms$State;
 
     invoke-direct {p0, v0}, Lcom/qualcomm/ims/vt/LowBatteryHandler;->disconnectVideoCalls(Lorg/codeaurora/ims/DriverCallIms$State;)V
 
-    .line 200
+    .line 192
     return-void
 .end method
 
@@ -223,7 +223,7 @@
     .locals 5
     .param p1, "state"    # Lorg/codeaurora/ims/DriverCallIms$State;
 
-    .line 206
+    .line 198
     iget-object v0, p0, Lcom/qualcomm/ims/vt/LowBatteryHandler;->mServiceSub:Lorg/codeaurora/ims/ImsServiceSub;
 
     invoke-virtual {v0, p1}, Lorg/codeaurora/ims/ImsServiceSub;->getCallSessionByState(Lorg/codeaurora/ims/DriverCallIms$State;)Ljava/util/List;
@@ -247,7 +247,7 @@
 
     check-cast v1, Lorg/codeaurora/ims/ImsCallSessionImpl;
 
-    .line 207
+    .line 199
     .local v1, "session":Lorg/codeaurora/ims/ImsCallSessionImpl;
     sget-object v2, Lcom/qualcomm/ims/vt/LowBatteryHandler;->TAG:Ljava/lang/String;
 
@@ -267,7 +267,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 208
+    .line 200
     invoke-virtual {v1}, Lorg/codeaurora/ims/ImsCallSessionImpl;->getInternalCallType()I
 
     move-result v2
@@ -278,17 +278,17 @@
 
     if-eqz v2, :cond_0
 
-    .line 209
+    .line 201
     const/16 v2, 0x1f9
 
     invoke-virtual {v1, v2}, Lorg/codeaurora/ims/ImsCallSessionImpl;->terminate(I)V
 
-    .line 211
+    .line 203
     .end local v1    # "session":Lorg/codeaurora/ims/ImsCallSessionImpl;
     :cond_0
     goto :goto_0
 
-    .line 212
+    .line 204
     :cond_1
     return-void
 .end method
@@ -300,13 +300,13 @@
 
     monitor-enter v0
 
-    .line 100
+    .line 92
     :try_start_0
     sget-object v1, Lcom/qualcomm/ims/vt/LowBatteryHandler;->sInstance:Lcom/qualcomm/ims/vt/LowBatteryHandler;
 
     if-eqz v1, :cond_0
 
-    .line 101
+    .line 93
     sget-object v1, Lcom/qualcomm/ims/vt/LowBatteryHandler;->sInstance:Lcom/qualcomm/ims/vt/LowBatteryHandler;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -315,7 +315,7 @@
 
     return-object v1
 
-    .line 103
+    .line 95
     :cond_0
     :try_start_1
     new-instance v1, Ljava/lang/RuntimeException;
@@ -328,7 +328,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 99
+    .line 91
     :catchall_0
     move-exception v1
 
@@ -396,7 +396,7 @@
     .locals 3
     .param p1, "intent"    # Landroid/content/Intent;
 
-    .line 166
+    .line 158
     const-string v0, "level"
 
     const/4 v1, -0x1
@@ -405,7 +405,7 @@
 
     move-result v0
 
-    .line 169
+    .line 161
     .local v0, "batteryLevel":I
     iget-object v1, p0, Lcom/qualcomm/ims/vt/LowBatteryHandler;->mContext:Landroid/content/Context;
 
@@ -413,7 +413,7 @@
 
     move-result-object v1
 
-    const v2, 0x10e007a
+    const v2, 0x10e0079
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -435,66 +435,21 @@
 .method private updateLowBatteryStatus()V
     .locals 1
 
-    .line 190
+    .line 182
     iget-object v0, p0, Lcom/qualcomm/ims/vt/LowBatteryHandler;->mServiceSub:Lorg/codeaurora/ims/ImsServiceSub;
 
     invoke-virtual {v0}, Lorg/codeaurora/ims/ImsServiceSub;->updateLowBatteryStatus()V
 
-    .line 191
+    .line 183
     return-void
 .end method
 
 
 # virtual methods
-.method public dispose()V
-    .locals 3
-
-    .line 88
-    sget-object v0, Lcom/qualcomm/ims/vt/LowBatteryHandler;->TAG:Ljava/lang/String;
-
-    const-string v1, "dispose()"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 89
-    const-class v0, Lcom/qualcomm/ims/vt/LowBatteryHandler;
-
-    monitor-enter v0
-
-    .line 90
-    :try_start_0
-    iget-object v1, p0, Lcom/qualcomm/ims/vt/LowBatteryHandler;->mContext:Landroid/content/Context;
-
-    iget-object v2, p0, Lcom/qualcomm/ims/vt/LowBatteryHandler;->mBatteryLevel:Landroid/content/BroadcastReceiver;
-
-    invoke-virtual {v1, v2}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
-
-    .line 91
-    const/4 v1, 0x0
-
-    sput-object v1, Lcom/qualcomm/ims/vt/LowBatteryHandler;->sInstance:Lcom/qualcomm/ims/vt/LowBatteryHandler;
-
-    .line 92
-    monitor-exit v0
-
-    .line 93
-    return-void
-
-    .line 92
-    :catchall_0
-    move-exception v1
-
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v1
-.end method
-
 .method public isLowBattery()Z
     .locals 2
 
-    .line 179
+    .line 171
     iget-boolean v0, p0, Lcom/qualcomm/ims/vt/LowBatteryHandler;->isCarrierOneSupported:Z
 
     if-nez v0, :cond_1
@@ -503,7 +458,7 @@
 
     iget-object v1, p0, Lcom/qualcomm/ims/vt/LowBatteryHandler;->mContext:Landroid/content/Context;
 
-    .line 180
+    .line 172
     invoke-static {v0, v1}, Lorg/codeaurora/ims/utils/QtiImsExtUtils;->allowVideoCallsInLowBattery(ILandroid/content/Context;)Z
 
     move-result v0
@@ -512,13 +467,13 @@
 
     goto :goto_0
 
-    .line 183
+    .line 175
     :cond_0
     const/4 v0, 0x0
 
     return v0
 
-    .line 181
+    .line 173
     :cond_1
     :goto_0
     iget-boolean v0, p0, Lcom/qualcomm/ims/vt/LowBatteryHandler;->mIsLowBattery:Z
@@ -594,7 +549,7 @@
     .locals 3
     .param p1, "callSession"    # Lorg/codeaurora/ims/ImsCallSessionImpl;
 
-    .line 134
+    .line 126
     sget-object v0, Lcom/qualcomm/ims/vt/LowBatteryHandler;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -613,15 +568,15 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 136
+    .line 128
     iget-boolean v0, p0, Lcom/qualcomm/ims/vt/LowBatteryHandler;->isCarrierOneSupported:Z
 
     if-nez v0, :cond_0
 
-    .line 137
+    .line 129
     return-void
 
-    .line 140
+    .line 132
     :cond_0
     iget-boolean v0, p0, Lcom/qualcomm/ims/vt/LowBatteryHandler;->mIsLowBattery:Z
 
@@ -633,17 +588,17 @@
 
     if-eqz v0, :cond_1
 
-    .line 141
+    .line 133
     iget-object v0, p0, Lcom/qualcomm/ims/vt/LowBatteryHandler;->mServiceSub:Lorg/codeaurora/ims/ImsServiceSub;
 
     sget-object v1, Lorg/codeaurora/ims/DriverCallIms$State;->DIALING:Lorg/codeaurora/ims/DriverCallIms$State;
 
-    .line 142
+    .line 134
     invoke-virtual {v0, v1}, Lorg/codeaurora/ims/ImsServiceSub;->getCallSessionByState(Lorg/codeaurora/ims/DriverCallIms$State;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 143
+    .line 135
     .local v0, "sessionList":Ljava/util/List;, "Ljava/util/List<Lorg/codeaurora/ims/ImsCallSessionImpl;>;"
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
@@ -651,7 +606,7 @@
 
     if-nez v1, :cond_1
 
-    .line 151
+    .line 143
     const/4 v1, 0x0
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -664,7 +619,7 @@
 
     invoke-virtual {v1, v2}, Lorg/codeaurora/ims/ImsCallSessionImpl;->terminate(I)V
 
-    .line 154
+    .line 146
     .end local v0    # "sessionList":Ljava/util/List;, "Ljava/util/List<Lorg/codeaurora/ims/ImsCallSessionImpl;>;"
     :cond_1
     return-void
@@ -674,6 +629,6 @@
     .locals 0
     .param p1, "callSession"    # Lorg/codeaurora/ims/ImsCallSessionImpl;
 
-    .line 159
+    .line 151
     return-void
 .end method
