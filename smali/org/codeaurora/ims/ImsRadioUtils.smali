@@ -4774,7 +4774,7 @@
 
     if-eq p0, v0, :cond_3
 
-    const v0, 0xf010
+    const/16 v0, 0x226
 
     if-eq p0, v0, :cond_2
 
@@ -5058,6 +5058,8 @@
     const/16 v0, 0x1fe
 
     return v0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x7

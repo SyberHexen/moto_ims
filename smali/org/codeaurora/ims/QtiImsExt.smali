@@ -614,6 +614,48 @@
     return-void
 .end method
 
+.method protected onSetCallBarring(IZLjava/lang/String;[Ljava/lang/String;Ljava/lang/String;ILorg/codeaurora/ims/internal/IQtiImsExtListener;)V
+    .locals 8
+    .param p1, "phoneId"    # I
+    .param p2, "operationType"    # Z
+    .param p3, "facilityType"    # Ljava/lang/String;
+    .param p4, "cbNumListInfo"    # [Ljava/lang/String;
+    .param p5, "password"    # Ljava/lang/String;
+    .param p6, "serviceClass"    # I
+    .param p7, "listener"    # Lorg/codeaurora/ims/internal/IQtiImsExtListener;
+
+    .line 220
+    iget-object v0, p0, Lorg/codeaurora/ims/QtiImsExt;->mContext:Landroid/content/Context;
+
+    const-string v1, "android.permission.MODIFY_PHONE_STATE"
+
+    const-string v2, "SetCallBarring"
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 221
+    iget-object v0, p0, Lorg/codeaurora/ims/QtiImsExt;->mServiceSub:[Lorg/codeaurora/ims/ImsServiceSub;
+
+    aget-object v1, v0, p1
+
+    move v2, p2
+
+    move-object v3, p3
+
+    move-object v4, p4
+
+    move-object v5, p5
+
+    move v6, p6
+
+    move-object v7, p7
+
+    invoke-virtual/range {v1 .. v7}, Lorg/codeaurora/ims/ImsServiceSub;->setCallBarring(ZLjava/lang/String;[Ljava/lang/String;Ljava/lang/String;ILorg/codeaurora/ims/internal/IQtiImsExtListener;)V
+
+    .line 223
+    return-void
+.end method
+
 .method protected onSetCallForwardUncondTimer(IIIIIIIILjava/lang/String;Lorg/codeaurora/ims/internal/IQtiImsExtListener;)V
     .locals 12
     .param p1, "phoneId"    # I

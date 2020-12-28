@@ -5,7 +5,7 @@ Name: AndroidManifest.xml
 SHA-256-Digest: sM2d6IpPI42UBiYKcsGhcFHN7T8Bafpyz/3CDUyhnT4=
 
 Name: classes.dex
-SHA-256-Digest: KFnoZCRxKfo4fU5hQR6ZCVRNM8bgSH4zsbgHn1FS7xY=
+SHA-256-Digest: jHF+Vi/L8r+iNViAnrzKf0Bhy1oBAyli7bRKVusiTMk=
 
 Name: res/drawable-xhdpi-v4/img_no_image.png
 SHA-256-Digest: O729uX6bgIy/ltKyAIZFfD5eTkogPQ0xfQ9PlZppJIU=
@@ -20,5 +20,5 @@ Name: res/drawable/img_no_image.png
 SHA-256-Digest: d1vgdcA4jt9eI1fcj/DMa6VpC6Y9UAVwK6WFrDUXgks=
 
 Name: resources.arsc
-SHA-256-Digest: jjqQzC/lNuuf1E1CC35gxw8jIR6Pf2jKxNBuywxMIwc=
+SHA-256-Digest: 7TlnYk/2SVoHfGD+XAAtJtnO4gFd8YdcTN54y69/RuI=
 

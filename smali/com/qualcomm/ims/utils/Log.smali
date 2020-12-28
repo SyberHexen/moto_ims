@@ -6,7 +6,7 @@
 # static fields
 .field public static final DEBUG:Z
 
-.field public static final FORCE_DEBUG:Z = true
+.field public static final FORCE_DEBUG:Z
 
 .field public static final TAG:Ljava/lang/String; = "QImsService"
 
@@ -17,16 +17,85 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 4
+
+    .line 30
+    nop
 
     .line 31
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
-    sput-boolean v0, Lcom/qualcomm/ims/utils/Log;->DEBUG:Z
+    const-string v1, "ro.debuggable"
+
+    invoke-static {v1, v0}, Landroid/os/SystemProperties;->getInt(Ljava/lang/String;I)I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    if-ne v1, v2, :cond_0
+
+    move v1, v2
+
+    goto :goto_0
+
+    :cond_0
+    move v1, v0
+
+    :goto_0
+    sput-boolean v1, Lcom/qualcomm/ims/utils/Log;->FORCE_DEBUG:Z
+
+    .line 32
+    sget-boolean v1, Lcom/qualcomm/ims/utils/Log;->FORCE_DEBUG:Z
+
+    const-string v3, "QImsService"
+
+    if-nez v1, :cond_2
+
+    const/4 v1, 0x3
 
     .line 33
+    invoke-static {v3, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    move v1, v0
+
+    goto :goto_2
+
+    :cond_2
+    :goto_1
+    move v1, v2
+
+    :goto_2
+    sput-boolean v1, Lcom/qualcomm/ims/utils/Log;->DEBUG:Z
+
+    .line 34
+    sget-boolean v1, Lcom/qualcomm/ims/utils/Log;->FORCE_DEBUG:Z
+
+    if-nez v1, :cond_3
+
+    const/4 v1, 0x2
+
+    .line 35
+    invoke-static {v3, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_4
+
+    :cond_3
+    move v0, v2
+
+    :cond_4
     sput-boolean v0, Lcom/qualcomm/ims/utils/Log;->VERBOSE:Z
 
+    .line 34
     return-void
 .end method
 
@@ -44,12 +113,12 @@
     .param p0, "obj"    # Ljava/lang/Object;
     .param p1, "msg"    # Ljava/lang/String;
 
-    .line 44
+    .line 45
     sget-boolean v0, Lcom/qualcomm/ims/utils/Log;->DEBUG:Z
 
     if-eqz v0, :cond_0
 
-    .line 45
+    .line 46
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -70,7 +139,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 47
+    .line 48
     :cond_0
     return-void
 .end method
@@ -81,12 +150,12 @@
     .param p1, "str1"    # Ljava/lang/String;
     .param p2, "str2"    # Ljava/lang/Object;
 
-    .line 50
+    .line 51
     sget-boolean v0, Lcom/qualcomm/ims/utils/Log;->DEBUG:Z
 
     if-eqz v0, :cond_0
 
-    .line 51
+    .line 52
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -109,7 +178,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 53
+    .line 54
     :cond_0
     return-void
 .end method
@@ -119,12 +188,12 @@
     .param p0, "tag"    # Ljava/lang/String;
     .param p1, "msg"    # Ljava/lang/String;
 
-    .line 38
+    .line 39
     sget-boolean v0, Lcom/qualcomm/ims/utils/Log;->DEBUG:Z
 
     if-eqz v0, :cond_0
 
-    .line 39
+    .line 40
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -145,7 +214,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 41
+    .line 42
     :cond_0
     return-void
 .end method
@@ -154,7 +223,7 @@
     .locals 2
     .param p0, "tag"    # Ljava/lang/String;
 
-    .line 105
+    .line 106
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -177,7 +246,7 @@
     .param p0, "obj"    # Ljava/lang/Object;
     .param p1, "msg"    # Ljava/lang/String;
 
-    .line 80
+    .line 81
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -198,7 +267,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 81
+    .line 82
     return-void
 .end method
 
@@ -208,7 +277,7 @@
     .param p1, "msg"    # Ljava/lang/String;
     .param p2, "e"    # Ljava/lang/Exception;
 
-    .line 76
+    .line 77
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -229,7 +298,7 @@
 
     invoke-static {v1, v0, p2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 77
+    .line 78
     return-void
 .end method
 
@@ -238,7 +307,7 @@
     .param p0, "tag"    # Ljava/lang/String;
     .param p1, "msg"    # Ljava/lang/String;
 
-    .line 72
+    .line 73
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -259,7 +328,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 73
+    .line 74
     return-void
 .end method
 
@@ -269,7 +338,7 @@
     .param p1, "msg"    # Ljava/lang/String;
     .param p2, "e"    # Ljava/lang/Exception;
 
-    .line 68
+    .line 69
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -290,7 +359,7 @@
 
     invoke-static {v1, v0, p2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 69
+    .line 70
     return-void
 .end method
 
@@ -298,7 +367,7 @@
     .locals 5
     .param p0, "bytes"    # [B
 
-    .line 132
+    .line 133
     new-instance v0, Ljava/lang/StringBuffer;
 
     array-length v1, p0
@@ -307,7 +376,7 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuffer;-><init>(I)V
 
-    .line 134
+    .line 135
     .local v0, "hex":Ljava/lang/StringBuffer;
     const/4 v1, 0x0
 
@@ -317,23 +386,23 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 135
+    .line 136
     aget-byte v2, p0, v1
 
     and-int/lit16 v2, v2, 0xff
 
-    .line 136
+    .line 137
     .local v2, "byteIntValue":I
     const/16 v3, 0x10
 
     if-ge v2, v3, :cond_0
 
-    .line 137
+    .line 138
     const-string v4, "0"
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 139
+    .line 140
     :cond_0
     invoke-static {v2, v3}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
 
@@ -341,13 +410,13 @@
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 134
+    .line 135
     .end local v2    # "byteIntValue":I
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 142
+    .line 143
     .end local v1    # "i":I
     :cond_1
     invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
@@ -361,7 +430,7 @@
     .locals 2
     .param p0, "obj"    # Ljava/lang/Object;
 
-    .line 101
+    .line 102
     if-nez p0, :cond_0
 
     const-string v0, ""
@@ -400,7 +469,7 @@
     .param p0, "obj"    # Ljava/lang/Object;
     .param p1, "msg"    # Ljava/lang/String;
 
-    .line 88
+    .line 89
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -421,7 +490,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 89
+    .line 90
     return-void
 .end method
 
@@ -430,7 +499,7 @@
     .param p0, "tag"    # Ljava/lang/String;
     .param p1, "msg"    # Ljava/lang/String;
 
-    .line 84
+    .line 85
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -451,7 +520,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 85
+    .line 86
     return-void
 .end method
 
@@ -459,7 +528,7 @@
     .locals 2
     .param p0, "pii"    # Ljava/lang/Object;
 
-    .line 113
+    .line 114
     if-eqz p0, :cond_1
 
     sget-boolean v0, Lcom/qualcomm/ims/utils/Log;->VERBOSE:Z
@@ -468,7 +537,7 @@
 
     goto :goto_0
 
-    .line 116
+    .line 117
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -502,7 +571,7 @@
 
     return-object v0
 
-    .line 114
+    .line 115
     :cond_1
     :goto_0
     invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
@@ -516,7 +585,7 @@
     .locals 3
     .param p0, "input"    # [B
 
-    .line 122
+    .line 123
     :try_start_0
     const-string v0, "SHA-1"
 
@@ -526,19 +595,19 @@
     :try_end_0
     .catch Ljava/security/NoSuchAlgorithmException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 125
+    .line 126
     .local v0, "messageDigest":Ljava/security/MessageDigest;
     nop
 
-    .line 126
+    .line 127
     invoke-virtual {v0, p0}, Ljava/security/MessageDigest;->update([B)V
 
-    .line 127
+    .line 128
     invoke-virtual {v0}, Ljava/security/MessageDigest;->digest()[B
 
     move-result-object v1
 
-    .line 128
+    .line 129
     .local v1, "result":[B
     invoke-static {v1}, Lcom/qualcomm/ims/utils/Log;->encodeHex([B)Ljava/lang/String;
 
@@ -546,13 +615,13 @@
 
     return-object v2
 
-    .line 123
+    .line 124
     .end local v0    # "messageDigest":Ljava/security/MessageDigest;
     .end local v1    # "result":[B
     :catch_0
     move-exception v0
 
-    .line 124
+    .line 125
     .local v0, "e":Ljava/security/NoSuchAlgorithmException;
     const/4 v1, 0x0
 
@@ -564,12 +633,12 @@
     .param p0, "obj"    # Ljava/lang/Object;
     .param p1, "msg"    # Ljava/lang/String;
 
-    .line 56
+    .line 57
     sget-boolean v0, Lcom/qualcomm/ims/utils/Log;->VERBOSE:Z
 
     if-eqz v0, :cond_0
 
-    .line 57
+    .line 58
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -590,7 +659,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 59
+    .line 60
     :cond_0
     return-void
 .end method
@@ -601,12 +670,12 @@
     .param p1, "str1"    # Ljava/lang/String;
     .param p2, "str2"    # Ljava/lang/Object;
 
-    .line 62
+    .line 63
     sget-boolean v0, Lcom/qualcomm/ims/utils/Log;->VERBOSE:Z
 
     if-eqz v0, :cond_0
 
-    .line 63
+    .line 64
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -629,7 +698,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 65
+    .line 66
     :cond_0
     return-void
 .end method
@@ -639,7 +708,7 @@
     .param p0, "obj"    # Ljava/lang/Object;
     .param p1, "msg"    # Ljava/lang/String;
 
-    .line 92
+    .line 93
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -660,7 +729,7 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 93
+    .line 94
     return-void
 .end method
 
@@ -669,7 +738,7 @@
     .param p0, "obj"    # Ljava/lang/Object;
     .param p1, "msg"    # Ljava/lang/String;
 
-    .line 96
+    .line 97
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -690,6 +759,6 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 97
+    .line 98
     return-void
 .end method

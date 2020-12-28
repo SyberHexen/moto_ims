@@ -72,11 +72,11 @@
 
 .field public static final CALL_FAIL_MISC:I = 0x1fd
 
-.field public static final CALL_FAIL_NETWORK_DETACH:I = 0xf01e
+.field public static final CALL_FAIL_NETWORK_DETACH:I = 0x234
 
-.field public static final CALL_FAIL_NETWORK_REJECT:I = 0xf016
+.field public static final CALL_FAIL_NETWORK_REJECT:I = 0x22c
 
-.field public static final CALL_FAIL_NETWORK_RESP_TIMEOUT:I = 0xf015
+.field public static final CALL_FAIL_NETWORK_RESP_TIMEOUT:I = 0x22b
 
 .field public static final CALL_FAIL_NETWORK_UNAVAILABLE:I = 0x1fa
 
@@ -84,63 +84,63 @@
 
 .field public static final CALL_FAIL_NORMAL_UNSPECIFIED:I = 0x3
 
-.field public static final CALL_FAIL_NO_CSFB_IN_CS_ROAM:I = 0xf02e
+.field public static final CALL_FAIL_NO_CSFB_IN_CS_ROAM:I = 0x244
 
-.field public static final CALL_FAIL_NO_VALID_SIM:I = 0xf013
+.field public static final CALL_FAIL_NO_VALID_SIM:I = 0x229
 
-.field public static final CALL_FAIL_OEM_CAUSE_1:I = 0xf01f
+.field public static final CALL_FAIL_OEM_CAUSE_1:I = 0x235
 
-.field public static final CALL_FAIL_OEM_CAUSE_10:I = 0xf028
+.field public static final CALL_FAIL_OEM_CAUSE_10:I = 0x23e
 
-.field public static final CALL_FAIL_OEM_CAUSE_11:I = 0xf029
+.field public static final CALL_FAIL_OEM_CAUSE_11:I = 0x23f
 
-.field public static final CALL_FAIL_OEM_CAUSE_12:I = 0xf02a
+.field public static final CALL_FAIL_OEM_CAUSE_12:I = 0x240
 
-.field public static final CALL_FAIL_OEM_CAUSE_13:I = 0xf02b
+.field public static final CALL_FAIL_OEM_CAUSE_13:I = 0x241
 
-.field public static final CALL_FAIL_OEM_CAUSE_14:I = 0xf02c
+.field public static final CALL_FAIL_OEM_CAUSE_14:I = 0x242
 
-.field public static final CALL_FAIL_OEM_CAUSE_15:I = 0xf02d
+.field public static final CALL_FAIL_OEM_CAUSE_15:I = 0x243
 
-.field public static final CALL_FAIL_OEM_CAUSE_2:I = 0xf020
+.field public static final CALL_FAIL_OEM_CAUSE_2:I = 0x236
 
-.field public static final CALL_FAIL_OEM_CAUSE_3:I = 0xf021
+.field public static final CALL_FAIL_OEM_CAUSE_3:I = 0x237
 
-.field public static final CALL_FAIL_OEM_CAUSE_4:I = 0xf022
+.field public static final CALL_FAIL_OEM_CAUSE_4:I = 0x238
 
-.field public static final CALL_FAIL_OEM_CAUSE_5:I = 0xf023
+.field public static final CALL_FAIL_OEM_CAUSE_5:I = 0x239
 
-.field public static final CALL_FAIL_OEM_CAUSE_6:I = 0xf024
+.field public static final CALL_FAIL_OEM_CAUSE_6:I = 0x23a
 
-.field public static final CALL_FAIL_OEM_CAUSE_7:I = 0xf025
+.field public static final CALL_FAIL_OEM_CAUSE_7:I = 0x23b
 
-.field public static final CALL_FAIL_OEM_CAUSE_8:I = 0xf026
+.field public static final CALL_FAIL_OEM_CAUSE_8:I = 0x23c
 
-.field public static final CALL_FAIL_OEM_CAUSE_9:I = 0xf027
+.field public static final CALL_FAIL_OEM_CAUSE_9:I = 0x23d
 
-.field public static final CALL_FAIL_OUT_OF_SERVICE:I = 0xf012
+.field public static final CALL_FAIL_OUT_OF_SERVICE:I = 0x228
 
 .field public static final CALL_FAIL_PULL_OUT_OF_SYNC:I = 0x1ff
 
-.field public static final CALL_FAIL_RADIO_ACCESS_FAILURE:I = 0xf017
+.field public static final CALL_FAIL_RADIO_ACCESS_FAILURE:I = 0x22d
 
-.field public static final CALL_FAIL_RADIO_INTERNAL_ERROR:I = 0xf014
+.field public static final CALL_FAIL_RADIO_INTERNAL_ERROR:I = 0x22a
 
-.field public static final CALL_FAIL_RADIO_LINK_FAILURE:I = 0xf018
+.field public static final CALL_FAIL_RADIO_LINK_FAILURE:I = 0x22e
 
-.field public static final CALL_FAIL_RADIO_LINK_LOST:I = 0xf019
+.field public static final CALL_FAIL_RADIO_LINK_LOST:I = 0x22f
 
-.field public static final CALL_FAIL_RADIO_OFF:I = 0xf011
+.field public static final CALL_FAIL_RADIO_OFF:I = 0x227
 
-.field public static final CALL_FAIL_RADIO_RELEASE_ABNORMAL:I = 0xf01d
+.field public static final CALL_FAIL_RADIO_RELEASE_ABNORMAL:I = 0x233
 
-.field public static final CALL_FAIL_RADIO_RELEASE_NORMAL:I = 0xf01c
+.field public static final CALL_FAIL_RADIO_RELEASE_NORMAL:I = 0x232
 
-.field public static final CALL_FAIL_RADIO_SETUP_FAILURE:I = 0xf01b
+.field public static final CALL_FAIL_RADIO_SETUP_FAILURE:I = 0x231
 
-.field public static final CALL_FAIL_RADIO_UPLINK_FAILURE:I = 0xf01a
+.field public static final CALL_FAIL_RADIO_UPLINK_FAILURE:I = 0x230
 
-.field public static final CALL_FAIL_SIP_ALTERNATE_EMERGENCY_CALL:I = 0xf010
+.field public static final CALL_FAIL_SIP_ALTERNATE_EMERGENCY_CALL:I = 0x226
 
 .field public static final CALL_FAIL_SIP_BAD_ADDRESS:I = 0x209
 
@@ -194,36 +194,6 @@
 
 .field public static final CALL_FAIL_USER_REJECT:I = 0x1f6
 
-.field public static final CODE_OEM_CAUSE_1:I = 0xf001
-
-.field public static final CODE_OEM_CAUSE_10:I = 0xf00a
-
-.field public static final CODE_OEM_CAUSE_11:I = 0xf00b
-
-.field public static final CODE_OEM_CAUSE_12:I = 0xf00c
-
-.field public static final CODE_OEM_CAUSE_13:I = 0xf00d
-
-.field public static final CODE_OEM_CAUSE_14:I = 0xf00e
-
-.field public static final CODE_OEM_CAUSE_15:I = 0xf00f
-
-.field public static final CODE_OEM_CAUSE_2:I = 0xf002
-
-.field public static final CODE_OEM_CAUSE_3:I = 0xf003
-
-.field public static final CODE_OEM_CAUSE_4:I = 0xf004
-
-.field public static final CODE_OEM_CAUSE_5:I = 0xf005
-
-.field public static final CODE_OEM_CAUSE_6:I = 0xf006
-
-.field public static final CODE_OEM_CAUSE_7:I = 0xf007
-
-.field public static final CODE_OEM_CAUSE_8:I = 0xf008
-
-.field public static final CODE_OEM_CAUSE_9:I = 0xf009
-
 
 # direct methods
 .method public constructor <init>()V
@@ -239,37 +209,37 @@
     .locals 4
     .param p0, "o"    # I
 
-    .line 450
+    .line 390
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 451
+    .line 391
     .local v0, "list":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     const/4 v1, 0x0
 
-    .line 452
+    .line 392
     .local v1, "flipped":I
     const-string v2, "CALL_FAIL_UNOBTAINABLE_NUMBER"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 453
+    .line 393
     and-int/lit8 v2, p0, 0x1
 
     const/4 v3, 0x1
 
     if-ne v2, v3, :cond_0
 
-    .line 454
+    .line 394
     const-string v2, "CALL_FAIL_NORMAL"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 455
+    .line 395
     or-int/lit8 v1, v1, 0x1
 
-    .line 457
+    .line 397
     :cond_0
     and-int/lit8 v2, p0, 0x2
 
@@ -277,15 +247,15 @@
 
     if-ne v2, v3, :cond_1
 
-    .line 458
+    .line 398
     const-string v2, "CALL_FAIL_BUSY"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 459
+    .line 399
     or-int/lit8 v1, v1, 0x2
 
-    .line 461
+    .line 401
     :cond_1
     and-int/lit8 v2, p0, 0x3
 
@@ -293,15 +263,15 @@
 
     if-ne v2, v3, :cond_2
 
-    .line 462
+    .line 402
     const-string v2, "CALL_FAIL_NORMAL_UNSPECIFIED"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 463
+    .line 403
     or-int/lit8 v1, v1, 0x3
 
-    .line 465
+    .line 405
     :cond_2
     and-int/lit8 v2, p0, 0x4
 
@@ -309,15 +279,15 @@
 
     if-ne v2, v3, :cond_3
 
-    .line 466
+    .line 406
     const-string v2, "CALL_FAIL_CONGESTION"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 467
+    .line 407
     or-int/lit8 v1, v1, 0x4
 
-    .line 469
+    .line 409
     :cond_3
     and-int/lit8 v2, p0, 0x5
 
@@ -325,15 +295,15 @@
 
     if-ne v2, v3, :cond_4
 
-    .line 470
+    .line 410
     const-string v2, "CALL_FAIL_INCOMPATIBILITY_DESTINATION"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 471
+    .line 411
     or-int/lit8 v1, v1, 0x5
 
-    .line 473
+    .line 413
     :cond_4
     and-int/lit8 v2, p0, 0x6
 
@@ -341,15 +311,15 @@
 
     if-ne v2, v3, :cond_5
 
-    .line 474
+    .line 414
     const-string v2, "CALL_FAIL_CALL_BARRED"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 475
+    .line 415
     or-int/lit8 v1, v1, 0x6
 
-    .line 477
+    .line 417
     :cond_5
     and-int/lit8 v2, p0, 0x7
 
@@ -357,15 +327,15 @@
 
     if-ne v2, v3, :cond_6
 
-    .line 478
+    .line 418
     const-string v2, "CALL_FAIL_FDN_BLOCKED"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 479
+    .line 419
     or-int/lit8 v1, v1, 0x7
 
-    .line 481
+    .line 421
     :cond_6
     and-int/lit8 v2, p0, 0x8
 
@@ -373,15 +343,15 @@
 
     if-ne v2, v3, :cond_7
 
-    .line 482
+    .line 422
     const-string v2, "CALL_FAIL_IMEI_NOT_ACCEPTED"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 483
+    .line 423
     or-int/lit8 v1, v1, 0x8
 
-    .line 485
+    .line 425
     :cond_7
     and-int/lit8 v2, p0, 0x9
 
@@ -389,15 +359,15 @@
 
     if-ne v2, v3, :cond_8
 
-    .line 486
+    .line 426
     const-string v2, "CALL_FAIL_DIAL_MODIFIED_TO_USSD"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 487
+    .line 427
     or-int/lit8 v1, v1, 0x9
 
-    .line 489
+    .line 429
     :cond_8
     and-int/lit8 v2, p0, 0xa
 
@@ -405,15 +375,15 @@
 
     if-ne v2, v3, :cond_9
 
-    .line 490
+    .line 430
     const-string v2, "CALL_FAIL_DIAL_MODIFIED_TO_SS"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 491
+    .line 431
     or-int/lit8 v1, v1, 0xa
 
-    .line 493
+    .line 433
     :cond_9
     and-int/lit8 v2, p0, 0xb
 
@@ -421,15 +391,15 @@
 
     if-ne v2, v3, :cond_a
 
-    .line 494
+    .line 434
     const-string v2, "CALL_FAIL_DIAL_MODIFIED_TO_DIAL"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 495
+    .line 435
     or-int/lit8 v1, v1, 0xb
 
-    .line 497
+    .line 437
     :cond_a
     and-int/lit8 v2, p0, 0xc
 
@@ -437,15 +407,15 @@
 
     if-ne v2, v3, :cond_b
 
-    .line 498
+    .line 438
     const-string v2, "CALL_FAIL_EMERGENCY_TEMP_FAILURE"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 499
+    .line 439
     or-int/lit8 v1, v1, 0xc
 
-    .line 501
+    .line 441
     :cond_b
     and-int/lit8 v2, p0, 0xd
 
@@ -453,15 +423,15 @@
 
     if-ne v2, v3, :cond_c
 
-    .line 502
+    .line 442
     const-string v2, "CALL_FAIL_EMERGENCY_PERM_FAILURE"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 503
+    .line 443
     or-int/lit8 v1, v1, 0xd
 
-    .line 505
+    .line 445
     :cond_c
     and-int/lit8 v2, p0, 0xe
 
@@ -469,15 +439,15 @@
 
     if-ne v2, v3, :cond_d
 
-    .line 506
+    .line 446
     const-string v2, "CALL_FAIL_HO_NOT_FEASIBLE"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 507
+    .line 447
     or-int/lit8 v1, v1, 0xe
 
-    .line 509
+    .line 449
     :cond_d
     and-int/lit16 v2, p0, 0x1f5
 
@@ -485,15 +455,15 @@
 
     if-ne v2, v3, :cond_e
 
-    .line 510
+    .line 450
     const-string v2, "CALL_FAIL_USER_BUSY"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 511
+    .line 451
     or-int/lit16 v1, v1, 0x1f5
 
-    .line 513
+    .line 453
     :cond_e
     and-int/lit16 v2, p0, 0x1f6
 
@@ -501,15 +471,15 @@
 
     if-ne v2, v3, :cond_f
 
-    .line 514
+    .line 454
     const-string v2, "CALL_FAIL_USER_REJECT"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 515
+    .line 455
     or-int/lit16 v1, v1, 0x1f6
 
-    .line 517
+    .line 457
     :cond_f
     and-int/lit16 v2, p0, 0x1f7
 
@@ -517,15 +487,15 @@
 
     if-ne v2, v3, :cond_10
 
-    .line 518
+    .line 458
     const-string v2, "CALL_FAIL_LOW_BATTERY"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 519
+    .line 459
     or-int/lit16 v1, v1, 0x1f7
 
-    .line 521
+    .line 461
     :cond_10
     and-int/lit16 v2, p0, 0x1f8
 
@@ -533,15 +503,15 @@
 
     if-ne v2, v3, :cond_11
 
-    .line 522
+    .line 462
     const-string v2, "CALL_FAIL_BLACKLISTED_CALL_ID"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 523
+    .line 463
     or-int/lit16 v1, v1, 0x1f8
 
-    .line 525
+    .line 465
     :cond_11
     and-int/lit16 v2, p0, 0x1f9
 
@@ -549,15 +519,15 @@
 
     if-ne v2, v3, :cond_12
 
-    .line 526
+    .line 466
     const-string v2, "CALL_FAIL_CS_RETRY_REQUIRED"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 527
+    .line 467
     or-int/lit16 v1, v1, 0x1f9
 
-    .line 529
+    .line 469
     :cond_12
     and-int/lit16 v2, p0, 0x1fa
 
@@ -565,15 +535,15 @@
 
     if-ne v2, v3, :cond_13
 
-    .line 530
+    .line 470
     const-string v2, "CALL_FAIL_NETWORK_UNAVAILABLE"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 531
+    .line 471
     or-int/lit16 v1, v1, 0x1fa
 
-    .line 533
+    .line 473
     :cond_13
     and-int/lit16 v2, p0, 0x1fb
 
@@ -581,15 +551,15 @@
 
     if-ne v2, v3, :cond_14
 
-    .line 534
+    .line 474
     const-string v2, "CALL_FAIL_FEATURE_UNAVAILABLE"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 535
+    .line 475
     or-int/lit16 v1, v1, 0x1fb
 
-    .line 537
+    .line 477
     :cond_14
     and-int/lit16 v2, p0, 0x1fc
 
@@ -597,15 +567,15 @@
 
     if-ne v2, v3, :cond_15
 
-    .line 538
+    .line 478
     const-string v2, "CALL_FAIL_SIP_ERROR"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 539
+    .line 479
     or-int/lit16 v1, v1, 0x1fc
 
-    .line 541
+    .line 481
     :cond_15
     and-int/lit16 v2, p0, 0x1fd
 
@@ -613,15 +583,15 @@
 
     if-ne v2, v3, :cond_16
 
-    .line 542
+    .line 482
     const-string v2, "CALL_FAIL_MISC"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 543
+    .line 483
     or-int/lit16 v1, v1, 0x1fd
 
-    .line 545
+    .line 485
     :cond_16
     and-int/lit16 v2, p0, 0x1fe
 
@@ -629,15 +599,15 @@
 
     if-ne v2, v3, :cond_17
 
-    .line 546
+    .line 486
     const-string v2, "CALL_FAIL_ANSWERED_ELSEWHERE"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 547
+    .line 487
     or-int/lit16 v1, v1, 0x1fe
 
-    .line 549
+    .line 489
     :cond_17
     and-int/lit16 v2, p0, 0x1ff
 
@@ -645,15 +615,15 @@
 
     if-ne v2, v3, :cond_18
 
-    .line 550
+    .line 490
     const-string v2, "CALL_FAIL_PULL_OUT_OF_SYNC"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 551
+    .line 491
     or-int/lit16 v1, v1, 0x1ff
 
-    .line 553
+    .line 493
     :cond_18
     and-int/lit16 v2, p0, 0x200
 
@@ -661,15 +631,15 @@
 
     if-ne v2, v3, :cond_19
 
-    .line 554
+    .line 494
     const-string v2, "CALL_FAIL_CAUSE_CALL_PULLED"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 555
+    .line 495
     or-int/lit16 v1, v1, 0x200
 
-    .line 557
+    .line 497
     :cond_19
     and-int/lit16 v2, p0, 0x201
 
@@ -677,15 +647,15 @@
 
     if-ne v2, v3, :cond_1a
 
-    .line 558
+    .line 498
     const-string v2, "CALL_FAIL_ACCESS_CLASS_BLOCKED"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 559
+    .line 499
     or-int/lit16 v1, v1, 0x201
 
-    .line 561
+    .line 501
     :cond_1a
     and-int/lit16 v2, p0, 0x202
 
@@ -693,15 +663,15 @@
 
     if-ne v2, v3, :cond_1b
 
-    .line 562
+    .line 502
     const-string v2, "CALL_FAIL_SIP_REDIRECTED"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 563
+    .line 503
     or-int/lit16 v1, v1, 0x202
 
-    .line 565
+    .line 505
     :cond_1b
     and-int/lit16 v2, p0, 0x203
 
@@ -709,15 +679,15 @@
 
     if-ne v2, v3, :cond_1c
 
-    .line 566
+    .line 506
     const-string v2, "CALL_FAIL_SIP_BAD_REQUEST"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 567
+    .line 507
     or-int/lit16 v1, v1, 0x203
 
-    .line 569
+    .line 509
     :cond_1c
     and-int/lit16 v2, p0, 0x204
 
@@ -725,15 +695,15 @@
 
     if-ne v2, v3, :cond_1d
 
-    .line 570
+    .line 510
     const-string v2, "CALL_FAIL_SIP_FORBIDDEN"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 571
+    .line 511
     or-int/lit16 v1, v1, 0x204
 
-    .line 573
+    .line 513
     :cond_1d
     and-int/lit16 v2, p0, 0x205
 
@@ -741,15 +711,15 @@
 
     if-ne v2, v3, :cond_1e
 
-    .line 574
+    .line 514
     const-string v2, "CALL_FAIL_SIP_NOT_FOUND"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 575
+    .line 515
     or-int/lit16 v1, v1, 0x205
 
-    .line 577
+    .line 517
     :cond_1e
     and-int/lit16 v2, p0, 0x206
 
@@ -757,15 +727,15 @@
 
     if-ne v2, v3, :cond_1f
 
-    .line 578
+    .line 518
     const-string v2, "CALL_FAIL_SIP_NOT_SUPPORTED"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 579
+    .line 519
     or-int/lit16 v1, v1, 0x206
 
-    .line 581
+    .line 521
     :cond_1f
     and-int/lit16 v2, p0, 0x207
 
@@ -773,15 +743,15 @@
 
     if-ne v2, v3, :cond_20
 
-    .line 582
+    .line 522
     const-string v2, "CALL_FAIL_SIP_REQUEST_TIMEOUT"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 583
+    .line 523
     or-int/lit16 v1, v1, 0x207
 
-    .line 585
+    .line 525
     :cond_20
     and-int/lit16 v2, p0, 0x208
 
@@ -789,15 +759,15 @@
 
     if-ne v2, v3, :cond_21
 
-    .line 586
+    .line 526
     const-string v2, "CALL_FAIL_SIP_TEMPORARILY_UNAVAILABLE"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 587
+    .line 527
     or-int/lit16 v1, v1, 0x208
 
-    .line 589
+    .line 529
     :cond_21
     and-int/lit16 v2, p0, 0x209
 
@@ -805,15 +775,15 @@
 
     if-ne v2, v3, :cond_22
 
-    .line 590
+    .line 530
     const-string v2, "CALL_FAIL_SIP_BAD_ADDRESS"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 591
+    .line 531
     or-int/lit16 v1, v1, 0x209
 
-    .line 593
+    .line 533
     :cond_22
     and-int/lit16 v2, p0, 0x20a
 
@@ -821,15 +791,15 @@
 
     if-ne v2, v3, :cond_23
 
-    .line 594
+    .line 534
     const-string v2, "CALL_FAIL_SIP_BUSY"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 595
+    .line 535
     or-int/lit16 v1, v1, 0x20a
 
-    .line 597
+    .line 537
     :cond_23
     and-int/lit16 v2, p0, 0x20b
 
@@ -837,15 +807,15 @@
 
     if-ne v2, v3, :cond_24
 
-    .line 598
+    .line 538
     const-string v2, "CALL_FAIL_SIP_REQUEST_CANCELLED"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 599
+    .line 539
     or-int/lit16 v1, v1, 0x20b
 
-    .line 601
+    .line 541
     :cond_24
     and-int/lit16 v2, p0, 0x20c
 
@@ -853,15 +823,15 @@
 
     if-ne v2, v3, :cond_25
 
-    .line 602
+    .line 542
     const-string v2, "CALL_FAIL_SIP_NOT_ACCEPTABLE"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 603
+    .line 543
     or-int/lit16 v1, v1, 0x20c
 
-    .line 605
+    .line 545
     :cond_25
     and-int/lit16 v2, p0, 0x20d
 
@@ -869,15 +839,15 @@
 
     if-ne v2, v3, :cond_26
 
-    .line 606
+    .line 546
     const-string v2, "CALL_FAIL_SIP_NOT_REACHABLE"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 607
+    .line 547
     or-int/lit16 v1, v1, 0x20d
 
-    .line 609
+    .line 549
     :cond_26
     and-int/lit16 v2, p0, 0x20e
 
@@ -885,15 +855,15 @@
 
     if-ne v2, v3, :cond_27
 
-    .line 610
+    .line 550
     const-string v2, "CALL_FAIL_SIP_SERVER_INTERNAL_ERROR"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 611
+    .line 551
     or-int/lit16 v1, v1, 0x20e
 
-    .line 613
+    .line 553
     :cond_27
     and-int/lit16 v2, p0, 0x20f
 
@@ -901,15 +871,15 @@
 
     if-ne v2, v3, :cond_28
 
-    .line 614
+    .line 554
     const-string v2, "CALL_FAIL_SIP_SERVER_NOT_IMPLEMENTED"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 615
+    .line 555
     or-int/lit16 v1, v1, 0x20f
 
-    .line 617
+    .line 557
     :cond_28
     and-int/lit16 v2, p0, 0x210
 
@@ -917,15 +887,15 @@
 
     if-ne v2, v3, :cond_29
 
-    .line 618
+    .line 558
     const-string v2, "CALL_FAIL_SIP_SERVER_BAD_GATEWAY"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 619
+    .line 559
     or-int/lit16 v1, v1, 0x210
 
-    .line 621
+    .line 561
     :cond_29
     and-int/lit16 v2, p0, 0x211
 
@@ -933,15 +903,15 @@
 
     if-ne v2, v3, :cond_2a
 
-    .line 622
+    .line 562
     const-string v2, "CALL_FAIL_SIP_SERVICE_UNAVAILABLE"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 623
+    .line 563
     or-int/lit16 v1, v1, 0x211
 
-    .line 625
+    .line 565
     :cond_2a
     and-int/lit16 v2, p0, 0x212
 
@@ -949,15 +919,15 @@
 
     if-ne v2, v3, :cond_2b
 
-    .line 626
+    .line 566
     const-string v2, "CALL_FAIL_SIP_SERVER_TIMEOUT"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 627
+    .line 567
     or-int/lit16 v1, v1, 0x212
 
-    .line 629
+    .line 569
     :cond_2b
     and-int/lit16 v2, p0, 0x213
 
@@ -965,15 +935,15 @@
 
     if-ne v2, v3, :cond_2c
 
-    .line 630
+    .line 570
     const-string v2, "CALL_FAIL_SIP_SERVER_VERSION_UNSUPPORTED"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 631
+    .line 571
     or-int/lit16 v1, v1, 0x213
 
-    .line 633
+    .line 573
     :cond_2c
     and-int/lit16 v2, p0, 0x214
 
@@ -981,15 +951,15 @@
 
     if-ne v2, v3, :cond_2d
 
-    .line 634
+    .line 574
     const-string v2, "CALL_FAIL_SIP_SERVER_MESSAGE_TOOLARGE"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 635
+    .line 575
     or-int/lit16 v1, v1, 0x214
 
-    .line 637
+    .line 577
     :cond_2d
     and-int/lit16 v2, p0, 0x215
 
@@ -997,15 +967,15 @@
 
     if-ne v2, v3, :cond_2e
 
-    .line 638
+    .line 578
     const-string v2, "CALL_FAIL_SIP_SERVER_PRECONDITION_FAILURE"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 639
+    .line 579
     or-int/lit16 v1, v1, 0x215
 
-    .line 641
+    .line 581
     :cond_2e
     and-int/lit16 v2, p0, 0x216
 
@@ -1013,15 +983,15 @@
 
     if-ne v2, v3, :cond_2f
 
-    .line 642
+    .line 582
     const-string v2, "CALL_FAIL_SIP_USER_REJECTED"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 643
+    .line 583
     or-int/lit16 v1, v1, 0x216
 
-    .line 645
+    .line 585
     :cond_2f
     and-int/lit16 v2, p0, 0x217
 
@@ -1029,15 +999,15 @@
 
     if-ne v2, v3, :cond_30
 
-    .line 646
+    .line 586
     const-string v2, "CALL_FAIL_SIP_GLOBAL_ERROR"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 647
+    .line 587
     or-int/lit16 v1, v1, 0x217
 
-    .line 649
+    .line 589
     :cond_30
     and-int/lit16 v2, p0, 0x218
 
@@ -1045,15 +1015,15 @@
 
     if-ne v2, v3, :cond_31
 
-    .line 650
+    .line 590
     const-string v2, "CALL_FAIL_MEDIA_INIT_FAILED"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 651
+    .line 591
     or-int/lit16 v1, v1, 0x218
 
-    .line 653
+    .line 593
     :cond_31
     and-int/lit16 v2, p0, 0x219
 
@@ -1061,15 +1031,15 @@
 
     if-ne v2, v3, :cond_32
 
-    .line 654
+    .line 594
     const-string v2, "CALL_FAIL_MEDIA_NO_DATA"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 655
+    .line 595
     or-int/lit16 v1, v1, 0x219
 
-    .line 657
+    .line 597
     :cond_32
     and-int/lit16 v2, p0, 0x21a
 
@@ -1077,15 +1047,15 @@
 
     if-ne v2, v3, :cond_33
 
-    .line 658
+    .line 598
     const-string v2, "CALL_FAIL_MEDIA_NOT_ACCEPTABLE"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 659
+    .line 599
     or-int/lit16 v1, v1, 0x21a
 
-    .line 661
+    .line 601
     :cond_33
     and-int/lit16 v2, p0, 0x21b
 
@@ -1093,15 +1063,15 @@
 
     if-ne v2, v3, :cond_34
 
-    .line 662
+    .line 602
     const-string v2, "CALL_FAIL_MEDIA_UNSPECIFIED_ERROR"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 663
+    .line 603
     or-int/lit16 v1, v1, 0x21b
 
-    .line 665
+    .line 605
     :cond_34
     and-int/lit16 v2, p0, 0x21c
 
@@ -1109,15 +1079,15 @@
 
     if-ne v2, v3, :cond_35
 
-    .line 666
+    .line 606
     const-string v2, "CALL_FAIL_HOLD_RESUME_FAILED"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 667
+    .line 607
     or-int/lit16 v1, v1, 0x21c
 
-    .line 669
+    .line 609
     :cond_35
     and-int/lit16 v2, p0, 0x21d
 
@@ -1125,15 +1095,15 @@
 
     if-ne v2, v3, :cond_36
 
-    .line 670
+    .line 610
     const-string v2, "CALL_FAIL_HOLD_RESUME_CANCELED"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 671
+    .line 611
     or-int/lit16 v1, v1, 0x21d
 
-    .line 673
+    .line 613
     :cond_36
     and-int/lit16 v2, p0, 0x21e
 
@@ -1141,15 +1111,15 @@
 
     if-ne v2, v3, :cond_37
 
-    .line 674
+    .line 614
     const-string v2, "CALL_FAIL_HOLD_REINVITE_COLLISION"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 675
+    .line 615
     or-int/lit16 v1, v1, 0x21e
 
-    .line 677
+    .line 617
     :cond_37
     and-int/lit16 v2, p0, 0x21f
 
@@ -1157,15 +1127,15 @@
 
     if-ne v2, v3, :cond_38
 
-    .line 678
+    .line 618
     const-string v2, "CALL_FAIL_DIAL_MODIFIED_TO_DIAL_VIDEO"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 679
+    .line 619
     or-int/lit16 v1, v1, 0x21f
 
-    .line 681
+    .line 621
     :cond_38
     and-int/lit16 v2, p0, 0x220
 
@@ -1173,15 +1143,15 @@
 
     if-ne v2, v3, :cond_39
 
-    .line 682
+    .line 622
     const-string v2, "CALL_FAIL_DIAL_VIDEO_MODIFIED_TO_DIAL"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 683
+    .line 623
     or-int/lit16 v1, v1, 0x220
 
-    .line 685
+    .line 625
     :cond_39
     and-int/lit16 v2, p0, 0x221
 
@@ -1189,15 +1159,15 @@
 
     if-ne v2, v3, :cond_3a
 
-    .line 686
+    .line 626
     const-string v2, "CALL_FAIL_DIAL_VIDEO_MODIFIED_TO_DIAL_VIDEO"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 687
+    .line 627
     or-int/lit16 v1, v1, 0x221
 
-    .line 689
+    .line 629
     :cond_3a
     and-int/lit16 v2, p0, 0x222
 
@@ -1205,15 +1175,15 @@
 
     if-ne v2, v3, :cond_3b
 
-    .line 690
+    .line 630
     const-string v2, "CALL_FAIL_DIAL_VIDEO_MODIFIED_TO_SS"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 691
+    .line 631
     or-int/lit16 v1, v1, 0x222
 
-    .line 693
+    .line 633
     :cond_3b
     and-int/lit16 v2, p0, 0x223
 
@@ -1221,15 +1191,15 @@
 
     if-ne v2, v3, :cond_3c
 
-    .line 694
+    .line 634
     const-string v2, "CALL_FAIL_DIAL_VIDEO_MODIFIED_TO_USSD"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 695
+    .line 635
     or-int/lit16 v1, v1, 0x223
 
-    .line 697
+    .line 637
     :cond_3c
     and-int/lit16 v2, p0, 0x224
 
@@ -1237,15 +1207,15 @@
 
     if-ne v2, v3, :cond_3d
 
-    .line 698
+    .line 638
     const-string v2, "CALL_FAIL_ERROR_UNSPECIFIED"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 699
+    .line 639
     or-int/lit16 v1, v1, 0x224
 
-    .line 701
+    .line 641
     :cond_3d
     and-int/lit16 v2, p0, 0x225
 
@@ -1253,939 +1223,515 @@
 
     if-ne v2, v3, :cond_3e
 
-    .line 702
+    .line 642
     const-string v2, "CALL_FAIL_INVALID"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 703
+    .line 643
     or-int/lit16 v1, v1, 0x225
 
-    .line 705
+    .line 645
     :cond_3e
-    const v2, 0xf001
+    and-int/lit16 v2, p0, 0x226
 
-    and-int/2addr v2, p0
-
-    const v3, 0xf001
+    const/16 v3, 0x226
 
     if-ne v2, v3, :cond_3f
 
-    .line 706
-    const-string v2, "CODE_OEM_CAUSE_1"
-
-    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 707
-    const v2, 0xf001
-
-    or-int/2addr v1, v2
-
-    .line 709
-    :cond_3f
-    const v2, 0xf002
-
-    and-int/2addr v2, p0
-
-    const v3, 0xf002
-
-    if-ne v2, v3, :cond_40
-
-    .line 710
-    const-string v2, "CODE_OEM_CAUSE_2"
-
-    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 711
-    const v2, 0xf002
-
-    or-int/2addr v1, v2
-
-    .line 713
-    :cond_40
-    const v2, 0xf003
-
-    and-int/2addr v2, p0
-
-    const v3, 0xf003
-
-    if-ne v2, v3, :cond_41
-
-    .line 714
-    const-string v2, "CODE_OEM_CAUSE_3"
-
-    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 715
-    const v2, 0xf003
-
-    or-int/2addr v1, v2
-
-    .line 717
-    :cond_41
-    const v2, 0xf004
-
-    and-int/2addr v2, p0
-
-    const v3, 0xf004
-
-    if-ne v2, v3, :cond_42
-
-    .line 718
-    const-string v2, "CODE_OEM_CAUSE_4"
-
-    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 719
-    const v2, 0xf004
-
-    or-int/2addr v1, v2
-
-    .line 721
-    :cond_42
-    const v2, 0xf005
-
-    and-int/2addr v2, p0
-
-    const v3, 0xf005
-
-    if-ne v2, v3, :cond_43
-
-    .line 722
-    const-string v2, "CODE_OEM_CAUSE_5"
-
-    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 723
-    const v2, 0xf005
-
-    or-int/2addr v1, v2
-
-    .line 725
-    :cond_43
-    const v2, 0xf006
-
-    and-int/2addr v2, p0
-
-    const v3, 0xf006
-
-    if-ne v2, v3, :cond_44
-
-    .line 726
-    const-string v2, "CODE_OEM_CAUSE_6"
-
-    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 727
-    const v2, 0xf006
-
-    or-int/2addr v1, v2
-
-    .line 729
-    :cond_44
-    const v2, 0xf007
-
-    and-int/2addr v2, p0
-
-    const v3, 0xf007
-
-    if-ne v2, v3, :cond_45
-
-    .line 730
-    const-string v2, "CODE_OEM_CAUSE_7"
-
-    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 731
-    const v2, 0xf007
-
-    or-int/2addr v1, v2
-
-    .line 733
-    :cond_45
-    const v2, 0xf008
-
-    and-int/2addr v2, p0
-
-    const v3, 0xf008
-
-    if-ne v2, v3, :cond_46
-
-    .line 734
-    const-string v2, "CODE_OEM_CAUSE_8"
-
-    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 735
-    const v2, 0xf008
-
-    or-int/2addr v1, v2
-
-    .line 737
-    :cond_46
-    const v2, 0xf009
-
-    and-int/2addr v2, p0
-
-    const v3, 0xf009
-
-    if-ne v2, v3, :cond_47
-
-    .line 738
-    const-string v2, "CODE_OEM_CAUSE_9"
-
-    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 739
-    const v2, 0xf009
-
-    or-int/2addr v1, v2
-
-    .line 741
-    :cond_47
-    const v2, 0xf00a
-
-    and-int/2addr v2, p0
-
-    const v3, 0xf00a
-
-    if-ne v2, v3, :cond_48
-
-    .line 742
-    const-string v2, "CODE_OEM_CAUSE_10"
-
-    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 743
-    const v2, 0xf00a
-
-    or-int/2addr v1, v2
-
-    .line 745
-    :cond_48
-    const v2, 0xf00b
-
-    and-int/2addr v2, p0
-
-    const v3, 0xf00b
-
-    if-ne v2, v3, :cond_49
-
-    .line 746
-    const-string v2, "CODE_OEM_CAUSE_11"
-
-    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 747
-    const v2, 0xf00b
-
-    or-int/2addr v1, v2
-
-    .line 749
-    :cond_49
-    const v2, 0xf00c
-
-    and-int/2addr v2, p0
-
-    const v3, 0xf00c
-
-    if-ne v2, v3, :cond_4a
-
-    .line 750
-    const-string v2, "CODE_OEM_CAUSE_12"
-
-    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 751
-    const v2, 0xf00c
-
-    or-int/2addr v1, v2
-
-    .line 753
-    :cond_4a
-    const v2, 0xf00d
-
-    and-int/2addr v2, p0
-
-    const v3, 0xf00d
-
-    if-ne v2, v3, :cond_4b
-
-    .line 754
-    const-string v2, "CODE_OEM_CAUSE_13"
-
-    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 755
-    const v2, 0xf00d
-
-    or-int/2addr v1, v2
-
-    .line 757
-    :cond_4b
-    const v2, 0xf00e
-
-    and-int/2addr v2, p0
-
-    const v3, 0xf00e
-
-    if-ne v2, v3, :cond_4c
-
-    .line 758
-    const-string v2, "CODE_OEM_CAUSE_14"
-
-    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 759
-    const v2, 0xf00e
-
-    or-int/2addr v1, v2
-
-    .line 761
-    :cond_4c
-    const v2, 0xf00f
-
-    and-int/2addr v2, p0
-
-    const v3, 0xf00f
-
-    if-ne v2, v3, :cond_4d
-
-    .line 762
-    const-string v2, "CODE_OEM_CAUSE_15"
-
-    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 763
-    const v2, 0xf00f
-
-    or-int/2addr v1, v2
-
-    .line 765
-    :cond_4d
-    const v2, 0xf010
-
-    and-int/2addr v2, p0
-
-    const v3, 0xf010
-
-    if-ne v2, v3, :cond_4e
-
-    .line 766
+    .line 646
     const-string v2, "CALL_FAIL_SIP_ALTERNATE_EMERGENCY_CALL"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 767
-    const v2, 0xf010
+    .line 647
+    or-int/lit16 v1, v1, 0x226
 
-    or-int/2addr v1, v2
+    .line 649
+    :cond_3f
+    and-int/lit16 v2, p0, 0x227
 
-    .line 769
-    :cond_4e
-    const v2, 0xf011
+    const/16 v3, 0x227
 
-    and-int/2addr v2, p0
+    if-ne v2, v3, :cond_40
 
-    const v3, 0xf011
-
-    if-ne v2, v3, :cond_4f
-
-    .line 770
+    .line 650
     const-string v2, "CALL_FAIL_RADIO_OFF"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 771
-    const v2, 0xf011
+    .line 651
+    or-int/lit16 v1, v1, 0x227
 
-    or-int/2addr v1, v2
+    .line 653
+    :cond_40
+    and-int/lit16 v2, p0, 0x228
 
-    .line 773
-    :cond_4f
-    const v2, 0xf012
+    const/16 v3, 0x228
 
-    and-int/2addr v2, p0
+    if-ne v2, v3, :cond_41
 
-    const v3, 0xf012
-
-    if-ne v2, v3, :cond_50
-
-    .line 774
+    .line 654
     const-string v2, "CALL_FAIL_OUT_OF_SERVICE"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 775
-    const v2, 0xf012
+    .line 655
+    or-int/lit16 v1, v1, 0x228
 
-    or-int/2addr v1, v2
+    .line 657
+    :cond_41
+    and-int/lit16 v2, p0, 0x229
 
-    .line 777
-    :cond_50
-    const v2, 0xf013
+    const/16 v3, 0x229
 
-    and-int/2addr v2, p0
+    if-ne v2, v3, :cond_42
 
-    const v3, 0xf013
-
-    if-ne v2, v3, :cond_51
-
-    .line 778
+    .line 658
     const-string v2, "CALL_FAIL_NO_VALID_SIM"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 779
-    const v2, 0xf013
+    .line 659
+    or-int/lit16 v1, v1, 0x229
 
-    or-int/2addr v1, v2
+    .line 661
+    :cond_42
+    and-int/lit16 v2, p0, 0x22a
 
-    .line 781
-    :cond_51
-    const v2, 0xf014
+    const/16 v3, 0x22a
 
-    and-int/2addr v2, p0
+    if-ne v2, v3, :cond_43
 
-    const v3, 0xf014
-
-    if-ne v2, v3, :cond_52
-
-    .line 782
+    .line 662
     const-string v2, "CALL_FAIL_RADIO_INTERNAL_ERROR"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 783
-    const v2, 0xf014
+    .line 663
+    or-int/lit16 v1, v1, 0x22a
 
-    or-int/2addr v1, v2
+    .line 665
+    :cond_43
+    and-int/lit16 v2, p0, 0x22b
 
-    .line 785
-    :cond_52
-    const v2, 0xf015
+    const/16 v3, 0x22b
 
-    and-int/2addr v2, p0
+    if-ne v2, v3, :cond_44
 
-    const v3, 0xf015
-
-    if-ne v2, v3, :cond_53
-
-    .line 786
+    .line 666
     const-string v2, "CALL_FAIL_NETWORK_RESP_TIMEOUT"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 787
-    const v2, 0xf015
+    .line 667
+    or-int/lit16 v1, v1, 0x22b
 
-    or-int/2addr v1, v2
+    .line 669
+    :cond_44
+    and-int/lit16 v2, p0, 0x22c
 
-    .line 789
-    :cond_53
-    const v2, 0xf016
+    const/16 v3, 0x22c
 
-    and-int/2addr v2, p0
+    if-ne v2, v3, :cond_45
 
-    const v3, 0xf016
-
-    if-ne v2, v3, :cond_54
-
-    .line 790
+    .line 670
     const-string v2, "CALL_FAIL_NETWORK_REJECT"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 791
-    const v2, 0xf016
+    .line 671
+    or-int/lit16 v1, v1, 0x22c
 
-    or-int/2addr v1, v2
+    .line 673
+    :cond_45
+    and-int/lit16 v2, p0, 0x22d
 
-    .line 793
-    :cond_54
-    const v2, 0xf017
+    const/16 v3, 0x22d
 
-    and-int/2addr v2, p0
+    if-ne v2, v3, :cond_46
 
-    const v3, 0xf017
-
-    if-ne v2, v3, :cond_55
-
-    .line 794
+    .line 674
     const-string v2, "CALL_FAIL_RADIO_ACCESS_FAILURE"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 795
-    const v2, 0xf017
+    .line 675
+    or-int/lit16 v1, v1, 0x22d
 
-    or-int/2addr v1, v2
+    .line 677
+    :cond_46
+    and-int/lit16 v2, p0, 0x22e
 
-    .line 797
-    :cond_55
-    const v2, 0xf018
+    const/16 v3, 0x22e
 
-    and-int/2addr v2, p0
+    if-ne v2, v3, :cond_47
 
-    const v3, 0xf018
-
-    if-ne v2, v3, :cond_56
-
-    .line 798
+    .line 678
     const-string v2, "CALL_FAIL_RADIO_LINK_FAILURE"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 799
-    const v2, 0xf018
+    .line 679
+    or-int/lit16 v1, v1, 0x22e
 
-    or-int/2addr v1, v2
+    .line 681
+    :cond_47
+    and-int/lit16 v2, p0, 0x22f
 
-    .line 801
-    :cond_56
-    const v2, 0xf019
+    const/16 v3, 0x22f
 
-    and-int/2addr v2, p0
+    if-ne v2, v3, :cond_48
 
-    const v3, 0xf019
-
-    if-ne v2, v3, :cond_57
-
-    .line 802
+    .line 682
     const-string v2, "CALL_FAIL_RADIO_LINK_LOST"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 803
-    const v2, 0xf019
+    .line 683
+    or-int/lit16 v1, v1, 0x22f
 
-    or-int/2addr v1, v2
+    .line 685
+    :cond_48
+    and-int/lit16 v2, p0, 0x230
 
-    .line 805
-    :cond_57
-    const v2, 0xf01a
+    const/16 v3, 0x230
 
-    and-int/2addr v2, p0
+    if-ne v2, v3, :cond_49
 
-    const v3, 0xf01a
-
-    if-ne v2, v3, :cond_58
-
-    .line 806
+    .line 686
     const-string v2, "CALL_FAIL_RADIO_UPLINK_FAILURE"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 807
-    const v2, 0xf01a
+    .line 687
+    or-int/lit16 v1, v1, 0x230
 
-    or-int/2addr v1, v2
+    .line 689
+    :cond_49
+    and-int/lit16 v2, p0, 0x231
 
-    .line 809
-    :cond_58
-    const v2, 0xf01b
+    const/16 v3, 0x231
 
-    and-int/2addr v2, p0
+    if-ne v2, v3, :cond_4a
 
-    const v3, 0xf01b
-
-    if-ne v2, v3, :cond_59
-
-    .line 810
+    .line 690
     const-string v2, "CALL_FAIL_RADIO_SETUP_FAILURE"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 811
-    const v2, 0xf01b
+    .line 691
+    or-int/lit16 v1, v1, 0x231
 
-    or-int/2addr v1, v2
+    .line 693
+    :cond_4a
+    and-int/lit16 v2, p0, 0x232
 
-    .line 813
-    :cond_59
-    const v2, 0xf01c
+    const/16 v3, 0x232
 
-    and-int/2addr v2, p0
+    if-ne v2, v3, :cond_4b
 
-    const v3, 0xf01c
-
-    if-ne v2, v3, :cond_5a
-
-    .line 814
+    .line 694
     const-string v2, "CALL_FAIL_RADIO_RELEASE_NORMAL"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 815
-    const v2, 0xf01c
+    .line 695
+    or-int/lit16 v1, v1, 0x232
 
-    or-int/2addr v1, v2
+    .line 697
+    :cond_4b
+    and-int/lit16 v2, p0, 0x233
 
-    .line 817
-    :cond_5a
-    const v2, 0xf01d
+    const/16 v3, 0x233
 
-    and-int/2addr v2, p0
+    if-ne v2, v3, :cond_4c
 
-    const v3, 0xf01d
-
-    if-ne v2, v3, :cond_5b
-
-    .line 818
+    .line 698
     const-string v2, "CALL_FAIL_RADIO_RELEASE_ABNORMAL"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 819
-    const v2, 0xf01d
+    .line 699
+    or-int/lit16 v1, v1, 0x233
 
-    or-int/2addr v1, v2
+    .line 701
+    :cond_4c
+    and-int/lit16 v2, p0, 0x234
 
-    .line 821
-    :cond_5b
-    const v2, 0xf01e
+    const/16 v3, 0x234
 
-    and-int/2addr v2, p0
+    if-ne v2, v3, :cond_4d
 
-    const v3, 0xf01e
-
-    if-ne v2, v3, :cond_5c
-
-    .line 822
+    .line 702
     const-string v2, "CALL_FAIL_NETWORK_DETACH"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 823
-    const v2, 0xf01e
+    .line 703
+    or-int/lit16 v1, v1, 0x234
 
-    or-int/2addr v1, v2
+    .line 705
+    :cond_4d
+    and-int/lit16 v2, p0, 0x235
 
-    .line 825
-    :cond_5c
-    const v2, 0xf01f
+    const/16 v3, 0x235
 
-    and-int/2addr v2, p0
+    if-ne v2, v3, :cond_4e
 
-    const v3, 0xf01f
-
-    if-ne v2, v3, :cond_5d
-
-    .line 826
+    .line 706
     const-string v2, "CALL_FAIL_OEM_CAUSE_1"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 827
-    const v2, 0xf01f
+    .line 707
+    or-int/lit16 v1, v1, 0x235
 
-    or-int/2addr v1, v2
+    .line 709
+    :cond_4e
+    and-int/lit16 v2, p0, 0x236
 
-    .line 829
-    :cond_5d
-    const v2, 0xf020
+    const/16 v3, 0x236
 
-    and-int/2addr v2, p0
+    if-ne v2, v3, :cond_4f
 
-    const v3, 0xf020
-
-    if-ne v2, v3, :cond_5e
-
-    .line 830
+    .line 710
     const-string v2, "CALL_FAIL_OEM_CAUSE_2"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 831
-    const v2, 0xf020
+    .line 711
+    or-int/lit16 v1, v1, 0x236
 
-    or-int/2addr v1, v2
+    .line 713
+    :cond_4f
+    and-int/lit16 v2, p0, 0x237
 
-    .line 833
-    :cond_5e
-    const v2, 0xf021
+    const/16 v3, 0x237
 
-    and-int/2addr v2, p0
+    if-ne v2, v3, :cond_50
 
-    const v3, 0xf021
-
-    if-ne v2, v3, :cond_5f
-
-    .line 834
+    .line 714
     const-string v2, "CALL_FAIL_OEM_CAUSE_3"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 835
-    const v2, 0xf021
+    .line 715
+    or-int/lit16 v1, v1, 0x237
 
-    or-int/2addr v1, v2
+    .line 717
+    :cond_50
+    and-int/lit16 v2, p0, 0x238
 
-    .line 837
-    :cond_5f
-    const v2, 0xf022
+    const/16 v3, 0x238
 
-    and-int/2addr v2, p0
+    if-ne v2, v3, :cond_51
 
-    const v3, 0xf022
-
-    if-ne v2, v3, :cond_60
-
-    .line 838
+    .line 718
     const-string v2, "CALL_FAIL_OEM_CAUSE_4"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 839
-    const v2, 0xf022
+    .line 719
+    or-int/lit16 v1, v1, 0x238
 
-    or-int/2addr v1, v2
+    .line 721
+    :cond_51
+    and-int/lit16 v2, p0, 0x239
 
-    .line 841
-    :cond_60
-    const v2, 0xf023
+    const/16 v3, 0x239
 
-    and-int/2addr v2, p0
+    if-ne v2, v3, :cond_52
 
-    const v3, 0xf023
-
-    if-ne v2, v3, :cond_61
-
-    .line 842
+    .line 722
     const-string v2, "CALL_FAIL_OEM_CAUSE_5"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 843
-    const v2, 0xf023
+    .line 723
+    or-int/lit16 v1, v1, 0x239
 
-    or-int/2addr v1, v2
+    .line 725
+    :cond_52
+    and-int/lit16 v2, p0, 0x23a
 
-    .line 845
-    :cond_61
-    const v2, 0xf024
+    const/16 v3, 0x23a
 
-    and-int/2addr v2, p0
+    if-ne v2, v3, :cond_53
 
-    const v3, 0xf024
-
-    if-ne v2, v3, :cond_62
-
-    .line 846
+    .line 726
     const-string v2, "CALL_FAIL_OEM_CAUSE_6"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 847
-    const v2, 0xf024
+    .line 727
+    or-int/lit16 v1, v1, 0x23a
 
-    or-int/2addr v1, v2
+    .line 729
+    :cond_53
+    and-int/lit16 v2, p0, 0x23b
 
-    .line 849
-    :cond_62
-    const v2, 0xf025
+    const/16 v3, 0x23b
 
-    and-int/2addr v2, p0
+    if-ne v2, v3, :cond_54
 
-    const v3, 0xf025
-
-    if-ne v2, v3, :cond_63
-
-    .line 850
+    .line 730
     const-string v2, "CALL_FAIL_OEM_CAUSE_7"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 851
-    const v2, 0xf025
+    .line 731
+    or-int/lit16 v1, v1, 0x23b
 
-    or-int/2addr v1, v2
+    .line 733
+    :cond_54
+    and-int/lit16 v2, p0, 0x23c
 
-    .line 853
-    :cond_63
-    const v2, 0xf026
+    const/16 v3, 0x23c
 
-    and-int/2addr v2, p0
+    if-ne v2, v3, :cond_55
 
-    const v3, 0xf026
-
-    if-ne v2, v3, :cond_64
-
-    .line 854
+    .line 734
     const-string v2, "CALL_FAIL_OEM_CAUSE_8"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 855
-    const v2, 0xf026
+    .line 735
+    or-int/lit16 v1, v1, 0x23c
 
-    or-int/2addr v1, v2
+    .line 737
+    :cond_55
+    and-int/lit16 v2, p0, 0x23d
 
-    .line 857
-    :cond_64
-    const v2, 0xf027
+    const/16 v3, 0x23d
 
-    and-int/2addr v2, p0
+    if-ne v2, v3, :cond_56
 
-    const v3, 0xf027
-
-    if-ne v2, v3, :cond_65
-
-    .line 858
+    .line 738
     const-string v2, "CALL_FAIL_OEM_CAUSE_9"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 859
-    const v2, 0xf027
+    .line 739
+    or-int/lit16 v1, v1, 0x23d
 
-    or-int/2addr v1, v2
+    .line 741
+    :cond_56
+    and-int/lit16 v2, p0, 0x23e
 
-    .line 861
-    :cond_65
-    const v2, 0xf028
+    const/16 v3, 0x23e
 
-    and-int/2addr v2, p0
+    if-ne v2, v3, :cond_57
 
-    const v3, 0xf028
-
-    if-ne v2, v3, :cond_66
-
-    .line 862
+    .line 742
     const-string v2, "CALL_FAIL_OEM_CAUSE_10"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 863
-    const v2, 0xf028
+    .line 743
+    or-int/lit16 v1, v1, 0x23e
 
-    or-int/2addr v1, v2
+    .line 745
+    :cond_57
+    and-int/lit16 v2, p0, 0x23f
 
-    .line 865
-    :cond_66
-    const v2, 0xf029
+    const/16 v3, 0x23f
 
-    and-int/2addr v2, p0
+    if-ne v2, v3, :cond_58
 
-    const v3, 0xf029
-
-    if-ne v2, v3, :cond_67
-
-    .line 866
+    .line 746
     const-string v2, "CALL_FAIL_OEM_CAUSE_11"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 867
-    const v2, 0xf029
+    .line 747
+    or-int/lit16 v1, v1, 0x23f
 
-    or-int/2addr v1, v2
+    .line 749
+    :cond_58
+    and-int/lit16 v2, p0, 0x240
 
-    .line 869
-    :cond_67
-    const v2, 0xf02a
+    const/16 v3, 0x240
 
-    and-int/2addr v2, p0
+    if-ne v2, v3, :cond_59
 
-    const v3, 0xf02a
-
-    if-ne v2, v3, :cond_68
-
-    .line 870
+    .line 750
     const-string v2, "CALL_FAIL_OEM_CAUSE_12"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 871
-    const v2, 0xf02a
+    .line 751
+    or-int/lit16 v1, v1, 0x240
 
-    or-int/2addr v1, v2
+    .line 753
+    :cond_59
+    and-int/lit16 v2, p0, 0x241
 
-    .line 873
-    :cond_68
-    const v2, 0xf02b
+    const/16 v3, 0x241
 
-    and-int/2addr v2, p0
+    if-ne v2, v3, :cond_5a
 
-    const v3, 0xf02b
-
-    if-ne v2, v3, :cond_69
-
-    .line 874
+    .line 754
     const-string v2, "CALL_FAIL_OEM_CAUSE_13"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 875
-    const v2, 0xf02b
+    .line 755
+    or-int/lit16 v1, v1, 0x241
 
-    or-int/2addr v1, v2
+    .line 757
+    :cond_5a
+    and-int/lit16 v2, p0, 0x242
 
-    .line 877
-    :cond_69
-    const v2, 0xf02c
+    const/16 v3, 0x242
 
-    and-int/2addr v2, p0
+    if-ne v2, v3, :cond_5b
 
-    const v3, 0xf02c
-
-    if-ne v2, v3, :cond_6a
-
-    .line 878
+    .line 758
     const-string v2, "CALL_FAIL_OEM_CAUSE_14"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 879
-    const v2, 0xf02c
+    .line 759
+    or-int/lit16 v1, v1, 0x242
 
-    or-int/2addr v1, v2
+    .line 761
+    :cond_5b
+    and-int/lit16 v2, p0, 0x243
 
-    .line 881
-    :cond_6a
-    const v2, 0xf02d
+    const/16 v3, 0x243
 
-    and-int/2addr v2, p0
+    if-ne v2, v3, :cond_5c
 
-    const v3, 0xf02d
-
-    if-ne v2, v3, :cond_6b
-
-    .line 882
+    .line 762
     const-string v2, "CALL_FAIL_OEM_CAUSE_15"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 883
-    const v2, 0xf02d
+    .line 763
+    or-int/lit16 v1, v1, 0x243
 
-    or-int/2addr v1, v2
+    .line 765
+    :cond_5c
+    and-int/lit16 v2, p0, 0x244
 
-    .line 885
-    :cond_6b
-    const v2, 0xf02e
+    const/16 v3, 0x244
 
-    and-int/2addr v2, p0
+    if-ne v2, v3, :cond_5d
 
-    const v3, 0xf02e
-
-    if-ne v2, v3, :cond_6c
-
-    .line 886
+    .line 766
     const-string v2, "CALL_FAIL_NO_CSFB_IN_CS_ROAM"
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 887
-    const v2, 0xf02e
+    .line 767
+    or-int/lit16 v1, v1, 0x244
 
-    or-int/2addr v1, v2
+    .line 769
+    :cond_5d
+    if-eq p0, v1, :cond_5e
 
-    .line 889
-    :cond_6c
-    if-eq p0, v1, :cond_6d
-
-    .line 890
+    .line 770
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -2210,8 +1756,8 @@
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 892
-    :cond_6d
+    .line 772
+    :cond_5e
     const-string v2, " | "
 
     invoke-static {v2, v0}, Ljava/lang/String;->join(Ljava/lang/CharSequence;Ljava/lang/Iterable;)Ljava/lang/String;
@@ -2225,1215 +1771,1050 @@
     .locals 2
     .param p0, "o"    # I
 
-    .line 116
+    .line 101
     if-nez p0, :cond_0
 
-    .line 117
+    .line 102
     const-string v0, "CALL_FAIL_UNOBTAINABLE_NUMBER"
 
     return-object v0
 
-    .line 119
+    .line 104
     :cond_0
     const/4 v0, 0x1
 
     if-ne p0, v0, :cond_1
 
-    .line 120
+    .line 105
     const-string v0, "CALL_FAIL_NORMAL"
 
     return-object v0
 
-    .line 122
+    .line 107
     :cond_1
     const/4 v0, 0x2
 
     if-ne p0, v0, :cond_2
 
-    .line 123
+    .line 108
     const-string v0, "CALL_FAIL_BUSY"
 
     return-object v0
 
-    .line 125
+    .line 110
     :cond_2
     const/4 v0, 0x3
 
     if-ne p0, v0, :cond_3
 
-    .line 126
+    .line 111
     const-string v0, "CALL_FAIL_NORMAL_UNSPECIFIED"
 
     return-object v0
 
-    .line 128
+    .line 113
     :cond_3
     const/4 v0, 0x4
 
     if-ne p0, v0, :cond_4
 
-    .line 129
+    .line 114
     const-string v0, "CALL_FAIL_CONGESTION"
 
     return-object v0
 
-    .line 131
+    .line 116
     :cond_4
     const/4 v0, 0x5
 
     if-ne p0, v0, :cond_5
 
-    .line 132
+    .line 117
     const-string v0, "CALL_FAIL_INCOMPATIBILITY_DESTINATION"
 
     return-object v0
 
-    .line 134
+    .line 119
     :cond_5
     const/4 v0, 0x6
 
     if-ne p0, v0, :cond_6
 
-    .line 135
+    .line 120
     const-string v0, "CALL_FAIL_CALL_BARRED"
 
     return-object v0
 
-    .line 137
+    .line 122
     :cond_6
     const/4 v0, 0x7
 
     if-ne p0, v0, :cond_7
 
-    .line 138
+    .line 123
     const-string v0, "CALL_FAIL_FDN_BLOCKED"
 
     return-object v0
 
-    .line 140
+    .line 125
     :cond_7
     const/16 v0, 0x8
 
     if-ne p0, v0, :cond_8
 
-    .line 141
+    .line 126
     const-string v0, "CALL_FAIL_IMEI_NOT_ACCEPTED"
 
     return-object v0
 
-    .line 143
+    .line 128
     :cond_8
     const/16 v0, 0x9
 
     if-ne p0, v0, :cond_9
 
-    .line 144
+    .line 129
     const-string v0, "CALL_FAIL_DIAL_MODIFIED_TO_USSD"
 
     return-object v0
 
-    .line 146
+    .line 131
     :cond_9
     const/16 v0, 0xa
 
     if-ne p0, v0, :cond_a
 
-    .line 147
+    .line 132
     const-string v0, "CALL_FAIL_DIAL_MODIFIED_TO_SS"
 
     return-object v0
 
-    .line 149
+    .line 134
     :cond_a
     const/16 v0, 0xb
 
     if-ne p0, v0, :cond_b
 
-    .line 150
+    .line 135
     const-string v0, "CALL_FAIL_DIAL_MODIFIED_TO_DIAL"
 
     return-object v0
 
-    .line 152
+    .line 137
     :cond_b
     const/16 v0, 0xc
 
     if-ne p0, v0, :cond_c
 
-    .line 153
+    .line 138
     const-string v0, "CALL_FAIL_EMERGENCY_TEMP_FAILURE"
 
     return-object v0
 
-    .line 155
+    .line 140
     :cond_c
     const/16 v0, 0xd
 
     if-ne p0, v0, :cond_d
 
-    .line 156
+    .line 141
     const-string v0, "CALL_FAIL_EMERGENCY_PERM_FAILURE"
 
     return-object v0
 
-    .line 158
+    .line 143
     :cond_d
     const/16 v0, 0xe
 
     if-ne p0, v0, :cond_e
 
-    .line 159
+    .line 144
     const-string v0, "CALL_FAIL_HO_NOT_FEASIBLE"
 
     return-object v0
 
-    .line 161
+    .line 146
     :cond_e
     const/16 v0, 0x1f5
 
     if-ne p0, v0, :cond_f
 
-    .line 162
+    .line 147
     const-string v0, "CALL_FAIL_USER_BUSY"
 
     return-object v0
 
-    .line 164
+    .line 149
     :cond_f
     const/16 v0, 0x1f6
 
     if-ne p0, v0, :cond_10
 
-    .line 165
+    .line 150
     const-string v0, "CALL_FAIL_USER_REJECT"
 
     return-object v0
 
-    .line 167
+    .line 152
     :cond_10
     const/16 v0, 0x1f7
 
     if-ne p0, v0, :cond_11
 
-    .line 168
+    .line 153
     const-string v0, "CALL_FAIL_LOW_BATTERY"
 
     return-object v0
 
-    .line 170
+    .line 155
     :cond_11
     const/16 v0, 0x1f8
 
     if-ne p0, v0, :cond_12
 
-    .line 171
+    .line 156
     const-string v0, "CALL_FAIL_BLACKLISTED_CALL_ID"
 
     return-object v0
 
-    .line 173
+    .line 158
     :cond_12
     const/16 v0, 0x1f9
 
     if-ne p0, v0, :cond_13
 
-    .line 174
+    .line 159
     const-string v0, "CALL_FAIL_CS_RETRY_REQUIRED"
 
     return-object v0
 
-    .line 176
+    .line 161
     :cond_13
     const/16 v0, 0x1fa
 
     if-ne p0, v0, :cond_14
 
-    .line 177
+    .line 162
     const-string v0, "CALL_FAIL_NETWORK_UNAVAILABLE"
 
     return-object v0
 
-    .line 179
+    .line 164
     :cond_14
     const/16 v0, 0x1fb
 
     if-ne p0, v0, :cond_15
 
-    .line 180
+    .line 165
     const-string v0, "CALL_FAIL_FEATURE_UNAVAILABLE"
 
     return-object v0
 
-    .line 182
+    .line 167
     :cond_15
     const/16 v0, 0x1fc
 
     if-ne p0, v0, :cond_16
 
-    .line 183
+    .line 168
     const-string v0, "CALL_FAIL_SIP_ERROR"
 
     return-object v0
 
-    .line 185
+    .line 170
     :cond_16
     const/16 v0, 0x1fd
 
     if-ne p0, v0, :cond_17
 
-    .line 186
+    .line 171
     const-string v0, "CALL_FAIL_MISC"
 
     return-object v0
 
-    .line 188
+    .line 173
     :cond_17
     const/16 v0, 0x1fe
 
     if-ne p0, v0, :cond_18
 
-    .line 189
+    .line 174
     const-string v0, "CALL_FAIL_ANSWERED_ELSEWHERE"
 
     return-object v0
 
-    .line 191
+    .line 176
     :cond_18
     const/16 v0, 0x1ff
 
     if-ne p0, v0, :cond_19
 
-    .line 192
+    .line 177
     const-string v0, "CALL_FAIL_PULL_OUT_OF_SYNC"
 
     return-object v0
 
-    .line 194
+    .line 179
     :cond_19
     const/16 v0, 0x200
 
     if-ne p0, v0, :cond_1a
 
-    .line 195
+    .line 180
     const-string v0, "CALL_FAIL_CAUSE_CALL_PULLED"
 
     return-object v0
 
-    .line 197
+    .line 182
     :cond_1a
     const/16 v0, 0x201
 
     if-ne p0, v0, :cond_1b
 
-    .line 198
+    .line 183
     const-string v0, "CALL_FAIL_ACCESS_CLASS_BLOCKED"
 
     return-object v0
 
-    .line 200
+    .line 185
     :cond_1b
     const/16 v0, 0x202
 
     if-ne p0, v0, :cond_1c
 
-    .line 201
+    .line 186
     const-string v0, "CALL_FAIL_SIP_REDIRECTED"
 
     return-object v0
 
-    .line 203
+    .line 188
     :cond_1c
     const/16 v0, 0x203
 
     if-ne p0, v0, :cond_1d
 
-    .line 204
+    .line 189
     const-string v0, "CALL_FAIL_SIP_BAD_REQUEST"
 
     return-object v0
 
-    .line 206
+    .line 191
     :cond_1d
     const/16 v0, 0x204
 
     if-ne p0, v0, :cond_1e
 
-    .line 207
+    .line 192
     const-string v0, "CALL_FAIL_SIP_FORBIDDEN"
 
     return-object v0
 
-    .line 209
+    .line 194
     :cond_1e
     const/16 v0, 0x205
 
     if-ne p0, v0, :cond_1f
 
-    .line 210
+    .line 195
     const-string v0, "CALL_FAIL_SIP_NOT_FOUND"
 
     return-object v0
 
-    .line 212
+    .line 197
     :cond_1f
     const/16 v0, 0x206
 
     if-ne p0, v0, :cond_20
 
-    .line 213
+    .line 198
     const-string v0, "CALL_FAIL_SIP_NOT_SUPPORTED"
 
     return-object v0
 
-    .line 215
+    .line 200
     :cond_20
     const/16 v0, 0x207
 
     if-ne p0, v0, :cond_21
 
-    .line 216
+    .line 201
     const-string v0, "CALL_FAIL_SIP_REQUEST_TIMEOUT"
 
     return-object v0
 
-    .line 218
+    .line 203
     :cond_21
     const/16 v0, 0x208
 
     if-ne p0, v0, :cond_22
 
-    .line 219
+    .line 204
     const-string v0, "CALL_FAIL_SIP_TEMPORARILY_UNAVAILABLE"
 
     return-object v0
 
-    .line 221
+    .line 206
     :cond_22
     const/16 v0, 0x209
 
     if-ne p0, v0, :cond_23
 
-    .line 222
+    .line 207
     const-string v0, "CALL_FAIL_SIP_BAD_ADDRESS"
 
     return-object v0
 
-    .line 224
+    .line 209
     :cond_23
     const/16 v0, 0x20a
 
     if-ne p0, v0, :cond_24
 
-    .line 225
+    .line 210
     const-string v0, "CALL_FAIL_SIP_BUSY"
 
     return-object v0
 
-    .line 227
+    .line 212
     :cond_24
     const/16 v0, 0x20b
 
     if-ne p0, v0, :cond_25
 
-    .line 228
+    .line 213
     const-string v0, "CALL_FAIL_SIP_REQUEST_CANCELLED"
 
     return-object v0
 
-    .line 230
+    .line 215
     :cond_25
     const/16 v0, 0x20c
 
     if-ne p0, v0, :cond_26
 
-    .line 231
+    .line 216
     const-string v0, "CALL_FAIL_SIP_NOT_ACCEPTABLE"
 
     return-object v0
 
-    .line 233
+    .line 218
     :cond_26
     const/16 v0, 0x20d
 
     if-ne p0, v0, :cond_27
 
-    .line 234
+    .line 219
     const-string v0, "CALL_FAIL_SIP_NOT_REACHABLE"
 
     return-object v0
 
-    .line 236
+    .line 221
     :cond_27
     const/16 v0, 0x20e
 
     if-ne p0, v0, :cond_28
 
-    .line 237
+    .line 222
     const-string v0, "CALL_FAIL_SIP_SERVER_INTERNAL_ERROR"
 
     return-object v0
 
-    .line 239
+    .line 224
     :cond_28
     const/16 v0, 0x20f
 
     if-ne p0, v0, :cond_29
 
-    .line 240
+    .line 225
     const-string v0, "CALL_FAIL_SIP_SERVER_NOT_IMPLEMENTED"
 
     return-object v0
 
-    .line 242
+    .line 227
     :cond_29
     const/16 v0, 0x210
 
     if-ne p0, v0, :cond_2a
 
-    .line 243
+    .line 228
     const-string v0, "CALL_FAIL_SIP_SERVER_BAD_GATEWAY"
 
     return-object v0
 
-    .line 245
+    .line 230
     :cond_2a
     const/16 v0, 0x211
 
     if-ne p0, v0, :cond_2b
 
-    .line 246
+    .line 231
     const-string v0, "CALL_FAIL_SIP_SERVICE_UNAVAILABLE"
 
     return-object v0
 
-    .line 248
+    .line 233
     :cond_2b
     const/16 v0, 0x212
 
     if-ne p0, v0, :cond_2c
 
-    .line 249
+    .line 234
     const-string v0, "CALL_FAIL_SIP_SERVER_TIMEOUT"
 
     return-object v0
 
-    .line 251
+    .line 236
     :cond_2c
     const/16 v0, 0x213
 
     if-ne p0, v0, :cond_2d
 
-    .line 252
+    .line 237
     const-string v0, "CALL_FAIL_SIP_SERVER_VERSION_UNSUPPORTED"
 
     return-object v0
 
-    .line 254
+    .line 239
     :cond_2d
     const/16 v0, 0x214
 
     if-ne p0, v0, :cond_2e
 
-    .line 255
+    .line 240
     const-string v0, "CALL_FAIL_SIP_SERVER_MESSAGE_TOOLARGE"
 
     return-object v0
 
-    .line 257
+    .line 242
     :cond_2e
     const/16 v0, 0x215
 
     if-ne p0, v0, :cond_2f
 
-    .line 258
+    .line 243
     const-string v0, "CALL_FAIL_SIP_SERVER_PRECONDITION_FAILURE"
 
     return-object v0
 
-    .line 260
+    .line 245
     :cond_2f
     const/16 v0, 0x216
 
     if-ne p0, v0, :cond_30
 
-    .line 261
+    .line 246
     const-string v0, "CALL_FAIL_SIP_USER_REJECTED"
 
     return-object v0
 
-    .line 263
+    .line 248
     :cond_30
     const/16 v0, 0x217
 
     if-ne p0, v0, :cond_31
 
-    .line 264
+    .line 249
     const-string v0, "CALL_FAIL_SIP_GLOBAL_ERROR"
 
     return-object v0
 
-    .line 266
+    .line 251
     :cond_31
     const/16 v0, 0x218
 
     if-ne p0, v0, :cond_32
 
-    .line 267
+    .line 252
     const-string v0, "CALL_FAIL_MEDIA_INIT_FAILED"
 
     return-object v0
 
-    .line 269
+    .line 254
     :cond_32
     const/16 v0, 0x219
 
     if-ne p0, v0, :cond_33
 
-    .line 270
+    .line 255
     const-string v0, "CALL_FAIL_MEDIA_NO_DATA"
 
     return-object v0
 
-    .line 272
+    .line 257
     :cond_33
     const/16 v0, 0x21a
 
     if-ne p0, v0, :cond_34
 
-    .line 273
+    .line 258
     const-string v0, "CALL_FAIL_MEDIA_NOT_ACCEPTABLE"
 
     return-object v0
 
-    .line 275
+    .line 260
     :cond_34
     const/16 v0, 0x21b
 
     if-ne p0, v0, :cond_35
 
-    .line 276
+    .line 261
     const-string v0, "CALL_FAIL_MEDIA_UNSPECIFIED_ERROR"
 
     return-object v0
 
-    .line 278
+    .line 263
     :cond_35
     const/16 v0, 0x21c
 
     if-ne p0, v0, :cond_36
 
-    .line 279
+    .line 264
     const-string v0, "CALL_FAIL_HOLD_RESUME_FAILED"
 
     return-object v0
 
-    .line 281
+    .line 266
     :cond_36
     const/16 v0, 0x21d
 
     if-ne p0, v0, :cond_37
 
-    .line 282
+    .line 267
     const-string v0, "CALL_FAIL_HOLD_RESUME_CANCELED"
 
     return-object v0
 
-    .line 284
+    .line 269
     :cond_37
     const/16 v0, 0x21e
 
     if-ne p0, v0, :cond_38
 
-    .line 285
+    .line 270
     const-string v0, "CALL_FAIL_HOLD_REINVITE_COLLISION"
 
     return-object v0
 
-    .line 287
+    .line 272
     :cond_38
     const/16 v0, 0x21f
 
     if-ne p0, v0, :cond_39
 
-    .line 288
+    .line 273
     const-string v0, "CALL_FAIL_DIAL_MODIFIED_TO_DIAL_VIDEO"
 
     return-object v0
 
-    .line 290
+    .line 275
     :cond_39
     const/16 v0, 0x220
 
     if-ne p0, v0, :cond_3a
 
-    .line 291
+    .line 276
     const-string v0, "CALL_FAIL_DIAL_VIDEO_MODIFIED_TO_DIAL"
 
     return-object v0
 
-    .line 293
+    .line 278
     :cond_3a
     const/16 v0, 0x221
 
     if-ne p0, v0, :cond_3b
 
-    .line 294
+    .line 279
     const-string v0, "CALL_FAIL_DIAL_VIDEO_MODIFIED_TO_DIAL_VIDEO"
 
     return-object v0
 
-    .line 296
+    .line 281
     :cond_3b
     const/16 v0, 0x222
 
     if-ne p0, v0, :cond_3c
 
-    .line 297
+    .line 282
     const-string v0, "CALL_FAIL_DIAL_VIDEO_MODIFIED_TO_SS"
 
     return-object v0
 
-    .line 299
+    .line 284
     :cond_3c
     const/16 v0, 0x223
 
     if-ne p0, v0, :cond_3d
 
-    .line 300
+    .line 285
     const-string v0, "CALL_FAIL_DIAL_VIDEO_MODIFIED_TO_USSD"
 
     return-object v0
 
-    .line 302
+    .line 287
     :cond_3d
     const/16 v0, 0x224
 
     if-ne p0, v0, :cond_3e
 
-    .line 303
+    .line 288
     const-string v0, "CALL_FAIL_ERROR_UNSPECIFIED"
 
     return-object v0
 
-    .line 305
+    .line 290
     :cond_3e
     const/16 v0, 0x225
 
     if-ne p0, v0, :cond_3f
 
-    .line 306
+    .line 291
     const-string v0, "CALL_FAIL_INVALID"
 
     return-object v0
 
-    .line 308
+    .line 293
     :cond_3f
-    const v0, 0xf001
+    const/16 v0, 0x226
 
     if-ne p0, v0, :cond_40
 
-    .line 309
-    const-string v0, "CODE_OEM_CAUSE_1"
-
-    return-object v0
-
-    .line 311
-    :cond_40
-    const v0, 0xf002
-
-    if-ne p0, v0, :cond_41
-
-    .line 312
-    const-string v0, "CODE_OEM_CAUSE_2"
-
-    return-object v0
-
-    .line 314
-    :cond_41
-    const v0, 0xf003
-
-    if-ne p0, v0, :cond_42
-
-    .line 315
-    const-string v0, "CODE_OEM_CAUSE_3"
-
-    return-object v0
-
-    .line 317
-    :cond_42
-    const v0, 0xf004
-
-    if-ne p0, v0, :cond_43
-
-    .line 318
-    const-string v0, "CODE_OEM_CAUSE_4"
-
-    return-object v0
-
-    .line 320
-    :cond_43
-    const v0, 0xf005
-
-    if-ne p0, v0, :cond_44
-
-    .line 321
-    const-string v0, "CODE_OEM_CAUSE_5"
-
-    return-object v0
-
-    .line 323
-    :cond_44
-    const v0, 0xf006
-
-    if-ne p0, v0, :cond_45
-
-    .line 324
-    const-string v0, "CODE_OEM_CAUSE_6"
-
-    return-object v0
-
-    .line 326
-    :cond_45
-    const v0, 0xf007
-
-    if-ne p0, v0, :cond_46
-
-    .line 327
-    const-string v0, "CODE_OEM_CAUSE_7"
-
-    return-object v0
-
-    .line 329
-    :cond_46
-    const v0, 0xf008
-
-    if-ne p0, v0, :cond_47
-
-    .line 330
-    const-string v0, "CODE_OEM_CAUSE_8"
-
-    return-object v0
-
-    .line 332
-    :cond_47
-    const v0, 0xf009
-
-    if-ne p0, v0, :cond_48
-
-    .line 333
-    const-string v0, "CODE_OEM_CAUSE_9"
-
-    return-object v0
-
-    .line 335
-    :cond_48
-    const v0, 0xf00a
-
-    if-ne p0, v0, :cond_49
-
-    .line 336
-    const-string v0, "CODE_OEM_CAUSE_10"
-
-    return-object v0
-
-    .line 338
-    :cond_49
-    const v0, 0xf00b
-
-    if-ne p0, v0, :cond_4a
-
-    .line 339
-    const-string v0, "CODE_OEM_CAUSE_11"
-
-    return-object v0
-
-    .line 341
-    :cond_4a
-    const v0, 0xf00c
-
-    if-ne p0, v0, :cond_4b
-
-    .line 342
-    const-string v0, "CODE_OEM_CAUSE_12"
-
-    return-object v0
-
-    .line 344
-    :cond_4b
-    const v0, 0xf00d
-
-    if-ne p0, v0, :cond_4c
-
-    .line 345
-    const-string v0, "CODE_OEM_CAUSE_13"
-
-    return-object v0
-
-    .line 347
-    :cond_4c
-    const v0, 0xf00e
-
-    if-ne p0, v0, :cond_4d
-
-    .line 348
-    const-string v0, "CODE_OEM_CAUSE_14"
-
-    return-object v0
-
-    .line 350
-    :cond_4d
-    const v0, 0xf00f
-
-    if-ne p0, v0, :cond_4e
-
-    .line 351
-    const-string v0, "CODE_OEM_CAUSE_15"
-
-    return-object v0
-
-    .line 353
-    :cond_4e
-    const v0, 0xf010
-
-    if-ne p0, v0, :cond_4f
-
-    .line 354
+    .line 294
     const-string v0, "CALL_FAIL_SIP_ALTERNATE_EMERGENCY_CALL"
 
     return-object v0
 
-    .line 356
-    :cond_4f
-    const v0, 0xf011
+    .line 296
+    :cond_40
+    const/16 v0, 0x227
 
-    if-ne p0, v0, :cond_50
+    if-ne p0, v0, :cond_41
 
-    .line 357
+    .line 297
     const-string v0, "CALL_FAIL_RADIO_OFF"
 
     return-object v0
 
-    .line 359
-    :cond_50
-    const v0, 0xf012
+    .line 299
+    :cond_41
+    const/16 v0, 0x228
 
-    if-ne p0, v0, :cond_51
+    if-ne p0, v0, :cond_42
 
-    .line 360
+    .line 300
     const-string v0, "CALL_FAIL_OUT_OF_SERVICE"
 
     return-object v0
 
-    .line 362
-    :cond_51
-    const v0, 0xf013
+    .line 302
+    :cond_42
+    const/16 v0, 0x229
 
-    if-ne p0, v0, :cond_52
+    if-ne p0, v0, :cond_43
 
-    .line 363
+    .line 303
     const-string v0, "CALL_FAIL_NO_VALID_SIM"
 
     return-object v0
 
-    .line 365
-    :cond_52
-    const v0, 0xf014
+    .line 305
+    :cond_43
+    const/16 v0, 0x22a
 
-    if-ne p0, v0, :cond_53
+    if-ne p0, v0, :cond_44
 
-    .line 366
+    .line 306
     const-string v0, "CALL_FAIL_RADIO_INTERNAL_ERROR"
 
     return-object v0
 
-    .line 368
-    :cond_53
-    const v0, 0xf015
+    .line 308
+    :cond_44
+    const/16 v0, 0x22b
 
-    if-ne p0, v0, :cond_54
+    if-ne p0, v0, :cond_45
 
-    .line 369
+    .line 309
     const-string v0, "CALL_FAIL_NETWORK_RESP_TIMEOUT"
 
     return-object v0
 
-    .line 371
-    :cond_54
-    const v0, 0xf016
+    .line 311
+    :cond_45
+    const/16 v0, 0x22c
 
-    if-ne p0, v0, :cond_55
+    if-ne p0, v0, :cond_46
 
-    .line 372
+    .line 312
     const-string v0, "CALL_FAIL_NETWORK_REJECT"
 
     return-object v0
 
-    .line 374
-    :cond_55
-    const v0, 0xf017
+    .line 314
+    :cond_46
+    const/16 v0, 0x22d
 
-    if-ne p0, v0, :cond_56
+    if-ne p0, v0, :cond_47
 
-    .line 375
+    .line 315
     const-string v0, "CALL_FAIL_RADIO_ACCESS_FAILURE"
 
     return-object v0
 
-    .line 377
-    :cond_56
-    const v0, 0xf018
+    .line 317
+    :cond_47
+    const/16 v0, 0x22e
 
-    if-ne p0, v0, :cond_57
+    if-ne p0, v0, :cond_48
 
-    .line 378
+    .line 318
     const-string v0, "CALL_FAIL_RADIO_LINK_FAILURE"
 
     return-object v0
 
-    .line 380
-    :cond_57
-    const v0, 0xf019
+    .line 320
+    :cond_48
+    const/16 v0, 0x22f
 
-    if-ne p0, v0, :cond_58
+    if-ne p0, v0, :cond_49
 
-    .line 381
+    .line 321
     const-string v0, "CALL_FAIL_RADIO_LINK_LOST"
 
     return-object v0
 
-    .line 383
-    :cond_58
-    const v0, 0xf01a
+    .line 323
+    :cond_49
+    const/16 v0, 0x230
 
-    if-ne p0, v0, :cond_59
+    if-ne p0, v0, :cond_4a
 
-    .line 384
+    .line 324
     const-string v0, "CALL_FAIL_RADIO_UPLINK_FAILURE"
 
     return-object v0
 
-    .line 386
-    :cond_59
-    const v0, 0xf01b
+    .line 326
+    :cond_4a
+    const/16 v0, 0x231
 
-    if-ne p0, v0, :cond_5a
+    if-ne p0, v0, :cond_4b
 
-    .line 387
+    .line 327
     const-string v0, "CALL_FAIL_RADIO_SETUP_FAILURE"
 
     return-object v0
 
-    .line 389
-    :cond_5a
-    const v0, 0xf01c
+    .line 329
+    :cond_4b
+    const/16 v0, 0x232
 
-    if-ne p0, v0, :cond_5b
+    if-ne p0, v0, :cond_4c
 
-    .line 390
+    .line 330
     const-string v0, "CALL_FAIL_RADIO_RELEASE_NORMAL"
 
     return-object v0
 
-    .line 392
-    :cond_5b
-    const v0, 0xf01d
+    .line 332
+    :cond_4c
+    const/16 v0, 0x233
 
-    if-ne p0, v0, :cond_5c
+    if-ne p0, v0, :cond_4d
 
-    .line 393
+    .line 333
     const-string v0, "CALL_FAIL_RADIO_RELEASE_ABNORMAL"
 
     return-object v0
 
-    .line 395
-    :cond_5c
-    const v0, 0xf01e
+    .line 335
+    :cond_4d
+    const/16 v0, 0x234
 
-    if-ne p0, v0, :cond_5d
+    if-ne p0, v0, :cond_4e
 
-    .line 396
+    .line 336
     const-string v0, "CALL_FAIL_NETWORK_DETACH"
 
     return-object v0
 
-    .line 398
-    :cond_5d
-    const v0, 0xf01f
+    .line 338
+    :cond_4e
+    const/16 v0, 0x235
 
-    if-ne p0, v0, :cond_5e
+    if-ne p0, v0, :cond_4f
 
-    .line 399
+    .line 339
     const-string v0, "CALL_FAIL_OEM_CAUSE_1"
 
     return-object v0
 
-    .line 401
-    :cond_5e
-    const v0, 0xf020
+    .line 341
+    :cond_4f
+    const/16 v0, 0x236
 
-    if-ne p0, v0, :cond_5f
+    if-ne p0, v0, :cond_50
 
-    .line 402
+    .line 342
     const-string v0, "CALL_FAIL_OEM_CAUSE_2"
 
     return-object v0
 
-    .line 404
-    :cond_5f
-    const v0, 0xf021
+    .line 344
+    :cond_50
+    const/16 v0, 0x237
 
-    if-ne p0, v0, :cond_60
+    if-ne p0, v0, :cond_51
 
-    .line 405
+    .line 345
     const-string v0, "CALL_FAIL_OEM_CAUSE_3"
 
     return-object v0
 
-    .line 407
-    :cond_60
-    const v0, 0xf022
+    .line 347
+    :cond_51
+    const/16 v0, 0x238
 
-    if-ne p0, v0, :cond_61
+    if-ne p0, v0, :cond_52
 
-    .line 408
+    .line 348
     const-string v0, "CALL_FAIL_OEM_CAUSE_4"
 
     return-object v0
 
-    .line 410
-    :cond_61
-    const v0, 0xf023
+    .line 350
+    :cond_52
+    const/16 v0, 0x239
 
-    if-ne p0, v0, :cond_62
+    if-ne p0, v0, :cond_53
 
-    .line 411
+    .line 351
     const-string v0, "CALL_FAIL_OEM_CAUSE_5"
 
     return-object v0
 
-    .line 413
-    :cond_62
-    const v0, 0xf024
+    .line 353
+    :cond_53
+    const/16 v0, 0x23a
 
-    if-ne p0, v0, :cond_63
+    if-ne p0, v0, :cond_54
 
-    .line 414
+    .line 354
     const-string v0, "CALL_FAIL_OEM_CAUSE_6"
 
     return-object v0
 
-    .line 416
-    :cond_63
-    const v0, 0xf025
+    .line 356
+    :cond_54
+    const/16 v0, 0x23b
 
-    if-ne p0, v0, :cond_64
+    if-ne p0, v0, :cond_55
 
-    .line 417
+    .line 357
     const-string v0, "CALL_FAIL_OEM_CAUSE_7"
 
     return-object v0
 
-    .line 419
-    :cond_64
-    const v0, 0xf026
+    .line 359
+    :cond_55
+    const/16 v0, 0x23c
 
-    if-ne p0, v0, :cond_65
+    if-ne p0, v0, :cond_56
 
-    .line 420
+    .line 360
     const-string v0, "CALL_FAIL_OEM_CAUSE_8"
 
     return-object v0
 
-    .line 422
-    :cond_65
-    const v0, 0xf027
+    .line 362
+    :cond_56
+    const/16 v0, 0x23d
 
-    if-ne p0, v0, :cond_66
+    if-ne p0, v0, :cond_57
 
-    .line 423
+    .line 363
     const-string v0, "CALL_FAIL_OEM_CAUSE_9"
 
     return-object v0
 
-    .line 425
-    :cond_66
-    const v0, 0xf028
+    .line 365
+    :cond_57
+    const/16 v0, 0x23e
 
-    if-ne p0, v0, :cond_67
+    if-ne p0, v0, :cond_58
 
-    .line 426
+    .line 366
     const-string v0, "CALL_FAIL_OEM_CAUSE_10"
 
     return-object v0
 
-    .line 428
-    :cond_67
-    const v0, 0xf029
+    .line 368
+    :cond_58
+    const/16 v0, 0x23f
 
-    if-ne p0, v0, :cond_68
+    if-ne p0, v0, :cond_59
 
-    .line 429
+    .line 369
     const-string v0, "CALL_FAIL_OEM_CAUSE_11"
 
     return-object v0
 
-    .line 431
-    :cond_68
-    const v0, 0xf02a
+    .line 371
+    :cond_59
+    const/16 v0, 0x240
 
-    if-ne p0, v0, :cond_69
+    if-ne p0, v0, :cond_5a
 
-    .line 432
+    .line 372
     const-string v0, "CALL_FAIL_OEM_CAUSE_12"
 
     return-object v0
 
-    .line 434
-    :cond_69
-    const v0, 0xf02b
+    .line 374
+    :cond_5a
+    const/16 v0, 0x241
 
-    if-ne p0, v0, :cond_6a
+    if-ne p0, v0, :cond_5b
 
-    .line 435
+    .line 375
     const-string v0, "CALL_FAIL_OEM_CAUSE_13"
 
     return-object v0
 
-    .line 437
-    :cond_6a
-    const v0, 0xf02c
+    .line 377
+    :cond_5b
+    const/16 v0, 0x242
 
-    if-ne p0, v0, :cond_6b
+    if-ne p0, v0, :cond_5c
 
-    .line 438
+    .line 378
     const-string v0, "CALL_FAIL_OEM_CAUSE_14"
 
     return-object v0
 
-    .line 440
-    :cond_6b
-    const v0, 0xf02d
+    .line 380
+    :cond_5c
+    const/16 v0, 0x243
 
-    if-ne p0, v0, :cond_6c
+    if-ne p0, v0, :cond_5d
 
-    .line 441
+    .line 381
     const-string v0, "CALL_FAIL_OEM_CAUSE_15"
 
     return-object v0
 
-    .line 443
-    :cond_6c
-    const v0, 0xf02e
+    .line 383
+    :cond_5d
+    const/16 v0, 0x244
 
-    if-ne p0, v0, :cond_6d
+    if-ne p0, v0, :cond_5e
 
-    .line 444
+    .line 384
     const-string v0, "CALL_FAIL_NO_CSFB_IN_CS_ROAM"
 
     return-object v0
 
-    .line 446
-    :cond_6d
+    .line 386
+    :cond_5e
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

@@ -210,7 +210,7 @@
     nop
 
     :pswitch_data_0
-    .packed-switch 0xf011
+    .packed-switch 0x227
         :pswitch_1d
         :pswitch_1c
         :pswitch_1b

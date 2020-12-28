@@ -1353,23 +1353,25 @@
 
     const-string v1, "updateStackConfig nothing to update"
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     .line 360
     sget-object v0, Lorg/codeaurora/ims/ImsSubController;->mStackStatus:Ljava/util/List;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_2
 
-    .line 361
-    const-string v0, "updateStackConfig Stacks are not yet initialized"
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
-    invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->w(Ljava/lang/Object;Ljava/lang/String;)V
+    move-result v0
 
-    .line 362
-    return-void
+    if-lt p1, v0, :cond_0
+
+    goto :goto_1
 
     .line 365
     :cond_0
+    sget-object v0, Lorg/codeaurora/ims/ImsSubController;->mStackStatus:Ljava/util/List;
+
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -1415,11 +1417,11 @@
 
     move-result v2
 
-    if-ge v1, v2, :cond_6
+    if-ge v1, v2, :cond_7
 
     array-length v2, v0
 
-    if-ge v1, v2, :cond_6
+    if-ge v1, v2, :cond_7
 
     .line 373
     sget-object v2, Lorg/codeaurora/ims/ImsSubController;->mStackStatus:Ljava/util/List;
@@ -1441,15 +1443,25 @@
 
     goto :goto_0
 
-    .line 378
+    .line 361
     .end local v0    # "activeStacks":[Z
     .end local v1    # "i":I
     :cond_2
+    :goto_1
+    const-string v0, "updateStackConfig Stacks are not yet initialized"
+
+    invoke-static {p0, v0}, Lcom/qualcomm/ims/utils/Log;->w(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 362
+    return-void
+
+    .line 378
+    :cond_3
     iget-boolean v0, p0, Lorg/codeaurora/ims/ImsSubController;->mIsReceiverRegistered:Z
 
     const/4 v2, 0x0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_4
 
     .line 379
     const-string v0, "updateStackConfig: unregistering BroadcastReceiver"
@@ -1467,12 +1479,12 @@
     iput-boolean v2, p0, Lorg/codeaurora/ims/ImsSubController;->mIsReceiverRegistered:Z
 
     .line 384
-    :cond_3
+    :cond_4
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSubController;->mActiveStacks:[Z
 
     aget-boolean v0, v0, p1
 
-    if-ne v0, p2, :cond_4
+    if-ne v0, p2, :cond_5
 
     .line 385
     invoke-static {p0, v1}, Lcom/qualcomm/ims/utils/Log;->w(Ljava/lang/Object;Ljava/lang/String;)V
@@ -1481,14 +1493,14 @@
     return-void
 
     .line 389
-    :cond_4
-    if-nez p2, :cond_5
+    :cond_5
+    if-nez p2, :cond_6
 
     .line 398
     iput v2, p0, Lorg/codeaurora/ims/ImsSubController;->mNumMultiModeStacks:I
 
     .line 401
-    :cond_5
+    :cond_6
     iget-object v0, p0, Lorg/codeaurora/ims/ImsSubController;->mActiveStacks:[Z
 
     aput-boolean p2, v0, p1
@@ -1498,7 +1510,7 @@
 
     .line 404
     .restart local v0    # "activeStacks":[Z
-    :cond_6
+    :cond_7
     invoke-direct {p0, v0, p1}, Lorg/codeaurora/ims/ImsSubController;->notifyStackConfigChanged([ZI)V
 
     .line 405

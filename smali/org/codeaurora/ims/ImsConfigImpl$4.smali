@@ -23,7 +23,7 @@
     .locals 0
     .param p1, "this$0"    # Lorg/codeaurora/ims/ImsConfigImpl;
 
-    .line 153
+    .line 152
     iput-object p1, p0, Lorg/codeaurora/ims/ImsConfigImpl$4;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
     invoke-direct {p0}, Landroid/telephony/SubscriptionManager$OnSubscriptionsChangedListener;-><init>()V
@@ -36,7 +36,7 @@
 .method public onSubscriptionsChanged()V
     .locals 7
 
-    .line 156
+    .line 155
     iget-object v0, p0, Lorg/codeaurora/ims/ImsConfigImpl$4;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
     invoke-static {v0}, Lorg/codeaurora/ims/ImsConfigImpl;->access$500(Lorg/codeaurora/ims/ImsConfigImpl;)Landroid/telephony/SubscriptionManager;
@@ -45,7 +45,7 @@
 
     iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$4;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    .line 157
+    .line 156
     invoke-static {v1}, Lorg/codeaurora/ims/ImsConfigImpl;->access$400(Lorg/codeaurora/ims/ImsConfigImpl;)Lorg/codeaurora/ims/ImsServiceSub;
 
     move-result-object v1
@@ -58,32 +58,32 @@
 
     move-result-object v0
 
-    .line 158
+    .line 157
     .local v0, "subInfo":Landroid/telephony/SubscriptionInfo;
     if-nez v0, :cond_0
 
-    .line 159
+    .line 158
     iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$4;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
     const-string v2, "onSubscriptionsChanged unable to process due to SubscriptionInfo is null"
 
     invoke-static {v1, v2}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 162
+    .line 161
     iget-object v1, p0, Lorg/codeaurora/ims/ImsConfigImpl$4;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
     invoke-static {v1}, Lorg/codeaurora/ims/ImsConfigImpl;->access$600(Lorg/codeaurora/ims/ImsConfigImpl;)V
 
-    .line 164
+    .line 163
     return-void
 
-    .line 167
+    .line 166
     :cond_0
     invoke-virtual {v0}, Landroid/telephony/SubscriptionInfo;->getSubscriptionId()I
 
     move-result v1
 
-    .line 168
+    .line 167
     .local v1, "subId":I
     iget-object v2, p0, Lorg/codeaurora/ims/ImsConfigImpl$4;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
@@ -115,7 +115,7 @@
 
     invoke-static {v2, v3}, Lcom/qualcomm/ims/utils/Log;->d(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 170
+    .line 169
     iget-object v2, p0, Lorg/codeaurora/ims/ImsConfigImpl$4;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
     invoke-static {v2}, Lorg/codeaurora/ims/ImsConfigImpl;->access$000(Lorg/codeaurora/ims/ImsConfigImpl;)I
@@ -124,19 +124,19 @@
 
     if-eq v2, v1, :cond_3
 
-    .line 171
+    .line 170
     iget-object v2, p0, Lorg/codeaurora/ims/ImsConfigImpl$4;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
     const/4 v3, 0x0
 
     invoke-static {v2, v3}, Lorg/codeaurora/ims/ImsConfigImpl;->access$102(Lorg/codeaurora/ims/ImsConfigImpl;Z)Z
 
-    .line 174
+    .line 173
     iget-object v2, p0, Lorg/codeaurora/ims/ImsConfigImpl$4;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
     invoke-static {v2}, Lorg/codeaurora/ims/ImsConfigImpl;->access$600(Lorg/codeaurora/ims/ImsConfigImpl;)V
 
-    .line 176
+    .line 175
     invoke-static {v1}, Landroid/telephony/SubscriptionManager;->isValidSubscriptionId(I)Z
 
     move-result v2
@@ -145,7 +145,7 @@
 
     iget-object v2, p0, Lorg/codeaurora/ims/ImsConfigImpl$4;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    .line 177
+    .line 176
     invoke-static {v2}, Lorg/codeaurora/ims/ImsConfigImpl;->access$500(Lorg/codeaurora/ims/ImsConfigImpl;)Landroid/telephony/SubscriptionManager;
 
     move-result-object v2
@@ -158,13 +158,13 @@
 
     goto/16 :goto_0
 
-    .line 182
+    .line 181
     :cond_1
     iget-object v2, p0, Lorg/codeaurora/ims/ImsConfigImpl$4;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
     invoke-static {v2, v1}, Lorg/codeaurora/ims/ImsConfigImpl;->access$002(Lorg/codeaurora/ims/ImsConfigImpl;I)I
 
-    .line 183
+    .line 182
     iget-object v2, p0, Lorg/codeaurora/ims/ImsConfigImpl$4;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
     invoke-static {v2}, Lorg/codeaurora/ims/ImsConfigImpl;->access$000(Lorg/codeaurora/ims/ImsConfigImpl;)I
@@ -177,7 +177,7 @@
 
     invoke-static {v2, v3}, Lorg/codeaurora/ims/ImsConfigImpl;->access$702(Lorg/codeaurora/ims/ImsConfigImpl;Landroid/telephony/ims/ImsMmTelManager;)Landroid/telephony/ims/ImsMmTelManager;
 
-    .line 184
+    .line 183
     iget-object v2, p0, Lorg/codeaurora/ims/ImsConfigImpl$4;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
     sget-object v3, Landroid/telephony/SubscriptionManager;->WFC_MODE_CONTENT_URI:Landroid/net/Uri;
@@ -192,7 +192,7 @@
 
     iget-object v6, p0, Lorg/codeaurora/ims/ImsConfigImpl$4;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    .line 185
+    .line 184
     invoke-static {v6}, Lorg/codeaurora/ims/ImsConfigImpl;->access$000(Lorg/codeaurora/ims/ImsConfigImpl;)I
 
     move-result v6
@@ -203,14 +203,14 @@
 
     move-result-object v4
 
-    .line 184
+    .line 183
     invoke-static {v3, v4}, Landroid/net/Uri;->withAppendedPath(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v3
 
     invoke-static {v2, v3}, Lorg/codeaurora/ims/ImsConfigImpl;->access$802(Lorg/codeaurora/ims/ImsConfigImpl;Landroid/net/Uri;)Landroid/net/Uri;
 
-    .line 186
+    .line 185
     iget-object v2, p0, Lorg/codeaurora/ims/ImsConfigImpl$4;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
     sget-object v3, Landroid/telephony/SubscriptionManager;->WFC_ROAMING_MODE_CONTENT_URI:Landroid/net/Uri;
@@ -223,7 +223,7 @@
 
     iget-object v5, p0, Lorg/codeaurora/ims/ImsConfigImpl$4;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    .line 187
+    .line 186
     invoke-static {v5}, Lorg/codeaurora/ims/ImsConfigImpl;->access$000(Lorg/codeaurora/ims/ImsConfigImpl;)I
 
     move-result v5
@@ -234,14 +234,14 @@
 
     move-result-object v4
 
-    .line 186
+    .line 185
     invoke-static {v3, v4}, Landroid/net/Uri;->withAppendedPath(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v3
 
     invoke-static {v2, v3}, Lorg/codeaurora/ims/ImsConfigImpl;->access$902(Lorg/codeaurora/ims/ImsConfigImpl;Landroid/net/Uri;)Landroid/net/Uri;
 
-    .line 188
+    .line 187
     iget-object v2, p0, Lorg/codeaurora/ims/ImsConfigImpl$4;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
     invoke-static {v2}, Lorg/codeaurora/ims/ImsConfigImpl;->access$1100(Lorg/codeaurora/ims/ImsConfigImpl;)Landroid/content/Context;
@@ -260,17 +260,17 @@
 
     iget-object v4, p0, Lorg/codeaurora/ims/ImsConfigImpl$4;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    .line 189
+    .line 188
     invoke-static {v4}, Lorg/codeaurora/ims/ImsConfigImpl;->access$1000(Lorg/codeaurora/ims/ImsConfigImpl;)Landroid/database/ContentObserver;
 
     move-result-object v4
 
-    .line 188
+    .line 187
     const/4 v5, 0x1
 
     invoke-virtual {v2, v3, v5, v4}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 190
+    .line 189
     iget-object v2, p0, Lorg/codeaurora/ims/ImsConfigImpl$4;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
     invoke-static {v2}, Lorg/codeaurora/ims/ImsConfigImpl;->access$1100(Lorg/codeaurora/ims/ImsConfigImpl;)Landroid/content/Context;
@@ -289,22 +289,22 @@
 
     iget-object v4, p0, Lorg/codeaurora/ims/ImsConfigImpl$4;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
-    .line 191
+    .line 190
     invoke-static {v4}, Lorg/codeaurora/ims/ImsConfigImpl;->access$1200(Lorg/codeaurora/ims/ImsConfigImpl;)Landroid/database/ContentObserver;
 
     move-result-object v4
 
-    .line 190
+    .line 189
     invoke-virtual {v2, v3, v5, v4}, Landroid/content/ContentResolver;->registerContentObserver(Landroid/net/Uri;ZLandroid/database/ContentObserver;)V
 
-    .line 192
+    .line 191
     iget-object v2, p0, Lorg/codeaurora/ims/ImsConfigImpl$4;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
 
     invoke-static {v2, v5}, Lorg/codeaurora/ims/ImsConfigImpl;->access$1302(Lorg/codeaurora/ims/ImsConfigImpl;Z)Z
 
     goto :goto_1
 
-    .line 178
+    .line 177
     :cond_2
     :goto_0
     iget-object v2, p0, Lorg/codeaurora/ims/ImsConfigImpl$4;->this$0:Lorg/codeaurora/ims/ImsConfigImpl;
@@ -325,10 +325,10 @@
 
     invoke-static {v2, v3}, Lcom/qualcomm/ims/utils/Log;->e(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 179
+    .line 178
     return-void
 
-    .line 194
+    .line 193
     :cond_3
     :goto_1
     return-void

@@ -11,12 +11,12 @@
     <string name="hd_icon_header_app_name">" "</string>
     <string name="ims_channel_name">ims</string>
     <string name="incoming_call_failed_low_battery">Incoming Call is failed due to low battery.</string>
-    <item type="string" name="APKTOOL_DUMMY_a">false</item>
-    <item type="string" name="APKTOOL_DUMMY_b">false</item>
-    <item type="string" name="APKTOOL_DUMMY_c">false</item>
-    <item type="string" name="APKTOOL_DUMMY_d">false</item>
-    <item type="string" name="APKTOOL_DUMMY_e">false</item>
-    <item type="string" name="APKTOOL_DUMMY_f">false</item>
-    <item type="string" name="APKTOOL_DUMMY_10">false</item>
-    <item type="string" name="APKTOOL_DUMMY_11">false</item>
+    <string name="APKTOOL_DUMMY_a" />
+    <string name="APKTOOL_DUMMY_b" />
+    <string name="APKTOOL_DUMMY_c" />
+    <string name="APKTOOL_DUMMY_d" />
+    <string name="APKTOOL_DUMMY_e" />
+    <string name="APKTOOL_DUMMY_f" />
+    <string name="APKTOOL_DUMMY_10" />
+    <string name="APKTOOL_DUMMY_11" />
 </resources>

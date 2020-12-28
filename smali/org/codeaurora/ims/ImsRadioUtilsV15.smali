@@ -251,7 +251,7 @@
     return v0
 
     :pswitch_data_0
-    .packed-switch 0xf045
+    .packed-switch 0x25b
         :pswitch_10
         :pswitch_f
         :pswitch_e

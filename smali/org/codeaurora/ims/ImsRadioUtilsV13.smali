@@ -53,7 +53,7 @@
 
     .line 36
     :cond_0
-    const v0, 0xf044
+    const/16 v0, 0x25a
 
     return v0
 .end method
@@ -199,7 +199,7 @@
     nop
 
     :pswitch_data_0
-    .packed-switch 0xf02f
+    .packed-switch 0x245
         :pswitch_14
         :pswitch_13
         :pswitch_12
@@ -253,7 +253,7 @@
     nop
 
     :pswitch_data_0
-    .packed-switch 0xf02f
+    .packed-switch 0x245
         :pswitch_0
         :pswitch_0
         :pswitch_0

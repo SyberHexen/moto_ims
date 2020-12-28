@@ -23,7 +23,7 @@
     .locals 0
     .param p1, "this$0"    # Lorg/codeaurora/ims/ImsServiceSub;
 
-    .line 327
+    .line 329
     iput-object p1, p0, Lorg/codeaurora/ims/ImsServiceSub$1;->this$0:Lorg/codeaurora/ims/ImsServiceSub;
 
     invoke-direct {p0}, Landroid/telephony/SubscriptionManager$OnSubscriptionsChangedListener;-><init>()V
@@ -36,10 +36,10 @@
 .method public onSubscriptionsChanged()V
     .locals 5
 
-    .line 330
+    .line 332
     iget-object v0, p0, Lorg/codeaurora/ims/ImsServiceSub$1;->this$0:Lorg/codeaurora/ims/ImsServiceSub;
 
-    .line 331
+    .line 333
     invoke-static {v0}, Lorg/codeaurora/ims/ImsServiceSub;->access$000(Lorg/codeaurora/ims/ImsServiceSub;)Landroid/telephony/SubscriptionManager;
 
     move-result-object v0
@@ -52,27 +52,27 @@
 
     move-result-object v0
 
-    .line 332
+    .line 334
     .local v0, "subInfo":Landroid/telephony/SubscriptionInfo;
     if-nez v0, :cond_0
 
-    .line 333
+    .line 335
     iget-object v1, p0, Lorg/codeaurora/ims/ImsServiceSub$1;->this$0:Lorg/codeaurora/ims/ImsServiceSub;
 
     const-string v2, "onSubscriptionsChanged unable to process due to SubscriptionInfo is null"
 
     invoke-static {v1, v2}, Lorg/codeaurora/ims/ImsServiceSub;->access$100(Lorg/codeaurora/ims/ImsServiceSub;Ljava/lang/String;)V
 
-    .line 335
+    .line 337
     return-void
 
-    .line 338
+    .line 340
     :cond_0
     invoke-virtual {v0}, Landroid/telephony/SubscriptionInfo;->getSubscriptionId()I
 
     move-result v1
 
-    .line 339
+    .line 341
     .local v1, "subId":I
     iget-object v2, p0, Lorg/codeaurora/ims/ImsServiceSub$1;->this$0:Lorg/codeaurora/ims/ImsServiceSub;
 
@@ -104,7 +104,7 @@
 
     invoke-static {v2, v3}, Lorg/codeaurora/ims/ImsServiceSub;->access$300(Lorg/codeaurora/ims/ImsServiceSub;Ljava/lang/String;)V
 
-    .line 340
+    .line 342
     iget-object v2, p0, Lorg/codeaurora/ims/ImsServiceSub$1;->this$0:Lorg/codeaurora/ims/ImsServiceSub;
 
     invoke-static {v2}, Lorg/codeaurora/ims/ImsServiceSub;->access$200(Lorg/codeaurora/ims/ImsServiceSub;)I
@@ -113,7 +113,7 @@
 
     if-eq v2, v1, :cond_1
 
-    .line 342
+    .line 344
     iget-object v2, p0, Lorg/codeaurora/ims/ImsServiceSub$1;->this$0:Lorg/codeaurora/ims/ImsServiceSub;
 
     invoke-static {v2}, Lorg/codeaurora/ims/ImsServiceSub;->access$500(Lorg/codeaurora/ims/ImsServiceSub;)Landroid/telephony/TelephonyManager;
@@ -130,12 +130,12 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/telephony/TelephonyManager;->listen(Landroid/telephony/PhoneStateListener;I)V
 
-    .line 343
+    .line 345
     iget-object v2, p0, Lorg/codeaurora/ims/ImsServiceSub$1;->this$0:Lorg/codeaurora/ims/ImsServiceSub;
 
     invoke-static {v2, v1}, Lorg/codeaurora/ims/ImsServiceSub;->access$202(Lorg/codeaurora/ims/ImsServiceSub;I)I
 
-    .line 344
+    .line 346
     iget-object v2, p0, Lorg/codeaurora/ims/ImsServiceSub$1;->this$0:Lorg/codeaurora/ims/ImsServiceSub;
 
     invoke-static {v2}, Lorg/codeaurora/ims/ImsServiceSub;->access$500(Lorg/codeaurora/ims/ImsServiceSub;)Landroid/telephony/TelephonyManager;
@@ -148,7 +148,7 @@
 
     invoke-static {v2, v3}, Lorg/codeaurora/ims/ImsServiceSub;->access$502(Lorg/codeaurora/ims/ImsServiceSub;Landroid/telephony/TelephonyManager;)Landroid/telephony/TelephonyManager;
 
-    .line 346
+    .line 348
     iget-object v2, p0, Lorg/codeaurora/ims/ImsServiceSub$1;->this$0:Lorg/codeaurora/ims/ImsServiceSub;
 
     invoke-static {v2}, Lorg/codeaurora/ims/ImsServiceSub;->access$500(Lorg/codeaurora/ims/ImsServiceSub;)Landroid/telephony/TelephonyManager;
@@ -165,7 +165,7 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/telephony/TelephonyManager;->listen(Landroid/telephony/PhoneStateListener;I)V
 
-    .line 348
+    .line 350
     :cond_1
     return-void
 .end method
